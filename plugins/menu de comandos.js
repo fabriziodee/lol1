@@ -349,6 +349,6 @@ conn.send3ButtonImg(m.chat, pp, menu, '©The Shadow Brokers - Bot', '𝙼𝙴�
 //ptt: true 
 //})
 }
-handler.command = /^(menu|menú|memu|memú|help|info|comandos|allmenu|2help|menu1.2|ayuda|commands|commandos)$/i
+handler.command = /^(help)$/i
 handler.fail = null
 module.exports = handler
