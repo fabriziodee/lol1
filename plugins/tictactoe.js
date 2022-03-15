@@ -26,10 +26,10 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
             }[v]
         })
         let str = `
-*ID de la sala:* ${room.id}
+_*🕹️ Juego Tic-tac-toe 🎮*_
 
-❎ - @${room.game.playerX.split`@`[0]}
-⭕ - @${room.game.playerO.split`@`[0]}
+❎ = @${room.game.playerX.split`@`[0]}
+⭕ = @${room.game.playerO.split`@`[0]}
 
       ${arr.slice(0, 3).join('')}
       ${arr.slice(3, 6).join('')}
