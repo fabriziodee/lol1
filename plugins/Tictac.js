@@ -23,8 +23,8 @@ handler.before = function (m) {
             m.reply({
                 '-3': 'El juego a terminado',
                 '-2': 'Invalido',
-                '-1': 'Posición invalido',
-                0: 'Posición invalido',
+                '-1': 'Posición invalida',
+                0: 'Posición invalida',
             }[ok])
             return !0
         }
@@ -50,18 +50,16 @@ handler.before = function (m) {
             isWin = true
         }
         let str = `
-*ID de la sala:* ${room.id}
+_*🕹️ Juego Tic-tac-toe 🎮*_
 
-❎ - @${room.game.playerX.split`@`[0]}
-⭕ - @${room.game.playerO.split`@`[0]}
+❎ = @${room.game.playerX.split`@`[0]}
+⭕ = @${room.game.playerO.split`@`[0]}
 
       ${arr.slice(0, 3).join('')}
       ${arr.slice(3, 6).join('')}
       ${arr.slice(6).join('')}
 
-${isWin ? `@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} Ganaste!` : isTie ? 'El juego terminó en empate' : `Tu turno @${room.game.currentTurn.split('@')[0]}`}
-
-Escriba *rendirse* para dejar de jugar
+${isWin ? `@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} Ganaste!` : isTie ? 'El juego terminó en empate' : `Tu turno @${room.game.currentTurn.split('@')[0]}\n\nEscriba *rendirse* para dejar de jugar`}
 `.trim()
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
