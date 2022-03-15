@@ -1,18 +1,38 @@
-const TicTacToe = require("../lib/tictactoe")
+let handler = m => m
+let debugMode = !1
 
-let handler = async (m, { conn, usedPrefix, command, text }) => {
-    conn.game = conn.game ? conn.game : {}
-    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw '*🔰 Aun estas en una sala de juego*\n\n*👉🏻 Para salir escribe "salir" respondiendo al mensaje del inicio que envio el Bot*\n\n*También puedes eliminar la sala escribiendo #delttt ~nombre de la sala~*'
-    let room = Object.values(conn.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
-    // m.reply('[WIP Feature]')
+handler.before = function (m) {
+    let ok
+    let isWin = !1
+    let isTie = !1
+    let isSurrender = !1
+    this.game = this.game ? this.game : {}
+    let room = Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
     if (room) {
-        m.reply('*✅ Un jugador ingreso a la sala*')
-        room.o = m.chat
-        room.game.playerO = m.sender
-        room.state = 'PLAYING'
+        // m.reply(`[DEBUG]\n${parseInt(m.text)}`)
+        if (!/^([1-9]|(me)?rendirse|surr?ender)$/i.test(m.text)) return !0
+        isSurrender = !/^[1-9]$/.test(m.text)
+        if (m.sender !== room.game.currentTurn) { // nek wayahku
+            if (!isSurrender) return !0
+        }
+        if (debugMode) m.reply('[DEBUG]\n' + require('util').format({
+            isSurrender,
+            text: m.text
+        }))
+        if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
+            m.reply({
+                '-3': 'El juego a terminado',
+                '-2': 'Invalido',
+                '-1': 'Posición invalido',
+                0: 'Posición invalido',
+            }[ok])
+            return !0
+        }
+        if (m.sender === room.game.winner) isWin = true
+        else if (room.game.board === 511) isTie = true
         let arr = room.game.render().map(v => {
             return {
-                X: '❌',
+                X: '❎',
                 O: '⭕',
                 1: '1️⃣',
                 2: '2️⃣',
@@ -25,44 +45,42 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
                 9: '9️⃣',
             }[v]
         })
+        if (isSurrender) {
+            room.game._currentTurn = m.sender === room.game.playerX
+            isWin = true
+        }
         let str = `
-*Clasico juego de gato o 3 en raya*
-*¿Como jugar? R=* _Responde al mensaje que envie el Bot con la tablita del juego, el mensaje debe contener la posiscion en la que quieras estar (1,2,3,4,5,6,7,8,9)_
+*ID de la sala:* ${room.id}
 
-${arr.slice(0, 3).join('')}
-${arr.slice(3, 6).join('')}
-${arr.slice(6).join('')}
+❎ - @${room.game.playerX.split`@`[0]}
+⭕ - @${room.game.playerO.split`@`[0]}
 
-*Es turno de @${room.game.currentTurn.split('@')[0]}*
-*- Para rendirse puede utulizar la palabra "salir", no escriba ningun prefijo ni las " ni las * y el mensaje debe ser respondiendo al mensaje del Bot en donde salga la tabla del juego*
+      ${arr.slice(0, 3).join('')}
+      ${arr.slice(3, 6).join('')}
+      ${arr.slice(6).join('')}
+
+${isWin ? `@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} Ganaste!` : isTie ? 'El juego terminó en empate' : `Tu turno @${room.game.currentTurn.split('@')[0]}`}
+
+Escriba *rendirse* para dejar de jugar
 `.trim()
+        if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
+            room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
         if (room.x !== room.o) m.reply(str, room.x, {
             contextInfo: {
-                mentionedJid: conn.parseMention(str)
+                mentionedJid: this.parseMention(str)
             }
         })
         m.reply(str, room.o, {
             contextInfo: {
-                mentionedJid: conn.parseMention(str)
+                mentionedJid: this.parseMention(str)
             }
         })
-    } else {
-        room = {
-            id: 'tictactoe-' + (+new Date),
-            x: m.chat,
-            o: '',
-            game: new TicTacToe(m.sender, 'o'),
-            state: 'WAITING'
+        if (isTie || isWin) {
+            if (debugMode) m.reply('[DEBUG]\n' + require('util').format(room))
+            delete this.game[room.id]
         }
-        if (text) room.name = text
-        m.reply('*👾 Esperando a que el jugador 2 se una a la sala* ' + (text ? `*el jugador 2 debe escribir el comando a continuación respetando las mayúsculas, puntos y acentuaciónes:*
-${usedPrefix}${command} ${text}` : ''))
-        conn.game[room.id] = room
     }
+    return !0
 }
-
-handler.help = ['tictactoe', 'ttt'].map(v => v + ' [custom room name]')
-handler.tags = ['']
-handler.command = /^(tictactoe|t{3})$/
 
 module.exports = handler
