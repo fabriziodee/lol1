@@ -59,7 +59,7 @@ _*🕹️ Juego Tic-tac-toe 🎮*_
       ${arr.slice(3, 6).join('')}
       ${arr.slice(6).join('')}
 
-${isWin ? `@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} Ganaste!` : isTie ? 'El juego terminó en empate' : `Tu turno @${room.game.currentTurn.split('@')[0]}\n\nEscriba *rendirse* para dejar de jugar`}
+${isWin ? `*@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} Ganastee 🥳!*` : isTie ? '*El juego terminó en empate 😐*' : `Tu turno @${room.game.currentTurn.split('@')[0]}\n\nEscriba *rendirse* para dejar de jugar`}
 `.trim()
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
