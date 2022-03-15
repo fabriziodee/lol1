@@ -528,15 +528,15 @@ Para desactivar esta función escriba:
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: '*[ ⚠ ️] Este comando solo puede ser utilizado por el propietario/owner del Bot*',
-    owner: '*[ ⚠ ️] Este comando solo puede ser utilizado por sub Bots (jadibot/serbot) y el propietario*',
-    mods: '*[ ⚠ ️] Este comando solo puede ser utilizado por moderadores y el propietario/owner del Bot*',
-    premium: '*[ ⚠ ️] Este comando es solo para miembros premium*',
-    group: '*[ ⚠ ️] Este comando solo se puede usar en grupos*',
-    private: '*[ ⚠ ️] Este comando solo se puede usar en el chat privado del numero del Bot*',
-    admin: '*[ ⚠ ️]️ Este comando es solo para administradores del grupo*',
-    botAdmin: '*[ ⚠ ️] Ascender el Bot a admin para usar este comando*',
-    unreg: '*[ ⚠ ️]️ Regístrese para utilizar esta función escribiendo:*\n\n*#registrar nombre.edad*\n\n*Ejemplo:*\n*#registrar Shadow.18*\n\n*Este registro se solicita con el fin de que el Bot no se sature*\n\nNota: No escriba los "*" ni los "_"\n\n*Nota: El registro fue quitado, si algun comando le pide registro favor de reportarlo*'
+    rowner: 'Esta función solo puede ser utilizado por el *creador* de la bot',
+    owner: 'Esta función solo puede ser utilizado por los *subbots* y el *creador* de la bot',
+    mods: 'Esta función solo puede ser utilizado por los *moderadores/as* y el *creador* de la bot',
+    premium: 'Esta función solo puede ser utilizado por miembros *premium*',
+    group: 'Esta función solo puede ser utilizado en *grupos*',
+    private: 'Esta función solo puede ser utilizado en el chat *privado*',
+    admin: 'Esta función solo puede ser utilizado por *administradores/as* del grupo',
+    botAdmin: 'Para ejecutar esta función tengo que ser *administradora*',
+    unreg: '*Registrese para utilizar esta función*\n\n- Ejemplo: Nombre|edad'
   }[type]
   if (msg) return m.reply(msg)
 }
