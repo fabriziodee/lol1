@@ -20,6 +20,7 @@ let tags = {
   'premium': 'Premiun 👑',
   'internet': 'Internet 📶',
   'random': 'Random 🍥',
+  'nsfw': 'Nsfw 🔞',
   'anonymous': 'Chat - anónimo 🕵️‍♂️',
   'nulis': 'Logo - maker 🎨',
   'audio': 'Audio 🔊',
