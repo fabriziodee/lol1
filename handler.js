@@ -165,6 +165,7 @@ module.exports = {
         if (typeof chat !== 'object') global.DATABASE._data.chats[m.chat] = {}
         if (chat) {
           if (!('isBanned' in chat)) chat.isBanned = false
+          if (!('isNsfw' in chat)) chat.isNsfw = false
           if (!('welcome' in chat)) chat.welcome = false
           if (!('detect' in chat)) chat.detect = false
           if (!('sWelcome' in chat)) chat.sWelcome = ''
@@ -178,6 +179,7 @@ module.exports = {
           if (!'antiToxic' in chat) chat.antiToxic = false
         } else global.DATABASE._data.chats[m.chat] = {
           isBanned: false,
+          isNsfw: false,
           welcome: false, 
           detect: false,
           sWelcome: "",
