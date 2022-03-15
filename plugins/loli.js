@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 
 let handler = async (m, { conn, text }) => {
 conn.reply(m.chat, wait, m)
-let imgurl = json[Math.floor(Math.random() * loli.length)]
+let imgurl = loli[Math.floor(Math.random() * loli.length)]
 let buffer = (await conn.getFile(imgurl)).data
 conn.sendFile(m.chat, buffer, '', `*LOLI*`.trim(), m)
 }
