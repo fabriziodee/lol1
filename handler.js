@@ -178,7 +178,7 @@ module.exports = {
           if (!'antiToxic' in chat) chat.antiToxic = false
         } else global.DATABASE._data.chats[m.chat] = {
           isBanned: false,
-          welcome: true, 
+          welcome: false, 
           detect: false,
           sWelcome: "",
           sBye: '',
@@ -390,7 +390,7 @@ ${global.owner.map((v, i) => '*Contacto ' + (i + 1) + ':* wa.me/' + v).join('\n'
                 console.error(e)
               }
             }
-            if (m.limit) m.reply(+ m.limit + ' *_limite usado, el limite por usuario son de 10, al finalizar con su limite no podra seguir usando los comandos con limites_*')
+            if (m.limit) m.reply('🎟️' + m.limit + ' limite utilizado')
           }
           break
         }
@@ -480,11 +480,12 @@ ${global.owner.map((v, i) => '*Contacto ' + (i + 1) + ':* wa.me/' + v).join('\n'
     let chat = global.DATABASE._data.chats[m.key.remoteJid]
     if (chat.delete) return
     await this.reply(m.key.remoteJid, `
-━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━
-*▢ Nombre:* @${m.participant.split`@`[0]}
-*▢ Enviando el mensaje..*
-*▢ Para desactivar esta función envie el comando:* #disable delete
-━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━
+*‧ [ 🧇 MENSAJE ELIMINADO 🧇 ] ‧*
+ 
+*• Nombre:* @${m.participant.split`@`[0]}
+
+Para desactivar esta función escriba:
+*.disable delete*
 `.trim(), m.message, {
       contextInfo: {
         mentionedJid: [m.participant]
@@ -521,7 +522,7 @@ ${global.owner.map((v, i) => '*Contacto ' + (i + 1) + ':* wa.me/' + v).join('\n'
       
       await this.send(`${tag},${JSON.stringify(NodePayload)}`)
     }
-    await this.sendMessage(from, '*[ ⚠ ️] ️NO LLAMAR AL BOT POR FAVOR, NO QUEREMOS BLOQUEARL@, EVITENOS LA PENA DE HACERLO [ ⚠ ️]*\n\n*❗SI ESTE INCIDENTE SE REPITE USTED SERA BLOQUEAD@❗*', MessageType.extendedText)
+    await this.sendMessage(from, 'No llame a la bot!', MessageType.extendedText)
   }
 }
 
