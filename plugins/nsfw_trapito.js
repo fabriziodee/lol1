@@ -8,7 +8,7 @@ conn.sendFile(m.chat, json.url, 'trapito', '*UN TRAPITO <3*', m)
 }
 
 handler.help = ['trapito']
-handler.tags = ['random']
+handler.tags = ['nsfw']
 handler.command = /^(trapito|htrap|trap)$/i
 handler.limit = true
 
