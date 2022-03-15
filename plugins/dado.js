@@ -1,16 +1,21 @@
-const dir = [
-  'https://tinyurl.com/ygms8wvy',
-  'https://tinyurl.com/yhdyhnap',
-  'https://tinyurl.com/yfwjbou7',
-  'https://tinyurl.com/yh3e3ogt',
-  'https://tinyurl.com/yfmhpvxs',
-  'https://tinyurl.com/ygpxka9q'
-];
+let fs = require('fs')
+
 let handler = async (m, { conn }) => {
-  conn.sendFile(m.chat, dir[Math.floor(Math.random() * dir.length)], 'dadu.webp', '', m)
+const number = [
+  'dado1',
+  'dado2',
+  'dado3',
+  'dado4',
+  'dado5',
+  'dado6'
+];
+
+let dado = `./storage/sticker/${number}.webp`
+conn.sendFile(m.chat, dado, 'dado.webp', m )
 }
+
 handler.help = ['dado']
-handler.tags = ['sticker', 'fun']
-handler.command = /^dado$/i
+handler.tags = ['fun']
+handler.command = /^(dado)$/i
 
 module.exports = handler
