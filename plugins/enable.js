@@ -195,7 +195,7 @@ ${usedPrefix}disable welcome
 `.trim())
 }
 handler.help = ['en', 'dis'].map(v => v + 'able')
-handler.tags = ['group', 'owner]
+handler.tags = ['group', 'owner']
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
 
 module.exports = handler
