@@ -48,6 +48,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.delete = isEnable
       break
+    case 'nsfw':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.isNsfw = isEnable
+      break
     case 'autodelvn':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -173,7 +182,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
     default:
       if (!/[01]/.test(command)) return m.reply(`
-Lista de opciones: welcome | delete | public | antilink | restrict | autoread | antilink2
+Lista de opciones: welcome | delete | public | antilink | nsfw | restrict | autoread | antilink2
 
 Ejemplo:
 ${usedPrefix}enable welcome
