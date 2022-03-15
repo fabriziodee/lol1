@@ -194,8 +194,8 @@ ${usedPrefix}disable welcome
 *${type}* *${isEnable ? 'activa' : 'desactiva'}do* ${isAll ? '*para este bot*' : isUser ? '' : '*para este chat*'}
 `.trim())
 }
-handler.help = ['en', 'dis'].map(v => v + 'able <option>')
-handler.tags = ['group', 'owner']
+handler.help = ['en', 'dis'].map(v => v + 'able')
+handler.tags = ['group', 'owner]
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
 
 module.exports = handler
