@@ -45,7 +45,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
   let latensi = speed() - timestamp
   let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn.state !== 'close').map(conn => conn.user)])]
   let totalfeatures = Object.values(global.plugins).filter( (v) => v.help && v.tags ).length
-  let infot = fs.readFileSync('./src/menu2.jpg')
+  let infot = fs.readFileSync('./storage/image/menu2.jpg')
   let ownum = "51940617554@s.whatsapp.net"
   let info = `
 🐋〃 Creador: @${ownum.split("@s.whatsapp.net")[0]}
@@ -60,7 +60,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
 ❄️〃 Chat Totales: ${chats.length}
 🐋〃 Tiempo activo: ${uptime}
 ❄️〃 Usuarios: ${totalreg} Numeros
-🐋〃 Bateria: ${conn.battery ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Cargando...' : '⚡ Desconectado'}` : '_Desconocido_'}
+🐋〃 Bateria: ${conn.battery ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Cargando...' : '⚡ Desconectado'}` : 'Desconocido'}
 ❄️〃 Sistema operativo: ${conn.user.phone.device_manufacturer}
 🐋〃 Version de Wsp: ${conn.user.phone.wa_version}
 ❄️〃 Bots secundarios: ${totaljadibot.length} Total
