@@ -10,7 +10,7 @@ if (command.includes('onichan', 'yamete', 'senpai')) {
 
 }
 
-handler.customPrefix = /onichan|yamete|senpai/i
+//handler.customPrefix = /onichan|yamete|senpai/i
 handler.command = new RegExp
 
 handler.fail = null
