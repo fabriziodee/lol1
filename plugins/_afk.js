@@ -2,11 +2,7 @@ let handler = m => m
 handler.before = m => {
   let user = global.DATABASE.data.users[m.sender]
   if (user.afk > -1) {
-    m.reply(`
-*_✳️ Dejaste de estar inactivo (AFK)${user.afkReason ? ' después de estar inactivo (AFK) por el motivo: ' + user.afkReason : ''}_*
-
-*_⌛ Tiempo de inactividad: ${clockString(new Date - user.afk)}_*
-`.trim())
+    conn.sendMessage(m.chat, `\t\t*‧ ⏰ Dejaste de estar AFK ⏰ ‧*\n\n• Nombre: @${m.sender.split("@s.whatsapp.net")[0]}\n• Razón: ${user.afkReason ? `${user.afkReason}` : 'No hay'}\n\nTiempo de inactividad: ${clockString(new Date - user.afk)}`, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [m.sender] } })
     user.afk = -1
     user.afkReason = ''
   }
@@ -17,15 +13,7 @@ handler.before = m => {
     let afkTime = user.afk
     if (!afkTime || afkTime < 0) continue
     let reason = user.afkReason || ''
-    m.reply(`
-*⚠ ️No lo etiquetes!!! ⚠️*
-
-*✳️ El usuario que mencionas está inactivo (AFK)*
-
-*👉${reason ? 'Motivo de inactividad: ' + reason : 'Motivo de inactividad: El usuario no especifico un motivo'}*
-
-*⌛ Tiempo transcurrido de inactividad: ${clockString(new Date - afkTime)}*
-`.trim())
+conn.sendMessage(m.chat, `\t\t*‧ [ 🚧 Usuario en AFK 🚧 ] ‧*\n\n• Razón: ${reason ? `${reason}` : 'No hay'}\n• Tiempo: ${clockString(new Date - afkTime)}`, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [m.sender] } })
   }
   return true
 }
