@@ -16,3 +16,4 @@ handler.command = /^(lesbiana)$/i
 handler.limit = true
 
 module.exports = handler
+
