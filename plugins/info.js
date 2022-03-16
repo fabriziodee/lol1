@@ -47,7 +47,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
   let totalfeatures = Object.values(global.plugins).filter( (v) => v.help && v.tags ).length
   let infot = fs.readFileSync('./storage/image/menu2.jpg')
   let ownum = "51940617554@s.whatsapp.net"
-  let info = `
+  let info = ` 
  🐋〃 Creador: @${ownum.split("@s.whatsapp.net")[0]}
  ❄️〃 Navegador: ${conn.browserDescription[1]}
  🐋〃 Version: ${conn.browserDescription[2]}
