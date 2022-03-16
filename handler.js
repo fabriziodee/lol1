@@ -447,18 +447,20 @@ ${global.owner.map((v, i) => '*Contacto ' + (i + 1) + ':* wa.me/' + v).join('\n'
         if (chat.welcome) {
           let groupMetadata = await this.groupMetadata(jid)
           for (let user of participants) {
-            let pp = './undefined.jpg'
+            let userr = user
+            let pp = await this.getProfilePicture("51940617554-1604073088@g.us")
+            let lolisg = fs.readFileSync('./storage/image/menu2.jpg')
             try {
-              pp = await this.getProfilePicture(user)
+              pp = await this.getProfilePicture(userr)
             } catch (e) {
             } finally {
-              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'welcome, @user!').replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc) :
-                (chat.sBye || this.bye || conn.bye || 'bye, @user!')).replace('@user', '@' + user.split('@')[0])
-              this.sendFile(jid, pp, 'pp.jpg', text, null, false, {
-                contextInfo: {
-                  mentionedJid: [user]
-                }
-              })
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Hola 😙, *@user*\n───────────────────\n*🎊Bienvenido/a al grupo* :\n@subject\n\n• *Descripción* :\n\n@desc').replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc) :
+                (chat.sBye || this.bye || conn.bye || '@user un gay salio del grupo')).replace('@user', '@' + user.split('@')[0])
+              let ppp = await(await fetch(pp)).buffer()
+              let py = await this.prepareMessage(jid, ppp, MessageType.image, {thumbnail: false, contextInfo: { externalAdReply:{title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: lolisg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}}})
+              let gbutsan = [ {buttonId: 'qqq', buttonText: {displayText: [[action === 'add' ? 'Gracias 🧃' : 'Adios 👋']]}, type: 1} ]
+              let gbuttonan = { imageMessage: py.message.imageMessage, contentText: text, footerText: [[action === 'add' ? "```– anu.action == 'add' –```": "```– anu.action == 'remove' –```"]], buttons: gbutsan, headerType: 4 }
+              this.sendMessage(jid, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [user] } })
             }
           }
         }
