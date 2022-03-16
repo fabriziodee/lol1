@@ -1,17 +1,10 @@
+let { MessageType } = require("@adiwajshing/baileys")
 let fs = require('fs')
 
 let handler = async (m, { conn }) => {
-const number = [
-  'dado1',
-  'dado2',
-  'dado3',
-  'dado4',
-  'dado5',
-  'dado6'
-];
-
-let dado = `./storage/sticker/${number}.webp`
-conn.sendFile(m.chat, dado, 'dado.webp', m )
+let num = Math.floor(Math.random() * 6)
+let dado = fs.readFileSync(`./storage/sticker/dado${num}.webp`)
+conn.sendMessage(m.chat, dado, MessageType.sticker, { quoted: m )
 }
 
 handler.help = ['dado']
