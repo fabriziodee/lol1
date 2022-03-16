@@ -13,8 +13,8 @@ let handler = async (m, { text, usedPrefix, command }) => {
 *• 📦 Link:* ${repo.html_url}
 *• 🏵️ Creador:* ${repo.owner.login}
 *• 🐣 Nombre:* ${repo.name}
-*• 📅 Creado el:* ${formatDate(repo.created_at)}
-*• ⏰ Actualización:* ${formatDate(repo.updated_at)}
+*• 📅 Creado:* ${formatDate(repo.created_at)}
+*• ⏰ Actualizado:* ${formatDate(repo.updated_at)}
 *• 👁 Visitas:* ${repo.watchers}
 *• 🍴 Bifurcado:* ${repo.forks}
 *• ⭐ Estrellas:* ${repo.stargazers_count}
@@ -23,7 +23,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
 *• ♻️ Clone:* ${repo.clone_url}
 `.trim()
     }).join('\n\n─────────────────\n\n')
-conn.sendMessage(m.chat, await (await fetch(json.items[0].owner.avatar_url)).buffer(), MessageType.image, { quoted: m, caption: `\t  *‧ [ 🔎 Github Busqueda 🔎 ] ‧*\n\n─────────────────\n\n${str}` })
+conn.sendMessage(m.chat, await (await fetch(json.items[0].owner.avatar_url)).buffer(), MessageType.image, { quoted: m, caption: `\t\t*‧ [ 🔎 Github Busqueda 🔎 ] ‧*\n\n─────────────────\n\n${str}` })
 }
 handler.help = ['githubsearch'].map(v => v + '')
 handler.tags = ['tools']
