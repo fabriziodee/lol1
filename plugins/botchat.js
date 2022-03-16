@@ -2,7 +2,7 @@ let util = require('util')
 let path = require('path')
 
 let handler = async (m, { conn, command }) => {
-let type = Object.keys(mek.message)[0]1
+let type = Object.keys(mek.message)[0]
 let budy = (type === 'conversation') ? m.message.conversation : (type === 'extendedTextMessage') ? m.message.extendedTextMessage.text : ''
 
 if (budy.includes('Test')) {
