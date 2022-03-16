@@ -48,22 +48,22 @@ let handler = async (m, { conn, text, usedPrefix }) => {
   let infot = fs.readFileSync('./storage/image/menu2.jpg')
   let ownum = "51940617554@s.whatsapp.net"
   let info = `
-\t🐋〃 Creador: @${ownum.split("@s.whatsapp.net")[0]}
-\t❄️〃 Navegador: ${conn.browserDescription[1]}
-\t🐋〃 Version: ${conn.browserDescription[2]}
-\t❄️〃 Servidor: ${conn.browserDescription[0]}
-\t🐋〃 Comandos: ${totalfeatures} Total
-\t❄️〃 Prefijo: ${usedPrefix}
-\t🐋〃 Velocidad: ${latensi.toFixed(4)} Segundos
-\t❄️〃 Chat Privado: ${chats.length - groups.length}
-\t🐋〃 Chat de Grupos: ${groups.length}
-\t❄️〃 Chat Totales: ${chats.length}
-\t🐋〃 Tiempo activo: ${uptime}
-\t❄️〃 Usuarios: ${totalreg} Numeros
-\t🐋〃 Bateria: ${conn.battery ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Cargando...' : '⚡ Desconectado'}` : 'Desconocido'}
-\t❄️〃 Sistema operativo: ${conn.user.phone.device_manufacturer}
-\t🐋〃 Version de Wsp: ${conn.user.phone.wa_version}
-\t❄️〃 Bots secundarios: ${totaljadibot.length} Total
+ 🐋〃 Creador: @${ownum.split("@s.whatsapp.net")[0]}
+ ❄️〃 Navegador: ${conn.browserDescription[1]}
+ 🐋〃 Version: ${conn.browserDescription[2]}
+ ❄️〃 Servidor: ${conn.browserDescription[0]}
+ 🐋〃 Comandos: ${totalfeatures} Total
+ ❄️〃 Prefijo: ${usedPrefix}
+ 🐋〃 Velocidad: ${latensi.toFixed(4)} Segundos
+ ❄️〃 Chat Privado: ${chats.length - groups.length}
+ 🐋〃 Chat de Grupos: ${groups.length}
+ ❄️〃 Chat Totales: ${chats.length}
+ 🐋〃 Tiempo activo: ${uptime}
+ ❄️〃 Usuarios: ${totalreg} Numeros
+ 🐋〃 Bateria: ${conn.battery ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Cargando...' : '⚡ Desconectado'}` : 'Desconocido'}
+ ❄️〃 Sistema operativo: ${conn.user.phone.device_manufacturer}
+ 🐋〃 Version de Wsp: ${conn.user.phone.wa_version}
+ ❄️〃 Bots secundarios: ${totaljadibot.length} Total
 `.trim() 
   conn.reply(m.chat, info, text, { quoted: m, contextInfo: { externalAdReply:{title: `↷✦╎Info - Bot╎💌˖ ⸙`, previewType:"PHOTO",thumbnail: infot, sourceUrl:``}, mentionedJid: [ownum]}})
 }
