@@ -16,22 +16,17 @@ let handler = async (m, { conn, participants, groupMetadata, args }) => {
         //let { isBanned, welcome, antivirtex, detect, sWelcome, sBye, sPromote, sDemote, antiLink } = global.DATABASE.data.chats[m.chat]
         const groupAdmins = getGroupAdmins(participants)
         let pesan = args.join` `
-        let oi = `*Mensaje:* ${pesan}`
         let listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.split('@')[0]}`).join('\n')
-        let text = `
-*━「 Invocando admins 」━*
-
-${oi}
-${listAdmin}
-
-*[ ⚠ ️] Solo usar este comando cuando se trate de una emergencia*
-`.trim()
+        let text = `\t\t*‧ [ 🍧 Lista de Admins 🍧 ] ‧*\n\nMensaje: ${pesan}\n${listAdmin}`
         ownernya = [`${m.chat.split`-`[0]}@s.whatsapp.net`]
         let mentionedJid = groupAdmins.concat(ownernya)
         conn.sendFile(m.key.remoteJid, pp, 'pp.jpg', text, m, false, { contextInfo: { mentionedJid } })
     }
 }
-handler.command = /^(admins|@admins)$/i
+
+handler.help = ['admins']
+handler.tags = ['group']
+handler.command = /^(admins|adms)$/i
 
 handler.group = true
 
