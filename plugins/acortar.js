@@ -1,14 +1,15 @@
 let axios = require("axios");
 let fetch = require('node-fetch')
-let handler = async(m, { conn, text, xteamkey }) => {
-if (!text) throw '*Inserte el link/enlace que desee acortar*'
+
+let handler = async(m, { conn, text, usedPrefix, command }) => {
+if (!text) throw '*Ingrese un link que desea acortar*\n\n- Ejemplo: ${usedPrefix + command} https://github.com/g4tito'
 let json = await (await fetch(`https://api.xteam.xyz/shorturl/tinyurl?url=${text}&apikey=cb15ed422c71a2fb`)).json()
 if (!json.status) throw json
-let hasil = `*Link acortado correctamente!!*\n\n*Link anterior:*\n${text}\n*Link nuevo:*\n*${json.result}*`.trim()
-          
+let hasil = `\t\t*‧ [ 🌟 Enlace Acortado 🌟 ] ‧*\n\n*• Link anterior:*\n${text}\n\n*• Link nuevo:*\n${json.result}`
 m.reply(hasil)
 }
-handler.help = ['tinyurl','short2'].map(v => v + ' <link>')
+
+handler.help = ['tinyurl']
 handler.tags = ['tools']
 handler.command = /^(tinyurl|short2|acortar|corto)$/i
 handler.owner = false
