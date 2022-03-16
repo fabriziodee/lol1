@@ -23,7 +23,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
 *• ♻️ Clone:* ${repo.clone_url}
 `.trim()
     }).join('\n\n─────────────────\n\n')
-conn.sendMessage(m.chat, await (await fetch(json.items[0].owner.avatar_url)).buffer(), MessageType.image, { quoted: m, caption: `\t\t*‧ [ 🔎 Github Busqueda 🔎 ] ‧*\n\n─────────────────\n\n${str}` })
+conn.sendMessage(m.chat, await (await fetch(json.items[0].owner.avatar_url)).buffer(), MessageType.image, { quoted: m, caption: `\t  *‧ [ 🔎 Github Busqueda 🔎 ] ‧*\n\n─────────────────\n\n${str}` })
 }
 handler.help = ['githubsearch'].map(v => v + '')
 handler.tags = ['tools']
