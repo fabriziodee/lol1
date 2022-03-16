@@ -1,7 +1,7 @@
 let util = require('util')
 let path = require('path')
 
-let handler = async (m, { conn }) => {
+let handler = async (m, { conn, command }) => {
 
 if (command.includes('onichan', 'yamete', 'senpai')) {
 	let vn = './storage/audio/Yamete_onii_chan.mp3'
