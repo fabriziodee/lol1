@@ -68,7 +68,7 @@ if (audio4B) {
 
 if (audio5B) {
 	let au = ["./storage/audio/Pensamientos_sexuales.mp3", "./storage/audio/Pensamientos_sexuales.mp3"]
-	let vn = _verdad[Math.floor(Math.random() * _truth.length)]
+	let vn = au[Math.floor(Math.random() * au.length)]
 	conn.sendFile(m.chat, vn, 'Pensamientos_verguensa.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	}
 
