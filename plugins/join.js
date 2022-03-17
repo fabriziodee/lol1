@@ -42,3 +42,13 @@ handler.tags = ['premium']
 handler.command = /^(join)$/i
 
 module.exports = handler
+
+function formatDate(n, locale = 'es') {
+  let d = new Date(n)
+  return d.toLocaleDateString(locale, {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  })
+}
