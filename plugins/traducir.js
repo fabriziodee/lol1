@@ -1,7 +1,7 @@
 const translate = require('translate-google-api')
 
 let handler = async (m, { args, text, usedPrefix, command }) => {
-result = await translate(`Hello`, { 'cn', to: 'es' })
+result = await translate(`Hello`,  { tld: 'cn', to: 'es', })
 m.reply(result[0])
 }
 
