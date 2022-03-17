@@ -8,7 +8,7 @@ conn.sendFile(m.chat, url, 'muslos', '*MUSLOS 7W7*', m)
 
 handler.help = ['muslos']
 handler.tags = ['random']
-handler.command = /^(muslos)$/i
+handler.command = /^(muslos|muslo)$/i
 
 module.exports = handler
 
