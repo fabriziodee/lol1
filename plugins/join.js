@@ -27,9 +27,9 @@ Holii soy una bot loli 7w7, fuí invitado por *@${m.sender.split("@s.whatsapp.ne
 *• Miembros:* ${res.size} Total
 
 
-Para ver mis comandos escriba *${usedPrefix}menu* uwu
+- Para ver mis comandos escriba *${usedPrefix}menu* uwu
 
-- La bot todavía está en *beta* y por lo tanto podría aver algunos errores/bugs
+La bot todavía está en *beta* y por lo tanto podría aver algunos errores/bugs
 `.trim()
     let joinloc = await conn.prepareMessage(target, { jpegThumbnail: faketumb }, MessageType.location)
     let buttonss = [{ buttonId: 'Thanks', buttonText: { displayText: 'Welcome 🧃' }, type: 1 }]
@@ -47,6 +47,8 @@ Para ver mis comandos escriba *${usedPrefix}menu* uwu
 handler.help = ['join']
 handler.tags = ['premium']
 handler.command = /^(join)$/i
+
+handler.premium = true
 
 module.exports = handler
 
