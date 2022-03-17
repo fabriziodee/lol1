@@ -1,20 +1,23 @@
 const axios = require('axios')
 let split = '|'
 let handler = async (m, { conn, args: [effect], text: txt, usedPrefix, command, name }) => {
-if (!effect) throw '*[❗] ¿Como usar este comando?*\n_#logo (efecto) (texto)_\n*Ejemplo:*\n_#logo 3d-deep-sea-metal Shadow_\n\n*[❗] Algunas veces le dira que falta otro texto, el uso seria el siguiente:*\n_#logo (efecto) (texto1|texto2)_\n*Ejemplo:*\n_#logo Wolf-Logo-Galaxy Shadow|Brokers_\n\n*_<LISTA DE EFECTOS/>_*\n\n° ඬ⃟📝 #logo ' + effects.map(v => v.title).join('\n° ඬ⃟📝 #logo ')
+if (!effect) throw `*Ingrese un efecto y texto*\n\n- Ejemplo: ${usedPrefix + command} lolibot\n\n*Lista de efectos:*\n- ${usedPrefix}logo ` + effects.map(v => v.title).join(`\n- ${usedPrefix}logo `)
   effect = effect.toLowerCase()
-  if (!effects.find(v => (new RegExp(v.title, 'gi')).test(effect))) throw `*[❗] El efecto ${effect} no se encuentra en la base de datos*`
+  if (!effects.find(v => (new RegExp(v.title, 'gi')).test(effect))) throw `El efecto *${effect}* no se encontro!`
   let text = txt.replace(new RegExp(effect, 'gi'), '').trimStart()
   if (text.includes(split)) text = text.split(split)
   text = Array.isArray(text) ? text : [text]
   let res = await textpro(effect, ...text)
-  if (typeof res == 'number') throw res == -1 ? `*[❗] El efecto *${effect}* no se encuentra en la base de datos*` : `*[❗] Uso correcto del comandos ${usedPrefix}${command} ${effect} ${new Array(res).fill('texto').map((v, i) => v + (i ? i + 1 : '')).join('|')}*`
+  if (typeof res == 'number') throw res == -1 ? `El efecto *${effect}* no se encontro!` : `Ejemplo de uso del comandos ${usedPrefix + command} ${effect} ${new Array(res).fill('texto').map((v, i) => v + (i ? i + 1 : '')).join('|')}`
   let result = await axios.get(res, {
     responseType: 'arraybuffer'
   })
-  await conn.sendFile(m.chat, result.data, 'Error.jpg', `*Toma tu imagen personalizada!!*\n*Efecto: ${effect}*`, m)
+  await conn.sendFile(m.chat, result.data, 'Error.jpg', `*Logo personalizada*\n*Efecto:* ${effect}`, m)
 }
-handler.command = /^(logo|logos)$/i
+
+handler.help = ['logo']
+handler.tags = ['maker']
+handler.command = /^(logo)$/i
 
 module.exports = handler
 
@@ -23,11 +26,11 @@ const fetch = require('node-fetch')
 const cheerio = require('cheerio')
 var effects = [
   {
-    "title": "3d-deep-sea-metal",
+    "title": "3D-deepsea",
     "url": "https://textpro.me/create-3d-deep-sea-metal-text-effect-online-1053.html"
   },
   {
-    "title": "American-flag-3D",
+    "title": "american-flag-3D",
     "url": "https://textpro.me/create-american-flag-3d-text-effect-online-1051.html"
   },
   {
@@ -35,7 +38,7 @@ var effects = [
     "url": "https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html"
   },
   {
-    "title": "3D-rainbow-color-calligraphy",
+    "title": "3D-rainbow",
     "url": "https://textpro.me/3d-rainbow-color-calligraphy-text-effect-1049.html"
   },
   {
@@ -43,7 +46,7 @@ var effects = [
     "url": "https://textpro.me/create-3d-water-pipe-text-effects-online-1048.html"
   },
   {
-    "title": "Halloween-skeleton",
+    "title": "halloween-skeleton",
     "url": "https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html"
   },
   {
@@ -63,7 +66,7 @@ var effects = [
     "url": "https://textpro.me/create-blue-circuit-style-text-effect-online-1043.html"
   },
   {
-    "title": "espacio",
+    "title": "space",
     "url": "https://textpro.me/create-space-text-effects-online-free-1042.html"
   },
   {
@@ -143,15 +146,11 @@ var effects = [
     "url": "https://textpro.me/create-art-paper-cut-text-effect-online-1022.html"
   },
   {
-    "title": "artistic-black-and-white-status-and-quote-with-your-photos",
-    "url": "https://textpro.me/create-artistic-black-and-white-status-and-quote-with-your-photos-1021.html"
-  },
-  {
-    "title": "Online-3D-gradient--generator",
+    "title": "3D-gradient-generator",
     "url": "https://textpro.me/online-3d-gradient-text-effect-generator-1020.html"
   },
   {
-    "title": "a-3D-glossy-metal",
+    "title": "3D-glossy-metal",
     "url": "https://textpro.me/create-a-3d-glossy-metal-text-effect-1019.html"
   },
   {
@@ -159,15 +158,15 @@ var effects = [
     "url": "https://textpro.me/create-3d-realistic-text-effect-on-the-beach-online-1018.html"
   },
   {
-    "title": "a-watercolor",
+    "title": "watercolor",
     "url": "https://textpro.me/create-a-free-online-watercolor-text-effect-1017.html"
   },
   {
-    "title": "Online-multicolor-3D-paper-cut",
+    "title": "multicolor-3D-paper-cut",
     "url": "https://textpro.me/online-multicolor-3d-paper-cut-text-effect-1016.html"
   },
   {
-    "title": "Write-text-on-foggy-window",
+    "title": "write-text-on-foggy-window",
     "url": "https://textpro.me/write-text-on-foggy-window-online-free-1015.html"
   },
   {
@@ -179,7 +178,7 @@ var effects = [
     "url": "https://textpro.me/3d-underwater-text-effect-generator-online-1013.html"
   },
   {
-    "title": "Online-black-and-white-bear-mascot-logo-creation",
+    "title": "bear-logo",
     "url": "https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html"
   },
   {
@@ -187,7 +186,7 @@ var effects = [
     "url": "https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html"
   },
   {
-    "title": "a-cool-graffiti-text-on-the-wall",
+    "title": "cool-graffiti-text-on-the-wall",
     "url": "https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html"
   },
   {
@@ -195,11 +194,11 @@ var effects = [
     "url": "https://textpro.me/create-cool-wall-graffiti-text-effect-online-1009.html"
   },
   {
-    "title": "a-christmas-holiday-snow",
+    "title": "christmas-holiday-snow",
     "url": "https://textpro.me/create-a-christmas-holiday-snow-text-effect-1007.html"
   },
   {
-    "title": "a-futuristic-technology-neon-light",
+    "title": "futuristic-technology-neon-light",
     "url": "https://textpro.me/create-a-futuristic-technology-neon-light-text-effect-1006.html"
   },
   {
@@ -207,7 +206,7 @@ var effects = [
     "url": "https://textpro.me/create-snow-text-effects-for-winter-holidays-1005.html"
   },
   {
-    "title": "a-cloud--on-the-sky",
+    "title": "cloud-on-the-sky",
     "url": "https://textpro.me/create-a-cloud-text-effect-on-the-sky-online-1004.html"
   },
   {
@@ -219,7 +218,7 @@ var effects = [
     "url": "https://textpro.me/3d-gradient-text-effect-online-free-1002.html"
   },
   {
-    "title": "Blackpink-logo-style",
+    "title": "blackpink-logo-style",
     "url": "https://textpro.me/create-blackpink-logo-style-online-1001.html"
   },
   {
@@ -231,7 +230,7 @@ var effects = [
     "url": "https://textpro.me/create-realistic-cloud-text-effect-online-free-999.html"
   },
   {
-    "title": "a-cloud--in-the-sky",
+    "title": "cloud-in-the-sky",
     "url": "https://textpro.me/create-a-cloud-text-effect-in-the-sky-online-997.html"
   },
   {
@@ -251,7 +250,7 @@ var effects = [
     "url": "https://textpro.me/create-a-summery-sand-writing-text-effect-988.html"
   },
   {
-    "title": "Foil-Balloon--For-Birthday",
+    "title": "Foil-Balloon-For-Birthday",
     "url": "https://textpro.me/foil-balloon-text-effect-for-birthday-987.html"
   },
   {
@@ -271,7 +270,7 @@ var effects = [
     "url": "https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html"
   },
   {
-    "title": "a-Stone",
+    "title": "stone",
     "url": "https://textpro.me/create-a-stone-text-effect-online-982.html"
   },
   {
@@ -283,27 +282,27 @@ var effects = [
     "url": "https://textpro.me/1917-style-text-effect-online-980.html"
   },
   {
-    "title": "80's-Retro-Neon",
+    "title": "80-Retro-Neon",
     "url": "https://textpro.me/80-s-retro-neon-text-effect-online-979.html"
   },
   {
-    "title": "Minion--3D",
+    "title": "minion-3D",
     "url": "https://textpro.me/minion-text-effect-3d-online-978.html"
   },
   {
-    "title": "Pornhub-Style-Logo",
+    "title": "pornhub",
     "url": "https://textpro.me/pornhub-style-logo-online-generator-free-977.html"
   },
   {
-    "title": "Double-Exposure--Black-&-White",
+    "title": "Double-Exposure-Black-&-White",
     "url": "https://textpro.me/double-exposure-text-effect-black-white-976.html"
   },
   {
-    "title": "Holographic-3D",
+    "title": "holographic-3D",
     "url": "https://textpro.me/holographic-3d-text-effect-975.html"
   },
   {
-    "title": "3D-Avengers-logo",
+    "title": "3D-avengers",
     "url": "https://textpro.me/create-3d-avengers-logo-online-974.html"
   },
   {
@@ -311,15 +310,15 @@ var effects = [
     "url": "https://textpro.me/metal-purple-dual-effect-973.html"
   },
   {
-    "title": "logo-style-Marvel-studios-Ver:-metal",
+    "title": "marvel",
     "url": "https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html"
   },
   {
-    "title": "logo-style-Marvel-studios",
+    "title": "marvel-2",
     "url": "https://textpro.me/create-logo-style-marvel-studios-online-971.html"
   },
   {
-    "title": "Deluxe-Silver",
+    "title": "deluxe",
     "url": "https://textpro.me/deluxe-silver-text-effect-970.html"
   },
   {
@@ -331,7 +330,7 @@ var effects = [
     "url": "https://textpro.me/glossy-blue-metal-text-effect-967.html"
   },
   {
-    "title": "Deluxe-Gold",
+    "title": "deluxe-2",
     "url": "https://textpro.me/deluxe-gold-text-effect-966.html"
   },
   {
@@ -339,27 +338,23 @@ var effects = [
     "url": "https://textpro.me/glossy-carbon-text-effect-965.html"
   },
   {
-    "title": "Fabric",
+    "title": "fabric",
     "url": "https://textpro.me/fabric-text-effect-online-964.html"
   },
   {
-    "title": "Neon",
+    "title": "neon",
     "url": "https://textpro.me/neon-text-effect-online-963.html"
   },
   {
-    "title": "New-Year-Cards-3D-By-Name",
+    "title": "new-year",
     "url": "https://textpro.me/new-year-cards-3d-by-name-960.html"
-  },
-  {
-    "title": "Happ-new-year-card-firework-gif",
-    "url": "https://textpro.me/happ-new-year-card-firework-gif-959.html"
   },
   {
     "title": "Fullcolor-Balloon",
     "url": "https://textpro.me/fullcolor-balloon-text-effect-958.html"
   },
   {
-    "title": "Text-Logo-3D-Metal",
+    "title": "3D-metal",
     "url": "https://textpro.me/create-text-logo-3d-metal-online-957.html"
   },
   {
@@ -387,11 +382,11 @@ var effects = [
     "url": "https://textpro.me/xmas-cards-3d-online-942.html"
   },
   {
-    "title": "Blood-Text-On-The-Frosted-Glass",
+    "title": "frosted-glass",
     "url": "https://textpro.me/blood-text-on-the-frosted-glass-941.html"
   },
   {
-    "title": "Halloween-Fire",
+    "title": "halloween-fire",
     "url": "https://textpro.me/halloween-fire-text-effect-940.html"
   },
   {
@@ -719,43 +714,43 @@ var effects = [
     "url": "https://textpro.me/yellow-jewelry-text-effect-851.html"
   },
   {
-    "title": "Silver-Jewelry",
+    "title": "silver-Jewelry",
     "url": "https://textpro.me/silver-jewelry-text-effect-850.html"
   },
   {
-    "title": "Red-Jewelry",
+    "title": "red-Jewelry",
     "url": "https://textpro.me/red-jewelry-text-effect-849.html"
   },
   {
-    "title": "Purple-Jewelry",
+    "title": "purple-Jewelry",
     "url": "https://textpro.me/purple-jewelry-text-effect-848.html"
   },
   {
-    "title": "Orange-Jewelry",
+    "title": "orange-Jewelry",
     "url": "https://textpro.me/orange-jewelry-text-effect-847.html"
   },
   {
-    "title": "Green-Jewelry",
+    "title": "green-Jewelry",
     "url": "https://textpro.me/green-jewelry-text-effect-846.html"
   },
   {
-    "title": "Cyan-Jewelry",
+    "title": "cyan-Jewelry",
     "url": "https://textpro.me/cyan-jewelry-text-effect-845.html"
   },
   {
-    "title": "Blue-Jewelry",
+    "title": "blue-Jewelry",
     "url": "https://textpro.me/blue-jewelry-text-effect-844.html"
   },
   {
-    "title": "Hot-Metal",
+    "title": "hot-Metal",
     "url": "https://textpro.me/hot-metal-text-effect-843.html"
   },
   {
-    "title": "Hexa-Golden",
+    "title": "hexa-Golden",
     "url": "https://textpro.me/hexa-golden-text-effect-842.html"
   },
   {
-    "title": "Blue-Glitter",
+    "title": "blue-Glitter",
     "url": "https://textpro.me/blue-glitter-text-effect-841.html"
   },
   {
@@ -811,7 +806,7 @@ var effects = [
     "url": "https://textpro.me/3d-glowing-metal-text-effect-828.html"
   },
   {
-    "title": "3D-Chrome",
+    "title": "3D-chrome",
     "url": "https://textpro.me/3d-chrome-text-effect-827.html"
   }
 ]
