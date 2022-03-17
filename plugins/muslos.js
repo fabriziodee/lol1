@@ -1,20 +1,15 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn }) => {
-	let url = muslos[Math.floor(Math.random() * muslos.length)]
-	await conn.sendMessage(m.chat, {
-		contentText: '🔥🔥🔥🔥',
-		footerText: '©The Shadow Brokers - Bot',
-		buttons: [
-			{ buttonId: '.muslos', buttonText: { displayText: 'SIGUIENTE' }, type: 1 }
-		],
-		headerType: 4,
-		imageMessage: (await conn.prepareMessageMedia(await (await fetch(url)).buffer(), 'imageMessage', {})).imageMessage
-	}, 'buttonsMessage', { quoted: m })
+conn.reply(m.chat, wait, m)
+let url = muslos[Math.floor(Math.random() * muslos.length)]
+conn.sendFile(m.chat, url, 'muslos', '*MUSLOS 7W7*', m)
 }
-handler.command = /^(muslos)$/i
-handler.tags = ['internet']
+
 handler.help = ['muslos']
+handler.tags = ['random']
+handler.command = /^(muslos)$/i
+
 module.exports = handler
 
 global.muslos = [
