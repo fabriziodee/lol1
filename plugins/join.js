@@ -16,16 +16,22 @@ let handler = async (m, { conn, text, isMods, isOwner, usedPrefix, command }) =>
     let textjoin = `
 Holii soy una bot loli 7w7, Fuí invitado por *@${m.participant.split`@`[0]}* para unirme a este grupo
 
-\t\t*‧ 🐋 Info del Grupo 🐋 ‧*
 
-• Grupo: ${res.subject}
-• Jid: ${res.id}
-• Creador: @${res.id.split('-')[0]}
-• Creado: ${formatDate(res.creation * 1000)}
-• Miembros: ${res.size} Total
-    `
+\t\t\t*‧ 🐋 Info del Grupo 🐋 ‧*
+
+*• Grupo:* ${res.subject}
+*• Jid:* ${res.id}
+*• Creador:* @${res.id.split('-')[0]}
+*• Creado:* ${formatDate(res.creation * 1000)}
+*• Miembros:* ${res.size} Total
+
+
+Para ver mis comandos escriba *${usedPrefix}menu* uwu
+
+- La bot todavía está en *beta* y por lo tanto podría aver algunos errores/bugs
+    `.trim
     let joinloc = await conn.prepareMessage(target, { jpegThumbnail: faketumb }, MessageType.location)
-    let buttonss = [{ buttonId: 'Thanks', buttonText: { displayText: 'Welcome :3' }, type: 1 }]
+    let buttonss = [{ buttonId: 'Thanks', buttonText: { displayText: 'Welcome 🧃' }, type: 1 }]
     let buttonsMessagee = {
 	locationMessage: joinloc.message.locationMessage,
     contentText: textjoin,
