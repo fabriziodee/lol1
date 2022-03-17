@@ -22,7 +22,7 @@ let tags = {
   'random': 'Random 🍥',
   'nsfw': 'Nsfw 🔞',
   'anonymous': 'Chat - anónimo 🕵️‍♂️',
-  'nulis': 'Logo - maker 🎨',
+  'maker': 'Logo - maker 🎨',
   'audio': 'Audio 🔊',
   'downloader': 'Descargas 📥',
   'tools': 'Ajustes ⚙️',
