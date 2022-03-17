@@ -3,10 +3,10 @@ const defaultLang = 'es'
 const tld = 'cn'
 
 let handler = async (m, { args, usedPrefix, command }) => {
-let msg = `*Ingrese un texto o etiqueta uno*\n\n- Ejemplo: ${usedPrefix + command} es Hello`
-if (!args || !args[0]) return m.reply(msg)
-let lang = args[0]
-let text = args.slice(1).join(' ')
+let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
+if (!teks) return m.reply(`*Ingrese un texto o etiqueta uno*\n\n- Ejemplo: ${usedPrefix + command} es Hello`)
+let lang = (args[0] || defaultLang)
+let text = (args.slice(1).join(' ') || teks)
 if ((args[0] || '').length !== 2) {
 lang = defaultLang
 text = args.join(' ') }
