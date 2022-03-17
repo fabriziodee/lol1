@@ -2,18 +2,18 @@ let util = require('util')
 let path = require('path')
 let { spawn } = require('child_process')
 
-// Font By MFarelS:V
 let fontPath = 'src/font/Zahraaa.ttf'
-let handler = async (m, { conn, args }) => {
+let handler = async (m, { conn, text, args }) => {
   if (!global.support.convert &&
       !global.support.magick &&
-      !global.support.gm) return handler.disabled = true // Disable if doesnt support
+      !global.support.gm) return handler.disabled = true 
   let inputPath = 'src/kertas/magernulis1.jpg'
   let d = new Date
   let tgl = d.toLocaleDateString('es-Id')
   let hari = d.toLocaleDateString('es-Id', { weekday: 'long' })
   let teks = args.join` `
   // conn.reply(m.chat, util.format({fontPath, inputPath, outputPath, tgl, hari, teks}), m)
+  conn.reply(m.chat, '↻ Espere lo estoy escribiendo...', m)
   let bufs = []
   const [_spawnprocess, ..._spawnargs] = [...(global.support.gm ? ['gm'] : global.support.magick ? ['magick'] : []),
     'convert',
@@ -56,13 +56,13 @@ let handler = async (m, { conn, args }) => {
   spawn(_spawnprocess, _spawnargs)
     .on('error', e => conn.reply(m.chat, util.format(e), m))
     .on('close', () => {
-      conn.sendFile(m.chat, Buffer.concat(bufs), 'nulis.jpg', '*_Aqui tienes_*', m)
+      conn.sendFile(m.chat, Buffer.concat(bufs), 'nulis.jpg', `*Texto:* ${teks}`, m)
     })
     .stdout.on('data', chunk => bufs.push(chunk))
 }
-handler.help = ['n'].map(v => v + 'ulis <teks>')
-handler.tags = ['nulis']
-handler.command = /^nulis$/i
+handler.help = ['nulis']
+handler.tags = ['maker']
+handler.command = /^(nulis)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
@@ -75,6 +75,3 @@ handler.botAdmin = false
 handler.fail = null
 
 module.exports = handler
-
-// BY MFARELS NJEENK
-// https://GitHub.com/MFarelS/
