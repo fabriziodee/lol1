@@ -1,7 +1,7 @@
 const axios = require('axios')
 let split = '|'
 let handler = async (m, { conn, args: [effect], text: txt, usedPrefix, command, name }) => {
-if (!effect) throw `*Ingrese un efecto y texto*\n\n- Ejemplo: ${usedPrefix + command} lolibot\n\n*Lista de efectos:*\n- ${usedPrefix}logo ` + effects.map(v => v.title).join(`\n- ${usedPrefix}logo `)
+if (!effect) throw `*Ingrese un efecto y texto*\n\n- Ejemplo: ${usedPrefix + command} space lolibot\n\n*Lista de efectos:*\n- ${usedPrefix}logo ` + effects.map(v => v.title).join(`\n- ${usedPrefix}logo `)
   effect = effect.toLowerCase()
   if (!effects.find(v => (new RegExp(v.title, 'gi')).test(effect))) throw `El efecto *${effect}* no se encontro!`
   let text = txt.replace(new RegExp(effect, 'gi'), '').trimStart()
@@ -9,6 +9,7 @@ if (!effect) throw `*Ingrese un efecto y texto*\n\n- Ejemplo: ${usedPrefix + com
   text = Array.isArray(text) ? text : [text]
   let res = await textpro(effect, ...text)
   if (typeof res == 'number') throw res == -1 ? `El efecto *${effect}* no se encontro!` : `Ejemplo de uso del comandos ${usedPrefix + command} ${effect} ${new Array(res).fill('texto').map((v, i) => v + (i ? i + 1 : '')).join('|')}`
+  conn.reply(m.chat, wait, m)
   let result = await axios.get(res, {
     responseType: 'arraybuffer'
   })
