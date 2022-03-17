@@ -8,14 +8,14 @@ const neko = new gs()
 
 let handler  = async (m, { conn, text }) => {
   pp = (await neko.sfw.nekoGif()).url
-                     await sticker(false, pp, 'SFW Neko', author).then(gege => {
+                     await sticker(false, pp, global.packname, global.author).then(gege => {
                      conn.sendMessage(m.chat, gege, 'stickerMessage', { quoted: m })
                      })
   //if (!text) throw 'Uhm...Teksnya?'
 }
-handler.help = ['nekogif (sfw)']
-handler.tags = ['wibu']
-handler.command = /^nekogif$/i
+handler.help = ['snekogif']
+handler.tags = ['sticker']
+handler.command = /^(snekogif)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
