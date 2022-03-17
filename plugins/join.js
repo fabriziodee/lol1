@@ -12,6 +12,7 @@ let handler = async (m, { conn, text, isMods, isOwner, usedPrefix, command }) =>
     let faketumb = fs.readFileSync('./storage/image/menu.jpg')
     let res = await conn.query({ json: ["query", "invite", code], expect200: true })
     let { gid: target } = await conn.acceptInvite(code)
+    conn.reply(m.chat 'Me uní al grupo', m)
     let member = (await conn.groupMetadata(target)).participants.map(v => v.jid)
     let textjoin = `
 Holii soy una bot loli 7w7, Fuí invitado por *@${m.participant.split`@`[0]}* para unirme a este grupo
@@ -29,7 +30,7 @@ Holii soy una bot loli 7w7, Fuí invitado por *@${m.participant.split`@`[0]}* pa
 Para ver mis comandos escriba *${usedPrefix}menu* uwu
 
 - La bot todavía está en *beta* y por lo tanto podría aver algunos errores/bugs
-    `.trim
+`.trim()
     let joinloc = await conn.prepareMessage(target, { jpegThumbnail: faketumb }, MessageType.location)
     let buttonss = [{ buttonId: 'Thanks', buttonText: { displayText: 'Welcome 🧃' }, type: 1 }]
     let buttonsMessagee = {
