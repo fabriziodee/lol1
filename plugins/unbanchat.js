@@ -1,14 +1,23 @@
 let handler = async (m, { conn }) => {
-  if (!(m.chat in global.DATABASE._data.chats)) return m.reply('*Este chat no está registrado en la base de datos!*')
+  if (!(m.chat in global.DATABASE._data.chats)) return m.reply('Este chat no está registrado en la base de datos!')
   let chat = global.DATABASE._data.chats[m.chat]
-  if (!chat.isBanned) return m.reply('*Este chat no está prohibido!!*')
+  if (!chat.isBanned) return m.reply('Este chat no está baneado!')
   chat.isBanned = false
-  m.reply('*✅ Listo.. chat desbaneado!*')
+  m.reply('\t\t*‧ 📬 Chat desbaneado 📬 ‧*\n\nAhora todos pueden utilizar los comandos')
 }
+
 handler.help = ['unbanchat']
-handler.tags = ['General']
-handler.command = /^unbanchat$/i
-handler.owner = false
-handler.admin = true
+handler.tags = ['owner']
+handler.command = /^(unbanchat)$/i
+handler.owner = true
+handler.mods = true
+handler.premium = false
+handler.group = true
+handler.private = false
+
+handler.admin = false
+handler.botAdmin = true
+
+handler.fail = null
 
 module.exports = handler
