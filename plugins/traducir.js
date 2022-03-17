@@ -1,8 +1,9 @@
 const translate = require('translate-google-api')
 const defaultLang = 'es'
 const tld = 'cn'
+
 let handler = async (m, { args, usedPrefix, command }) => {
-let msg = `*[❗] Uso correcto del comando ${usedPrefix + command} (idioma) (texto)*\n*Ejemplo:*\n*${usedPrefix + command} es Hello*\n\n*Conoce los idiomas admitidos aquí:*\n*- https://cloud.google.com/translate/docs/languages*`
+let msg = `*Ingrese un texto o etiqueta uno*\n\n- Ejemplo: ${usedPrefix + command} es Hello`
 if (!args || !args[0]) return m.reply(msg)
 let lang = args[0]
 let text = args.slice(1).join(' ')
@@ -21,6 +22,11 @@ tld,
 to: defaultLang, })
 } finally {
 m.reply('*Traducción:* ' +  result[0]) }}
-handler.command = /^(tr(anslate)|traducir?)$/i
+
+handler.help = ['traducir']
+handler.tags = ['internet']
+handler.command = /^(translate|traducir)$/i
+
 handler.fail = null
+
 module.exports = handler
