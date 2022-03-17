@@ -16,7 +16,7 @@ let handler = async (m, { conn, text }) => {
 	locationMessage: joinloc.message.locationMessage,
     contentText: 'Test - Join',
     buttons: buttonss,
-    footerText: "Lolibot - OFC',
+    footerText: 'Lolibot - OFC',
     headerType: 6
     }
     await conn.sendMessage(target, buttonsMessagee, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [m.sender] } } )
