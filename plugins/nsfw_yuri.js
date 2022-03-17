@@ -3,6 +3,7 @@ let fetch = require('node-fetch')
 let handler  = async (m, { conn, usedPrefix, command }) => {
 let chat = global.DATABASE.data.chats[m.chat]
 if (chat.isNsfw) {
+conn.reply(m.chat, wait, m)
 heum = await fetch(`https://api-alc.herokuapp.com/api/nsfw/yuri2?apikey=ConfuMods`)
 json = await heum.buffer()
 conn.sendFile(m.chat, json, 'cum', '*CUM*', m)
