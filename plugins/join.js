@@ -1,20 +1,44 @@
+let { MessageType } = require("@adiwajshing/baileys")
+let fs = require ('fs')
+
 let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
 
-let handler = async (m, { conn, text, isMods, isOwner }) => {
-    let link = (m.quoted ? m.quoted.text ? m.quoted.text : text : text) || text
+let handler = async (m, { conn, text, isMods, isOwner, usedPrefix, command }) => {
+	let link = (m.quoted ? m.quoted.text ? m.quoted.text : text : text) || text
+	if (!link) throw `*Ingrese un enlace de WhatsApp o etiqueta uno*\n\n- Ejemplo: ${usedPrefix + command} https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`
     let [_, code] = link.match(linkRegex) || []
-    if (!code) throw '*[ ⚠️ ] Link erroneo o faltante*\n*👉🏻 Inserte un enlace de unión de un grupo de WhatsApp*\n\n*Ejemplo:*\n*#join https://chat.whatsapp.com/FwEUGxkvZD85fIIp0gKyFC*\n\n*[❗] No responda a un mensaje porque causa interferencia, escribalo únicamente como un mensaje nuevo*'
+    if (!code) throw 'Enlace invalido!'
     if (isMods || isOwner || m.fromMe) {
-        let res = await conn.acceptInvite(code)
-        m.reply(`*✅ El Bot se unió con éxito al grupo*`)
-    } else {
-        for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) m.reply('*[❗] SOLICITUD DE BOT PARA UN GRUPO [❗]*\n\n*Nunero solicitante:* ' + 'wa.me//' + m.sender.split('@')[0] + '\n*Link del grupo:* ' + link, jid)
-        m.reply('*[❗] El link de su grupo fue enviado a mi propietario*\n\n*👉🏻 Su grupo será evaluado y quedara a criterio del propietario del Bot si añade o no al Bot a su grupo*\n\n*[❗] Algunas posibles causas que el Bot no se añada:*\n*1.- El Bot se encuentra saturado*\n*2.- El Bot fue sacado recientemente del grupo*\n*3.- Se restableció el link del grupo*\n*4.- El Bot no se agrega a grupos*\n\n*👉🏻 Ten en cuenta que tu solicitud para unir el Bot a tu grupo puede demorar algunas horas en ser respondida*')
-    }
-}
-handler.help = ['join [chat.whatsapp.com]']
-handler.tags = ['premium']
+    let faketumb = fs.readFileSync('./storage/image/menu.jpg')
+    let res = await conn.query({ json: ["query", "invite", code], expect200: true })
+    let { gid: target } = await conn.acceptInvite(code)
+    let member = (await conn.groupMetadata(target)).participants.map(v => v.jid)
+    let textjoin = `
+Holii soy una bot loli 7w7, Fuí invitado por *@${m.participant.split`@`[0]}* para unirme a este grupo
 
-handler.command = /^unete|join|nuevogrupo$/i
+\t\t*‧ 🐋 Info del Grupo 🐋 ‧*
+
+• Grupo: ${res.subject}
+• Jid: ${res.id}
+• Creador: @${res.id.split('-')[0]}
+• Creado: ${formatDate(res.creation * 1000)}
+• Miembros: ${res.size} Total
+    `
+    let joinloc = await conn.prepareMessage(target, { jpegThumbnail: faketumb }, MessageType.location)
+    let buttonss = [{ buttonId: 'Thanks', buttonText: { displayText: 'Welcome :3' }, type: 1 }]
+    let buttonsMessagee = {
+	locationMessage: joinloc.message.locationMessage,
+    contentText: textjoin,
+    buttons: buttonss,
+    footerText: 'Lolibot - OFC',
+    headerType: 6
+    }
+    await conn.sendMessage(target, buttonsMessagee, MessageType.buttonsMessage, { contextInfo: { mentionedJid: member } } )
+}
+}
+
+handler.help = ['join']
+handler.tags = ['premium']
+handler.command = /^(join)$/i
 
 module.exports = handler
