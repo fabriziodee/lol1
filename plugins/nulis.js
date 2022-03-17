@@ -3,7 +3,8 @@ let path = require('path')
 let { spawn } = require('child_process')
 
 let fontPath = 'src/font/Zahraaa.ttf'
-let handler = async (m, { conn, text, args }) => {
+let handler = async (m, { conn, text, args, usedPrefix, command }) => {
+let (!text) throw `*Ingrese un texto para escribir*\n\n- Ejemplo: ${usedPrefix + command} lolibot`
   if (!global.support.convert &&
       !global.support.magick &&
       !global.support.gm) return handler.disabled = true 
