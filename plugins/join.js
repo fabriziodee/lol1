@@ -40,7 +40,7 @@ Para ver mis comandos escriba *${usedPrefix}menu* uwu
     footerText: 'Lolibot - OFC',
     headerType: 6
     }
-    await conn.sendMessage(target, buttonsMessagee, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [member] } } )
+    await conn.sendMessage(target, buttonsMessagee, MessageType.buttonsMessage, { contextInfo: { mentionedJid: conn.parseMention(textjoin) } } )
 }
 }
 
