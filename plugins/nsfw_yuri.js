@@ -6,7 +6,7 @@ if (chat.isNsfw) {
 conn.reply(m.chat, wait, m)
 heum = await fetch(`https://api-alc.herokuapp.com/api/nsfw/yuri2?apikey=ConfuMods`)
 json = await heum.buffer()
-conn.sendFile(m.chat, json, 'cum', '*CUM*', m)
+conn.sendFile(m.chat, json, 'yuri', '*YURI*', m)
 } else m.reply('En este grupo no se permite el contenido +18')
 }
 
