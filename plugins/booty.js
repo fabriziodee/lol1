@@ -1,10 +1,17 @@
 const axios = require('axios')
+
 let handler = async(m, { conn, usedPrefix, command }) => {
+et chat = global.DATABASE.data.chats[m.chat]
+if (chat.isNsfw) {
+conn.reply(m.chat, wait, m)
 let res = await axios("https://meme-api.herokuapp.com/gimme/booty")
 let json = res.data
-let ShadowBot = json.url
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let mentionedJid = [who]
-conn.sendButtonImg(m.chat, ShadowBot, "*Booty 🍑❤️‍🔥*", '©The Shadow Borkers - Bot', '🥵 SIGUIENTE 🥵', `${usedPrefix + command}`, m, false, { contextInfo: { mentionedJid }})}
-handler.command = /^(booty|culo|culos|culo2|culos2)$/i
+conn.sendFile(m.chat, json.url, 'nalgas', '*NALGAS*', m)
+} else m.reply('En este grupo no se permite el contenido +18')
+}
+
+handler.help = ['nalgas']
+handler.tags = ['nsfw']
+handler.command = /^(nalgas|nalga)$/i
+
 module.exports = handler
