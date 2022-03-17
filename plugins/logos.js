@@ -63,7 +63,7 @@ var effects = [
     "url": "https://textpro.me/create-blue-circuit-style-text-effect-online-1043.html"
   },
   {
-    "title": "space",
+    "title": "espacio",
     "url": "https://textpro.me/create-space-text-effects-online-free-1042.html"
   },
   {
