@@ -15,14 +15,14 @@ let handler = async (m, { conn, text, isMods, isOwner, usedPrefix, command }) =>
     conn.reply(m.chat, 'Me uní al grupo', m)
     let member = (await conn.groupMetadata(target)).participants.map(v => v.jid)
     let textjoin = `
-Holii soy una bot loli 7w7, fuí invitado por *@${m.participant.split`@`[0]}* para unirme a este grupo.
+Holii soy una bot loli 7w7, fuí invitado por *@${m.sender.split("@s.whatsapp.net")[0]}* para unirme a este grupo.
 
 
 \t\t\t*‧ 🐋 Info del Grupo 🐋 ‧*
 
 *• Grupo:* ${res.subject}
 *• Jid:* ${res.id}
-*• Creador:* @${res.id.split('')[0]}
+*• Creador:* @${res.id.split('-')[0]}
 *• Creado:* ${formatDate(res.creation * 1000)}
 *• Miembros:* ${res.size} Total
 
