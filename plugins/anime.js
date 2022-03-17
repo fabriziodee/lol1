@@ -1,9 +1,9 @@
 let fetch = require('node-fetch')
 
-let handler = async(m, { conn, args, usedPrefix }) => {
-    if (args.length == 0) return conn.reply(m.chat, `*Usted esta usando mal el comando ${usedPrefix}anime*\n\n*Usted debe usarlo de la siguiente manera: ${usedPrefix}anime (categoría)*\n\n*Ejemplo: ${usedPrefix}anime random*\n\n*categorías disponibles:*\n*random, waifu, husbu, neko*`, m)
+let handler = async(m, { conn, args, usedPrefix, command }) => {
+    if (args.length == 0) return conn.reply(m.chat, `*Elige una categoría de anime*\n\n- Ejemplo: ${usedPrefix + command} random\n\n*Lista de categorías:*\n\n- Random\n- Waifu\n- Husbu\n- Neko`, m)
+    conn.reply(m.chat, wait, m)
     if (args[0] == 'random' || args[0] == 'waifu' || args[0] == 'husbu' || args[0] == 'neko') {
-  await m.reply('*Agurde un momento...*')
 
         fetch('https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/anime/' + args[0] + '.txt')
             .then(res => res.text())
@@ -13,16 +13,16 @@ let handler = async(m, { conn, args, usedPrefix }) => {
                 conn.sendFile(m.chat, randomnimex, '', '*7w7*', m)
             })
             .catch(() => {
-                conn.reply(m.chat, 'Hubo un error, disculpe... ', m)
+                conn.reply(m.chat, 'Lo siento ocurrio un error!', m)
             })
     } else {
-        conn.reply(m.chat, `*⚠️ Uso erróneo*\n\n*👉🏻 Uso correcto: ${usedPrefix}anime (categoría)*\n\n*🔰 Escriba ${usedPrefix}anime para ver la lista de categorías disponibles*`, m)
+        conn.reply(m.chat, `*Elige una categoría correcta*\n\n- Ejemplo: ${usedPrefix + command} random\n\n*Lista de categorías:*\n\n- Random\n- Waifu\n- Husbu\n- Neko`, m)
     }
 
 }
 
-handler.help = ['anime <query>']
-handler.tags = ['anime']
+handler.help = ['anime']
+handler.tags = ['internet']
 handler.command = /^(anime)$/i
 
 handler.fail = null
