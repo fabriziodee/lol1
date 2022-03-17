@@ -22,7 +22,7 @@ Holii soy una bot loli 7w7, fuí invitado por *@${m.participant.split`@`[0]}* pa
 
 *• Grupo:* ${res.subject}
 *• Jid:* ${res.id}
-*• Creador:* @${res.id.split('-')[0]}
+*• Creador:* @${res.id.split('')[0]}
 *• Creado:* ${formatDate(res.creation * 1000)}
 *• Miembros:* ${res.size} Total
 
@@ -40,7 +40,7 @@ Para ver mis comandos escriba *${usedPrefix}menu* uwu
     footerText: 'Lolibot - OFC',
     headerType: 6
     }
-    await conn.sendMessage(target, buttonsMessagee, MessageType.buttonsMessage, { contextInfo: { mentionedJid: member } } )
+    await conn.sendMessage(target, buttonsMessagee, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [member] } } )
 }
 }
 
