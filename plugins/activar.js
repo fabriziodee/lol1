@@ -7,11 +7,20 @@ let type = (args[0] || ' ').toLowerCase()
 switch (type) {
 case 'bienvenida':
 case 'welcome':
-      if (chat.welcome) return m.reply('La *bienvenida* ya está *activado* en este chat!')
+      if (chat.welcome) return m.reply('La *bienvenida* ya está *activado* en este grupo!')
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.welcome = true
       m.reply('Se activó la *bienvenida* en este grupo!')
+      break
+
+case 'antienlace':
+case 'antilink':
+      if (chat.antilink) return m.reply('La función *anti-enlace* ya está *activado* en este grupo!')
+      if (!m.isGroup) return global.dfail('group', m, conn)
+      if (!isOwner) return global.dfail('owner', m, conn)
+      chat.welcome = true
+      m.reply('Se activó la función *anti-enlace* en este grupo!')
       break
 
     default:
@@ -22,6 +31,7 @@ let opc = `
 
 *Lista de opciones:*
 - Bienvenida
+- Antienlace
 `.trim()
 return m.reply(opc)
   }
@@ -29,6 +39,6 @@ return m.reply(opc)
 
 handler.help = ['activar < opcion >']
 handler.tags = ['group']
-handler.command = /^(activar)$/i
+handler.command = /^(activar|enable)$/i
 
 module.exports = handler
