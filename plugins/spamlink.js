@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let { gid: target } = await conn.acceptInvite(code)
     conn.reply(m.chat, 'Enviando spam!', m)
     let member = (await conn.groupMetadata(target)).participants.map(v => v.jid)
-await conn.sendMessage(target, '\t*‧ 🤖 Auto espam WhatsApp Bot 🤖‧*\n\nHemos detectado su enlace en uno de nuestros grupo.\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA', 'conversation', {
+await conn.sendMessage(target, '\t\t*‧ 🤖 Auto spam WhatsApp Bot 🤖‧*\n\nHemos detectado su enlace en uno de nuestros grupo por lo tanto se enviará spam automáticamente.\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA', 'conversation', {
  quoted: {
   key: {
   remoteJid: 'status@broadcast',
@@ -20,7 +20,6 @@ await conn.sendMessage(target, '\t*‧ 🤖 Auto espam WhatsApp Bot 🤖‧*\n\n
   },
   message: {
    orderMessage: {
-    itemCount: 99999999,
     status: 200,
     thumbnail: faketumb,
     surface: 200,
