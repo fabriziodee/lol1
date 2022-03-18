@@ -10,7 +10,7 @@ conn.sendFile(m.chat, les.data.url, 'yaoi', `*YAOI*`, m)
 }
 
 handler.help = ['yaoi']
-handler.tags = ['images']
+handler.tags = ['nsfw']
 handler.command = /^(yaoi)$/i
 handler.owner = false
 handler.mods = false
