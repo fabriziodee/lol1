@@ -4,23 +4,9 @@ let fs = require ('fs')
 let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
 
 let handler = async (m, { conn, text }) => {
-	if (!text) throw '*Ingrese un enlace de WhatsApp*\n\n- Ejemplo: ${usedPrefix + command} https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw'
-	let faketumb = fs.readFileSync('./storage/image/menu.jpg')
-    let [_, code] = text.match(linkRegex) || []
-    if (!code) throw 'Enlace invalido!'
-    let { gid: target } = await conn.acceptInvite(code)
-    let member = (await conn.groupMetadata(target)).participants.map(v => v.jid)
-    let joinloc = await conn.prepareMessage(target, { jpegThumbnail: faketumb }, MessageType.location)
-    let buttonss = [{ buttonId: 'Thanks', buttonText: { displayText: 'Welcome :3' }, type: 1 }]
-    let buttonsMessagee = {
-	locationMessage: joinloc.message.locationMessage,
-    contentText: 'Test - Join',
-    buttons: buttonss,
-    footerText: 'Lolibot - OFC',
-    headerType: 6
-    }
-    await conn.sendMessage(target, buttonsMessagee, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [m.sender] } } )
-
+if (!text) throw '*Ingrese un número*\n\n- Ejemplo: ${usedPrefix + command} 100 GB`
+if (Number(text.split(' MB')[0]) >= 70.00) return m.reply(`✳️ El archivo es demasiado grande, la descarga se canceló`)
+if (Number(text.split(' GB')[0]) >= 70.00) return m.reply(`✳️ El archivo es demasiado grande, la descarga se canceló`)
 }
 
 handler.help = ['test']
