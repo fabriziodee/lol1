@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { args, usedPrefix, command }) => {
-    let msg = `Gunakan format ${usedPrefix}${command} [lang] [teks]`
+    let msg = `*Ingrese un texto para traducir*\n\n- Ejemplo: ${usedPrefix + command} es Hello`
     if (!args || !args[0]) return m.reply(msg)
     let lang = 'es'
     let text = args.join(' ')
@@ -14,10 +14,7 @@ let handler = async (m, { args, usedPrefix, command }) => {
     }))
     let json = await res.json()
     if (json.status !== true) throw json
-    m.reply(`
-*${json.result.from.language.iso}:* ${text}
-*${lang}:* ${json.result.text}
-`.trim())
+    conn.reply(m.chat, `\t\t*‧ 🌐 Google Traductor 🌐 ‧*\n\n*${json.result.from.language.iso}:* ${text}\n*${lang}:* ${json.result.text}`, m)
 }
 
 handler.help = ['traducir']
