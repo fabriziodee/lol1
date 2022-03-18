@@ -1,7 +1,7 @@
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
 let handler = async (m, { conn, text}) => {
-    let teks = text ? text : m.quoted.sender && m.mentionedJid[0] ? m.quoted.sender : m.mentionedJid[0]
+    let teks = m.quoted.sender ? m.quoted.sender : m.quoted.sender && m.mentionedJid[0] ? m.quoted.sender : m.mentionedJid[0]
     if (!teks) throw 'Etiqueta a alguien del grupo!'
     let users = global.DATABASE._data.users
     users[who].banned = true
