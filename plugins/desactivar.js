@@ -23,6 +23,15 @@ case 'antilink':
       m.reply('Se *desactivó* la función *anti-enlace* en este grupo!')
       break
 
+case 'nsfw':
+case '+18':
+      if (!chat.nsfw) return m.reply('La función *nsfw* ya está *desactivado* en este grupo!')
+      if (!m.isGroup) return global.dfail('group', m, conn)
+      if (!isOwner) return global.dfail('owner', m, conn)
+      chat.welcome = false
+      m.reply('Se *desactivó* la función *nsfw* en este grupo!')
+      break
+
     default:
 let opc = `
 *Ingrese una opción para desactivar*
@@ -32,6 +41,7 @@ let opc = `
 *Lista de opciones:*
 - Bienvenida
 - Antienlace
+- Nsfw
 `.trim()
 return m.reply(opc)
   }
