@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 const defaultLang = 'es'
 
 let handler = async (m, { args, usedPrefix, command }) => {
-    let err = `*Ingrese un texto para traducir*\n\n- Ejemplo: ${usedPrefix + command} es Hello`
+    let err = `*Ingrese un texto para traducir o etiqueta uno*\n\n- Ejemplo: ${usedPrefix + command} es Hello`
 
     let lang = args[0]
     let text = args.slice(1).join(' ')
