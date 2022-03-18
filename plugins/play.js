@@ -33,10 +33,8 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 *📂 Peso del video:* _${yt2.filesizeF}_
 `.trim(), '©The Shadow Borkers - Bot', '🎵 AUDIO 💽 ', `.yta ${vid.url}`, '🎥 VIDEO 🎞️', `.yt ${vid.url}`)
 }
-handler.help = ['play'].map(v => v + ' <pencarian>')
-handler.tags = ['downloader']
-handler.command = /^(reproducir|reproducir2|reproductor|Reproducir|Reproducir2|Reproductor|play3|Play3|playvid|Playvid|playaudio|Playaudio)$/i
 
-handler.exp = 0
+
+handler.command = /^(ppppplay)$/i
 
 module.exports = handler
