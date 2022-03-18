@@ -182,7 +182,7 @@ module.exports = {
           nsfw: false,
           welcome: false, 
           detect: false,
-          sWelcome: "",
+          sWelcome: '',
           sBye: '',
           sPromote: '',
           sDemote: '',
