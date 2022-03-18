@@ -22,6 +22,15 @@ case 'antilink':
       chat.welcome = true
       m.reply('Se activó la función *anti-enlace* en este grupo!')
       break
+      
+case 'nsfw':
+case '+18':
+      if (chat.antilink) return m.reply('La función *nsfw* ya está *activado* en este grupo!')
+      if (!m.isGroup) return global.dfail('group', m, conn)
+      if (!isOwner) return global.dfail('owner', m, conn)
+      chat.welcome = true
+      m.reply('Se activó la función *nsfw* en este grupo!')
+      break
 
     default:
 let opc = `
@@ -32,6 +41,7 @@ let opc = `
 *Lista de opciones:*
 - Bienvenida
 - Antienlace
+- Nsfw
 `.trim()
 return m.reply(opc)
   }
