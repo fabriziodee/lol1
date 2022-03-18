@@ -1,21 +1,30 @@
 let fetch = require('node-fetch')
-let handler = async (m, { args, text, usedPrefix, command }) => {
-    let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
-    let msg = `*Ingrese un texto para traducir*\n\n- Ejemplo: ${usedPrefix + command} es Hello`
-    if (!teks) return m.reply(msg)
-    let lang = args[0] ? args[0] : 'es'
-    let texxt = args.join(' ')
-    if (args[0].length == 2 && args.length > 0) {
-        lang = args[0] ? args[0] : 'es'
-        teks = args.slice(1).join(' ')
+const defaultLang = 'es'
+
+let handler = async (m, { args, usedPrefix, command }) => {
+    let err = `*Ingrese un texto para traducir*\n\n- Ejemplo: ${usedPrefix + command} es Hello`
+
+    let lang = args[0]
+    let text = args.slice(1).join(' ')
+    if ((args[0] || '').length !== 2) {
+        lang = defaultLang
+        text = args.join(' ')
     }
-    let res = await fetch(global.API('bg', '/translate', {
-        q: teks,
-        lang
-    }))
-    let json = await res.json()
-    if (json.status !== true) throw json
-    conn.reply(m.chat, `\t\t*‧ 🌐 Google Traductor 🌐 ‧*\n\n*${json.result.from.language.iso}:* ${teks}\n*${lang}:* ${json.result.text}`, m)
+    
+    if (!text && m.quoted && m.quoted.text) text = m.quoted.text
+
+    try {
+        res = await fetch(global.API('bg', '/translate', { q: text, lang }))
+        json = await res.json()
+        if (json.status !== true) throw json
+    } catch (e) {
+        res = await fetch(global.API('bg', '/translate', { q: text, defaultLang }))
+        json = await res.json()
+        if (json.status !== true) throw json
+    } finally {
+        conn.reply(m.chat, `\t\t*‧ 🌐 Google Traductor 🌐 ‧*\n\n*${json.result.from.language.iso}:* ${text}\n*${lang}:* ${json.result.text}`, m)
+    }
+
 }
 
 handler.help = ['traducir']
