@@ -1,26 +1,24 @@
-const translate = require('translate-google-api')
-const defaultLang = 'es'
-const tld = 'cn'
+let fetch = require('node-fetch')
 let handler = async (m, { args, usedPrefix, command }) => {
-let msg = `*[❗] Uso correcto del comando ${usedPrefix + command} (idioma) (texto)*\n*Ejemplo:*\n*${usedPrefix + command} es Hello*\n\n*Conoce los idiomas admitidos aquí:*\n*- https://cloud.google.com/translate/docs/languages*`
-if (!args || !args[0]) return m.reply(msg)
-let lang = args[0]
-let text = args.slice(1).join(' ')
-if ((args[0] || '').length !== 2) {
-lang = defaultLang
-text = args.join(' ') }
-if (!text && m.quoted && m.quoted.text) text = m.quoted.text
-let result
-try {
-result = await translate(`${text}`, {
-tld,
-to: lang, })
-} catch (e) {
-result = await translate(`${text}`, {
-tld,
-to: defaultLang, })
-} finally {
-m.reply('*Traducción:* ' +  result[0]) }}
+    let msg = `Gunakan format ${usedPrefix}${command} [lang] [teks]`
+    if (!args || !args[0]) return m.reply(msg)
+    let lang = 'es'
+    let text = args.join(' ')
+    if (args[0].length == 2 && args.length > 0) {
+        lang = args[0]
+        text = args.slice(1).join(' ')
+    }
+    let res = await fetch(global.API('bg', '/translate', {
+        q: text,
+        lang
+    }))
+    let json = await res.json()
+    if (json.status !== true) throw json
+    m.reply(`
+*${json.result.from.language.iso}:* ${text}
+*${lang}:* ${json.result.text}
+`.trim())
+}
 
 handler.help = ['traducir']
 handler.tags = ['tools']
