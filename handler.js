@@ -166,7 +166,7 @@ module.exports = {
         if (typeof chat !== 'object') global.DATABASE._data.chats[m.chat] = {}
         if (chat) {
           if (!('isBanned' in chat)) chat.isBanned = false
-          if (!('isNsfw' in chat)) chat.isNsfw = false
+          if (!('nsfw' in chat)) chat.isNsfw = false
           if (!('welcome' in chat)) chat.welcome = false
           if (!('detect' in chat)) chat.detect = false
           if (!('sWelcome' in chat)) chat.sWelcome = ''
@@ -175,12 +175,11 @@ module.exports = {
           if (!('sDemote' in chat)) chat.sDemote = ''
           if (!('delete' in chat)) chat.delete = false
           if (!('antidelete' in chat)) chat.antidelete = false
-          if (!('antiLink' in chat)) chat.antiLink = false
-          if (!('antiLink2' in chat)) chat.antiLink2 = false
-          if (!'antiToxic' in chat) chat.antiToxic = false
+          if (!('antilink' in chat)) chat.antiLink = false
+          if (!('antitoxic' in chat)) chat.antiToxic = false
         } else global.DATABASE._data.chats[m.chat] = {
           isBanned: false,
-          isNsfw: false,
+          nsfw: false,
           welcome: false, 
           detect: false,
           sWelcome: "",
@@ -189,9 +188,8 @@ module.exports = {
           sDemote: '',
           delete: false,
           antidelete: false,
-          antiLink: false,
-          antiLink2: false,
-          antiToxic: false,
+          antilink: false,
+          antitoxic: false,
         }
       } catch (e) {
         console.error(e)
@@ -393,7 +391,7 @@ ${global.owner.map((v, i) => '*Contacto ' + (i + 1) + ':* wa.me/' + v).join('\n'
                 console.error(e)
               }
             }
-            if (m.limit) m.reply('🎟️' + m.limit + ' limite utilizado')
+            if (m.limit) m.reply('🎟️ ' + m.limit + ' limite utilizado!')
           }
           break
         }
@@ -533,14 +531,14 @@ Para desactivar esta función escriba:
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: 'Esta función solo puede ser utilizado por el *creador* de la bot',
-    owner: 'Esta función solo puede ser utilizado por los *subbots* y el *creador* de la bot',
-    mods: 'Esta función solo puede ser utilizado por los *moderadores/as* y el *creador* de la bot',
-    premium: 'Esta función solo puede ser utilizado por miembros *premium*',
-    group: 'Esta función solo puede ser utilizado en *grupos*',
-    private: 'Esta función solo puede ser utilizado en el chat *privado*',
-    admin: 'Esta función solo puede ser utilizado por *administradores/as* del grupo',
-    botAdmin: 'Para ejecutar esta función tengo que ser *administradora*',
+    rowner: 'Esta función solo puede ser utilizado por el *creador* de la bot!',
+    owner: 'Esta función solo puede ser utilizado por los *subbots* y el *creador* de la bot!',
+    mods: 'Esta función solo puede ser utilizado por los *moderadores/as* y el *creador* de la bot!',
+    premium: 'Esta función solo puede ser utilizado por miembros *premium*!',
+    group: 'Esta función solo puede ser utilizado en *grupos*!',
+    private: 'Esta función solo puede ser utilizado en el chat *privado*!',
+    admin: 'Esta función solo puede ser utilizado por *administradores/as* del grupo!',
+    botAdmin: 'Para ejecutar esta función tengo que ser *administradora*!',
     unreg: '*Registrese para utilizar esta función*\n\n- Ejemplo: Nombre|edad'
   }[type]
   if (msg) return m.reply(msg)
