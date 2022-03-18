@@ -1,11 +1,17 @@
 const axios = require('axios')
- let handler = async(m, { conn }) => {
-let les = await axios.get('https://meme-api.herokuapp.com/gimme/yaoigif')
-            conn.sendFile(m.chat, `${les.data.url}`, '', `${les.data.title}`, m)
-  }
-handler.help = ['yaoigif']
+
+let handler = async(m, { conn }) => {
+let chat = global.DATABASE.data.chats[m.chat]
+if (chat.isNsfw) {
+conn.reply(m.chat, wait, m)
+let les = await axios.get('https://meme-api.herokuapp.com/gimme/yaoi')
+conn.sendFile(m.chat, les.data.url, 'yaoi', `*YAOI*`, m)
+} else m.reply('En este grupo no se permite el contenido +18')
+}
+
+handler.help = ['yaoi']
 handler.tags = ['images']
-handler.command = /^(yaoigif)$/i
+handler.command = /^(yaoi)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
