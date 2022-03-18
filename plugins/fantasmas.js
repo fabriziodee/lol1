@@ -1,6 +1,5 @@
 let { MessageType, Presence } = require('@adiwajshing/baileys')
-let handler = async (m, { conn, text, participants }) => {
-	await conn.updatePresence(m.chat, Presence.composing) 
+let handler = async (m, { conn, text, participants, groupMetadata }) => {
 	let member = participants.map(u => u.jid)
 	if(!text) {
 		var sum = member.length
@@ -23,13 +22,12 @@ let handler = async (m, { conn, text, participants }) => {
 			}
 		}
 	}
-	if(total == 0) return conn.reply(m.chat, `*Este grupo no tiene fantasmas :D.*`, m) 
-	// conn.reply(m.chat, `*[ SIDER CHECK ]*\n\n*Grup ${conn.getName(m.chat)}, memiliki anggota ${sum} orang dan terdapat sider (penyimak profesional) sebanyak ${total} orang.*\n\n*NB* : *“Akurasi dari fitur ini akan mencapai 85% apabila BOT sudah berada didalam grup minimal 7hr dan fitur ini tidak menghitung admin sider.”*${%readmore}\n\n${sider.map(v => '  ○ @' + v.replace(/@.+/, '')).join('\n')}`, m,{ contextInfo: { mentionedJid: sider } })
-	conn.reply(m.chat, `*[ REVISIÓN DE INACTIVOS ]*\n\n*Grupo: ${conn.getName(m.chat)}*\n*Participantes: ${sum}*\n\n*[ 👻 LISTA DE FANTASMAS 👻 ]*\n${sider.map(v => '  👉🏻 @' + v.replace(/@.+/, '')).join('\n')}\n\n*Nota: Esto puede no ser 100% acertado*`, m,{ contextInfo: { mentionedJid: sider } })
+	if(total == 0) return conn.reply(m.chat, `*Este grupo no tiene fantasmas :D*`, m) 
+	conn.reply(m.chat, `*･ 🍟 REVISIÓN DE INACTIVOS 🍟 ･*\n\n*• Grupo:* ${groupMetadata.subject}\n*• Miembros:* ${sum} Total\n\nManténgase activo en el grupo porque pronto habrá limpieza de miembros.\n\n*Lista de Fantasmas:*\n${sider.map(v => '- @' + v.replace(/@.+/, '')).join('\n')}\n\n*👻 Fantasmas:* ${total} Total`, m,{ contextInfo: { mentionedJid: sider } })
 }
-handler.help = ['verfantasmas']
+handler.help = ['fantasmas']
 handler.tags = ['group']
-handler.command = /^(verfantasmas|fantasmas)$/i
+handler.command = /^(sider|fantasmas|verfantasmas)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
@@ -38,6 +36,7 @@ handler.private = false
 handler.admin = true
 handler.botAdmin = true
 handler.fail = null
+
 module.exports = handler
 
 const more = String.fromCharCode(8206)
