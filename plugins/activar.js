@@ -19,16 +19,16 @@ case 'antilink':
       if (chat.antilink) return m.reply('La función *anti-enlace* ya está *activado* en este grupo!')
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
-      chat.welcome = true
+      chat.antilink = true
       m.reply('Se activó la función *anti-enlace* en este grupo!')
       break
       
 case 'nsfw':
 case '+18':
-      if (chat.antilink) return m.reply('La función *nsfw* ya está *activado* en este grupo!')
+      if (chat.nsfw) return m.reply('La función *nsfw* ya está *activado* en este grupo!')
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
-      chat.welcome = true
+      chat.nsfw = true
       m.reply('Se activó la función *nsfw* en este grupo!')
       break
 
