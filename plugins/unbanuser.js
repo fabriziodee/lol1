@@ -1,17 +1,16 @@
-let { MessageType } = require('@adiwajshing/baileys')
+let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
+
 let handler = async (m, { conn, text}) => {
-    if (!text) throw '*A quien quiere desbanear? etiquete a la persona con el @*'
-    let who
-    if (m.isGroup) who = m.mentionedJid[0]
-    else who = m.chat
-    if (!who) throw '*Etiquete a una persona con el @*'
+    let buser = m.quoted.sender ? m.quoted.sender : m.quoted.sender && m.mentionedJid[0] ? m.quoted.sender : m.mentionedJid[0]
+    if (!buser) throw 'Etiqueta a alguien del grupo!'
     let users = global.DATABASE._data.users
-    users[who].banned = false
-    conn.reply(m.chat, `*✅ Listo, usuario desbaneado*`, m)
+    users[buser].banned = false
+    conn.sendMessage(m.chat, `*🔔 El usuario @${buser.split("@s.whatsapp.net")[0]} fue desbaneado*\n\n- Ahora podrá utilizar los comandos`, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [buser] } })
 }
-handler.help = ['ban']
+
+handler.help = ['unbanuser']
 handler.tags = ['owner']
-handler.command = /^unbanuser$/i
+handler.command = /^(unbanuser)$/i
 handler.rowner = true
 
 module.exports = handler
