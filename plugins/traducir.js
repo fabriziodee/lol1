@@ -22,7 +22,7 @@ let handler = async (m, { args, usedPrefix, command }) => {
         if (json.status !== true) throw json
     } finally {
         conn.reply(m.chat, `\t\t*‧ 🌐 Google Traductor 🌐 ‧*\n\n*${json.result.from.language.iso}:* ${text}\n*${lang}:* ${json.result.text}`, m)
-    } else m.reply(err)
+    }
 
 }
 
