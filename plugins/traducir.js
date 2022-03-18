@@ -1,9 +1,10 @@
 let fetch = require('node-fetch')
-let handler = async (m, { args, usedPrefix, command }) => {
+let handler = async (m, { args, text, usedPrefix, command }) => {
+    let text = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
     let msg = `*Ingrese un texto para traducir*\n\n- Ejemplo: ${usedPrefix + command} es Hello`
-    if (!args || !args[0]) return m.reply(msg)
+    if (!teks) return m.reply(msg)
     let lang = 'es'
-    let text = args.join(' ')
+    let texxt = args.join(' ')
     if (args[0].length == 2 && args.length > 0) {
         lang = args[0]
         text = args.slice(1).join(' ')
