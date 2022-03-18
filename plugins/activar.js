@@ -7,7 +7,7 @@ let type = (args[0] || ' ').toLowerCase()
 switch (type) {
 case 'bienvenida':
 case 'welcome':
-      if (chat.welcome) return reply('La *bienvenida* ya está *activado* en este chat!')
+      if (chat.welcome) return m.reply('La *bienvenida* ya está *activado* en este chat!')
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.welcome = true
