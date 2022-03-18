@@ -6,7 +6,7 @@ let handler = async (m, { args, text, usedPrefix, command }) => {
     let err = `*Ingrese un texto para traducir o etiqueta uno*\n\n- Ejemplo: ${usedPrefix + command} es Hello`
     if (!teks) throw err
     let lang = args[0]
-    let text = args.slice(1).join(' ')
+    let texxt = args.slice(1).join(' ')
     if ((args[0] || '').length !== 2) {
         lang = defaultLang
         texxt = args.join(' ')
