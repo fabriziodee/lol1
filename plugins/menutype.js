@@ -6,13 +6,13 @@ let type = (args[0] || ' ').toLowerCase()
 
 switch (type) {
 case 'imagen':
-case 'Image':
+case 'image':
 case 'img':
       if (chat.menu == 1) return m.reply('El menu *imagen* ya está activado!')
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.menu = 1
-      m.reply('Se cambió al menu *imagen*!')
+      m.reply('Se cambió al menu a *imagen*!')
       break
 
 case 'documento':
@@ -21,7 +21,7 @@ case 'document':
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.menu = 2
-      m.reply('Se cambió al menu *documento*!')
+      m.reply('Se cambió al menu a *documento*!')
       break
       
 case 'simple':
@@ -29,7 +29,7 @@ case 'simple':
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.menu = 3
-      m.reply('Se cambió al menu *simple*!')
+      m.reply('Se cambió al menu a *simple*!')
       break
 
     default:
