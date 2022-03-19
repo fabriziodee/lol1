@@ -1,5 +1,6 @@
-let handler = async (m, { conn }) => {
 let fetch = require('node-fetch')
+
+let handler = async (m, { conn }) => {
 let res = await fetch("https://api-alc.herokuapp.com/api/other/frases?apikey=ConfuMods")
 let json = await res.json()
 let { frase } = json
