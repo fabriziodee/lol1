@@ -393,7 +393,7 @@ ${global.owner.map((v, i) => '*Contacto ' + (i + 1) + ':* wa.me/' + v).join('\n'
                 console.error(e)
               }
             }
-            if (m.limit) m.reply('🎟️ ' + m.limit + ' limite utilizado!')
+            if (m.limit) m.reply('🎟️ Se utilizó *' + m.limit + '* de su limite!')
           }
           break
         }
