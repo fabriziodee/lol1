@@ -7,9 +7,9 @@ let handler = async (m, { conn, command, usedPrefix }) => {
   if (!global.support.convert &&
       !global.support.magick &&
       !global.support.gm) {
-      if (!m.quoted) throw `*🔰 Responda a un sticker con el comando* *${usedPrefix + command}*`
+      if (!m.quoted) throw `Etiqueta un sticker!`
       let mime = m.quoted.mimetype || ''
-      if (!/webp/.test(mime)) throw `*🔰 Responda a un sticker con el comando* *${usedPrefix + command}*`
+      if (!/webp/.test(mime)) throw `Etiqueta un sticker!`
       let media = await m.quoted.download()
       let out = Buffer.alloc(0)
       if (/webp/.test(mime)) {
@@ -20,7 +20,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
       })
       return
   }
-  if (!m.quoted) return conn.reply(m.chat, 'Responda a un sticker!', m)
+  if (!m.quoted) return conn.reply(m.chat, 'Etiqueta un sticker!', m)
   let q = { message: { [m.quoted.mtype]: m.quoted } }
   if (/sticker/.test(m.quoted.mtype)) {
     let sticker = await conn.downloadM(q)
@@ -39,19 +39,17 @@ let handler = async (m, { conn, command, usedPrefix }) => {
     })
   }
 }
-handler.help = ['toimg (reply)']
-handler.tags = ['General']
-handler.command = /^toimg|img|jpg$/i
+
+handler.help = ['toimg']
+handler.tags = ['tools']
+handler.command = /^(toimg|img|jpg|aimg)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
 handler.group = false
 handler.private = false
-
 handler.admin = false
 handler.botAdmin = false
-
 handler.fail = null
 
 module.exports = handler
-
