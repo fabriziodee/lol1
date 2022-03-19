@@ -4,15 +4,15 @@ let path = require('path')
 let fs = require('fs')
 let package = require('./package.json')
 const CFonts  = require('cfonts')
-CFonts.say('The Shadow\nBrokers\nBot', {
-  font: 'chrome',
+CFonts.say('WhatsApp bot', {
+  font: 'tiny',
   align: 'center',
   gradient: ['red', 'magenta']
 })
-CFonts.say(`Subscribete a The Shadow Brokers - Bot\n\nBot creado por Bruno Sobrino`, {
+CFonts.say('by gatito', {
   font: 'console',
   align: 'center',
-  gradient: ['red', 'magenta']
+  gradient: ['yellow', 'yellow']
 })
 
 var isRunning = false
@@ -47,7 +47,7 @@ function start(file) {
   })
   p.on('exit', code => {
     isRunning = false
-    console.error('Ocurrio un error inesperado:', code)
+    console.error('Ocurrió un error:', code)
     if (code === 0) return
     fs.watchFile(args[0], () => {
       fs.unwatchFile(args[0])
