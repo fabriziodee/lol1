@@ -5,7 +5,7 @@ let fs = require ('fs')
 let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
 
 let handler = async (m, { conn, text }) => {
-let tumb = fs.readFileSync('./storage/image/menu.jpg')
+let tumb = fs.readFileSync('./storage/image/test.mp4')
 let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
 let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.video, { quoted: m, thumbnail: tumb, contextInfo: { externalAdReply: { title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", previewType: "PHOTO", thumbnail: tumbb, sourceUrl: "" } } })
 gbutsan = [{ buttonId: '.info', buttonText: { displayText: '🛰 INFO' }, type: 1 }, { buttonId: '.owner', buttonText: { displayText: '🎋 CREADOR' }, type: 1 }]
