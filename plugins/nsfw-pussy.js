@@ -9,7 +9,7 @@ conn.sendFile(m.chat, `${porn.data.url}`, 'cuca', `*${porn.data.title}*`, m)
 } else m.reply('En este grupo no se permite el contenido +18')
 }
 
-handler.help = ['cuca']
+handler.help = ['pussy']
 handler.tags = ['nsfw']
 handler.command = /^(concha|vajina|cuca|pussy)$/i
 handler.owner = false
