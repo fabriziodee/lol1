@@ -12,7 +12,7 @@ case 'img':
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.menu = 1
-      m.reply('Se activó el menu *imagen*!')
+      m.reply('Se cambió al menu *imagen*!')
       break
 
 case 'documento':
@@ -21,7 +21,7 @@ case 'document':
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.menu = 2
-      m.reply('Se activó el menu *documento*!')
+      m.reply('Se cambió al menu *documento*!')
       break
       
 case 'simple':
@@ -29,7 +29,7 @@ case 'simple':
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.menu = 3
-      m.reply('Se activó el menu *simple*!')
+      m.reply('Se cambió al menu *simple*!')
       break
 
     default:
