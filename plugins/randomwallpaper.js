@@ -1,11 +1,14 @@
 const axios = require('axios')
- let handler = async(m, { conn }) => {
+
+let handler = async(m, { conn }) => {
+conn.reply(m.chat, wait, m)
 let les = await axios.get('https://meme-api.herokuapp.com/gimme/wallpaper')
-            conn.sendFile(m.chat, `${les.data.url}`, '', `${les.data.title}`, m)
-  }
-handler.help = ['randomwallpaper']
-handler.tags = ['images']
-handler.command = /^(randomwallpaper)$/i
+conn.sendFile(m.chat, les.data.url, 'wallpaper', `*${les.data.title}*`, m)
+}
+
+handler.help = ['rawallpaper']
+handler.tags = ['random']
+handler.command = /^(randomwallpaper|rawallpaper|randomwall)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
