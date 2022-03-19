@@ -8,7 +8,7 @@ gay = `sayang`
 
   if (!m.quoted) throw `Tag Fotonya ` + gay // org gay
 
-    await m.reply(`*[❗] Aguarde un momento, estoy realizando su diseño...*`)
+  conn.reply(m.chat, wait, m)
   let q = m.quoted ? m.quoted : m
   let media = await q.download()
   let img = await uploadImage(media)
@@ -24,9 +24,9 @@ gay = `sayang`
    throw err
   }
 }
-handler.help = ['blur (reply)']
-handler.tags = ['editor']
-handler.command = /^blur$/i
+handler.help = ['blur']
+handler.tags = ['maker']
+handler.command = /^(blur)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
@@ -38,7 +38,6 @@ handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
-handler.exp = 0
 handler.limit = false
 
 module.exports = handler
