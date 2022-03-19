@@ -163,7 +163,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
      let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
      let chatp = global.DATABASE._data.chats[m.chat]
      if (chatp.menu == 1) {
-     let menux =  await conn.prepareMessage(m.chat, tumbb, MessageType.image, { quoted: m, thumbnail: tumbb, contextInfo: { externalAdReply: { title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", previewType: "PHOTO", thumbnail: tumb, sourceUrl: "" } } })
+     let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.image, { quoted: m, thumbnail: tumb, contextInfo: { externalAdReply: { title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", previewType: "PHOTO", thumbnail: tumbb, sourceUrl: "" } } })
      gbutsan = [{ buttonId: '.info', buttonText: { displayText: '🛰 INFO' }, type: 1 }, { buttonId: '.owner', buttonText: { displayText: '🎋 CREADOR' }, type: 1 }]
      gbuttonan = { imageMessage: menux.message.imageMessage, contentText: text.trim(), footerText: 'Lolibot - OFC', buttons: gbutsan, headerType: 4 }
      await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [m.sender], forwardingScore: 750, isForwarded: true }, quoted: m })
