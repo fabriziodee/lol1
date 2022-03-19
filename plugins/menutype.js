@@ -8,28 +8,28 @@ switch (type) {
 case 'imagen':
 case 'image':
 case 'img':
-      if (chat.menu == 1) return m.reply('El menu *imagen* ya está activado!')
+      if (chat.menu == 1) return m.reply('Ya está cambiado el menu a *imagen*!')
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.menu = 1
-      m.reply('Se cambió al menu a *imagen*!')
+      m.reply('Se cambió el menu a *imagen*!')
       break
 
 case 'documento':
 case 'document':
-      if (chat.menu == 2) return m.reply('El menu *documento* ya está activado!')
+      if (chat.menu == 2) return m.reply('Ya está cambiado el menu a *documento*!')
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.menu = 2
-      m.reply('Se cambió al menu a *documento*!')
+      m.reply('Se cambió el menu a *documento*!')
       break
       
 case 'simple':
-      if (chat.menu == 3) return m.reply('El menu *simple* ya está activado!')
+      if (chat.menu == 3) return m.reply('Ya está cambiado el menu a *simple*!')
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.menu = 3
-      m.reply('Se cambió al menu a *simple*!')
+      m.reply('Se cambió el menu a *simple*!')
       break
 
     default:
