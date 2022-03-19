@@ -1,6 +1,6 @@
 let util = require('util')
 let simple = require('./lib/simple')
-let { MessageType } = require('@adiwajshing/baileys')
+let { MessageType, Presence } = require('@adiwajshing/baileys')
 let fetch = require('node-fetch')
 
 const isNumber = x => typeof x === 'number' && !isNaN(x)
@@ -177,7 +177,7 @@ module.exports = {
           if (!('delete' in chat)) chat.delete = false
           if (!('antidelete' in chat)) chat.antidelete = false
           if (!('antilink' in chat)) chat.antiLink = false
-          if (!('antitoxic' in chat)) chat.antiToxic = false
+          if (!'antitoxic' in chat) chat.antiToxic = false
         } else global.DATABASE._data.chats[m.chat] = {
           isBanned: false,
           nsfw: false,
@@ -399,6 +399,7 @@ ${global.owner.map((v, i) => '*Contacto ' + (i + 1) + ':* wa.me/' + v).join('\n'
         }
       }
     } finally {
+  	await this.updatePresence(m.chat, Presence.available).catch(console.error)
       //console.log(global.DATABASE._data.users[m.sender])
       let user, stats = global.DATABASE._data.stats
       if (m) {
