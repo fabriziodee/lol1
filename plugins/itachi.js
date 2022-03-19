@@ -1,6 +1,7 @@
 let fetch = require('node-fetch')
-
+conn.reply(m.chat, wait, m)
 let handler  = async (m, { conn, usedPrefix, command }) => {
+
 heum = await fetch(`https://api-reysekha.herokuapp.com/api/wallpaper/itachi?apikey=APIKEY`)
 json = await heum.buffer()
 conn.sendFile(m.chat, json, 'itachi', '*ITACHI*', m)
