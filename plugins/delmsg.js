@@ -1,5 +1,5 @@
 let handler = async (m, { command, usedPrefix, text }) => {
-    let which = command.replace(/eliminar/i, '')
+    let which = command.replace(/del/i, '')
     if (!text) throw `Usar *${usedPrefix}list${which}* para ver la lista`
     let msgs = global.DATABASE._data.msgs
     if (!text in msgs) throw `'${text}' no registrado en la lista de mensajes`
