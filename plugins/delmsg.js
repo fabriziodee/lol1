@@ -6,9 +6,9 @@ let handler = async (m, { command, usedPrefix, text }) => {
     delete msgs[text]
     m.reply(`Eliminó con éxito el mensaje en la lista de mensajes con el nombre '${text}'`)
 }
-handler.help = ['vn', 'msg', 'video', 'audio', 'img', 'sticker'].map(v => 'del' + v + ' <text>')
+handler.help = ['vn', 'msg', 'video', 'audio', 'img', 'sticker'].map(v => 'del' + v + '')
 handler.tags = ['database']
-handler.command = /^eliminar(vn|msg|video|audio|img|sticker)$/
+handler.command = /^del(vn|msg|video|audio|img|sticker)$/
 handler.rowner = true
 
 module.exports = handler
