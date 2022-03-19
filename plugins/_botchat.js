@@ -45,6 +45,9 @@ let audio12B = audio12A.exec(m.text)
 let audio13A = /suicidar/i
 let audio13B = audio13A.exec(m.text)
 
+let audio14A = /puto bot|bot puto|pvto bot|bot pvto/i
+let audio14B = audio14A.exec(m.text)
+
 
 if (audio1B) {
 	let vn = './storage/audio/Yamete_onii_chan.mp3'
@@ -110,6 +113,11 @@ if (audio12B) {
 if (audio13B) {
 	let vn = './storage/audio/El_suicidio_no_es_una_opcion.mp3'
 	conn.sendFile(m.chat, vn, 'El_suicidio_no_es_una_opcion.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+	}
+
+if (audio14B) {
+	let vn = './storage/audio/Deje_de_insultarme.mp3'
+	conn.sendFile(m.chat, vn, 'Deje_de_insultarme.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	}
 
 
