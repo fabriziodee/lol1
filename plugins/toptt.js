@@ -4,7 +4,7 @@ const { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m
   let mime = (m.quoted ? m.quoted : m.msg).mimetype || ''
-  if (!/video|audio/.test(mime)) throw `Balas audio yang ingin diubah ke voice note dengan caption *${usedPrefix + command}*`
+  if (!/video|audio/.test(mime)) throw `Etiqueta una música para convertirlo en audio!`
   let media = await q.download()
   let audio = await toPTT(media, 'mp4')
   conn.sendMessage(m.chat, audio, MessageType.audio, {
@@ -12,9 +12,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     ptt: true
   })
 }
-handler.help = ['tovn']
-handler.tags = ['General']
 
-handler.command = /^to(vn|(ptt)?)$/i
+handler.help = ['toaudio']
+handler.tags = ['tools']
+handler.command = /^(toaudio|tovn|toptt)$/i
 
 module.exports = handler
