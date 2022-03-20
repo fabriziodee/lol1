@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 let handler = async(m, { conn, usedPrefix, command }) => {
-let res = await axios("https://meme-api.herokuapp.com/gimme/memesmexico")
+let res = await axios("https://meme-api.herokuapp.com/gimme/MemesESP")
 let json = res.data
 let ShadowBot = 
 conn.sendFile(m.chat, json.url, 'meme', `*${json.title}*`, m)
