@@ -21,7 +21,7 @@ let handler = async (m, { conn, text }) => {
 }
 
 handler.help = ['strash']
-handler.tags = ['stiker']
+handler.tags = ['sticker']
 handler.command = /^(strash|trash)$/i
 
 module.exports = handler
