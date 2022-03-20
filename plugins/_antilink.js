@@ -7,7 +7,7 @@ handler.before = async function (m, { user, isBotAdmin, isAdmin }) {
   let chat = global.DATABASE.data.chats[m.chat]
   let isGroupLink = linkRegex.exec(m.text)
 
-  if (chat.antiLink && isGroupLink) {
+  if (chat.antilink && isGroupLink) {
     await this.sendMessage(m.chat, `\t\t\t\t*‧ [ ⭕ Enlace Detectado ⭕ ] ‧*\n\n• Nombre: @${m.sender.split("@s.whatsapp.net")[0]}\n• Fecha: ${date}\n• Enlace: WhatsApp.com`, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [m.sender] } })
     if (isAdmin) return m.reply('Menos mal que eres un administrador')
     if (!isBotAdmin) return m.reply('Menos mal que no soy administradora del grupo')
