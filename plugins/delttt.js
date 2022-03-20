@@ -11,9 +11,9 @@ let handler = async (m, { conn, text }) => {
 		m.reply('estropeado')
 	}
 }
-handler.help = ['delsesittt']
+handler.help = ['delttt']
 handler.tags = ['game']
-handler.command = /^(delsesittt|dellsesitt|delttt|deltictactoe)$/i
+handler.command = /^(delttt|dellsesitt|delttt|deltictactoe)$/i
 handler.limit = false
 
 handler.register = false
