@@ -3,10 +3,11 @@ let handler = m => m
 
 handler.before = function (m, { user, text }) {
   if (m.isBaileys && m.fromMe) {
-  let res = await fetch(`https://api.simsimi.net/v2/?text=${text}&lc=es`)
-  let json = await res.json()
-  if (json.success) m.reply(json.success)
-  else throw json
+  	
+let res = await fetch(`https://api.simsimi.net/v2/?text=${text}&lc=es`)
+let json = await res.json()
+let { success } = json
+m.reply(`${success}`)
 }
 }
 
