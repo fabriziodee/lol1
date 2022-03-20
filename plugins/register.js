@@ -49,7 +49,7 @@ conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { quoted: m })
 }
 conn.sendMessage(m.sender, `Codigo de registro: ${sn}`, MessageType.text, { quoted: m })
 }
-handler.help = [''registrarse']
+handler.help = ['register']
 handler.tags = ['xp']
 
 handler.command = /^(registrarse|daftar|register|reg)$/i
