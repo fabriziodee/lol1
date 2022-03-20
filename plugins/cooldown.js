@@ -18,11 +18,7 @@ const cooldowns = {
 }
 let handler = async (m, { conn, usedPrefix }) => {
     const user = global.DATABASE._data.users[m.sender]
-    let str = `
-*—「 🕖 Cooldown 」—*
-
-${Object.entries(cooldowns).map(([d, { name, cooldown }]) => `*${name}:* ${new Date() - user[d] >= cooldown ? '✅' : '❌'}`).join('\n')}
-`.trim()
+    let str = `\t\t*‧ 🕰️ Tiempo de Espera 🕰️ ‧*\n\n${Object.entries(cooldowns).map(([d, { name, cooldown }]) => `*${name}:* ${new Date() - user[d] >= cooldown ? '✅' : '❌'}`).join('\n')}`
     conn.sendButton(m.chat, str, `Lolibot- OFC`, null, [
         ['Inventario 🎒', usedPrefix + 'inv'],
         ['Perfil 👤', usedPrefix + 'profile']
