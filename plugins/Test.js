@@ -1,9 +1,6 @@
 let { MessageType } = require("@adiwajshing/baileys")
 let fs = require ('fs')
 
-
-let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
-
 let handler = async (m, { conn, text }) => {
 let tumb = fs.readFileSync('./storage/image/menuvid.mp4')
 let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
