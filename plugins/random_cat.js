@@ -1,23 +1,20 @@
-//created by Scooppt
 let fetch = require('node-fetch')
 
 let handler  = async (m, { conn, text }) => {
+conn.reply(m.chat, wait, m)
   try {
      let res = await fetch('https://cataas.com/cat')
      let img = await res.buffer()
-     let caption = `
-©The Shadow Brokers - Bot
-`.trim()
-    conn.sendFile(m.chat, img, 'cat.jpg', caption, m)
+    conn.sendFile(m.chat, img, 'gato.jpg', '*GATO*', m)
    } catch (e) {
         console.log(e)
-        throw '_*Erro!*_'
+        throw error
     }
 }
 
-handler.help = ['cat']
+handler.help = ['gato']
 handler.tags = ['random']
-handler.command = /^cat$/i
+handler.command = /^(gato|cat)$/i
 
 handler.fail = null
 
