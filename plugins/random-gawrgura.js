@@ -1,10 +1,11 @@
 const axios = require('axios')
- let handler = async(m, { conn }) => {
+let handler = async(m, { conn }) => {
+conn.reply(m.chat, wait, m)
 let les = await axios.get('https://meme-api.herokuapp.com/gimme/GawrGura')
-            conn.sendFile(m.chat, `${les.data.url}`, '', `${les.data.title}`, m)
+  conn.sendFile(m.chat, `${les.data.url}`, '', `*${les.data.title}*`, m)
   }
 handler.help = ['gawrgura']
-handler.tags = ['images']
+handler.tags = ['random']
 handler.command = /^(gawrgura)$/i
 handler.owner = false
 handler.mods = false
@@ -17,7 +18,6 @@ handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
-handler.exp = 0
 handler.limit = false
 
 module.exports = handler
