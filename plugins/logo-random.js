@@ -2,6 +2,7 @@ let fetch = require('node-fetch')
 
 let handler = async (m, { conn, args, usedPrefix, command, text }) => {
 if (!args[0]) throw `*Ingrese un texto*\n\n- Ejemplo: ${usedPrefix + command} lolibot`
+conn.reply(m.chat, wait, m)
 response = args.join(' ').split('|')
 let ralogo = pickRandom(global.logos)
 let res = `https://api-alc.herokuapp.com/api/photooxy/${ralogo}?texto=${response[0]}&apikey=ConfuMods`
