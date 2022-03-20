@@ -1,12 +1,17 @@
 let fetch = require('node-fetch')
+
 let handler = async (m, { conn, args, usedPrefix, command, text }) => {
+if (!args[0]) throw `*Ingrese un texto*\n\n- Ejemplo: ${usedPrefix + command} lolibot`
 response = args.join(' ').split('|')
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let mentionedJid = [who]
-if (!args[0]) throw '*[❗] Ingrese un texto*\n*Ejemplo:*\n*#logorandom Shadow*'        
-let res = `https://api-alc.herokuapp.com/api/photooxy/${pickRandom(global.logos)}?texto=${response[0]}&apikey=ConfuMods`
-conn.sendButtonImg(m.chat, res, "*Logo random terminado*", '©The Shadow Borkers - Bot', 'SIGUIENTE', `${usedPrefix + command} ${text}`, m, false, { contextInfo: { mentionedJid }})}
-handler.command = /^(logorandom)$/i
+let ralogo = pickRandom(global.logos)
+let res = `https://api-alc.herokuapp.com/api/photooxy/${ralogo}?texto=${response[0]}&apikey=ConfuMods`
+conn.sendFile(m.chat, res, 'logo.jpg', `*Logo personalizada*\n*Efecto:* ${ralogo}`, m)
+}
+
+handler.help = ['randomlogo']
+handler.tags = ['maker']
+handler.command = /^(randomlogo|logorandom)$/i
+
 module.exports = handler
 
 function pickRandom(list) {
