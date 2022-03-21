@@ -2,7 +2,7 @@ const axios = require('axios')
 
 let handler = async(m, { conn }) => {
 let chat = global.DATABASE.data.chats[m.chat]
-if (chat.isNsfw) {
+if (chat.isNsfw == true) {
 conn.reply(m.chat, wait, m)
 let les = await axios.get('https://meme-api.herokuapp.com/gimme/yaoi')
 conn.sendFile(m.chat, les.data.url, 'yaoi', `*YAOI*`, m)
