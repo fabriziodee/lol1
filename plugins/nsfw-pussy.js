@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 let handler = async(m, { conn }) => {
-let chat = global.DATABASE.data.chats[m.chat]
+let chat = global.DATABASE._data.chats[m.chat]
 if (chat.nsfw) {
 conn.reply(m.chat, wait, m)
 let porn = await axios.get('https://meme-api.herokuapp.com/gimme/pussy')
