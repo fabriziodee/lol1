@@ -1,4 +1,5 @@
 let axios = require("axios")
+
 let handler = async (m, { conn, usedPrefix, command }) => {
 let chat = global.DATABASE.data.chats[m.chat]
 if (chat.nsfw) {
