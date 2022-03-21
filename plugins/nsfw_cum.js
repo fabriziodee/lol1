@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 
 let handler  = async (m, { conn, usedPrefix, command }) => {
 let chat = global.DATABASE.data.chats[m.chat]
-if (chat.isNsfw) {
+if (chat.nsfw) {
 conn.reply(m.chat, wait, m)
 heum = await fetch(`https://server-api-rey.herokuapp.com/api/nsfw/cum?apikey=apirey`)
 json = await heum.buffer()
