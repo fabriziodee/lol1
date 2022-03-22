@@ -4,10 +4,9 @@ let fs = require ('fs')
 let handler = async (m, { conn, text }) => {
 let tumb = fs.readFileSync('./storage/image/menuvid.mp4')
 let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
-let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.video, { quoted: m, thumbnail: tumb, contextInfo: { externalAdReply: { title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", previewType: "PHOTO", thumbnail: tumbb, sourceUrl: "" } } })
-gbutsan = [{ buttonId: '.info', buttonText: { displayText: '🛰 INFO' }, type: 1 }, { buttonId: '.owner', buttonText: { displayText: '🎋 CREADOR' }, type: 1 }]
-gbuttonan = { videoMessage: menux.message.videoMessage, contentText: `Test`, footerText: '  Lolibot - OFC', buttons: gbutsan, headerType: 4 }
-await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [m.sender], forwardingScore: 750, isForwarded: true }, quoted: m })
+let [[jid, { invite_code, invite_code_exp }]] = Object.entries(m.sender)
+conn.sendGroupV4Invite(m.sender, jid, invite_code, invite_code_exp, false, 'Test')
+
 }
 
 handler.help = ['test']
