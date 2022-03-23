@@ -34,7 +34,7 @@ if (user.rpg == 1) {
 
 let _dueloo = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
-"title": "\t\t\t\t*‧ 🌳 BATALLA RPG 🌳 ‧*",
+"title": "\t\t*‧ 🌳 Tienes un duelo pendiente! 🌳 ‧*",
 "description": dueloo,
 "buttonText": "Opciones",
 "listType": "SINGLE_SELECT",
@@ -164,3 +164,4 @@ function clockString(seconds) {
   sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " Segundos") : "";
   return dDisplay + hDisplay + mDisplay + sDisplay;
 };
+ 
