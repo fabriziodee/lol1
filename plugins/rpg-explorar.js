@@ -4,7 +4,7 @@ const cooldown = 300000
 
 let handler = async (m, { conn, usedPrefix, command }) => {
 let user = global.DATABASE._data.users[m.sender]
-let ranrpg = pickRandom(['0', '11', '0', '0', '0', '0', '0', '10', '0'])
+let ranrpg = pickRandom(['0', '11', '0', '0', '0', '10', '0'])
 let ranmap = pickRandom(['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'])
 let _ranmap = pickRandom(['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'])
 let __ranmap = pickRandom(['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'])
@@ -22,6 +22,35 @@ let potion = (user.healt == 0 ? _potion : '0')
 let __timers = (new Date - global.DATABASE._data.users[m.sender].energy)
 let _timers = (cooldown - __timers)
 let timers = clockString(_timers)
+
+if (user.rpg == 1) {
+	let duelooo = `
+*${mob}*
+- Vida: ${user.hmob}
+
+*Jugador*
+- Vida: ${user.healt}
+`.trim()
+
+let _dueloo = conn.prepareMessageFromContent(m.chat, {
+"listMessage":  {
+"title": "\t\t\t*‧ 🌳 *BATALLA RPG* 🌳 ‧*",
+"description": dueloo,
+"buttonText": "Opciones",
+"listType": "SINGLE_SELECT",
+"sections": [
+{
+"rows": [
+{
+"title": "Atacar 🔪",
+"rowId": `${usedPrefix}selec atacar`
+},
+{
+"title": "Escapar 💨",
+"rowId": `${usedPrefix}selec escapar`
+}
+]}]}}, { quoted: m })
+conn.reply(m.chat, 'Tienes un duelo pendiente!', m)
 
 if (user.healt >= 100) {
 		if (__timers >= 100) {
@@ -42,13 +71,13 @@ global.DATABASE._data.users[m.sender].energy = new Date * 1
 conn.reply(m.chat, str, m)
 } else conn.reply(m.chat, 'Te quedaste sin energía vuelve dentro de *' + timers + '*', m)
 } else conn.reply(m.chat, 'Mínimo 30 de vida para poder ir a explorar', m)
-
+} else conn.relayWAMessage(_dueloo)
 //rpg mobs
 if (ranrpg == 11) {
 global.DATABASE._data.users[m.sender].rpg = 1
 global.DATABASE._data.users[m.sender].mob = 2
 global.DATABASE._data.users[m.sender].hmob = hmob * 1
-let duel = `
+let duelo = `
 *${mob}*
 - Vida: ${user.hmob}
 
@@ -74,7 +103,7 @@ let _duelo = conn.prepareMessageFromContent(m.chat, {
 "rowId": `${usedPrefix}selec escapar`
 }
 ]}]}}, { quoted: m })
-conn.relayWAMessage(duel)
+conn.relayWAMessage(_duelo)
 }
 
 
