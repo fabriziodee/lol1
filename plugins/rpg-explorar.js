@@ -15,9 +15,9 @@ let exp = (Math.floor(Math.random() * 400) + 70)
 let wood = (Math.floor(Math.random() * 5) + 1)
 let stone = (Math.floor(Math.random() * 4) + 1)
 let mob = (user.mob == 1 ? 'Slime' : '????' || user.mob == 2 ? 'Orco' : '????')
-let hmob = (user.mob == 1 ? 40 : 0 || user.mob == 2 ? 60 : 0)
+let hmob = (user.mob == 1 ? '40' : '0' || user.mob == 2 ? '60' : '0')
 let _potion = (Math.floor(Math.random() * 2) + 1)
-let potion = (user.healt == 0 ? 0 : _potion)
+let potion = (user.healt == 0 ? _potion : '0')
 
 let __timers = (new Date - global.DATABASE._data.users[m.sender].energy)
 let _timers = (cooldown - __timers)
@@ -30,7 +30,7 @@ let str = `
 
 ◦Exp: ${exp} 
 ◦Madera: ${wood}
-◦Piedra: ${stone}${user.healt == 0 ? '' : '\n◦Pocion: ' + potion + ''}
+◦Piedra: ${stone}${user.healt == 0 ? '\n◦Pocion: ' + potion + '' : ''}
 `.trim()
 
 global.DATABASE._data.users[m.sender].exp += exp * 1
@@ -48,14 +48,14 @@ if (ranrpg == 11) {
 global.DATABASE._data.users[m.sender].rpg = 1
 global.DATABASE._data.users[m.sender].mob = 2
 global.DATABASE._data.users[m.sender].hmob = hmob * 1
-let orco = `
+let duel = `
 *${mob}*
 - Vida: ${user.hmob}
 
 *Jugador*
 - Vida: ${user.healt}
 `.trim()
-conn.sendMessage(m.chat, 'Un ' + mob + ' a aparecido!', MessageType.text)
+conn.sendMessage(m.chat, 'Un ' + mob + ' a aparecido!', MessageType.text, { quoted: m })
 let _duelo = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
 "title": "\t\t\t*‧ 🌳 *BATALLA RPG* 🌳 ‧*",
@@ -74,7 +74,7 @@ let _duelo = conn.prepareMessageFromContent(m.chat, {
 "rowId": `${usedPrefix}selec escapar`
 }
 ]}]}}, { quoted: m })
-conn.relayWAMessage(_duelo)
+conn.relayWAMessage(duel)
 }
 
 
