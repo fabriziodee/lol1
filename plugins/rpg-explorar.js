@@ -1,5 +1,7 @@
 let { MessageType } = require('@adiwajshing/baileys')
 
+const cooldown = 300000
+
 let handler = async (m, { conn, usedPrefix, command }) => {
 let user = global.DATABASE._data.users[m.sender]
 let ranrpg = pickRandom(['0', '11', '0', '0', '0', '0', '0', '10', '0'])
@@ -17,7 +19,7 @@ let hmob = (user.mob == 1 ? 40 : 0 || user.mob == 2 ? 60 : 0)
 let _potion = (Math.floor(Math.random() * 2) + 1)
 let potion = (user.healt == 0 ? 0 : _potion)
 
-let __timers = (new Date - global.DATABASE._data.users[m.sender].lastadventure)
+let __timers = (new Date - global.DATABASE._data.users[m.sender].energy)
 let _timers = (cooldown - __timers)
 let timers = clockString(_timers)
 
