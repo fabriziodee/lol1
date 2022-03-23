@@ -34,7 +34,7 @@ if (user.rpg == 1) {
 
 let _dueloo = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
-"title": "\t\t\t*‧ 🌳 BATALLA RPG 🌳 ‧*",
+"title": "\t\t\t\t*‧ 🌳 BATALLA RPG 🌳 ‧*",
 "description": dueloo,
 "buttonText": "Opciones",
 "listType": "SINGLE_SELECT",
@@ -56,7 +56,7 @@ conn.relayWAMessage(_dueloo)
 
 if (user.healt >= 100) {
 	if (user.rpg == 1) return 
-		if (__timers >= 100) {
+		if (new Date - global.DATABASE._data.users[m.sender].energy > 100) {
 let str = `
 *Al explorar en el bosque encontraste*
 
@@ -86,10 +86,9 @@ let duelo = `
 *Jugador*
 - Vida: ${user.healt}
 `.trim()
-conn.sendMessage(m.chat, 'Un ' + mob + ' a aparecido!', MessageType.text, { quoted: m })
 let _duelo = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
-"title": "\t\t\t*‧ 🌳 BATALLA RPG 🌳 ‧*",
+"title": '\t\t\t*‧ 🌳 Un ' + mob + ' a aparecido! 🌳 ‧*',
 "description": duelo,
 "buttonText": "Opciones",
 "listType": "SINGLE_SELECT",
