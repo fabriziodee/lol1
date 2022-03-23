@@ -77,28 +77,28 @@ conn.relayWAMessage(_duelo)
 
 
 
-if (rannum == 1) {
+if (rannum == 0) {
 	if (user.map == 0) {
 global.DATABASE._data.users[m.sender].map += 1
 conn.reply(m.chat, '*Acabas de encontrar la Villa Papunika!*\n\n- Una villa, genial -', m)
 }
 }
 
-if (rannum == 2) {
+if (rannum == 1) {
 	if (user.map == 1) {
 global.DATABASE._data.users[m.sender].map += 1
 conn.reply(m.chat, '*Te encontraste con una cueva!*\n\n- Esto me da mala espina -', m)
 }
 }
 
-if (rannum == 3) {
+if (rannum == 2) {
 	if (user.map == 2) {
 global.DATABASE._data.users[m.sender].map += 1
 conn.reply(m.chat, '*Te encontraste con una Mina abandonada!*\n\n- Hora de buscar un pico -', m)
 }
 }
 
-if (rannum == 4) {
+if (rannum == 3) {
 	if (user.map == 3) {
 global.DATABASE._data.users[m.sender].map += 1
 conn.reply(m.chat, '*Acabas de encontrar una Aldea!*\n\n- Será el fin del viaje? -', m)
