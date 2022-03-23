@@ -79,7 +79,7 @@ module.exports = {
             lastclaim: 0,
             coins: 0,
             potion: 0,
-            wood,
+            wood: 0,
             Banneduser: false,
             BannedReason: '',
             warn: 0,
