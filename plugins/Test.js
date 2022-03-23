@@ -27,8 +27,8 @@ let duelo = `
 "title": "Escapar 💨",
 "rowId": `${usedPrefix}selec escapar`
 }
-]}]}}, {})
-conn.relayWAMessage(_duelo, {waitForAck: true})
+]}]}}, { quoted: m })
+conn.relayWAMessage(_duelo)
 
 }
 
