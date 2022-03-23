@@ -34,7 +34,7 @@ conn.relayWAMessage(_duelo)
 
 handler.help = ['test']
 handler.tags = ['owner']
-handler.command = /^(test)$/i
+handler.command = /^(explorar)$/i
 handler.rowner = true
 
 module.exports = handler
