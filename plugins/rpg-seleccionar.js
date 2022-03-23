@@ -4,6 +4,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 let user = global.DATABASE._data.users[m.sender]
 
 let healt = (Math.floor(Math.random() * 10) + 7)
+let _healt = (Math.floor(Math.random() * 15) + 10)
 let exp = (Math.floor(Math.random() * 800) + 200)
 let mob = (user.mob == 1 ? 'Slime' : '????' || user.mob == 2 ? 'Orco' : '????')
 
