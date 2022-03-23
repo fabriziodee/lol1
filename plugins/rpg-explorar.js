@@ -23,7 +23,7 @@ let __timers = (new Date - global.DATABASE._data.users[m.sender].energy)
 let _timers = (cooldown - __timers)
 let timers = clockString(_timers)
 
-if (user.rpg == 1) {
+if (user.rpg == 1) return {
 	let dueloo = `
 *${mob}*
 - Vida: ${user.hmob}
@@ -34,7 +34,7 @@ if (user.rpg == 1) {
 
 let _dueloo = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
-"title": "\t\t\t*‧ 🌳 *BATALLA RPG* 🌳 ‧*",
+"title": "\t\t\t*‧ 🌳 BATALLA RPG 🌳 ‧*",
 "description": dueloo,
 "buttonText": "Opciones",
 "listType": "SINGLE_SELECT",
@@ -88,7 +88,7 @@ let duelo = `
 conn.sendMessage(m.chat, 'Un ' + mob + ' a aparecido!', MessageType.text, { quoted: m })
 let _duelo = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
-"title": "\t\t\t*‧ 🌳 *BATALLA RPG* 🌳 ‧*",
+"title": "\t\t\t*‧ 🌳 BATALLA RPG 🌳 ‧*",
 "description": duelo,
 "buttonText": "Opciones",
 "listType": "SINGLE_SELECT",
