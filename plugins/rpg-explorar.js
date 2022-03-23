@@ -24,7 +24,7 @@ let _timers = (cooldown - __timers)
 let timers = clockString(_timers)
 
 if (user.rpg == 1) {
-	let duelooo = `
+	let dueloo = `
 *${mob}*
 - Vida: ${user.hmob}
 
