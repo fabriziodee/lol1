@@ -23,7 +23,7 @@ let __timers = (new Date - global.DATABASE._data.users[m.sender].energy)
 let _timers = (cooldown - __timers)
 let timers = clockString(_timers)
 
-if (user.rpg == 1) return {
+if (user.rpg == 1) {
 	let dueloo = `
 *${mob}*
 - Vida: ${user.hmob}
@@ -55,6 +55,7 @@ conn.relayWAMessage(_dueloo)
 }
 
 if (user.healt >= 100) {
+	if (user.rpg == 1) return 
 		if (__timers >= 100) {
 let str = `
 *Al explorar en el bosque encontraste*
