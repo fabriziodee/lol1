@@ -17,9 +17,8 @@ switch (type) {
 case 'atacar':
       if (user.rpg == 0) return m.reply('El duelo a terminado!')
       
-      global.DATABASE._data.users[m.sender].rpg = 0
-      global.DATABASE._data.users[m.sender].mob = 0
-      global.DATABASE._data.users[m.sender].hmob = 0
+      global.DATABASE._data.users[m.sender].healt -= healt * 1
+      global.DATABASE._data.users[m.sender].hmob -= healt * 1
       
       let duelo = `
 *${mob}*
@@ -29,10 +28,11 @@ case 'atacar':
 - Vida: ${user.healt}
 `.trim()
 
-      global.DATABASE._data.users[m.sender].healt -= healt * 1
-      global.DATABASE._data.users[m.sender].hmob -= healt * 1
-
       if (user.hmob <= 0) {
+      global.DATABASE._data.users[m.sender].rpg = 0
+      global.DATABASE._data.users[m.sender].mob = 0
+      global.DATABASE._data.users[m.sender].hmob = 0
+      global.DATABASE._data.users[m.sender].exp += exp * 1
       let fduelo = `
 *Ganaste la batalla!*
 
@@ -43,7 +43,7 @@ case 'atacar':
       }
       let _duelo = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
-"title": "\t\t\t*‧ 🌳 *BATALLA RPG* 🌳 ‧*",
+"title": "\t\t\t*‧ 🌳 BATALLA RPG 🌳 ‧*",
 "description": duelo,
 "buttonText": "Opciones",
 "listType": "SINGLE_SELECT",
