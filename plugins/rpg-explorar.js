@@ -50,7 +50,6 @@ let _dueloo = conn.prepareMessageFromContent(m.chat, {
 "rowId": `${usedPrefix}selec escapar`
 }
 ]}]}}, { quoted: m })
-conn.reply(m.chat, 'Tienes un duelo pendiente!', m)
 conn.relayWAMessage(_dueloo)
 }
 
