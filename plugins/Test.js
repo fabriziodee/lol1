@@ -12,7 +12,7 @@ let duelo = `
 `.trim()
       let _duelo = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
-"title": "		*‧ ⚔️ BATALLA RPG ⚔️ ‧*",
+"title": "\t\t\t*‧ ⚔️ BATALLA RPG ⚔️ ‧*",
 "description": duelo,
 "buttonText": "Opciones",
 "listType": "SINGLE_SELECT",
