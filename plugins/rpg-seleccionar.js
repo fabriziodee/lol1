@@ -4,7 +4,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 let user = global.DATABASE._data.users[m.sender]
 
 let healt = (Math.floor(Math.random() * 10) + 7)
-let exp = (Math.floor(Math.random() * 800) + 100)
+let exp = (Math.floor(Math.random() * 800) + 200)
 let mob = (user.mob == 1 ? 'Slime' : '????' || user.mob == 2 ? 'Orco' : '????')
 
 
@@ -29,10 +29,12 @@ case 'atacar':
 `.trim()
 
       if (user.hmob <= 0) {
+      	
       global.DATABASE._data.users[m.sender].rpg = 0
       global.DATABASE._data.users[m.sender].mob = 0
       global.DATABASE._data.users[m.sender].hmob = 0
       global.DATABASE._data.users[m.sender].exp += exp * 1
+      
       let fduelo = `
 *Ganaste la batalla!*
 
@@ -43,7 +45,7 @@ case 'atacar':
       }
       let _duelo = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
-"title": "\t\t\t*‧ 🌳 BATALLA RPG 🌳 ‧*",
+"title": "\t\t\t\t*‧ 🌳 BATALLA RPG 🌳 ‧*",
 "description": duelo,
 "buttonText": "Opciones",
 "listType": "SINGLE_SELECT",
