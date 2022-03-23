@@ -39,7 +39,7 @@ case 'atacar':
 ◦Exp: ${exp}
 `.trim()
       
-      conn.sendMessage(m.chat, fduelo, MessageType.text)
+      conn.sendMessage(m.chat, fduelo, MessageType.text, { quoted: m })
       }
       let _duelo = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
@@ -75,7 +75,7 @@ let correr = `
 
 ◦Vida: -${healt}
 `.trim()
-      conn.sendMessage(m.chat, correr, MessageType.text)
+      conn.sendMessage(m.chat, correr, MessageType.text, { quoted: m })
       break
 
 
