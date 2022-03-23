@@ -51,6 +51,8 @@ let _dueloo = conn.prepareMessageFromContent(m.chat, {
 }
 ]}]}}, { quoted: m })
 conn.reply(m.chat, 'Tienes un duelo pendiente!', m)
+conn.relayWAMessage(_dueloo)
+}
 
 if (user.healt >= 100) {
 		if (__timers >= 100) {
@@ -71,7 +73,6 @@ global.DATABASE._data.users[m.sender].energy = new Date * 1
 conn.reply(m.chat, str, m)
 } else conn.reply(m.chat, 'Te quedaste sin energía vuelve dentro de *' + timers + '*', m)
 } else conn.reply(m.chat, 'Mínimo 30 de vida para poder ir a explorar', m)
-} else conn.relayWAMessage(_dueloo)
 //rpg mobs
 if (ranrpg == 11) {
 global.DATABASE._data.users[m.sender].rpg = 1
