@@ -9,12 +9,12 @@ let __ranmap = pickRandom(['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'
 let ___ranmap = pickRandom(['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'])
 
 let healt = (Math.floor(Math.random() * 10) + 7)
-let exp = (Math.floor(Math.random() * 400) + (kuda * 70))
-let wood = (Math.floor(Math.random() * 5) + (kuda * 1))
-let stone = (Math.floor(Math.random() * 4) + (kuda * 1))
+let exp = (Math.floor(Math.random() * 400) + 70)
+let wood = (Math.floor(Math.random() * 5) + 1)
+let stone = (Math.floor(Math.random() * 4) + 1)
 let mob = (user.mob == 1 ? 'Slime' : '????' || user.mob == 2 ? 'Orco' : '????')
 let hmob = (user.mob == 1 ? 40 : 0 || user.mob == 2 ? 60 : 0)
-let _potion = (Math.floor(Math.random() * 2) + (kuda * 1))
+let _potion = (Math.floor(Math.random() * 2) + 1)
 let potion = (user.healt == 0 ? 0 : _potion)
 
 let __timers = (new Date - global.DATABASE._data.users[m.sender].lastadventure)
