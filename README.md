@@ -92,11 +92,11 @@
 
 ---------
 
-<img src="https://i.pinimg.com/originals/e7/05/10/e7051066441ec250190cb66101a1af57.gif">
+ <img src="https://i.pinimg.com/originals/e7/05/10/e7051066441ec250190cb66101a1af57.gif">
 
 ---------
 
  [![Gɑtito](https://github.com/g4tito.png?size=100)](https://github.com/g4tito) | [![Bruno](https://github.com/BrunoSobrino.png?size=100)](https://github.com/BrunoSobrino)
 ----|----
-[Gɑtito](https://github.com/g4tito) | [Bruno](https://github.com/BrunoSobrino)
- Recodificador :| <p align="center">Creɑdor</p>
+<p align="center">[Gɑtito](https://github.com/g4tito)</p> | <p align="center">[Bruno](https://github.com/BrunoSobrino)</p>
+<p align="center">Recodificador</p> | <p align="center">Creɑdor</p>
