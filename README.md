@@ -20,7 +20,7 @@
 </h1>
 
 ---------
-## <img src="" width="35px"> Herrɑmientɑs
+## <img src="https://i0.wp.com/i230.photobucket.com/albums/ee124/joaclint/joaclint_istgud/ruedas.gif" width="35px"> Herrɑmientɑs
 
 ```bash
 > Termux
@@ -90,9 +90,10 @@
 
 * <a href="https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
+---------
 
-<h2 align="center">RANDOM LOLI NSFW</h2>
-<img src="https://api.lolhuman.xyz/api/random/nsfw/loli?apikey=40cd5b6566bef10af1425f0f" width="10000px">
+<h2 align="center"></h2>
+<img src="https://i.pinimg.com/originals/e7/05/10/e7051066441ec250190cb66101a1af57.gif">
 
 ---------
  [![Gɑtito](https://github.com/g4tito.png?size=100)](https://github.com/g4tito) | [![Bruno](https://github.com/BrunoSobrino.png?size=100)](https://github.com/BrunoSobrino)
