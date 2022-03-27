@@ -93,17 +93,16 @@
 
 ---------
 
+ <img src="https://i.pinimg.com/originals/e7/05/10/e7051066441ec250190cb66101a1af57.gif">
+
+---------
+
 ### Github Stats
 
 ![github stats](https://github-readme-stats.vercel.app/api?username=g4tito&show_icons=true&theme=chartreuse-dark)
 ![github toplang](https://github-readme-stats.vercel.app/api/top-langs/?username=g4tito&layout=compact&theme=chartreuse-dark)
 
 ---------
-
- <img src="https://i.pinimg.com/originals/e7/05/10/e7051066441ec250190cb66101a1af57.gif">
-
----------
-
  [![Gɑtito](https://github.com/g4tito.png?size=100)](https://github.com/g4tito) | [![Bruno](https://github.com/BrunoSobrino.png?size=100)](https://github.com/BrunoSobrino)
 ----|----
 [Gɑtito](https://github.com/g4tito) | [Bruno](https://github.com/BrunoSobrino)
