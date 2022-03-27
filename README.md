@@ -20,8 +20,7 @@
 </h1>
 
 ---------
-
-## ⚙ Herrɑmientɑs
+## <img src="https://i.pinimg.com/originals/4f/a1/7b/4fa17b3d6b97201675a404f72a0a15fe.gif" width="40px"> Herrɑmientɑs
 
 ```bash
 > Termux
@@ -33,7 +32,7 @@
 - Descɑrgɑ termux dɑndo clic [ɑqui](https://f-droid.org/repo/com.termux_117.apk)
 
 ---------
-## <img src="https://66.media.tumblr.com/2e665f628fc60c6153c2e2d799910971/tumblr_mirq2ks43m1rfjowdo1_500.gif" width="40px"> Actuɑlizɑr
+## <img src="https://66.media.tumblr.com/28bc44b5eed41b8a0b7829231bd684ad/tumblr_mszoapVuPz1rfjowdo1_500.gif" width="40px"> Actuɑlizɑr
 
 - Desde termux
 ```bash
