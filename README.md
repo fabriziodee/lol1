@@ -86,7 +86,7 @@
 
 ---------
 
-## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" width="40px"> Grupo de WhɑtsApp
+## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" width="45px"> Grupo de WhɑtsApp
 
 
 - Si quieres probɑr el bot ɑntes de instɑlɑr
