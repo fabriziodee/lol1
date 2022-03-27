@@ -1,4 +1,4 @@
-\centering LOLIBOT
+<h1 align="center">LOLIBOT</h1>
 
 <h1 align="center">
         <img src= "https://i.ibb.co/cgGLf2k/loli.gif">
