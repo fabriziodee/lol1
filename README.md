@@ -28,7 +28,7 @@
 > Un buen internet
 ```
 [](https://play.google.com/store/apps/details?id=com.termux&hl=pt_BR&gl=ES)
-- Descarga termux dando clic [aqui](https://f-droid.org/repo/com.termux_117.apk)
+- Descɑrgɑ termux dɑndo clic [ɑqui](https://f-droid.org/repo/com.termux_117.apk)
 
 ---------
 
