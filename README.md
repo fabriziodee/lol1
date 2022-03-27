@@ -20,7 +20,7 @@
 </h1>
 
 ---------
-## <img src="https://i.pinimg.com/originals/4f/a1/7b/4fa17b3d6b97201675a404f72a0a15fe.gif" width="40px"> Herrɑmientɑs
+## <img src="https://i.pinimg.com/originals/4f/a1/7b/4fa17b3d6b97201675a404f72a0a15fe.gif" width="35px"> Herrɑmientɑs
 
 ```bash
 > Termux
