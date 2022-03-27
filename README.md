@@ -94,5 +94,5 @@
 
  [![Gatito](https://github.com/g4tito.png?size=100)](https://github.com/g4tito) | [![Bruno](https://github.com/BrunoSobrino.png?size=100)](https://github.com/BrunoSobrino)
 ----|----
-[<h1 align="center">Gatito</h1>](https://github.com/g4tito) | [Bruno](https://github.com/BrunoSobrino)
+[Gatito](https://github.com/g4tito) | [Bruno](https://github.com/BrunoSobrino)
  Recodicador | Creador
