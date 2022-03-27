@@ -89,3 +89,7 @@
 - Si quieres probar el bot antes de instalar
 
 * <a href="https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+
+----|----
+[Gatito](https://github.com/g4tito) | [Bruno](https://github.com/BrunoSobrino)
+ Recodicador | Creador
