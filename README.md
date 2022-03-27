@@ -94,7 +94,7 @@
 <h2 align="center">RANDOM NEKO</h2>
 <img src="https://api-alc.herokuapp.com/api/nsfw/neko?apikey=ConfuMods" width="100px">
 
-
+---------
  [![Gɑtito](https://github.com/g4tito.png?size=100)](https://github.com/g4tito) | [![Bruno](https://github.com/BrunoSobrino.png?size=100)](https://github.com/BrunoSobrino)
 ----|----
 [Gɑtito](https://github.com/g4tito) | [Bruno](https://github.com/BrunoSobrino)
