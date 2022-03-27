@@ -93,7 +93,7 @@
 
 <h1 align="center">RANDOM NEKO</h1>
 ---------
-## <img src="https://api-alc.herokuapp.com/api/nsfw/neko?apikey=ConfuMods" width="45px">
+<img src="https://api-alc.herokuapp.com/api/nsfw/neko?apikey=ConfuMods" width="100px">
 ---------
 
 
