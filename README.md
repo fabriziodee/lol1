@@ -47,7 +47,7 @@
 
 ---------
 
-## 📥 Instɑlɑción [termux](https://f-droid.org/repo/com.termux_117.apk)
+## 📥 Instɑlɑción [[termux]](https://f-droid.org/repo/com.termux_117.apk)
 
 ```bash
 > pkg update -y
