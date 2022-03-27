@@ -94,7 +94,7 @@
 
 <h2 align="center">RANDOM LOLI</h2>
 ---------
- [![Link](https://i.imgur.com/cvqoK7l.jpg?size=100)](https://i.imgur.com/cvqoK7l.jpg) | [![Link](https://i.imgur.com/l9of06d.jpg?size=100)](https://i.imgur.com/l9of06d.jpg)
+ [![Link](https://i.imgur.com/cvqoK7l.jpg)](https://i.imgur.com/cvqoK7l.jpg) | [![Link](https://i.imgur.com/l9of06d.jpg)](https://i.imgur.com/l9of06d.jpg)
 ----|----
 [Gɑtito](https://github.com/g4tito) | [Bruno](https://github.com/BrunoSobrino)
  Recodicɑdor | Creɑdor
