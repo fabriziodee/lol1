@@ -1,69 +1,100 @@
-# **🔥𝗧𝗵𝗲 𝗦𝗵𝗮𝗱𝗼𝘄 𝗕𝗿𝗼𝗸𝗲𝗿𝘀 - 𝗕𝗼𝘁🔥**
-### `Si necesitas ayuda mandame mensaje`
-<a href="http://wa.me/5219992095479" target="blank"><img src="https://img.shields.io/badge/Whatsapp-30302f?style=flat&logo=whatsapp" /></a>
-> NO BOT
-### `Unete a los grupos oficales para conocer novedades del Bot`
-[![Grupo de WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JlomZPEgo3bLmzjGUYPfyJ)
-[![Grupo de WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/DbXBmsydWBE1ZN3EoY0hRs)
-[![Grupo de WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/BW0P22xx7EGBTdH5IM851F)
-[![Grupo de WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/CjexkGVr37J6GuSdDVAHzC)
-[![Grupo de WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/H7NUXdrGlFg20ae3bqgwlb)
-[![Grupo de WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/GvrLSUSzVuT9P17CKfdxDa)
-[![Grupo de WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/HylyPaLc49b9DWF67K8pdc)
-[![Grupo de WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/IW12dLVoyWGHreGpX7rQIw)
-### `AJUSTES`
-- CAMBIAR NÚMERO DE PROPIETARIO [Aqui](https://github.com/BrunoSobrino/ShadowBotV3/blob/master/config.js)
+# LOLIBOT
+---------
 
-### `Video tutorial para instalar el Bot`
-<a href="https://www.youtube.com/watch?v=dP8-aaHinBE&t=55s"><img height="30" src="https://github.com/shanduy/ShanBot/blob/main/temples/youtube-logo-6-2.png?raw=true"></a>&nbsp;&nbsp;
-> Dar click en la imagen para redireccionarlos a YouTube
+<h1 align="center">
+    <p>
+        <img src= "https://i.ibb.co/cgGLf2k/loli.gif">
+    </p>
+    <p align="center">
+        <a href="#"><img title="whatsapp-bot-termux" src="https://img.shields.io/badge/-WHATSAPP--BOT--TERMUX-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+    </p>
+    <p>
+        <a href="https://github.com/g4tito"><img title="Author"    src="https://img.shields.io/badge/Author-gatito-purple.svg?style=for-the-badge&logo=github"></a>
+    </p>
+    <p>
+        <a href="https://github.com/g4tito/followers"><img title="Followers" src="https://img.shields.io/github/followers/g4tito?color=blue&style=flat-square"></a>
+        <a href="https://github.com/g4tito/lolibot/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/g4tito/lolibot?color=red&style=flat-square"></a>
+        <a href="https://github.com/g4tito/lolibot/network/members"><img title="Forks" src="http://img.shields.io/github/forks/g4tito/lolibot?color=red&style=flat-square"></a>
+        <a href="https://github.com/g4tito/lolibot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/g4tito/lolibot?label=Watchers&color=blue&style=flat-square"></a>
+        <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fg4tito%2Flolibot&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Support&edge_flat=false"/></a>
+        <a href="#"><img title="MANTENIMIENTO" src="https://img.shields.io/badge/MANTENIMIENTO-SI-blue.svg"</a>
+    </p>
+</h1>
 
-### `INSTALACION TERMUX`
+---------
+
+## 🔮 Deploy
+- [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/g4tito/lolibot/)
+
+---------
+
+## ⚙ Herramientas
+
 ```bash
-> termux-setup-storage
-> apt update && apt upgrade -y -y
-> apt install git -y
-> apt install nodejs -y
-> apt install ffmpeg -y
-> apt install imagemagick -y
-> git clone https://github.com/BrunoSobrino/ShadowBotV3
-> cd ShadowBotV3
-> npm install
-> npm install -g npm@8.5.4
-> npm update
+> Termux
+> WhatsApp
+> 2 celulares
+> Un buen internet
+```
+[](https://play.google.com/store/apps/details?id=com.termux&hl=pt_BR&gl=ES)
+- Descarga termux dando clic [aqui](https://f-droid.org/repo/com.termux_117.apk)
+
+---------
+
+## 🔁 Atualizar automaticamente
+
+- Desde termux
+```bash
+> cd lolibot
+> git pull
+```
+
+- Desde WhatsApp
+```bash
+> /update
+```
+
+---------
+
+## 📥 Instalación en termux
+
+```bash
+> pkg update -y
+> pkg upgrade -y
+> pkg install git
+> git clone https://github.com/g4tito/lolibot
+> cd lolibot
 > npm start
 ```
-### `NOTAS`
+
+- Después de eso te aparecerá un código **QR** lo escaneas con el WhatsApp web y listo :b
+
+#### iniciar el bot manualmente
+
 ```bash
-> Para activar algunos comandos como 
-el #añadir y #sacar el propietario del 
-Bot debera usar el comando #enable restrict 
-desde el numero que haya puesto en el archivo 
-config.js
-
-> Para obtener nuevamente el codigo QR, escribe en el termux:
-> rm -rf session.data.json
-> npm start 
-
-> Si el termux se cierra para volver activar escribe:
-> cd ShadowBotV3
-> npm start 
-
-> cada vez que realices una modificacion en el
-repositorio del Bot (tu GitHub), puedes usar 
-el comando #actualizar para que se actualicen los datos
-
-> Aconsejable maximo 40 grupos, despues 
-de esa cantidad el Bot empieza a ir 
-excesivamente lento (depende del WhatsApp igual)
-
-> El Bot aun no es compartible con la version de multi device 
-de WhatsApp, por lo que sugiero usar este WhatsApp:
+> npm start
 ```
-[WhatsApp-Recomendado](https://download853.mediafire.com/xawpdplr7wvg/u133oxjqtiry52t/%E2%9E%A2+SOLITARIO+BUSINESS+%E2%9E%A2_2.21.19.21.apk)
 
-## `EDITOR Y PORPIETARIO DEL BOT` 
-[![BrunoSobrino](https://avatars.githubusercontent.com/u/90165013?s=400&u=946f5c00c527c7e6fa2ef5148c6ad56270bb600e&v=4size=100)](https://avatars.githubusercontent.com/u/90165013?s=400&u=cdf7fd989e2a787c9f400545147865615c336002&v=4) 
-```bash
-`The Shadow Brokers - Bot ___ By Bruno Sobrino` 
-```
+---------
+
+## 💰 Donaciones
+
+- Si quieres hacer alguna donación
+
+* <a href="https://paypal.me/gatito55"><img alt="Paypal" src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" /></a>
+
+---------
+
+## 🤧 Contacto
+
+- Si tiene algún problema el bot contactame n.n
+
+* <a href="https://wa.me/51940617554"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+
+---------
+
+## 🎋 Grupo de WhatsApp
+
+- Si quieres probar el bot antes de instalar
+
+* <a href="https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
