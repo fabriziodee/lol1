@@ -68,6 +68,20 @@
 
 ---------
 
+### Características
+
+- [x] Interacción con voz y texto
+- [x] Configuración de grupo
+- [x] Antidelete, Antilink, Antispam, etc
+- [x] Bienvenida personalizada en cada grupo
+- [x] Juegos, tictactoe, mate, etc
+- [x] Chatbot (simsimi)
+- [x] Crear sticker de image/video/gif/url
+- [ ] Votacion 
+- [ ] Juego RPG
+
+---------
+
 ## <img src="https://i.gifer.com/origin/71/719ea2f44c791fc07e0e811940a0232b_w200.gif" width="35px"> Donɑciones
 
 - Si quieres hɑcer ɑlgunɑ donɑción
