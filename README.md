@@ -1,4 +1,4 @@
-<h1 align="center">‧ LOLIBOT ‧
+<h1 align="center">‧💌 LOLIBOT 💌‧
         <img src= "https://i.ibb.co/cgGLf2k/loli.gif">
     </p>
     <p align="center">
