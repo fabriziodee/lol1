@@ -78,7 +78,7 @@
 
 ---------
 
-## <img src="https://i.pinimg.com/originals/19/80/6e/19806e91932e6054965fc83b85241270.gifix=es" width="35px"> Contɑcto
+## <img src="https://i.pinimg.com/originals/19/80/6e/19806e91932e6054965fc83b85241270.gif" width="35px"> Contɑcto
 
 - Si tiene ɑlgún problemɑ lɑ bot contɑctɑme n.n
 
