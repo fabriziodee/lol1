@@ -48,8 +48,7 @@
 ```
 
 ---------
-
-## 📥 Instɑlɑción [[termux](https://f-droid.org/repo/com.termux_117.apk)]
+## <img src="https://i.giphy.com/media/nWGRHBnAl5Kmc/giphy.gif" width="35px"> Instɑlɑción [[termux](https://f-droid.org/repo/com.termux_117.apk)]
 
 ```bash
 > pkg update -y
