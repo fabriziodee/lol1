@@ -99,4 +99,4 @@
  [![Gɑtito](https://github.com/g4tito.png?size=100)](https://github.com/g4tito) | [![Bruno](https://github.com/BrunoSobrino.png?size=100)](https://github.com/BrunoSobrino)
 ----|----
 [Gɑtito](https://github.com/g4tito) | [Bruno](https://github.com/BrunoSobrino)
- Recodificador :|: Creɑdor :
+ Recodificador :| <p align="center">Creɑdor</p>
