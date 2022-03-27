@@ -1,7 +1,8 @@
 
 <h1 align="center">
 <p>
-# LOLIBOT
+LOLIBOT
+<p>
 ---------
         <img src= "https://i.ibb.co/cgGLf2k/loli.gif">
     </p>
