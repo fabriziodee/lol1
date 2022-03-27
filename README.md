@@ -91,8 +91,9 @@
 * <a href="https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 ---------
-
+<h1 align="center">
  [![Gatito](https://github.com/g4tito.png?size=100)](https://github.com/g4tito) | [![Bruno](https://github.com/BrunoSobrino.png?size=100)](https://github.com/BrunoSobrino)
 ----|----
 [Gatito](https://github.com/g4tito) | [Bruno](https://github.com/BrunoSobrino)
  Recodicador | Creador
+</h1>
