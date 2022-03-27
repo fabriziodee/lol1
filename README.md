@@ -73,7 +73,7 @@
 - [x] Interacción con voz y texto
 - [x] Configuración de grupo
 - [x] Antidelete, Antilink, Antispam, etc
-- [x] Bienvenida personalizada en cada grupo
+- [x] Bienvenida personalizada
 - [x] Juegos, tictactoe, mate, etc
 - [x] Chatbot (simsimi)
 - [x] Crear sticker de image/video/gif/url
