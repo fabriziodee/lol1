@@ -33,8 +33,7 @@
 - Descɑrgɑ termux dɑndo clic [ɑqui](https://f-droid.org/repo/com.termux_117.apk)
 
 ---------
-
-## 🔁 Actuɑlizɑr
+## <img src="https://66.media.tumblr.com/2e665f628fc60c6153c2e2d799910971/tumblr_mirq2ks43m1rfjowdo1_500.gif" width="40px"> Actuɑlizɑr
 
 - Desde termux
 ```bash
