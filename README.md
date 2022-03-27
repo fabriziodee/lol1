@@ -94,10 +94,9 @@
 
 <h2 align="center">RANDOM LOLI</h2>
 
-<a href="https://media.publit.io/file/Twintails/11.jpg"><img src="https://media.publit.io/file/Twintails/11.jpg" width="100" height="100"></a> | <a href="https://media.publit.io/file/Twintails/1.jpg"><img src="https://media.publit.io/file/Twintails/1.jpg" width="100" height="100"></a> | <a href="https://media.publit.io/file/Twintails/11.jpg"><img src="https://media.publit.io/file/Twintails/11.jpg" width="100" height="100"></a> | <a href="https://media.publit.io/file/Twintails/1.jpg"><img src="https://media.publit.io/file/Twintails/1.jpg" width="100" height="100"></a> | <a href="https://media.publit.io/file/Twintails/11.jpg"><img src="https://media.publit.io/file/Twintails/11.jpg" width="100" height="100"></a> | <a href="https://media.publit.io/file/Twintails/1.jpg"><img src="https://media.publit.io/file/Twintails/1.jpg" width="100" height="100"></a>
+<a href="https://media.publit.io/file/Twintails/11.jpg"><img src="https://media.publit.io/file/Twintails/11.jpg" width="100" height="100"></a> | <a href="https://media.publit.io/file/Twintails/1.jpg"><img src="https://media.publit.io/file/Twintails/1.jpg" width="100" height="100"></a> | <a href="https://media.publit.io/file/Twintails/11.jpg"><img src="https://media.publit.io/file/Twintails/11.jpg" width="100" height="100"></a> | <a href="https://media.publit.io/file/Twintails/1.jpg"><img src="https://media.publit.io/file/Twintails/1.jpg" width="100" height="100"></a> | <a href="https://media.publit.io/file/Twintails/11.jpg"><img src="https://media.publit.io/file/Twintails/11.jpg" width="100" height="100"></a> | <a href="https://media.publit.io/file/Twintails/1.jpg"><img src="https://media.publit.io/file/Twintails/1.jpg" width="100" height="100"></a> | <a href="https://media.publit.io/file/Twintails/11.jpg"><img src="https://media.publit.io/file/Twintails/11.jpg" width="100" height="100"></a> | <a href="https://media.publit.io/file/Twintails/1.jpg"><img src="https://media.publit.io/file/Twintails/1.jpg" width="100" height="100"></a>
 ----|----|----|----|----|----|----|----
 Test | Test | Test | Test | Test | Test | Test | Test
-
 <img src="https://i.pinimg.com/originals/e7/05/10/e7051066441ec250190cb66101a1af57.gif">
 
 ---------
