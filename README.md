@@ -90,14 +90,6 @@
 
 * <a href="https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
---------------
-
-<h2 align="center">RANDOM LOLI</h2>
-
-<a href="https://media.publit.io/file/Twintails/11.jpg"><img src="https://media.publit.io/file/Twintails/11.jpg"></a> | <a href="https://media.publit.io/file/Twintails/1.jpg"><img src="https://media.publit.io/file/Twintails/1.jpg"></a>
-----|----
-Test | Test
-
 ---------
  [![Gɑtito](https://github.com/g4tito.png?size=100)](https://github.com/g4tito) | [![Bruno](https://github.com/BrunoSobrino.png?size=100)](https://github.com/BrunoSobrino)
 ----|----
