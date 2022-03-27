@@ -68,16 +68,16 @@
 
 ---------
 
-### Características
+## <img src="https://i.pinimg.com/originals/73/69/6e/73696e022df7cd5cb3d999c6875361dd.gif" width="42px"> Cɑrɑcterísticɑs
 
-- [x] Interacción con voz y texto
-- [x] Configuración de grupo
-- [x] Antidelete, Antilink, Antispam, etc
-- [x] Bienvenida personalizada
-- [x] Juegos, tictactoe, mate, etc
-- [x] Chatbot (simsimi)
-- [x] Crear sticker de image/video/gif/url
-- [ ] Votacion 
+- [x] Interɑcción con voz y texto
+- [x] Configurɑción de grupo
+- [x] ɑntidelete, ɑntilink, ɑntispɑm, etc
+- [x] Bienvenidɑ personɑlizɑdɑ
+- [x] Juegos, tictɑctoe, mɑte, etc
+- [x] Chɑtbot (simsimi)
+- [x] Creɑr sticker de imɑge/video/gif/url
+- [ ] Votɑcion 
 - [ ] Juego RPG
 
 ---------
@@ -111,7 +111,7 @@
 
 ---------
 
-### Github Stats
+## Github Stats
 
 ![github stats](https://github-readme-stats.vercel.app/api?username=g4tito&show_icons=true&theme=chartreuse-dark)
 ![github toplang](https://github-readme-stats.vercel.app/api/top-langs/?username=g4tito&layout=compact&theme=chartreuse-dark)
