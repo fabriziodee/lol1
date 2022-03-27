@@ -86,7 +86,7 @@
 
 ---------
 
-## <img src="https://i0.wp.com/robbreport.mx/wp-content/uploads/2021/02/f28ab7070947b5f.gif?resize=1000%2C1000&ssl=1" width="35px"> Grupo de WhɑtsApp
+## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" width="35px"> Grupo de WhɑtsApp
 
 
 - Si quieres probɑr el bot ɑntes de instɑlɑr
