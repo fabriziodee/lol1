@@ -23,11 +23,6 @@
 
 ---------
 
-## 🔮 Deploy
-- [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/g4tito/lolibot/)
-
----------
-
 ## ⚙ Herramientas
 
 ```bash
