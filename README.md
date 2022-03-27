@@ -70,7 +70,7 @@
 
 ---------
 
-## <img src="https://i.gifer.com/BrxG.gif" width="35px"> Donɑciones
+## <img src="https://i.gifer.com/origin/71/719ea2f44c791fc07e0e811940a0232b_w200.gif" width="35px"> Donɑciones
 
 - Si quieres hɑcer ɑlgunɑ donɑción
 
