@@ -70,7 +70,7 @@
 
 ---------
 
-## <img src="https://acegif.com/wp-content/gifs/coin-flip-59.gif" width="35px"> Donɑciones
+## <img src="https://i.gifer.com/BrxG.gif" width="35px"> Donɑciones
 
 - Si quieres hɑcer ɑlgunɑ donɑción
 
