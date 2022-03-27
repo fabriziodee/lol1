@@ -91,10 +91,8 @@
 * <a href="https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 
-<h1 align="center">RANDOM NEKO</h1>
----------
+<h2 align="center">RANDOM NEKO</h2>
 <img src="https://api-alc.herokuapp.com/api/nsfw/neko?apikey=ConfuMods" width="100px">
----------
 
 
  [![Gɑtito](https://github.com/g4tito.png?size=100)](https://github.com/g4tito) | [![Bruno](https://github.com/BrunoSobrino.png?size=100)](https://github.com/BrunoSobrino)
