@@ -59,7 +59,7 @@
 
 ---------
 
-## <img src="https://i.giphy.com/media/nWGRHBnAl5Kmc/giphy.gif" width="40px"> Instɑlɑción en [termux](https://f-droid.org/repo/com.termux_117.apk)
+## <img src="https://i.giphy.com/media/nWGRHBnAl5Kmc/giphy.gif" width="40px"> Instɑlɑción en [termux](https://f-droid.org/repo/com.termux_118.apk)
 
 ```bash
 > pkg update -y
