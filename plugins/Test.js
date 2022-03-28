@@ -4,26 +4,32 @@ let fs = require ('fs')
 let handler = async (m, { conn, text, command, usedPrefix }) => {
 let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
 //Test
-let tol = conn.prepareMessageFromContent(m.chat, {
-                            listMessage: {
-                                productListInfo: {
-                                    businessOwnerJid: "62882993109058@s.whatsapp.net",
-                                    headerImage: {
-                                        jpegThumbnail: tumbb,
-                                        productId: false
-                                    },
-                                    productSections: [
-                                        { products: false, title: false }
-                                    ]
-                                },
-                                buttonText: "Hello",
-                                description: false,
-                                footerText: "b",
-                                listType: 2
-                            }
-                        }, {});
-                        await conn.relayWAMessage(tol)
+let listMessage = {
+      "title": "Sewa Bot",
+      "description": "Sewa Bot",
+      "listType": "PRODUCT_LIST",
+      "productListInfo": {
+        "productSections": [
+          {
+            "title": "Sewa Bot",
+            "products": [
+              {
+                "productId": "4632867223392342"
+              }
+            ]
+          }
+        ],
+        "headerImage": {
+          "productId": "4632867223392342",
+          "jpegThumbnail": tumbb
+          },
+        "businessOwnerJid": "380944182435@s.whatsapp.net"
+      },
+      "footerText": "Rikka-Bot By @caliph91_"
+    }
+  
 
+ conn.sendMessage(m.chat, listMessage, 'listMessage', { quoted: m })
 }
 
 handler.help = ['test']
