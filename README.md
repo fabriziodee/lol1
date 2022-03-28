@@ -25,7 +25,7 @@
 <div align="center">
 <details>
  <summary></summary>
-💌 Lobita & Gatito 💫
+ 💌 Lobita & Gatito 💫
 </details>
 </div>
 
