@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let waktur = clockString(_waktur)
     let jungle = (axe == 1 ? Math.floor(Math.random() * 5) : '' || axe == 2 ? Math.floor(Math.random() * 7) : '' || axe == 3 ? Math.floor(Math.random() * 10) : '' || axe == 4 ? Math.floor(Math.random() * 20) : '' || axe == 5 ? Math.floor(Math.random() * 30) : '' )
     let birch = (axe == 1 ? Math.floor(Math.random() * 10) : '' || axe == 2 ? Math.floor(Math.random() * 17) : '' || axe == 3 ? Math.floor(Math.random() * 25) : '' || axe == 4 ? Math.floor(Math.random() * 40) : '' || axe == 5 ? Math.floor(Math.random() * 55) : '' )
-    let oak = (axe == 1 ? Math.ceil(Math.random() * 200) : '' || axe == 2 ? Math.ceil(Math.random() * 250) : '' || axe == 3 ? Math.ceil(Math.random() * 300) : '' || axe == 4 ? Math.ceil(Math.random() * 350) : '' || axe == 5 ? Math.ceil(Math.random() * 500) : '' )
+    let oak = (axe == 1 ? Math.ceil(Math.random() * 100) : '' || axe == 2 ? Math.ceil(Math.random() * 150) : '' || axe == 3 ? Math.ceil(Math.random() * 200) : '' || axe == 4 ? Math.ceil(Math.random() * 250) : '' || axe == 5 ? Math.ceil(Math.random() * 350) : '' )
     let exp = (axe == 1 ? Math.ceil(Math.random() * 200) : '' || axe == 2 ? Math.ceil(Math.random() * 400) : '' || axe == 3 ? Math.ceil(Math.random() * 600) : '' || axe == 4 ? Math.ceil(Math.random() * 800) : '' || axe == 5 ? Math.ceil(Math.random() * 1000) : '' )
     let durability = Math.floor(Math.random() * 100)
     let goa = (pickRandom(['un bosque 🌳']))
