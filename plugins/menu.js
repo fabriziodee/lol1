@@ -51,7 +51,6 @@ Hola *@%user*, %greeting
 `.trimStart(),
   header: '     _*%category*_',
   body: '*⎔ >* %cmd %islimit %isPremium',
-  bodyy: '*⎔ >* %cmd %islimit %isPremium',
   footer: '╶',
   after: "*lolibot-ofc@^0.9.8*\n```Customizable WhatsApp Bot```",
 }
@@ -118,7 +117,6 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let before = conn.menu.before || defaultMenu.before
     let header = conn.menu.header || defaultMenu.header
     let body = conn.menu.body || defaultMenu.body
-    let bodyy = conn.menu.bodyy || defaultMenu.bodyy
     let footer = conn.menu.footer || defaultMenu.footer
     let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
     let _text = [
@@ -128,7 +126,6 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                return bodyy.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
                 .replace(/%islimit/g, menu.limit ? '(limite)' : '')
                 .replace(/%isPremium/g, menu.premium ? '(premium)' : '')
                 .trim()
