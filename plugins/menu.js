@@ -51,7 +51,7 @@ Hola *@%user*, %greeting
 *• 📆 Fecha:* %date
 *• ⏱️ Hora:* %time
 
-`.trimStart(),
+`,
   header: '     _*%category*_',
   body: '∙•⃝⃕%rmoji *%cmd* %islimit %isPremium',
   footer: '╶',
@@ -166,7 +166,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
      let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
      let chatp = global.DATABASE._data.chats[m.chat]
      if (chatp.menu == 1) {
-     let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.location)
+     let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.location, { jpegThumbnail: tumb })
      gbutsan = [{ buttonId: '.info', buttonText: { displayText: '🛰 INFO' }, type: 1 }, { buttonId: '.owner', buttonText: { displayText: '🎋 CREADOR' }, type: 1 }]
      gbuttonan = { locationMessage: menux.message.locationMessage, contentText: text.trim(), footerText: '  Lolibot - OFC', buttons: gbutsan, headerType: 6 }
      await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [m.sender, ownernum], forwardingScore: 750, isForwarded: true }, quoted: m })
