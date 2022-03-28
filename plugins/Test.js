@@ -12,7 +12,9 @@ let tol = conn.prepareMessageFromContent(m.chat, {
                                         jpegThumbnail: tumbb,
                                         productId: false
                                     },
-                                    productSections: false
+                                    productSections: [
+                                        { products: [{ productId: false }], title: 'a' }
+                                    ]
                                 },
                                 buttonText: "Hello",
                                 description: false,
