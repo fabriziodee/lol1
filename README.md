@@ -20,12 +20,12 @@
    </p>
 </h1>
 
-<div align="center">
+<p align="center">
 <details>
  <summary>💌</summary>
 💌 Lobita & Gatito 💫
 </details>
-</div>
+</p>
 
 ---------
 
