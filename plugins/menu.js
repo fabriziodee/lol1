@@ -7,6 +7,8 @@ let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let ownernum = "51940617554@s.whatsapp.net"
+let emoji ["", "", "", "", ""]
+let rmoji = emoji[Math.floor(Math.random() * emoji.length)]
 let tags = {
   'main': 'Menu 🍟',
   'rpg': 'Juego - RPG ⚔️',
