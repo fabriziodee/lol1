@@ -18,13 +18,15 @@
         <a href="#"><img title="MANTENIMIENTO" src="https://img.shields.io/badge/MANTENIMIENTO-SI-blue.svg"</a>
         <img title="Peso" src="https://img.shields.io/github/repo-size/g4tito/lolibot" /> <br>
    </p>
+</h1>
 
 
+<div align="center">
 <details>
  <summary>💌</summary>
 💌 Lobita & Gatito 💫
 </details>
-</h1>
+</div>
 
 ---------
 
