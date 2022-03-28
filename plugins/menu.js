@@ -8,7 +8,6 @@ let path = require('path')
 let levelling = require('../lib/levelling')
 let ownernum = "51940617554@s.whatsapp.net"
 let emoji = ["🐋", "🍅", "🥮", "🏵️", "⛲", "🐤"]
-let rmoji = emoji[Math.floor(Math.random() * emoji.length)]
 let tags = {
   'main': 'Menu 🍟',
   'rpg': 'Juego - RPG ⚔️',
@@ -52,7 +51,7 @@ Hola *@%user*, %greeting
 
 `.trimStart(),
   header: '     _*%category*_',
-  body: '∙•⃝⃕' + rmoji + ' *%cmd* %islimit %isPremium',
+  body: '∙•⃝⃕%rmoji *%cmd* %islimit %isPremium',
   footer: '╶',
   after: "*lolibot-ofc@^0.9.8*\n```Customizable WhatsApp Bot```",
 }
@@ -140,6 +139,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     ].join('\n')
     text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
     biot = await conn.getStatus(`${m.sender.split('@')[0]}@c.us`)
+    ramoji = emoji[Math.floor(Math.random() * emoji.length)]
     let replace = {
       '%': '%',
       p: _p, uptime, muptime,
@@ -151,6 +151,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       version: conn.browserDescription[2],
       bio: biot.status == 401 ? 'Sin info' : biot.status,
       greeting: saludo,
+      rmoji: ramoji,
       npmname: package.name,
       npmdesc: package.description,
       version: package.version,
