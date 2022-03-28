@@ -42,7 +42,7 @@ case 'simple':
 
 case 'artículo':
 case 'articulo':
-      if (chat.menu == 1) return m.reply('Ya está cambiado el menu a *artículo*!')
+      if (chat.menu == 5) return m.reply('Ya está cambiado el menu a *artículo*!')
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.menu = 5
