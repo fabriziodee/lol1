@@ -22,10 +22,12 @@
 
 ---------
 
+<h1 align="center">
 <details>
  <summary>💌</summary>
 💌 Lobita & Gatito 💫
 </details>
+</h1>
 
 ---------
 
