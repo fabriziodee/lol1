@@ -12,7 +12,6 @@ let handler = async (m, { conn, usedPrefix }) => {
     let stone = (pickaxe == 1 ? Math.ceil(Math.random() * 200) : '' || pickaxe == 2 ? Math.ceil(Math.random() * 250) : '' || pickaxe == 3 ? Math.ceil(Math.random() * 300) : '' || pickaxe == 4 ? Math.ceil(Math.random() * 350) : '' || pickaxe == 5 ? Math.ceil(Math.random() * 500) : '' )
     let exp = (pickaxe == 1 ? Math.ceil(Math.random() * 200) : '' || pickaxe == 2 ? Math.ceil(Math.random() * 400) : '' || pickaxe == 3 ? Math.ceil(Math.random() * 600) : '' || pickaxe == 4 ? Math.ceil(Math.random() * 800) : '' || pickaxe == 5 ? Math.ceil(Math.random() * 1000) : '' )
     let durability = Math.floor(Math.random() * 100)
-    let exp = (Math.floor(Math.random() * 200) + (pickaxe * 70))
     let goa = (pickRandom(['una cueva 🏔', 'un volcan 🌋', 'jupiter 🪨', 'saturno 🪐']))
     
     if (pickaxe > 0) {
