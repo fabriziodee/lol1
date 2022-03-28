@@ -40,7 +40,7 @@
 > 2 celulares
 > Un buen internet
 ```
-- Descɑrgɑ termux dɑndo clic [ɑqui](https://f-droid.org/repo/com.termux_117.apk)
+- Descɑrgɑ termux dɑndo clic [ɑqui](https://f-droid.org/repo/com.termux_118.apk)
 
 ---------
 
