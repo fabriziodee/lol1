@@ -43,6 +43,12 @@ module.exports = {
             if (!isNumber(user.wood)) user.wood = 0
             if (!isNumber(user.stone)) user.stone = 0
             
+            //Minerales
+            if (!isNumber(user.diamond)) user.diamond = 0
+            if (!isNumber(user.gold)) user.gold = 0
+            if (!isNumber(user.iron)) user.iron = 0
+            if (!isNumber(user.stone)) user.stone = 0
+            
 
             if (!'banned' in user) user.banned = false
             if (!'bannedReason' in user) user.bannedReason = ''
@@ -79,7 +85,10 @@ module.exports = {
             lastclaim: 0,
             coins: 0,
             potion: 0,
-            wood: 0,
+            diamond: 0,
+            gold: 0,
+            iron: 0,
+            stone: 0,
             Banneduser: false,
             BannedReason: '',
             warn: 0,
