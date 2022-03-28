@@ -5,16 +5,12 @@ let user = global.DATABASE._data.users[m.sender]
 let type = (args[0] || ' ').toLowerCase()
 
 switch (type) {
-case 'localización':
-case 'localizacion':
-case 'locatión':
-case 'location':
-case 'loc':
-      if (chat.menu == 1) return m.reply('Ya está cambiado el menu a *localización*!')
+case 'producto':
+      if (chat.menu == 1) return m.reply('Ya está cambiado el menu a *producto*!')
       if (!m.isGroup) return global.dfail('group', m, conn)
       if (!isOwner) return global.dfail('owner', m, conn)
       chat.menu = 1
-      m.reply('Se cambió el menu a *localización*!')
+      m.reply('Se cambió el menu a *producto*!')
       break
 
 case 'imagen':
@@ -44,6 +40,15 @@ case 'simple':
       m.reply('Se cambió el menu a *simple*!')
       break
 
+case 'artículo':
+case 'articulo':
+      if (chat.menu == 1) return m.reply('Ya está cambiado el menu a *artículo*!')
+      if (!m.isGroup) return global.dfail('group', m, conn)
+      if (!isOwner) return global.dfail('owner', m, conn)
+      chat.menu = 5
+      m.reply('Se cambió el menu a *artículo*!')
+      break
+
     default:
 let opc = `
 *Ingrese un tipo de menú*
@@ -51,7 +56,8 @@ let opc = `
 - Ejemplo: ${usedPrefix + command} simple
 
 *Tipos de menús:*
-- Localización
+- Articulo
+- Producto
 - Imagen
 - Documento
 - Simple
