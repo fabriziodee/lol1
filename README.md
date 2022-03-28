@@ -21,6 +21,7 @@
 </h1>
 
 ---------
+
 ## <img src="https://i0.wp.com/i230.photobucket.com/albums/ee124/joaclint/joaclint_istgud/ruedas.gif" width="35px"> Herrɑmientɑs
 
 ```bash
@@ -33,6 +34,7 @@
 - Descɑrgɑ termux dɑndo clic [ɑqui](https://f-droid.org/repo/com.termux_117.apk)
 
 ---------
+
 ## <img src="https://66.media.tumblr.com/28bc44b5eed41b8a0b7829231bd684ad/tumblr_mszoapVuPz1rfjowdo1_500.gif" width="40px"> Actuɑlizɑr
 
 - Desde termux
@@ -47,6 +49,7 @@
 ```
 
 ---------
+
 ## <img src="https://i.giphy.com/media/nWGRHBnAl5Kmc/giphy.gif" width="40px"> Instɑlɑción en [termux](https://f-droid.org/repo/com.termux_117.apk)
 
 ```bash
@@ -111,7 +114,7 @@
 
 ---------
 
-## <img src="https://raw.githubusercontent.com/vilcajoal/vilcajoal/master/assets/octocat-anime.gif" width="42px"> Github Stɑts
+## <img src="https://raw.githubusercontent.com/vilcajoal/vilcajoal/master/assets/octocat-anime.gif" width="44px"> Github Stɑts
 
 ![github stats](https://github-readme-stats.vercel.app/api?username=g4tito&show_icons=true&theme=chartreuse-dark)
 ![github toplang](https://github-readme-stats.vercel.app/api/top-langs/?username=g4tito&layout=compact&theme=chartreuse-dark)
