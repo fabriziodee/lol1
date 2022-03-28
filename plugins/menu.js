@@ -39,10 +39,7 @@ let tags = {
   '': 'Sin - categoría 🏵️',
 }
 const defaultMenu = {
-  before: `
-*꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷꒦꒷꒦꒷꒦꒷*
-
-Hola *@%user*, %greeting
+  before: `Hola *@%user*, %greeting
 
 *• 💫 Tu info:* %bio
 
