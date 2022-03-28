@@ -164,7 +164,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
      imeg = await conn.prepareMessage(m.chat, tumbb, 'imageMessage')
      imeu = imeg.message.imageMessage
      conn.relayWAMessage(await conn.prepareMessageFromContent(m.chat, {productMessage: { businessOwnerJid: '51940617554@s.whatsapp.net', product: { productId: '750', productImage:imeu, title: '💌 Lobita & Gatito 💫', description: text.trim(), currencyCode: 'IDR', priceAmount1000: '2022', retailerId: '750', url: 'Lolibot - OFC', productImageCount: 1, salePriceAmount1000: '7.8000', } } }, { quoted: m contextInfo: { mentionedJid: [m.sender, ownernum] } }))
-     } else if (chatp.menu == 2) {
+     } else if (chatp.menu == 5) {
      let listMessage = { "title": "💌 Lobita & Gatito 💫", "description": text.trim(), "listType": "PRODUCT_LIST", "productListInfo": { "productSections": [ { "title": "Lolibot - OFC", "products": [ { "productId": "4632867223392342" } ] } ], "headerImage": { "productId": "4632867223392342", "jpegThumbnail": tumbb }, "businessOwnerJid": "380944182435@s.whatsapp.net" }, "footerText": "Lolibot - OFC" }
      conn.sendMessage(m.chat, listMessage, 'listMessage', { quoted: m, contextInfo: { mentionedJid: [m.sender, ownernum] }})
      } else if (chatp.menu == 2) {
