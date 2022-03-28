@@ -7,7 +7,7 @@ let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let ownernum = "51940617554@s.whatsapp.net"
-let emoji ["", "", "", "", ""]
+let emoji ["🐋", "🍅", "🥮", "🏵️", "⛲", "🐤"]
 let rmoji = emoji[Math.floor(Math.random() * emoji.length)]
 let tags = {
   'main': 'Menu 🍟',
@@ -52,7 +52,7 @@ Hola *@%user*, %greeting
 
 `.trimStart(),
   header: '     _*%category*_',
-  body: '∙•⃝⃕🐋 *%cmd* %islimit %isPremium',
+  body: '∙•⃝⃕' + rmoji + ' *%cmd* %islimit %isPremium',
   footer: '╶',
   after: "*lolibot-ofc@^0.9.8*\n```Customizable WhatsApp Bot```",
 }
