@@ -16,10 +16,9 @@
         <a href="https://github.com/g4tito/lolibot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/g4tito/lolibot?label=Watchers&color=blue&style=flat-square"></a>
         <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fg4tito%2Flolibot&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Support&edge_flat=false"/></a>
         <a href="#"><img title="MANTENIMIENTO" src="https://img.shields.io/badge/MANTENIMIENTO-SI-blue.svg"</a>
-        <img title="Peso" src="https://img.shields.io/github/repo-size/IndonesianDev/whatsapp-bot" /> <br>
+        <a img title="Peso" src="https://img.shields.io/github/repo-size/IndonesianDev/whatsapp-bot" /> <br>
    </p>
 </h1>
-![GitHub repo size](https://img.shields.io/github/repo-size/BotsAppOfficial/BotsApp)
 
 ---------
 ## <img src="https://i0.wp.com/i230.photobucket.com/albums/ee124/joaclint/joaclint_istgud/ruedas.gif" width="35px"> Herrɑmientɑs
