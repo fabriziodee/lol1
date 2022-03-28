@@ -4,24 +4,25 @@ let fs = require ('fs')
 let handler = async (m, { conn, text, command, usedPrefix }) => {
 let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
 //Test
-imeg = await conn.prepareMessage(m.chat, tumbb, 'imageMessage')
-imeu = imeg.message.imageMessage
-conn.relayWAMessage(await conn.prepareMessageFromContent(m.chat, {productMessage: {
-businessOwnerJid: '51940617554@s.whatsapp.net',
-product: {
-productId: '1011',
-productImage:imeu,
-title: 'HALO SAYA SELFBOT',
-description:  `Silahkan Ketik #menu`,
-currencyCode: 'IDR',
-priceAmount1000: '10000000',
-retailerId: '0507',
-url: 'https://wa.me/51940617554',
-productImageCount: 1,
-salePriceAmount1000: '7.8000',
-}
-}
-}, { quoted: m }))
+let tol = conn.prepareMessageFromContent(m.chat, {
+                            listMessage: {
+                                productListInfo: {
+                                    businessOwnerJid: "62882993109058@s.whatsapp.net",
+                                    headerImage: {
+                                        jpegThumbnail: tumbb,
+                                        productId: "5896288457111763"
+                                    },
+                                    productSections: [
+                                        { products: [{productId: "5896288457111763"}], title: 'a' }
+                                    ]
+                                },
+                                buttonText: "Hello",
+                                description: `Test`,
+                                footerText: "b",
+                                listType: 2
+                            }
+                        }, {});
+                        await conn.relayWAMessage(tol)
 
 }
 
