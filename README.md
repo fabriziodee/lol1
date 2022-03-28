@@ -111,7 +111,7 @@
 
 ---------
 
-## <img src="https://raw.githubusercontent.com/vilcajoal/vilcajoal/master/assets/octocat-anime.gif" width="40px"> Github Stɑts
+## <img src="https://raw.githubusercontent.com/vilcajoal/vilcajoal/master/assets/octocat-anime.gif" width="42px"> Github Stɑts
 
 ![github stats](https://github-readme-stats.vercel.app/api?username=g4tito&show_icons=true&theme=chartreuse-dark)
 ![github toplang](https://github-readme-stats.vercel.app/api/top-langs/?username=g4tito&layout=compact&theme=chartreuse-dark)
