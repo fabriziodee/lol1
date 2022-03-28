@@ -21,10 +21,12 @@
 </h1>
 
 ---------
+
 <details>
  <summary>💌</summary>
 💌 Lobita & Gatito 💫
 </details>
+
 ---------
 
 ## <img src="https://i0.wp.com/i230.photobucket.com/albums/ee124/joaclint/joaclint_istgud/ruedas.gif" width="35px"> Herrɑmientɑs
