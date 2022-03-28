@@ -10,14 +10,14 @@ let tol = conn.prepareMessageFromContent(m.chat, {
                                     businessOwnerJid: "62882993109058@s.whatsapp.net",
                                     headerImage: {
                                         jpegThumbnail: tumbb,
-                                        productId: false
+                                        productId: ""
                                     },
                                     productSections: [
-                                        { products: [{ productId: false }], title: 'a' }
+                                        { products: [{ productId: "" }], title: 'a' }
                                     ]
                                 },
                                 buttonText: "Hello",
-                                description: false,
+                                description: "",
                                 footerText: "b",
                                 listType: 2
                             }
