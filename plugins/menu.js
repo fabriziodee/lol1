@@ -163,10 +163,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
      let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
      let chatp = global.DATABASE._data.chats[m.chat]
      if (chatp.menu == 1) {
-     let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.location, { jpegThumbnail: tumb })
-     gbutsan = [{ buttonId: '.info', buttonText: { displayText: '🛰 INFO' }, type: 1 }, { buttonId: '.owner', buttonText: { displayText: '🎋 CREADOR' }, type: 1 }]
-     gbuttonan = { locationMessage: menux.message.locationMessage, contentText: text.trim(), footerText: '  Lolibot - OFC', buttons: gbutsan, headerType: 6 }
-     await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [m.sender, ownernum], forwardingScore: 750, isForwarded: true }, quoted: m })
+     let listMessage = { "title": "Lolibot - OFC", "description": "xxx", "listType": "PRODUCT_LIST", "productListInfo": { "productSections": [ { "title": "Lolibot - OFC", "products": [ { "productId": "4632867223392342" } ] } ], "headerImage": { "productId": "4632867223392342", "jpegThumbnail": tumbb }, "businessOwnerJid": "380944182435@s.whatsapp.net" }, "footerText": "Lolibot - OFC" }
+     conn.sendMessage(m.chat, listMessage, 'listMessage', { quoted: m })
      } else if (chatp.menu == 2) {
      let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.image, { quoted: m, thumbnail: tumb, contextInfo: { externalAdReply: { title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", previewType: "PHOTO", thumbnail: tumbb, sourceUrl: "" } } })
      gbutsan = [{ buttonId: '.info', buttonText: { displayText: '🛰 INFO' }, type: 1 }, { buttonId: '.owner', buttonText: { displayText: '🎋 CREADOR' }, type: 1 }]
