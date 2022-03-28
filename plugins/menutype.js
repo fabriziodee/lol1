@@ -5,8 +5,8 @@ let user = global.DATABASE._data.users[m.sender]
 let type = (args[0] || ' ').toLowerCase()
 
 switch (type) {
-case 'localización:
-case 'localizacion:
+case 'localización':
+case 'localizacion':
 case 'locatión':
 case 'location':
 case 'loc':
