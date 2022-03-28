@@ -20,8 +20,6 @@
    </p>
 </h1>
 
----------
-
 <div align="center">
 <details>
  <summary>💌</summary>
