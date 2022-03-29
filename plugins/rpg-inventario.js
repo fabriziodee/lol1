@@ -66,7 +66,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 *∙ 💵 Dinero:* ${money}
 *∙ 📈 Nivel:* ${level}
-*∙ ✨ Exp:* ${user.exp - min}/${exp}
+*∙ ✨ Exp:* ${exp}
+*∙ ✨ Exp nivel:* ${user.exp - min}/${max}
 
 *∙ ⛏️ Pico:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'Pico de madera' : '' || pickaxe == 2 ? 'Pico de piedra' : '' || pickaxe == 3 ? 'Pico de hierro' : '' || pickaxe == 4 ? 'Pico de oro' : '' || pickaxe == 5 ? 'Pico de diamante': ''}
 *∙ ↪️ Durabilidad:* ${pdurability}
