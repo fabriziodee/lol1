@@ -33,7 +33,6 @@ module.exports = {
             if (!isNumber(user.limit)) user.limit = 10
             if (!isNumber(user.money)) user.money = 0
             if (!isNumber(user.lastclaim)) user.lastclaim = 0
-            if (!isNumber(user.money)) user.coin = 0
         
             if (!isNumber(user.potion)) user.potion = 0
             if (!isNumber(user.wood)) user.wood = 0
@@ -49,6 +48,11 @@ module.exports = {
             if (!isNumber(user.jungle)) user.jungle = 0
             if (!isNumber(user.birch)) user.birch = 0
             if (!isNumber(user.oak)) user.oak = 0
+            
+            //Peces
+            if (!isNumber(user.blowfish)) user.blowfish = 0
+            if (!isNumber(user.tropicalfish)) user.tropicalfish = 0
+            if (!isNumber(user.commonfish)) user.commonfish = 0
 
             if (!'banned' in user) user.banned = false
             if (!'bannedReason' in user) user.bannedReason = ''
@@ -64,10 +68,13 @@ module.exports = {
             if (!isNumber(user.axedurability)) user.axedurability = 0
             if (!isNumber(user.pickaxe)) user.pickaxe = 0
             if (!isNumber(user.pickaxedurability)) user.pickaxedurability = 0
+            if (!isNumber(user.rod)) user.rod = 0
+            if (!isNumber(user.roddurability)) user.roddurability = 0
 
             if (!isNumber(user.energy)) user.energy = 0
             if (!isNumber(user.lastmining)) user.lastmining = 0
             if (!isNumber(user.lastcut)) user.lastcut = 0
+            if (!isNumber(user.lastfishing)) user.lastfishing = 0
             if (!('registered' in user)) user.registered = false
             if (!user.registered) {
                 if (!('name' in user)) user.name = this.getName(m.sender)
@@ -82,7 +89,6 @@ module.exports = {
             limit: 10,
             money: 0,
             lastclaim: 0,
-            coins: 0,
             potion: 0,
             diamond: 0,
             gold: 0,
@@ -91,6 +97,9 @@ module.exports = {
             jungle: 0,
             birch: 0,
             oak: 0,
+            blowfish: 0,
+            tropicalfish: 0,
+            commonfish: 0,
             Banneduser: false,
             BannedReason: '',
             warn: 0,
@@ -102,9 +111,12 @@ module.exports = {
             axedurability: 0,
             pickaxe: 0,
             pickaxedurability: 0,
+            rod: 0,
+            roddurability: 0,
             energy: 0,
             lastmining: 0,
             lastcut: 0,
+            lastfishing: 0,
             registered: false,
             name: this.getName(m.sender),
             age: -1,
