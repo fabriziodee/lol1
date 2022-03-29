@@ -1,3 +1,6 @@
+let { MessageType, MentionedJid } = require("@adiwajshing/baileys")
+let fs = require('fs')
+
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
 
 let chat = global.DATABASE._data.chats[m.chat]
@@ -36,7 +39,7 @@ let shop = `
 *[${user.money >= pickaxe ? '✅' : '✖️'}] Pico de ${cpickaxe}:*  $${pickaxe}
 *[${user.money >= axe ? '✅' : '✖️'}] Hacha de ${caxe}:*  $${axe}
 `.trim()
-return conn.reply(m.chat, shop, text, { quoted: m, contextInfo: { externalAdReply:{title: '∙•⃝⃕🛍️ 𝗧𝗜𝗘𝗡𝗗𝗔 𝗥𝗣𝗚 🛍️⃝⃕・∙', previewType:"PHOTO",thumbnail: shoprpg, sourceUrl:``}}})
+return conn.reply(m.chat, shop, MessageType.text, { quoted: m, contextInfo: { externalAdReply:{title: '∙•⃝⃕🛍️ 𝗧𝗜𝗘𝗡𝗗𝗔 𝗥𝗣𝗚 🛍️⃝⃕・∙', previewType:"PHOTO",thumbnail: shoprpg, sourceUrl:``}}})
   }
 }
 
