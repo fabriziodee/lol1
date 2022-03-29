@@ -24,7 +24,7 @@ try {
 			conn.reply(m.chat, `*[ ✅ ] ÓRDENES RECIBIDAS*`, m)
 	}	
 }
-handler.help = ['*593xxx*','*@usuario*','*responder chat*'].map(v => 'promote ' + v)
+handler.help = ['promote']
 handler.tags = ['group']
 handler.command = /^(promote|daradmin|admin|darpoder)$/i
 handler.owner = false
