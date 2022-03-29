@@ -27,7 +27,7 @@ global.DATABASE._data.users[m.sender].exp += exp * 1
           setTimeout(() => {
           	m.reply(`*Talaste en ${goa} y obtienes*
 
-- Roble: ${oak}
+- Madera: ${oak}
 - Exp: ${exp}
 
 *🪓 Durabilidad:* -${durability}`)
