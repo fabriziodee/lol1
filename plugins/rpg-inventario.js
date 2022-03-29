@@ -26,10 +26,12 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let oak = global.DATABASE._data.users[who].oak
     
     //Peces
-    let blowfish = global.DATABASE._data.users[m.sender].blowfish
-    let tropicalfish = global.DATABASE._data.users[m.sender].tropicalfish
-    let commonfish = global.DATABASE._data.users[m.sender].commonfish
+    let blowfish = global.DATABASE._data.users[who].blowfish
+    let tropicalfish = global.DATABASE._data.users[who].tropicalfish
+    let commonfish = global.DATABASE._data.users[who].commonfish
     
+    let chest = global.DATABASE._data.users[who].chest
+
     let level = global.DATABASE._data.users[who].level
     let money = global.DATABASE._data.users[who].money
     let exp = global.DATABASE._data.users[who].exp
@@ -86,6 +88,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 🐠 Pez tropical:* ${tropicalfish}
 *∙ 🐡 Pez globo:* ${blowfish}
 *∙ 🐟 Pez comun:* ${commonfish}
+
+*∙ 🧰 Cofre:* ${chest}
 
 *∙ 🍱 Total inv:* ${diamond + gold + iron + stone + oak + blowfish + tropicalfish + commonfish} items`
 
