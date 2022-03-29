@@ -63,6 +63,10 @@ Inventario de @${who.split("@s.whatsapp.net")[0]}
 
 *∙ ♥️ Vida:* ${healt}
 
+*∙ 💵 Dinero:* ${money}
+*∙ 📈 Nivel:* ${level}
+*∙ ✨ Exp:* ${exp}
+
 *∙ ⛏️ Pico:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'Pico de madera' : '' || pickaxe == 2 ? 'Pico de piedra' : '' || pickaxe == 3 ? 'Pico de hierro' : '' || pickaxe == 4 ? 'Pico de oro' : '' || pickaxe == 5 ? 'Pico de diamante': ''}
 *∙ ↪️ Durabilidad:* ${pdurability}
 
@@ -72,11 +76,7 @@ Inventario de @${who.split("@s.whatsapp.net")[0]}
 *∙ 🎣 Caña:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'Caña normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : ''}
 *∙ ↪️ Durabilidad:* ${rdurability}
 
-*∙ 💵 Dinero:* ${money}
-*∙ 📈 Nivel:* ${level}
-*∙ ✨ Exp:* ${exp}
-
-\t\t\t*• 🎒 INVENTARIO 🎒 • *
+\t\t\t*• 🎒 INVENTARIO 🎒 •*
 
 *∙ 💎 Diamante:* ${diamond}
 *∙ 🪙 Oro:* ${gold}
