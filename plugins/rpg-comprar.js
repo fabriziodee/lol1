@@ -14,6 +14,7 @@ let _axe = global.DATABASE._data.users[m.sender].axe
 let axe = (_axe == 0 ? 20000 : '' || _axe == 1 ? 49999 : '' || _axe == 2 ? 99999 : '' || _axe == 3 ? 149999 : '' || _axe == 4 ? 299999 : '')
 let caxe = (_axe == 0 ? 'madera' : '' || _axe == 1 ? 'piedra' : '' || _axe == 2 ? 'hierro' : '' || _axe == 3 ? 'oro' : '' || _axe == 4 ? 'diamante' : '')
 
+let imgshop = fs.readFileSync('./storage/image/shop.png')
 
 let type = (args[0] || ' ').toLowerCase()
 
@@ -39,7 +40,7 @@ let shop = `
 *[${user.money >= pickaxe ? '✅' : '✖️'}] Pico de ${cpickaxe}:*  $${pickaxe}
 *[${user.money >= axe ? '✅' : '✖️'}] Hacha de ${caxe}:*  $${axe}
 `.trim()
-return conn.reply(m.chat, shop, MessageType.text, { quoted: m, contextInfo: { externalAdReply:{title: '∙•⃝⃕🛍️ 𝗧𝗜𝗘𝗡𝗗𝗔 𝗥𝗣𝗚 🛍️⃝⃕・∙', previewType:"PHOTO",thumbnail: shoprpg, sourceUrl:``}}})
+return conn.reply(m.chat, shop, MessageType.text, { quoted: m, contextInfo: { externalAdReply:{title: '∙•⃝⃕🛍️ 𝗧𝗜𝗘𝗡𝗗𝗔 𝗥𝗣𝗚 🛍️⃝⃕・∙', previewType:"PHOTO",thumbnail: imgshop, sourceUrl:``}}})
   }
 }
 
