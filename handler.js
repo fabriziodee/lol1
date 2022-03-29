@@ -27,15 +27,11 @@ module.exports = {
         let user = global.DATABASE._data.users[m.sender]
         if (typeof user !== 'object') global.DATABASE._data.users[m.sender] = {}
         if (user) {
-        	if (!isNumber(user.rpg)) user.rpg = 0
-            if (!isNumber(user.mob)) user.mob = 0
-            if (!isNumber(user.hmob)) user.hmob = 0
-            if (!isNumber(user.map)) user.map = 0
-            
             if (!isNumber(user.healt)) user.healt = 0
             if (!isNumber(user.level)) user.level = 0
             if (!isNumber(user.exp)) user.exp = 0
             if (!isNumber(user.limit)) user.limit = 10
+            if (!isNumber(user.money)) user.money = 0
             if (!isNumber(user.lastclaim)) user.lastclaim = 0
             if (!isNumber(user.money)) user.coin = 0
         
@@ -80,13 +76,11 @@ module.exports = {
             }
             if (!('autolevelup' in user)) user.autolevelup = true
         } else global.DATABASE._data.users[m.sender] = {
-        	rpg: 0,
-            mob: 0,
-            hmob: 0,
             healt: 100,
             level: 0,
             exp: 0,
             limit: 10,
+            money: 0,
             lastclaim: 0,
             coins: 0,
             potion: 0,
