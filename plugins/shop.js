@@ -381,8 +381,8 @@ ${usedPrefix}shop sell basura 10
     }
 }
 
-handler.help = ['shop']
+handler.help = ['shopxxx']
 handler.tags = ['rpg']
     
-handler.command = /^(shop|toko|buy|beli|sell|jual)$/i
+handler.command = /^(shopxxx)$/i
 module.exports = handler
