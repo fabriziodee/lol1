@@ -10,7 +10,7 @@ let user = global.DATABASE._data.users[m.sender]
 
 let type = (args[0] || ' ').toLowerCase()
 
-const count = args[2] && args[2].length > 0 ? Math.min(99999999, Math.max(parseInt(args[2]), 1)) : !args[2] || args.length < 4 ? 1 :Math.min(1, count)
+const count = args[1] && args[1].length > 0 ? Math.min(99999999, Math.max(parseInt(args[1]), 1)) : !args[1] || args.length < 3 ? 1 : Math.min(1, count)
 
 switch (type) {
 case 'diamante':
