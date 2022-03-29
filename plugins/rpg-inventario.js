@@ -11,6 +11,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let pdurability = global.DATABASE._data.users[who].pickaxedurability
     let axe = global.DATABASE._data.users[who].axe
     let adurability = global.DATABASE._data.users[who].axedurability
+    let rod = global.DATABASE._data.users[m.sender].rod
+    let rdurability = global.DATABASE._data.users[m.sender].roddurability
     
     //Minerales
     let diamond = global.DATABASE._data.users[who].diamond
@@ -22,6 +24,11 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let jungle = global.DATABASE._data.users[who].jungle
     let birch = global.DATABASE._data.users[who].birch
     let oak = global.DATABASE._data.users[who].oak
+    
+    //Peces
+    let blowfish = global.DATABASE._data.users[m.sender].blowfish
+    let tropicalfish = global.DATABASE._data.users[m.sender].tropicalfish
+    let commonfish = global.DATABASE._data.users[m.sender].commonfish
     
     let level = global.DATABASE._data.users[who].level
     let money = global.DATABASE._data.users[who].money
@@ -56,8 +63,10 @@ Inventario de @${who.split("@s.whatsapp.net")[0]}
 *• ♥️ Vida:* ${healt}
 *• ⛏️ Pico:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'Pico de madera' : '' || pickaxe == 2 ? 'Pico de piedra' : '' || pickaxe == 3 ? 'Pico de hierro' : '' || pickaxe == 4 ? 'Pico de oro' : '' || pickaxe == 5 ? 'Pico de diamante': ''}
 *• ↪️ Durabilidad:* ${pdurability}
-*• 🪓 Hacha:* ${axe == 0 ? 'No tiene' : '' || axe == 1 ? 'Hacha de madera' : '' || pickaxe == 2 ? 'Hacha de piedra' : '' || pickaxe == 3 ? 'Hacha de hierro' : '' || pickaxe == 4 ? 'Hacha de oro' : '' || pickaxe == 5 ? 'Hacha de diamante' : ''}
+*• 🪓 Hacha:* ${axe == 0 ? 'No tiene' : '' || axe == 1 ? 'Hacha de madera' : '' || axe == 2 ? 'Hacha de piedra' : '' || axe == 3 ? 'Hacha de hierro' : '' || axe == 4 ? 'Hacha de oro' : '' || axe == 5 ? 'Hacha de diamante' : ''}
 *• ↪️ Durabilidad:* ${adurability}
+*• 🪓 Caña:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'Caña normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : ''}
+*• ↪️ Durabilidad:* ${rdurability}
 
 *• 💵 Dinero:* ${money}
 *• 📈 Nivel:* ${level}
@@ -69,7 +78,10 @@ Inventario de @${who.split("@s.whatsapp.net")[0]}
 *• 🔩 Hierro:* ${iron}
 *• 🪨 Piedra:* ${stone}
 *• 🪵 Madera:* ${oak}
-*• 🎒 Total inv:* ${diamond + gold + iron + stone + oak} items
+*• 🐠 Pez tropical:* ${tropicalfish}
+*• 🐡 Pez globo:* ${blowfish}
+*• 🐟 Pez comun:* ${commonfish}
+*• 🎒 Total inv:* ${diamond + gold + iron + stone + oak + blowfish + tropicalfish + commonfish} items
 `.trim()
 
     let type = (args[0] || ' ').toLowerCase()
