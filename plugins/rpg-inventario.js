@@ -56,7 +56,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let usersmythic = sortedmythic.map(v => v[0])
     let userslegendary = sortedlegendary.map(v => v[0])
     let invt = fs.readFileSync('./storage/image/inventario.png')
-    let str = `\t\t\t*• 📊 ESTADO 📊 •*
+    let str = `\t\t\t*• 📨 ESTADO 📨 •*
 
 *∙ 👤 Nombre:* @${who.split("@s.whatsapp.net")[0]}
 *∙ ♥️ Vida:* ${healt}
@@ -87,7 +87,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 🐡 Pez globo:* ${blowfish}
 *∙ 🐟 Pez comun:* ${commonfish}
 
-*∙ 🎒 Total inv:* ${diamond + gold + iron + stone + oak + blowfish + tropicalfish + commonfish} items`
+*∙ 🍱 Total inv:* ${diamond + gold + iron + stone + oak + blowfish + tropicalfish + commonfish} items`
 
     let type = (args[0] || ' ').toLowerCase()
     
