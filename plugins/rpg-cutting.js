@@ -28,8 +28,6 @@ global.DATABASE._data.users[m.sender].exp += exp * 1
           	m.reply(`*Talaste en ${goa} y obtienes*
 
 - Roble: ${oak}
-- Abedul: ${birch}
-- Jungla: ${jungle}
 - Exp: ${exp}
 
 *🪓 Durabilidad:* -${durability}`)
@@ -39,6 +37,12 @@ global.DATABASE._data.users[m.sender].exp += exp * 1
          } else m.reply(`Repara tu hacha, escribiendo ${usedPrefix}reparar hacha`)
      } else m.reply(`Todavía no tienes una hacha, compralo escribiendo ${usedPrefix}comprar hacha`)
  }
+
+//Update
+//- Roble: ${oak}
+//- Abedul: ${birch}
+//- Jungla: ${jungle}
+//- Exp: ${exp}
 
 handler.help = ['talar']
 handler.tags = ['rpg']
