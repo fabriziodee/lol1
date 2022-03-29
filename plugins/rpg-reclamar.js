@@ -6,21 +6,18 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let _timers = (cooldown - __timers)
     let timers = clockString(_timers)
     if (new Date - user.lastclaim > cooldown) {
-        conn.reply(m.chat, `Has reclamado 1000 de dinero y una pocion`, m)
+        conn.reply(m.chat, 'Has reclamado 1000 de dinero y un cofre!', m)
+        global.DATABASE._data.users[m.sender].wood += 1
         global.DATABASE._data.users[m.sender].money += 1000
-        global.DATABASE._data.users[m.sender].potion += 1
         global.DATABASE._data.users[m.sender].lastclaim = new Date * 1
     } else {
-        let buttons = button(`Espere *${timers}* para volver a reclamar`, user)
-        conn.sendMessage(m.chat, buttons, MessageType.buttonsMessage, { quoted: m })
+        conn.sendMessage(m.chat, 'Espere *' + timers + '* para volver a reclamar', MessageType.text, { quoted: m })
     }
 }
 
-
-
-handler.help = ['daily']
+handler.help = ['reclamar']
 handler.tags = ['rpg']
-handler.command = /^(claim|daily)$/i
+handler.command = /^(reclamar|claim|daily)$/i
 
 handler.cooldown = cooldown
 
@@ -38,26 +35,3 @@ function clockString(seconds) {
   sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " Segundos") : "";
   return dDisplay + hDisplay + mDisplay + sDisplay;
 };
-
-function button(teks, user) {
-    const buttons = []
-
-    let claim = new Date - user.lastclaim > 86400000
-    let monthly = new Date - user.lastmonthly > 2592000000
-    let weekly = new Date - user.lastweekly > 604800000
-    console.log({ claim, monthly, weekly })
-
-    if (monthly) buttons.push({ buttonId: `.monthly`, buttonText: { displayText: 'Reclamo del mes 🎑' }, type: 1 })
-    if (weekly) buttons.push({ buttonId: `.weekly`, buttonText: { displayText: '🎁 Reclamo de la semana' }, type: 1 })
-    if (claim) buttons.push({ buttonId: `.daily`, buttonText: { displayText: 'Reclamo del día 🌤️' }, type: 1 })
-    if (buttons.length == 0) throw teks
-
-    const buttonMessage = {
-        contentText: teks,
-        footerText: 'Lolibot - OFC',
-        buttons: buttons,
-        headerType: 1
-    }
-
-    return buttonMessage
-}
