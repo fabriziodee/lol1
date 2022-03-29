@@ -43,7 +43,7 @@ global.DATABASE._data.users[m.sender].exp += exp * 1
      } else m.reply(`Todavía no tienes un pico, compralo escribiendo ${usedPrefix}comprar pico`)
  }
 
-handler.help = ['mining']
+handler.help = ['minar']
 handler.tags = ['rpg']
 
 handler.command = /^(mining|minar)$/i
