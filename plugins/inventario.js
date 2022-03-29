@@ -1,7 +1,7 @@
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys")
 let fs = require('fs')
 let levelling = require('../lib/levelling')
-let handler = async (m, { conn, text, usedPrefix, command }) => {
+let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 	
 	let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 	
