@@ -39,8 +39,8 @@ global.DATABASE._data.users[m.sender].exp += exp * 1
           }, 0)
           
             } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
-         } else m.reply(`Repara tu pico, escribiendo ${usedPrefix}shop up pico`)
-     } else m.reply(`Todavía no tienes un pico, compralo escribiendo ${usedPrefix}shop buy pico`)
+         } else m.reply(`Repara tu pico, escribiendo ${usedPrefix}reparar pico`)
+     } else m.reply(`Todavía no tienes un pico, compralo escribiendo ${usedPrefix}comprar pico`)
  }
 
 handler.help = ['mining']
