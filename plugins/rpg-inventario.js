@@ -59,29 +59,37 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let str = `
 Inventario de @${who.split("@s.whatsapp.net")[0]}
 
-     *ESTADO*
-*• ♥️ Vida:* ${healt}
-*• ⛏️ Pico:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'Pico de madera' : '' || pickaxe == 2 ? 'Pico de piedra' : '' || pickaxe == 3 ? 'Pico de hierro' : '' || pickaxe == 4 ? 'Pico de oro' : '' || pickaxe == 5 ? 'Pico de diamante': ''}
-*• ↪️ Durabilidad:* ${pdurability}
-*• 🪓 Hacha:* ${axe == 0 ? 'No tiene' : '' || axe == 1 ? 'Hacha de madera' : '' || axe == 2 ? 'Hacha de piedra' : '' || axe == 3 ? 'Hacha de hierro' : '' || axe == 4 ? 'Hacha de oro' : '' || axe == 5 ? 'Hacha de diamante' : ''}
-*• ↪️ Durabilidad:* ${adurability}
-*• 🪓 Caña:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'Caña normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : ''}
-*• ↪️ Durabilidad:* ${rdurability}
+\t\t\t*• 📊 ESTADO 📊 •*
 
-*• 💵 Dinero:* ${money}
-*• 📈 Nivel:* ${level}
-*• ✨ Exp:* ${exp}
+*∙ ♥️ Vida:* ${healt}
 
-     *INVENTARIO*
-*• 💎 Diamante:* ${diamond}
-*• 🪙 Oro:* ${gold}
-*• 🔩 Hierro:* ${iron}
-*• 🪨 Piedra:* ${stone}
-*• 🪵 Madera:* ${oak}
-*• 🐠 Pez tropical:* ${tropicalfish}
-*• 🐡 Pez globo:* ${blowfish}
-*• 🐟 Pez comun:* ${commonfish}
-*• 🎒 Total inv:* ${diamond + gold + iron + stone + oak + blowfish + tropicalfish + commonfish} items
+*∙ ⛏️ Pico:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'Pico de madera' : '' || pickaxe == 2 ? 'Pico de piedra' : '' || pickaxe == 3 ? 'Pico de hierro' : '' || pickaxe == 4 ? 'Pico de oro' : '' || pickaxe == 5 ? 'Pico de diamante': ''}
+*∙ ↪️ Durabilidad:* ${pdurability}
+
+*∙ 🪓 Hacha:* ${axe == 0 ? 'No tiene' : '' || axe == 1 ? 'Hacha de madera' : '' || axe == 2 ? 'Hacha de piedra' : '' || axe == 3 ? 'Hacha de hierro' : '' || axe == 4 ? 'Hacha de oro' : '' || axe == 5 ? 'Hacha de diamante' : ''}
+*∙ ↪️ Durabilidad:* ${adurability}
+
+*∙ 🎣 Caña:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'Caña normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : ''}
+*∙ ↪️ Durabilidad:* ${rdurability}
+
+*∙ 💵 Dinero:* ${money}
+*∙ 📈 Nivel:* ${level}
+*∙ ✨ Exp:* ${exp}
+
+\t\t\t*• 🎒 INVENTARIO 🎒 • *
+
+*∙ 💎 Diamante:* ${diamond}
+*∙ 🪙 Oro:* ${gold}
+*∙ 🔩 Hierro:* ${iron}
+*∙ 🪨 Piedra:* ${stone}
+
+*∙ 🪵 Madera:* ${oak}
+
+*∙ 🐠 Pez tropical:* ${tropicalfish}
+*∙ 🐡 Pez globo:* ${blowfish}
+*∙ 🐟 Pez comun:* ${commonfish}
+
+*∙ 🎒 Total inv:* ${diamond + gold + iron + stone + oak + blowfish + tropicalfish + commonfish} items
 `.trim()
 
     let type = (args[0] || ' ').toLowerCase()
