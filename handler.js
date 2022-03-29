@@ -35,8 +35,7 @@ module.exports = {
             if (!isNumber(user.lastclaim)) user.lastclaim = 0
         
             if (!isNumber(user.potion)) user.potion = 0
-            if (!isNumber(user.wood)) user.wood = 0
-            if (!isNumber(user.stone)) user.stone = 0
+            if (!isNumber(user.chest)) user.chest = 0
             
             //Minerales
             if (!isNumber(user.diamond)) user.diamond = 0
@@ -89,6 +88,7 @@ module.exports = {
             limit: 10,
             money: 0,
             lastclaim: 0,
+            chest: 0,
             potion: 0,
             diamond: 0,
             gold: 0,
