@@ -20,19 +20,23 @@ let type = (args[0] || ' ').toLowerCase()
 
 switch (type) {
 case 'pico':
-      if (chat.welcome) return m.reply('La *bienvenida* ya está *activado* en este grupo!')
-      if (!m.isGroup) return global.dfail('group', m, conn)
-      if (!isOwner) return global.dfail('owner', m, conn)
-      chat.welcome = true
-      m.reply('Se activó la *bienvenida* en este grupo!')
+      if (global.DATABASE._data.users[m.sender].pickaxe == 5) return conn.reply(m.chat, 'Tu pico esta al nivel máximo', m)
+      if (global.DATABASE._data.users[m.sender].money > pickaxe * 1) {
+      	global.DATABASE._data.users[m.sender].pickaxe += 1
+          global.DATABASE._data.users[m.sender].pickaxedurability += ( 0 ? 500 : '' || 1 ? 1000 : '' || 2 ? 1500 : '' || 3 ? 2000 : '' || 4 ? 2500 : '' || 5 ? 3000 : '')
+          global.DATABASE._data.users[m.sender].money -= pickaxe * 1
+          conn.reply(m.chat, 'Compraste un pico por ' + pickaxe + ' de dinero' ,m)
+           } else conn.reply(m.chat, 'Tu dinero no es suficiente para comprar un pico que cuesta ' + pickaxe + ' de dinero', m)
       break
 
 case 'hacha':
-      if (chat.antilink) return m.reply('La función *anti-enlace* ya está *activado* en este grupo!')
-      if (!m.isGroup) return global.dfail('group', m, conn)
-      if (!isOwner) return global.dfail('owner', m, conn)
-      chat.antilink = true
-      m.reply('Se activó la función *anti-enlace* en este grupo!')
+      if (global.DATABASE._data.users[m.sender].axe == 5) return conn.reply(m.chat, 'Tu hacha esta al nivel máximo', m)
+      if (global.DATABASE._data.users[m.sender].money > pickaxe * 1) {
+      	global.DATABASE._data.users[m.sender].axe += 1
+          global.DATABASE._data.users[m.sender].axedurability += ( 0 ? 500 : '' || 1 ? 1000 : '' || 2 ? 1500 : '' || 3 ? 2000 : '' || 4 ? 2500 : '' || 5 ? 3000 : '')
+          global.DATABASE._data.users[m.sender].money -= pickaxe * 1
+          conn.reply(m.chat, 'Compraste una hacha por ' + pickaxe + ' de dinero' ,m)
+           } else conn.reply(m.chat, 'Tu dinero no es suficiente para comprar una hacha que cuesta ' + pickaxe + ' de dinero', m)
       break
 
     default:
