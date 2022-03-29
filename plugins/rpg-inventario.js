@@ -2,9 +2,10 @@ let { MessageType, mentionedJid } = require("@adiwajshing/baileys")
 let fs = require('fs')
 let levelling = require('../lib/levelling')
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
-	
+
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-	
+    let user = global.DATABASE._data.users[who]
+
     let healt = global.DATABASE._data.users[who].healt
     
     let pickaxe = global.DATABASE._data.users[who].pickaxe
@@ -65,7 +66,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 *∙ 💵 Dinero:* ${money}
 *∙ 📈 Nivel:* ${level}
-*∙ ✨ Exp:* ${exp}
+*∙ ✨ Exp:* ${user.exp - min}/${exp}
 
 *∙ ⛏️ Pico:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'Pico de madera' : '' || pickaxe == 2 ? 'Pico de piedra' : '' || pickaxe == 3 ? 'Pico de hierro' : '' || pickaxe == 4 ? 'Pico de oro' : '' || pickaxe == 5 ? 'Pico de diamante': ''}
 *∙ ↪️ Durabilidad:* ${pdurability}
