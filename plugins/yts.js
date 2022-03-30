@@ -22,6 +22,6 @@ ${v.videoCount} video
 
 handler.help = ['ytsearch']
 handler.tags = ['internet']
-handler.command = /^(yts|ytsearch)?$/i
+handler.command = /^(yts|ytsearch)$/i
 
 module.exports = handler
