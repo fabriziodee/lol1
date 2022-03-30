@@ -1,12 +1,12 @@
-let fetch = require('node-fetch')
+let axios = require("axios")
 
-let handler  = async (m, { conn, usedPrefix, command }) => {
+let handler = async (m, { conn, usedPrefix, command }) => {
 let chat = global.DATABASE.data.chats[m.chat]
 if (chat.nsfw) {
 conn.reply(m.chat, wait, m)
-heum = await fetch(`https://server-api-rey.herokuapp.com/api/nsfw/cum?apikey=apirey`)
-json = await heum.buffer()
-conn.sendFile(m.chat, json, 'cum', '*CUM*', m)
+let res = await axios("https://api.waifu.pics/nsfw/cum")
+let json = res.data
+conn.sendFile(m.chat, json.url, 'cum', '*CUM*', m)
 } else m.reply('En este grupo no se permite el contenido +18')
 }
 
