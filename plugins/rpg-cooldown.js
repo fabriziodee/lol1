@@ -24,18 +24,18 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let fishing = clockString(_fishing)
     
 let cd = `
-*[${user.lastclaim == 0 ? '✅' : '✖️'}] Reclamar 🧰*
-*∙ ╰* ${user.lastclaim == 0 ? 'Ya puedes reclamar': `${claim}`}
+*[${user.lastclaim <= 0 ? '✅' : '✖️'}] Reclamar 🧰*
+*∙ ╰* ${user.lastclaim <= 0 ? 'Ya puedes reclamar': `${claim}`}
 
-*[${user.lastmining == 0 ? '✅' : '✖️'}] Minar ⛏️*
-*∙ ╰* ${user.lastmining == 0 ? 'Ya puedes minar' : `${mining}`}
+*[${user.lastmining <= 0 ? '✅' : '✖️'}] Minar ⛏️*
+*∙ ╰* ${user.lastmining <= 0 ? 'Ya puedes minar' : `${mining}`}
 
-*[${user.lastcutting == 0 ? '✅' : '✖️'}] Talar 🪓*
-*∙ ╰* ${user.lastcutting == 0 ? 'Ya puedes talar' : `${cutting}`}
+*[${user.lastcutting <= 0 ? '✅' : '✖️'}] Talar 🪓*
+*∙ ╰* ${user.lastcutting <= 0 ? 'Ya puedes talar' : `${cutting}`}
 
-*[${user.lastclaim == 0 ? '✅' : '✖️'}] Pescar 🎣*
-*∙ ╰* ${user.lastfishing == 0 ? 'Ya puedes pescar' : `${fishing}`}
-`
+*[${user.lastclaim <= 0 ? '✅' : '✖️'}] Pescar 🎣*
+*∙ ╰* ${user.lastfishing <= 0 ? 'Ya puedes pescar' : `${fishing}`}
+`.trim()
 conn.sendMessage(m.chat, cd, MessageType.text, { quoted: m})
 }
 
