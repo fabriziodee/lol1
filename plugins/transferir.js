@@ -167,9 +167,9 @@ let handler = async (m, { conn, args, usedPrefix, command, DevMode }) => {
     }
 }
     
-handler.help = ['transferir']
-handler.tags = ['rpg']
-handler.command = /^(transfer|transferir)$/i
+//handler.help = ['transferir']
+//handler.tags = ['rpg']
+handler.command = /^(transferirxxx)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
