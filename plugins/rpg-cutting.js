@@ -3,7 +3,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 	let user = global.DATABASE._data.users[m.sender]
 	let axe = global.DATABASE._data.users[m.sender].axe
 	let adurability = global.DATABASE._data.users[m.sender].axedurability
-    let __waktur = (new Date - global.DATABASE._data.users[m.sender].lastcut)
+    let __waktur = (new Date - global.DATABASE._data.users[m.sender].cutting)
     let _waktur = (180000 - __waktur)
     let waktur = clockString(_waktur)
     let jungle = (axe == 1 ? Math.floor(Math.random() * 5) : '' || axe == 2 ? Math.floor(Math.random() * 7) : '' || axe == 3 ? Math.floor(Math.random() * 10) : '' || axe == 4 ? Math.floor(Math.random() * 20) : '' || axe == 5 ? Math.floor(Math.random() * 30) : '' )
@@ -15,7 +15,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     
     if (axe > 0) {
     if (global.DATABASE._data.users[m.sender].axedurability > 99) {
-    if (new Date - global.DATABASE._data.users[m.sender].lastcut > 180000) {
+    if (new Date - global.DATABASE._data.users[m.sender].cutting > 180000) {
        
 global.DATABASE._data.users[m.sender].lastcut = new Date * 1
 //global.DATABASE._data.users[m.sender].jungle += jungle * 1 
