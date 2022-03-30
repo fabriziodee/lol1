@@ -54,11 +54,16 @@ case 'caña':
       break
 
     default:
-let shop = `
+let shop = `\t\t\t*• 🗓️ INFO 🗓️ •*
+
+✖️ = No puedes comprar
+✅ = Ya puedes comprar
+
+\t\t\t*• 🏪 ITEMS 🏪 •*
+
 *[${user.money >= pickaxe ? '✅' : '✖️'}] Pico de ${cpickaxe}:*  $${pickaxe}
 *[${user.money >= axe ? '✅' : '✖️'}] Hacha de ${caxe}:*  $${axe}
-*[${user.money >= rod ? '✅' : '✖️'}] Caña ${crod}:*  $${rod}
-`.trim()
+*[${user.money >= rod ? '✅' : '✖️'}] Caña ${crod}:*  $${rod}`
 return conn.reply(m.chat, shop, MessageType.text, { quoted: m, contextInfo: { externalAdReply:{title: '∙•⃝⃕🛍️ 𝗧𝗜𝗘𝗡𝗗𝗔 𝗥𝗣𝗚 🛍️⃝⃕・∙', previewType:"PHOTO",thumbnail: imgshop, sourceUrl:``}}})
   }
 }
