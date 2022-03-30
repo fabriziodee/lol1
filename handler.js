@@ -143,7 +143,7 @@ module.exports = {
           if (!('sBye' in chat)) chat.sBye = ''
           if (!('sPromote' in chat)) chat.sPromote = ''
           if (!('sDemote' in chat)) chat.sDemote = ''
-          if (!('menu' in chat)) chat.menu = 1
+          if (!('menu' in chat)) chat.menu = 5
           if (!('delete' in chat)) chat.delete = false
           if (!('antidelete' in chat)) chat.antidelete = false
           if (!('antilink' in chat)) chat.antiLink = false
@@ -158,7 +158,7 @@ module.exports = {
           sBye: '',
           sPromote: '',
           sDemote: '',
-          menu: 1,
+          menu: 5,
           delete: false,
           antidelete: false,
           antilink: false,
