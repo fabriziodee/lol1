@@ -140,9 +140,9 @@ conn.reply(m.chat, '*Acabas de encontrar una Aldea!*\n\n- Será el fin del viaje
 }
 
 
-handler.help = ['explorar']
-handler.tags = ['rpg']
-handler.command = /^(aventura|adventure|explorar)$/i
+//handler.help = ['explorar']
+//handler.tags = ['rpg']
+handler.command = /^(explorarxxx)$/i
 
 module.exports = handler
 
