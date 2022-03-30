@@ -2,6 +2,14 @@ let { MessageType, MentionedJid } = require("@adiwajshing/baileys")
 let fs = require('fs')
 
 const Sdiamond = 750
+const Sgold = 350
+const Siron = 50
+const Sstone = 4
+const Soak = 5
+const Stropicalfish = 57
+const Xxx = Xxx
+const Xxx = Xxx
+const Xxx = Xxx
 
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
 
@@ -22,6 +30,48 @@ case 'diamantes':
           } else conn.reply(m.chat, 'No tienes suficientes diamantes para vender', m)
       break
 
+case 'oro':
+      if (global.DATABASE._data.users[m.sender].gold >= count * 1) {
+      	global.DATABASE._data.users[m.sender].gold -= count * 1
+      	global.DATABASE._data.users[m.sender].money += Sgold * count
+          conn.reply(m.chat, `Vendiste ${count} de oro por ${Sgold * count} de dinero`, m)
+          } else conn.reply(m.chat, 'No tienes suficiente oro, para vender', m)
+      break
+
+case 'hierro':
+      if (global.DATABASE._data.users[m.sender].iron >= count * 1) {
+      	global.DATABASE._data.users[m.sender].iron -= count * 1
+      	global.DATABASE._data.users[m.sender].money += Siron * count
+          conn.reply(m.chat, `Vendiste ${count} de hierro por ${Siron * count} de dinero`, m)
+          } else conn.reply(m.chat, 'No tienes suficiente hierro, para vender', m)
+      break
+
+case 'piedra':
+      if (global.DATABASE._data.users[m.sender].stone >= count * 1) {
+      	global.DATABASE._data.users[m.sender].stone -= count * 1
+      	global.DATABASE._data.users[m.sender].money += Sstone * count
+          conn.reply(m.chat, `Vendiste ${count} de piedra por ${Sstone * count} de dinero`, m)
+          } else conn.reply(m.chat, 'No tienes suficiente piedra, para vender', m)
+      break
+
+case 'madera':
+      if (global.DATABASE._data.users[m.sender].oak >= count * 1) {
+      	global.DATABASE._data.users[m.sender].oak -= count * 1
+      	global.DATABASE._data.users[m.sender].money += Soak * count
+          conn.reply(m.chat, `Vendiste ${count} de madera por ${Soak * count} de dinero`, m)
+          } else conn.reply(m.chat, 'No tienes suficiente madera, para vender', m)
+      break
+
+case 'pes tropical':
+case 'tropical':
+      if (global.DATABASE._data.users[m.sender].tropicalfish >= count * 1) {
+      	global.DATABASE._data.users[m.sender].tropicalfish -= count * 1
+      	global.DATABASE._data.users[m.sender].money += Stropicalfish * count
+          conn.reply(m.chat, `Vendiste ${count} peces tropical por ${Stropicalfish * count} de dinero`, m)
+          } else conn.reply(m.chat, 'No tienes suficientes peces tropicales, para vender', m)
+      break
+
+
     default:
 let sell = `
 *Que item quieres vender?*
@@ -30,6 +80,10 @@ let sell = `
 
 *Lista de items para vender*
 - Diamante
+- Oro
+- Hierro
+- Piedra
+- Pez tropical
 `.trim()
 return conn.reply(m.chat, sell, m)
   }
