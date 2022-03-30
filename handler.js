@@ -72,7 +72,7 @@ module.exports = {
 
             if (!isNumber(user.energy)) user.energy = 0
             if (!isNumber(user.lastmining)) user.lastmining = 0
-            if (!isNumber(user.lastcut)) user.lastcut = 0
+            if (!isNumber(user.lastcut)) user.lastcutting = 0
             if (!isNumber(user.lastfishing)) user.lastfishing = 0
             if (!('registered' in user)) user.registered = false
             if (!user.registered) {
@@ -115,7 +115,7 @@ module.exports = {
             roddurability: 0,
             energy: 0,
             lastmining: 0,
-            lastcut: 0,
+            lastcutting: 0,
             lastfishing: 0,
             registered: false,
             name: this.getName(m.sender),
