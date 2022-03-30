@@ -77,9 +77,9 @@ let handler = async (m, { conn, args, usedPrefix }) => {
             return conn.reply(m.chat, `*Ejemplo de uso:* ${usedPrefix}feed gato\n\nLista de mascotas :\n- zorro\n- lobo\n- gato`, m)
     }
 }
-handler.help = ['feed <mascota>']
-handler.tags = ['rpg']
-handler.command = /^(feed(ing)?)$/i
+//handler.help = ['feed <mascota>']
+//handler.tags = ['rpg']
+handler.command = /^(feedxxx)$/i
 
 module.exports = handler
 
