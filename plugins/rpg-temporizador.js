@@ -23,25 +23,25 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let _fishing = (fishingcd - __fishing)
     let fishing = clockString(_fishing)
     
-let cd = `
+let cd = `\t\t\t*‧ 🕰️ Temporizador 🕰️ ‧*
+
 *[${user.lastclaim <= 0 ? '✅' : '✖️'}] Reclamar 🧰*
-*∙ ╰* ${user.lastclaim <= 0 ? 'Ya puedes reclamar': `${claim}`}
+*∙ ╰➮* ${user.lastclaim <= 0 ? 'Ya puedes reclamar': `${claim}`}
 
 *[${user.lastmining <= 0 ? '✅' : '✖️'}] Minar ⛏️*
-*∙ ╰* ${user.lastmining <= 0 ? 'Ya puedes minar' : `${mining}`}
+*∙ ╰➮* ${user.lastmining <= 0 ? 'Ya puedes minar' : `${mining}`}
 
 *[${user.lastcutting <= 0 ? '✅' : '✖️'}] Talar 🪓*
-*∙ ╰* ${user.lastcutting <= 0 ? 'Ya puedes talar' : `${cutting}`}
+*∙ ╰➮* ${user.lastcutting <= 0 ? 'Ya puedes talar' : `${cutting}`}
 
 *[${user.lastfishing <= 0 ? '✅' : '✖️'}] Pescar 🎣*
-*∙ ╰* ${user.lastfishing <= 0 ? 'Ya puedes pescar' : `${fishing}`}
-`.trim()
+*∙ ╰➮* ${user.lastfishing <= 0 ? 'Ya puedes pescar' : `${fishing}`}`
 conn.sendMessage(m.chat, cd, MessageType.text, { quoted: m})
 }
 
-handler.help = ['cd']
+handler.help = ['temporizador']
 handler.tags = ['rpg']
-handler.command = /^(cd)$/i
+handler.command = /^(temporizador|cd)$/i
 
 module.exports = handler
 
