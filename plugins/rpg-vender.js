@@ -7,9 +7,7 @@ const Siron = 50
 const Sstone = 4
 const Soak = 5
 const Stropicalfish = 57
-const Xxx = Xxx
-const Xxx = Xxx
-const Xxx = Xxx
+const Sxx = 750
 
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
 
