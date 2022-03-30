@@ -62,7 +62,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let latensi = speed() - timestamp
     
     let d = new Date(new Date + 3600000)
-    let locale = 'es-PE'
+    let locale = "es-PE"
     // d.getTimeZoneOffset()
     // Offset -420 is 18.00
     // Offset    0 is  0.00
@@ -84,6 +84,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       minute: 'numeric',
       second: 'numeric'
     })
+
     let _uptime = process.uptime() * 1000
     let _muptime
     if (process.send) {
