@@ -33,7 +33,7 @@ let cd = `
 *[${user.lastcutting <= 0 ? '✅' : '✖️'}] Talar 🪓*
 *∙ ╰* ${user.lastcutting <= 0 ? 'Ya puedes talar' : `${cutting}`}
 
-*[${user.lastclaim <= 0 ? '✅' : '✖️'}] Pescar 🎣*
+*[${user.lastfishing <= 0 ? '✅' : '✖️'}] Pescar 🎣*
 *∙ ╰* ${user.lastfishing <= 0 ? 'Ya puedes pescar' : `${fishing}`}
 `.trim()
 conn.sendMessage(m.chat, cd, MessageType.text, { quoted: m})
