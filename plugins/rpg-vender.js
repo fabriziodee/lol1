@@ -79,7 +79,7 @@ case 'globo':
       	global.DATABASE._data.users[m.sender].blowfish -= _count * 1
       	global.DATABASE._data.users[m.sender].money += Sblowfish * _count
           conn.reply(m.chat, `Vendiste ${_count} peces tropical por ${Sblowfish * _count} de dinero`, m)
-          } else conn.reply(m.chat, 'No tienes suficientes peces tropicales, para vender', m)
+          } else conn.reply(m.chat, 'No tienes suficientes peces globos, para vender', m)
       break
       
 case 'comun':
@@ -87,7 +87,7 @@ case 'comun':
       	global.DATABASE._data.users[m.sender].commonfish -= _count * 1
       	global.DATABASE._data.users[m.sender].money += Scommonfish * _count
           conn.reply(m.chat, `Vendiste ${_count} peces tropical por ${Scommonfish * _count} de dinero`, m)
-          } else conn.reply(m.chat, 'No tienes suficientes peces tropicales, para vender', m)
+          } else conn.reply(m.chat, 'No tienes suficientes peces comunes, para vender', m)
       break
       
       }
