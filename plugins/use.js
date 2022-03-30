@@ -65,9 +65,9 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) =>  {
     }
 }
 
-handler.help = ['use']
-handler.tags = ['rpg']
-handler.command = /^(use|heal|usar)$/i
+//handler.help = ['use']
+//handler.tags = ['rpg']
+handler.command = /^(usarxxx)$/i
 
 module.exports = handler
 
