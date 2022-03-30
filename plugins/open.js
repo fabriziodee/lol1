@@ -659,9 +659,8 @@ ${lm3 > 0 ? `\n- Dinero: ${lm3}` : ''}${le3 > 0 ? `\n- Exp: ${le3}` : ''}${ld3 >
     }
   }
 }
-handler.help = ['open']
-handler.tags = ['rpg']
-handler.command = /^(open|buka|abrir)$/i
+
+handler.command = /^(openxxx)$/i
 
 handler.fail = null
 
