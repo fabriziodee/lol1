@@ -22,20 +22,20 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let __fishing  = (new Date - user.lastfishing)
     let _fishing = (fishingcd - __fishing)
     let fishing = clockString(_fishing)
-    
+
 let cd = `\t\t\t*‧ 🕰️ Temporizador 🕰️ ‧*
 
-*[${user.lastclaim <= 0 ? '✅' : '✖️'}] Reclamar 🧰*
-*∙ ╰➮* ${user.lastclaim <= 0 ? 'Ya puedes reclamar': `${claim}`}
+*[${new Date - user.lastclaim > 86400000 ? '✅' : '✖️'}] Reclamar 🧰*
+*∙ ╰➮* ${new Date - user.lastclaim > 86400000 ? 'Ya puedes reclamar': `${claim}`}
 
-*[${user.lastmining <= 0 ? '✅' : '✖️'}] Minar ⛏️*
-*∙ ╰➮* ${user.lastmining <= 0 ? 'Ya puedes minar' : `${mining}`}
+*[${new Date - user.lastmining > 180000 ? '✅' : '✖️'}] Minar ⛏️*
+*∙ ╰➮* ${new Date - user.lastmining > 180000 ? 'Ya puedes minar' : `${mining}`}
 
-*[${user.lastcutting <= 0 ? '✅' : '✖️'}] Talar 🪓*
-*∙ ╰➮* ${user.lastcutting <= 0 ? 'Ya puedes talar' : `${cutting}`}
+*[${new Date - user.lastcutting > 180000 ? '✅' : '✖️'}] Talar 🪓*
+*∙ ╰➮* ${new Date - user.lastcutting <= 180000 ? 'Ya puedes talar' : `${cutting}`}
 
-*[${user.lastfishing <= 0 ? '✅' : '✖️'}] Pescar 🎣*
-*∙ ╰➮* ${user.lastfishing <= 0 ? 'Ya puedes pescar' : `${fishing}`}`
+*[${new Date - user.lastfishing > 180000 ? '✅' : '✖️'}] Pescar 🎣*
+*∙ ╰➮* ${new Date - user.lastfishing > 180000 ? 'Ya puedes pescar' : `${fishing}`}`
 conn.sendMessage(m.chat, cd, MessageType.text, { quoted: m})
 }
 
