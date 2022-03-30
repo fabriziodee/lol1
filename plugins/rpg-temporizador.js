@@ -32,7 +32,7 @@ let cd = `\t\t\t*‧ 🕰️ Temporizador 🕰️ ‧*
 *∙ ╰➮* ${new Date - user.lastmining > 180000 ? 'Ya puedes minar' : `${mining}`}
 
 *[${new Date - user.lastcutting > 180000 ? '✅' : '✖️'}] Talar 🪓*
-*∙ ╰➮* ${new Date - user.lastcutting <= 180000 ? 'Ya puedes talar' : `${cutting}`}
+*∙ ╰➮* ${new Date - user.lastcutting > 180000 ? 'Ya puedes talar' : `${cutting}`}
 
 *[${new Date - user.lastfishing > 180000 ? '✅' : '✖️'}] Pescar 🎣*
 *∙ ╰➮* ${new Date - user.lastfishing > 180000 ? 'Ya puedes pescar' : `${fishing}`}`
