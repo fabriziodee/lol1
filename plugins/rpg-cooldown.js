@@ -28,13 +28,13 @@ let cd = `
 *∙ ╰* ${user.lastclaim == 0 ? 'Ya puedes reclamar': `${claim}`}
 
 *[${user.lastmining == 0 ? '✅' : '✖️'}] Minar ⛏️*
-*∙ ╰* ${lastmining == 0 ? 'Ya puedes minar' : `${mining}`}
+*∙ ╰* ${user.lastmining == 0 ? 'Ya puedes minar' : `${mining}`}
 
 *[${user.lastcutting == 0 ? '✅' : '✖️'}] Talar 🪓*
 *∙ ╰* ${user.lastcutting == 0 ? 'Ya puedes talar' : `${cutting}`}
 
 *[${user.lastclaim == 0 ? '✅' : '✖️'}] Pescar 🎣*
-*∙ ╰* ${lastclaim == 0 ? 'Ya puedes pescar' : `${claim}`}
+*∙ ╰* ${user.lastfishing == 0 ? 'Ya puedes pescar' : `${fishing}`}
 `
 conn.sendMessage(m.chat, cd, MessageType.text, { quoted: m})
 }
