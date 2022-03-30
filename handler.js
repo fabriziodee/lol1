@@ -62,7 +62,11 @@ module.exports = {
         
             if (!isNumber(user.antispam)) user.antispam = 0
             if (!isNumber(user.antispamlastclaim)) user.antispamlastclaim = 0
-
+            
+            if (!isNumber(user.armor)) user.armor = 0
+            if (!isNumber(user.armordurability)) user.armordurability = 0
+            if (!isNumber(user.sword)) user.sword = 0
+            if (!isNumber(user.sworddurability)) user.sworddurability = 0
             if (!isNumber(user.axe)) user.axe = 0
             if (!isNumber(user.axedurability)) user.axedurability = 0
             if (!isNumber(user.pickaxe)) user.pickaxe = 0
@@ -70,7 +74,7 @@ module.exports = {
             if (!isNumber(user.rod)) user.rod = 0
             if (!isNumber(user.roddurability)) user.roddurability = 0
 
-            if (!isNumber(user.energy)) user.energy = 0
+            if (!isNumber(user.energy)) user.lastadventure = 0
             if (!isNumber(user.lastmining)) user.lastmining = 0
             if (!isNumber(user.lastcut)) user.lastcutting = 0
             if (!isNumber(user.lastfishing)) user.lastfishing = 0
@@ -107,13 +111,17 @@ module.exports = {
             afkReason: '',
             antispam: 0,
             antispamlastclaim: 0,
+            armor: 0,
+            armordurability: 0,
+            sword: 0,
+            sworddurability: 0,
             axe: 0,
             axedurability: 0,
             pickaxe: 0,
             pickaxedurability: 0,
             rod: 0,
             roddurability: 0,
-            energy: 0,
+            lastadventure: 0,
             lastmining: 0,
             lastcutting: 0,
             lastfishing: 0,
