@@ -25,7 +25,7 @@ global.DATABASE._data.users[m.sender].roddurability -= durability * 1
 global.DATABASE._data.users[m.sender].exp += exp * 1
 
           setTimeout(() => {
-          	m.reply(`*Minaste en ${goa} y obtienes*
+          	m.reply(`*Pescaste en ${goa} y obtienes*
           
 - Pez globo: ${blowfish}
 - Pez tropical: ${tropicalfish}
