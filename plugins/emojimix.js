@@ -7,8 +7,7 @@ if (!args[0]) throw `*Ingrese dos emojis*\m\n- Ejemplo: ${usedPrefix + command} 
                 let anu = await (await fetch(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)).json()
 		let emix = anu.results[0].media_formats.png_transparent.url
                 m.reply(`${emix}`)
-		    let encmedia = await conn.sendImageAsSticker(m.chat, emix, m, { packname: global.packname, author: global.author, categories: res.tags })
-		    await fs.unlinkSync(encmedia)
+                conn.sendFile(m.chat, emix, 'emojimix', '', m)
 		
 }
 handler.help = ['emojimix']
