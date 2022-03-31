@@ -19,9 +19,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     })
 
 }
-handler.help = ['smeme']
-handler.tags = ['sticker']
-handler.command = /^(stickermeme|smeme|stickmeme)$/i
+//handler.help = ['smeme']
+//handler.tags = ['sticker']
+handler.command = /^(stickermemexxx|smemexxx|stickmemexxx)$/i
 
 handler.limit = 1
 
