@@ -4,32 +4,7 @@ let fs = require ('fs')
 let handler = async (m, { conn, text, command, usedPrefix }) => {
 let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
 //Test
-let listMessage = {
-      "title": "Sewa Bot",
-      "description": "Sewa Bot",
-      "listType": "PRODUCT_LIST",
-      "productListInfo": {
-        "productSections": [
-          {
-            "title": "Sewa Bot",
-            "products": [
-              {
-                "productId": "4632867223392342"
-              }
-            ]
-          }
-        ],
-        "headerImage": {
-          "productId": "4632867223392342",
-          "jpegThumbnail": tumbb
-          },
-        "businessOwnerJid": "380944182435@s.whatsapp.net"
-      },
-      "footerText": "Rikka-Bot By @caliph91_"
-    }
-  
-
- conn.sendMessage(m.chat, listMessage, 'listMessage', { quoted: m })
+conn.sendMessage(from, 'Test', MessageType.text, { quoted: { id: "F5D54EDF35F5DFA26A3E67FF8C96F578" }, thumbnail : tumbb })
 }
 
 handler.help = ['test']
