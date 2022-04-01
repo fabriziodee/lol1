@@ -431,7 +431,7 @@ ${global.owner.map((v, i) => '*Contacto ' + (i + 1) + ':* wa.me/' + v).join('\n'
               text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Hola 😙, *@user*\n───────────────────\n*🎊Bienvenido/a al grupo* :\n@subject\n\n• *Descripción* :\n\n@desc').replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc) :
                 (chat.sBye || this.bye || conn.bye || '@user un gay salio del grupo')).replace('@user', '@' + user.split('@')[0])
               let ppp = await(await fetch(pp)).buffer()
-              let py = await this.prepareMessage(jid, ppp, MessageType.image, {thumbnail: false, contextInfo: { externalAdReply:{title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: lolisg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}}})
+              let py = await this.prepareMessage(jid, ppp, MessageType.image, {contextInfo: { externalAdReply:{title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: lolisg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}}})
               let gbutsan = [ {buttonId: 'qqq', buttonText: {displayText: [[action === 'add' ? 'Gracias 🧃' : 'Adios 👋']]}, type: 1} ]
               let gbuttonan = { imageMessage: py.message.imageMessage, contentText: text, footerText: [[action === 'add' ? "```– anu.action == 'add' –```": "```– anu.action == 'remove' –```"]], buttons: gbutsan, headerType: 4 }
               this.sendMessage(jid, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [user] } })
