@@ -4,17 +4,8 @@ let fs = require ('fs')
 let handler = async (m, { conn, text, command, usedPrefix }) => {
 let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
 //Test
-yahaha = await conn.prepareMessageFromContent(m.chat, {
-orderMessage: {
-itemCount : "2022",
-//status: 1,
-surface: "750",
-message: "Test",
-orderTitle: 'Lolibot - OFC', 
-thumbnail: tumbb, 
-sellerJid: '0@s.whatsapp.net' 
-}}, {});
-conn.relayWAMessage(yahaha)
+let res = await conn.prepareMessageFromContent(m.chat ,{ "orderMessage": { "itemCount": 999999999, "message": 'Test', "footerText": "© lolibot", "jpegThumbnail": tumbb, "surface": 'CATALOG' }}, { quoted: m })
+conn.relayWAMessage(res)
 }
 
 handler.help = ['test']
