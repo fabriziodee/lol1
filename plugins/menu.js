@@ -47,9 +47,9 @@ const defaultMenu = {
  *• ⏱️ Hora:* %time
 
 `,
-  header: '       _*%category*_',
-  body: '  ∙•⃝⃕%rmoji *%cmd* %islimit %isPremium',
-  footer: '       ╶',
+  header: '\t\t_*%category*_',
+  body: '\t∙•⃝⃕%rmoji *%cmd* %islimit %isPremium',
+  footer: '\t╶',
   after: "",
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
