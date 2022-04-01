@@ -37,19 +37,19 @@ let tags = {
   '': 'Sin - categoría 🏵️',
 }
 const defaultMenu = {
-  before: ` Hola *@%user*, %greeting
+  before: `Hola *@%user*, %greeting
 
- *• 💫 Tu info:* %bio
+⠀ *• 💫 Tu info:* %bio
 
- *• 🐤 Nombre:* %name
- *• 📟 Número:* +%user
- *• 📆 Fecha:* %date
- *• ⏱️ Hora:* %time
+⠀ *• 🐤 Nombre:* %name
+⠀ *• 📟 Número:* +%user
+⠀ *• 📆 Fecha:* %date
+⠀ *• ⏱️ Hora:* %time
 
 `,
-  header: '\t\t _*%category*_',
-  body: '                   ∙•⃝⃕%rmoji *%cmd* %islimit %isPremium',
-  footer: '\t ╶',
+  header: '⠀⠀ _*%category*_',
+  body: '⠀ ∙•⃝⃕%rmoji *%cmd* %islimit %isPremium',
+  footer: '⠀ ╶',
   after: "",
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
