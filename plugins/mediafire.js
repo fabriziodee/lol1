@@ -1,8 +1,8 @@
-const { mediafireDl } = require('../lib/mediafire.js')
+const { mediafireDl } = require('./lib/mediafire.js')
 
 let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, command }) => {
 if (!text) return m.reply(`Kirim perintah ${usedPrefix + command} *link mediafire*`)
-if (!args[0].includes('mediafire.com')) return m.reply(error.linkmf)
+if (!args[0].includes('mediafire.com')) return m.reply(`Error`)
 let mdjon = args.join(' ')
 res = await mediafireDl(mdjon)
 result = `「 *MEDIAFIRE DOWNLOAD* 」
@@ -13,7 +13,7 @@ result = `「 *MEDIAFIRE DOWNLOAD* 」
 _Tunggu Proses Upload Media_`
 m.reply(result)
 
-conn.sendFile(m.chat, res[0].link, res[0].nama, null, m, false, {asDocument:true, mimetype:res[0].mime})
+conn.sendFile(m.chat, res[0].link, res[0].nama, null, m, false, { asDocument: true, mimetype: res[0].mime })
 }
 
 handler.help = ['mediafire']
