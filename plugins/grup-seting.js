@@ -1,23 +1,37 @@
 let { Presence, GroupSettingChange } = require('@adiwajshing/baileys')
-let handler  = async (m, { conn, args, usedPrefix, command }) => {
-	let isClose = { // Switch Case Like :v
-		'abierto': false,
-		'cerrado': true,
-                'abrir': false,
-		'cerrar': true,
-	}[(args[0] || '')]
-	await conn.updatePresence(m.chat, Presence.composing)
-	if (isClose === undefined)
-		throw `
-*[ ⚠ ️] Formato erróneo!!*
 
-*┏━━━❲ ✨Ejemplo✨ ❳━━━┓* 
-*┠┉↯ ${usedPrefix + command} abrir*
-*┠┉↯ ${usedPrefix + command} cerrar*
+let handler  = async (m, { conn, args, usedPrefix, command }) => {
+
+let type = (args[0] || ' ').toLowerCase()
+
+switch (type) {
+case 'abrir':
+case 'open':
+      conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, false)
+      m.reply('Grupo *abierto* ahora *todos los participantes* pueden escribir!')
+      break
+
+case 'cerrar':
+case 'close':
+      conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, true)
+      m.reply('Grupo *cerrado* ahora *solo los administradores/as* pueden escribir!')
+      break
+
+    default:
+let opc = `
+*Quiere abrir o cerrar el grupo?*
+
+*Abrir:*
+${usedPrefix + command} abrir 
+
+*Cerrar:*
+${usedPrefix + command} cerrar
 `.trim()
-	await conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, isClose)
-{m.reply('*Se realizó con exito✅*')}
+return m.reply(opc)
+  }
+
 }
+
 handler.command = /^(grupo)$/i
 handler.group = true
 handler.admin = true
