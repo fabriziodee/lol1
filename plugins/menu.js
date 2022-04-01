@@ -3,6 +3,7 @@ const {
 } = require("@adiwajshing/baileys");
 let fetch = require('node-fetch')
 let speed = require('performance-now')
+let PhoneNumber = require('awesome-phonenumber')
 let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
@@ -42,7 +43,7 @@ const defaultMenu = {
 ⠀ *• 💫 Tu info:* %bio
 
 ⠀ *• 🐤 Nombre:* %name
-⠀ *• 📟 Número:* +%user
+⠀ *• 📟 Número:* +%number
 ⠀ *• 📆 Fecha:* %date
 ⠀ *• ⏱️ Hora:* %time
 
@@ -141,7 +142,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let replace = {
       '%': '%',
       p: _p, uptime, muptime,
-      user: m.sender.split("@s.whatsapp.net")[0],
+      number, PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international'),
       ownum: ownernum.split("@s.whatsapp.net")[0],
       me: conn.user.name,
       server: conn.browserDescription[0],
