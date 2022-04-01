@@ -48,7 +48,7 @@ const defaultMenu = {
 
 `,
   header: '\t\t _*%category*_',
-  body: '\t ∙•⃝⃕%rmoji *%cmd* %islimit %isPremium',
+  body: '                   ∙•⃝⃕%rmoji *%cmd* %islimit %isPremium',
   footer: '\t ╶',
   after: "",
 }
