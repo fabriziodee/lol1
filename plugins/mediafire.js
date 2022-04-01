@@ -1,4 +1,4 @@
-let { mdfireDl } = require('../lib/mediafire.js')
+const { mdfireDl } = require('./lib/mediafire.js')
 
 let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, command }) => {
 if (!text) return m.reply(`Kirim perintah ${usedPrefix + command} *link mediafire*`)
