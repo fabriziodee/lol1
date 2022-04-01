@@ -10,7 +10,7 @@ let handler = async (m, { command, usedPrefix, text }) => {
 }
 handler.help = ['vn', 'msg', 'video', 'audio', 'img', 'sticker'].map(v => 'add' + v + '')
 handler.tags = ['database']
-handler.command = /^adf(vn|msg|video|audio|img|sticker)$/
+handler.command = /^add(vn|msg|video|audio|img|sticker)$/
 handler.rowner = true
 
 module.exports = handler
