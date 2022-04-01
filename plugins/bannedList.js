@@ -18,8 +18,8 @@ let handler = async (m, { conn, usedPrefix }) => {
 └────
 `.trim())
 }
-handler.help = ['bannedlist']
+handler.help = ['banlist']
 handler.tags = ['info']
-handler.command = /^listban(ned)?|ban(ned)?list|daftarban(ned)?$/i
+handler.command = /^(listban|bannedlist|banlist)$/i
 handler.rowner = true
 module.exports = handler
