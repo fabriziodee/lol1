@@ -4,14 +4,14 @@ let handler = async (m, { conn, usedPrefix }) => {
     
     m.reply(`
 ┌ *Lista de chats baneados*
-│ Total : ${chats.length} Chat${chats ? '\n' + chats.map(([jid], i) => `
+│ Total : ${chats.length} Chats${chats ? '\n' + chats.map(([jid], i) => `
 │ ${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
 │ ${jid}
 `.trim()).join('\n') : '│'}
 └────
 
 ┌ *Lista de usuarios baneados*
-│ Total : ${users.length} User${users ? '\n' + users.map(([jid], i) => `
+│ Total : ${users.length} Usuarios${users ? '\n' + users.map(([jid], i) => `
 │ ${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
 │ ${jid}
 `.trim()).join('\n') : '│'}
