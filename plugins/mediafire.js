@@ -1,35 +1,21 @@
 const axios = require('axios')
-const cheerio = require('cheerio')
-
-const mdfireDl = async (url) => {
-const res = await axios.get(url) 
-const $ = cheerio.load(res.data)
-const hasil = []
-const link = $('a#downloadButton').attr('href')
-const size = $('a#downloadButton').text().replace('Download', '').replace('(', '').replace(')', '').replace('\n', '').replace('\n', '').replace('                         ', '')
-const seplit = link.split('/')
-const nombre = seplit[5]
-mime = nombre.split('.')
-mime = mime[1]
-hasil.push({ nombre, mime, size, link })
-return hasil
-}
-
 
 let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, command }) => {
 if (!text) return m.reply(`Kirim perintah ${usedPrefix + command} *link mediafire*`)
 if (!args[0].includes('mediafire.com')) return m.reply(`Error`)
-let mdjon = args.join(' ')
-res = await mdfireDl(mdjon)
+let les = await axios.get(`https://api.lolhuman.xyz/api/mediafire?apikey=40cd5b6566bef10af1425f0f&url=${text}`)
+let result = les.result
 result = `「 *MEDIAFIRE DOWNLOAD* 」
+
 *Data Berhasil Didapatkan!*
-🆔 Nama : ${res[0].nama}
-📊 Ukuran : ${res[0].size}
-💬 Link : ${res[0].link}
+🆔 Nama : ${result.filename}
+📊 Ukuran : ${result.filesize}
+💬 Link : ${result.link}
+
 _Tunggu Proses Upload Media_`
 m.reply(result)
 
-conn.sendFile(m.chat, res[0].link, res[0].nama, null, m, false, { asDocument: true, mimetype: res[0].mime })
+conn.sendFile(m.chat, result.link, result.filename, null, m, false, { asDocument: true, mimetype: result.filetype })
 }
 
 handler.help = ['mediafire']
