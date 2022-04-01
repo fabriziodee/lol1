@@ -48,6 +48,9 @@ let audio13B = audio13A.exec(m.text)
 let audio14A = /puto bot|bot puto|pvto bot|bot pvto/i
 let audio14B = audio14A.exec(m.text)
 
+let audio15A = /A|ª/i
+let audio15B = audio15A.exec(m.text)
+
 
 if (audio1B) {
 	let vn = './storage/audio/Yamete_onii_chan.mp3'
@@ -118,6 +121,11 @@ if (audio13B) {
 if (audio14B) {
 	let vn = './storage/audio/Deje_de_insultarme.mp3'
 	conn.sendFile(m.chat, vn, 'Deje_de_insultarme.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+	}
+
+if (audio15B) {
+	let vn = './storage/audio/A.mp3'
+	conn.sendFile(m.chat, vn, 'A.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	}
 
 
