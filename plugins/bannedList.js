@@ -6,15 +6,13 @@ let handler = async (m, { conn, usedPrefix }) => {
 ┌ *Lista de chats baneados*
 │ Total : ${chats.length} Chats${chats ? '\n' + chats.map(([jid], i) => `
 │ ${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
-│ ${jid}
-`.trim()).join('\n') : '│'}
+│ ${jid}`.trim()).join('\n') : ''}
 └────
 
 ┌ *Lista de usuarios baneados*
 │ Total : ${users.length} Usuarios${users ? '\n' + users.map(([jid], i) => `
 │ ${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
-│ ${jid}
-`.trim()).join('\n') : '│'}
+│ ${jid}`.trim()).join('\n') : ''}
 └────
 `.trim())
 }
