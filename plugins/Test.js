@@ -13,7 +13,7 @@ message: "Test",
 orderTitle: 'MAMPUS', 
 sellerJid: '0@s.whatsapp.net' 
 }}, {});
-
+conn.relayWAMessage(yahaha)
 }
 
 handler.help = ['test']
