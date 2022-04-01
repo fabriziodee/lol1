@@ -15,7 +15,7 @@ result = `「 *MEDIAFIRE DOWNLOAD* 」
 _Tunggu Proses Upload Media_`
 m.reply(result)
 
-conn.sendFile(m.chat, result.link, result.filename, null, m, false, { asDocument: true, mimetype: result.filetype })
+conn.sendFile(m.chat, result.link, result.filename, null, m, false, { asDocument: true, mimetype: 'application/zip' })
 }
 
 handler.help = ['mediafire']
