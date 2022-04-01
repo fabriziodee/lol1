@@ -32,7 +32,7 @@ return m.reply(opc)
 
 }
 
-handler.command = /^(grupo)$/i
+handler.command = /^(grupo|group)$/i
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
