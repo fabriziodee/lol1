@@ -142,7 +142,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let replace = {
       '%': '%',
       p: _p, uptime, muptime,
-      number, PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international'),
+      number: PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international'),
       ownum: ownernum.split("@s.whatsapp.net")[0],
       me: conn.user.name,
       server: conn.browserDescription[0],
