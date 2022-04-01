@@ -49,7 +49,7 @@ const defaultMenu = {
 `,
   header: '       _*%category*_',
   body: '  ∙•⃝⃕%rmoji *%cmd* %islimit %isPremium',
-  footer: '  ╶',
+  footer: '       ╶',
   after: "",
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
