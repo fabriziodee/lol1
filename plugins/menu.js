@@ -37,20 +37,20 @@ let tags = {
   '': 'Sin - categoría 🏵️',
 }
 const defaultMenu = {
-  before: `Hola *@%user*, %greeting
+  before: ` Hola *@%user*, %greeting
 
-*• 💫 Tu info:* %bio
+ *• 💫 Tu info:* %bio
 
-*• 🐤 Nombre:* %name
-*• 📟 Número:* +%user
-*• 📆 Fecha:* %date
-*• ⏱️ Hora:* %time
+ *• 🐤 Nombre:* %name
+ *• 📟 Número:* +%user
+ *• 📆 Fecha:* %date
+ *• ⏱️ Hora:* %time
 
 `,
-  header: '     _*%category*_',
-  body: '∙•⃝⃕%rmoji *%cmd* %islimit %isPremium',
-  footer: '╶',
-  after: "*lolibot-ofc@^0.9.8*\n```Customizable WhatsApp Bot```",
+  header: '      _*%category*_',
+  body: ' ∙•⃝⃕%rmoji *%cmd* %islimit %isPremium',
+  footer: ' ╶',
+  after: "",
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
   try {
