@@ -4,16 +4,19 @@ let fs = require ('fs')
 let handler = async (m, { conn, text, command, usedPrefix }) => {
 let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
 //Test
-let res = await conn.prepareMessageFromContent(m.chat, {
-"orderMessage": {
-"itemCount": 2022, 
-"message": 'Test', 
-"footerText": "© lolibot", 
-"thumbnail": tumbb,
-"surface": 'CATALOG' 
-}}, { quoted: m })
+const templateButtons = [
+    {index: 1, urlButton: {displayText: '⭐ Star Baileys on GitHub!', url: 'https://github.com/adiwajshing/Baileys'}},
+    {index: 2, callButton: {displayText: 'Call me!', phoneNumber: '+1 (234) 5678-901'}},
+    {index: 3, quickReplyButton: {displayText: 'This is a reply, just like normal buttons!', id: 'id-like-buttons-message'}},
+]
 
-conn.relayWAMessage(res)
+const templateMessage = {
+    text: "Hi it's a template message",
+    footer: 'Hello World',
+    templateButtons: templateButtons
+}
+
+const sendMsg = await conn.sendMessage(m.chat, templateMessage)
 }
 
 handler.help = ['test']
