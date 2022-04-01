@@ -23,9 +23,9 @@ conn.sendFile(m.chat, dl_link, '', `
     return await conn.sendButton(m.chat, '*El servidor 1 fallo*\n\n*Quiere volver a intentarlo con otro servidor?*', '', 'VOLVER A INTENTAR', `${usedPrefix + command} ${args[0]}`)
   }
 }
-handler.help = ['mp4', 'v', ''].map(v => 'yt' + v + ` <url> [server: ${servers.join(', ')}]`)
+handler.help = ['ytmp4']
 handler.tags = ['downloader']
-handler.command = /^dlvid|dlyt2|dlvideo$/i
+handler.command = /^(ytmp4)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
