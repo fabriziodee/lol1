@@ -1,18 +1,18 @@
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+const { MessageType } = require("@adiwajshing/baileys");
 const { servers, yta, ytv } = require('../lib/y2mate')
 let yts = require('yt-search')
 let fetch = require('node-fetch')
+let isOnline = require('is-online')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `*✳️ Uhm.. que estas buscando?*\n*👉🏻 Ingrese un texto o enlace de YT*\n\n*✅ Ejemplo:*\n*${usedPrefix + command} Begin you*`
-//  let chat = global.db.data.chats[m.chat]
+  if (!text) throw `*Ingrese el nombre de la musica*\n\n- Ejemplo: ${usedPrefix + command} beliver`
+  let offline = await isOnline()
+  if (offline == false) return m.reply('Sin conexión a Internet :/')
   let results = await yts(text)
   let vid = results.all.find(video => video.seconds < 3600)
-  if (!vid) throw '*El video no se encontró, intente ingresar el nombre original de la canción o video*'
-  let isVideo = /2$/.test(command)
+  if (!vid) throw 'No se encontro el video/audio'
   let yt = false
   let yt2 = false
   let usedServer = servers[0]
-  m.reply('*⏳Procesando⏳*\n\n*[❗] Si no obtiene ningun resultado o le sale algun error intente con otro nombre*')
   for (let i in servers) {
     let server = servers[i]
     try {
@@ -21,20 +21,43 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       usedServer = server
       break
     } catch (e) {
-      m.reply(`*El servidor ${server} fallo!, reintentando con otro servidor*${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
+      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nPrueba con otro servidor...'}`)
     }
   }
-  if (yt === false) throw '*Todos los servidores fallaron*'
-  if (yt2 === false) throw '*Todos los servidores fallaron*'
+  if (yt === false) throw 'Todos los servidores fallaron'
+  if (yt2 === false) throw 'Todos los servidores fallaron'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
-  await conn.send2ButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
-*🔥 Titulo:* _${title}_
-*📂 Peso del audio:* _${filesizeF}_
-*📂 Peso del video:* _${yt2.filesizeF}_
-`.trim(), '©The Shadow Borkers - Bot', '🎵 AUDIO 💽 ', `.yta ${vid.url}`, '🎥 VIDEO 🎞️', `.yt ${vid.url}`)
+  let playtxt = `
+*< + DESCARGA DE YOUTUBE +/>*
+
+- 📝Título: ${title}
+- 📌Link: ${vid.url}
+- 📦Tamaño del audio: ${filesizeF}
+- 🗳️Tamaño del video: ${yt2.filesizeF}
+
+*Servidor y2mate:* ${usedServer}
+  `.trim()
+  py =  await conn.prepareMessage(m.chat, await (await fetch(thumb)).buffer(), MessageType.image)
+gbutsan = [
+{buttonId: `${usedPrefix}ytab ${vid.url}`, buttonText: {displayText: 'Audio 🔊'}, type: 1},
+{buttonId: `${usedPrefix}ytvb ${vid.url}`, buttonText: {displayText: 'Video 📽️'}, type: 1}
+]
+gbuttonan = {
+imageMessage: py.message.imageMessage,
+contentText: playtxt,
+footerText: 'Seleccione el formato de descarga',
+buttons: gbutsan,
+headerType: 4
 }
+await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { quoted: m })
+}
+handler.help = ['play', 'play2']
+handler.tags = ['downloader']
+handler.command = /^(play|play2)$/i
 
-
-handler.command = /^(ppppplay)$/i
+handler.exp = 0
 
 module.exports = handler
+
+
+
