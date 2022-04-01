@@ -7,10 +7,10 @@ let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
 yahaha = await conn.prepareMessageFromContent(m.chat, {
 orderMessage: {
 itemCount : "2022",
-status: 1,
-surface: 1,
+//status: 1,
+surface: "750",
 message: "Test",
-orderTitle: 'MAMPUS', 
+orderTitle: 'Lolibot - OFC', 
 thumbnail: tumbb, 
 sellerJid: '0@s.whatsapp.net' 
 }}, {});
