@@ -11,7 +11,7 @@ const Stropicalfish = 57
 const Sblowfish = 300
 const Scommonfish = 3
 
-let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
+let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
 
 let chat = global.DATABASE._data.chats[m.chat]
 let user = global.DATABASE._data.users[m.sender]
@@ -95,7 +95,8 @@ case 'comúnes':
           conn.reply(m.chat, `Vendiste ${_count} peces comunes por ${Scommonfish * _count} de dinero`, m)
           } else conn.reply(m.chat, 'No tienes suficientes peces comunes, para vender', m)
       break
-      
+    default:
+    return conn.reply(m.chat, `*${text}* no está en la lista!`, m)
       }
       break
 
