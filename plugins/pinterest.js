@@ -13,7 +13,7 @@ conn.sendMessage(m.chat, get.data, 'imageMessage', { quoted: m, mimetype: get.mi
 
 handler.help = ['pinterest']
 handler.tags = ['internet']
-handler.command = /^(pinterest)$/i
+handler.command = /^(pinterest|pint)$/i
 
 handler.fail = null
 
