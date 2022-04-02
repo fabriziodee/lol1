@@ -5,7 +5,7 @@ let axios = require('axios')
 let handler = async(m, { conn }) => {
 let res = await axios("https://meme-api.herokuapp.com/gimme/yurigif")
 let les = await(await fetch(res.data.url)).buffer()
-conn.sendMessage(m.chat, les, MessageType.video, { mimetype: Mimetype.gif, quoted : m })
+conn.sendMessage(m.chat, les, MessageType.gif, { mimetype: Mimetype.gif, quoted : m })
 }
 
 handler.help = ['yurigif']
