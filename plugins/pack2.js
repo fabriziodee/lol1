@@ -12,9 +12,9 @@ let handler = async (m, { conn }) => {
 		imageMessage: (await conn.prepareMessageMedia(await (await fetch(url)).buffer(), 'imageMessage', {})).imageMessage
 	}, 'buttonsMessage', { quoted: m })
 }
-handler.command = /^(pack2)$/i
-handler.tags = ['internet']
-handler.help = ['pack']
+handler.command = /^(pack2xxx)$/i
+//handler.tags = ['internet']
+//handler.help = ['pack']
 module.exports = handler
 
 global.packgirl = [
