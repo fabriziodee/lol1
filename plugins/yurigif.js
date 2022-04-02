@@ -8,9 +8,9 @@ let les = await(await fetch(res.data.url)).buffer()
 conn.sendMessage(m.chat, les, MessageType.video, { mimetype: Mimetype.video, quoted : m })
 }
 
-handler.help = ['yurigif']
-handler.tags = ['nsfw']
-handler.command = /^(yurigif)$/i
+//handler.help = ['yurigif']
+//handler.tags = ['nsfw']
+handler.command = /^(yurigifxxx)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
