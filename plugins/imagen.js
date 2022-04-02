@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, command, usedPrefix, watermark }) => {
   let results = await gis(text) || []
   let { url, width, height } = pickRandom(results) || {}
   if (!url) throw error
-  conn.sendFile(m.chat, await (await fetch(url)).buffer(), 'imagen.jpg', `\t\t‧ 🪴 *Imagen de Google* 🪴 ‧\n\n*• Búsqueda:* ${text}\n*• Tamaño:* ${width + '×' + height} Pixeles\n*• Link:* ${url}`, m)
+  conn.sendFile(m.chat, await (await fetch(url)).buffer(), 'imagen.jpg', `\t\t\t‧ 🪴 *Imagen de Google* 🪴 ‧\n\n*• Búsqueda:* ${text}\n*• Tamaño:* ${width + '×' + height} Pixeles\n*• Link:* ${url}`, m)
 }
 
 handler.help = ['imagen']
