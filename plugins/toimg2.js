@@ -1,5 +1,7 @@
 let fs = require('fs')
 
+let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
+
 const {
     MessageType,
     Mimetype
@@ -11,7 +13,7 @@ const anu = {
        message: {
                     documentMessage: {
                     title: '© Toimg By LynnXzy', 
-                    jpegThumbnail: false
+                    jpegThumbnail: tumbb
                           }
                         }
                       }
@@ -25,7 +27,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   if (/webp/.test(mime)) {
     out = await webp2png(media)
   }
-  await conn.sendFile(m.chat, out, 'out.png', 'Selesai...', anu, false, { thumbnail: fs.readFileSync('./src/RadBot.png')})
+  await conn.sendFile(m.chat, out, 'out.png', 'Selesai...', anu, false, { thumbnail: tumbb })
 }
 handler.help = ['toimg2']
 handler.tags = ['sticker']
