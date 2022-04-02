@@ -1,5 +1,7 @@
 let { MessageType } = require("@adiwajshing/baileys")
 let axios = require("axios");
+let fetch = require('node-fetch')
+
 let handler = async(m, { conn, text }) => {
 
 if (!text) return conn.reply(m.chat, 'Masukan Alamat IP yang akan dicek', m)
