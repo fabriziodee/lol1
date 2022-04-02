@@ -51,8 +51,8 @@ return m.reply(rep)
   }
 }
 
-handler.help = ['reparar']
-handler.tags = ['rpg']
-handler.command = /^(reparar)$/i
+//handler.help = ['reparar']
+//handler.tags = ['rpg']
+handler.command = /^(repararxxx)$/i
 
 module.exports = handler
