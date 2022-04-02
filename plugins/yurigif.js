@@ -2,7 +2,7 @@ const axios = require('axios')
 
 let handler = async(m, { conn }) => {
 let les = await axios.get('https://meme-api.herokuapp.com/gimme/yurigif')
-conn.sendFile(m.chat, `${les.data.url}`, 'yuri.gif', `*${les.data.title}*`, m)
+conn.sendFile(m.chat, les.data.url, 'yuri.gif', `*${les.data.title}*`, m, 0, { mimetype: 'video/gif' })
   }
 handler.help = ['yurigif']
 handler.tags = ['nsfw']
