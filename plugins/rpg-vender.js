@@ -68,6 +68,7 @@ case 'pez':
 case 'peces':
 switch (_type) {
 case 'tropical':
+case 'tropicales':
       if (global.DATABASE._data.users[m.sender].tropicalfish >= _count * 1) {
       	global.DATABASE._data.users[m.sender].tropicalfish -= _count * 1
       	global.DATABASE._data.users[m.sender].money += Stropicalfish * _count
@@ -76,6 +77,7 @@ case 'tropical':
       break
       
 case 'globo':
+case 'globos':
       if (global.DATABASE._data.users[m.sender].blowfish >= _count * 1) {
       	global.DATABASE._data.users[m.sender].blowfish -= _count * 1
       	global.DATABASE._data.users[m.sender].money += Sblowfish * _count
@@ -84,6 +86,9 @@ case 'globo':
       break
       
 case 'comun':
+case 'común':
+case 'comunes':
+case 'comúnes':
       if (global.DATABASE._data.users[m.sender].commonfish >= _count * 1) {
       	global.DATABASE._data.users[m.sender].commonfish -= _count * 1
       	global.DATABASE._data.users[m.sender].money += Scommonfish * _count
