@@ -2,7 +2,8 @@ let { MessageType } = require("@adiwajshing/baileys")
 let axios = require('axios')
 
 let handler = async(m, { conn }) => {
-let les = await (await fetch('https://meme-api.herokuapp.com/gimme/yurigif').buffer()
+let res = await axios("https://meme-api.herokuapp.com/gimme/yurigif")
+let les = await (await fetch(xxx).buffer()
 conn.sendMessage(m.chat, les, MessageType.video, { mimetype: Mimetype.gif, quoted : m })
 }
 
