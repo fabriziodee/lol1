@@ -25,7 +25,7 @@ let iptext = `*🔍Ip:* _${text}_
 🌐 *Proveedor de servicios de Internet*:
 _${ip.isp}_
 
-🕋 *Organización*: _${ip.org}_ 
+🕋 *Organización*: _${ip.org}_`
 conn.reply(m.chat, iptext, m)
     
 }
