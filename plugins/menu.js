@@ -46,8 +46,8 @@ const defaultMenu = {
 ⠀ *∙•⃝⃕📟 Número:* %number
 ⠀ *∙•⃝⃕📆 Fecha:* %date
 ⠀ *∙•⃝⃕⏱️ Hora:* %time
-⠀ *∙•⃝⃕🎲 Comandos:* %comand
-⠀ *∙•⃝⃕🧸 Prefijo:* < ∙/multiprefix/∙ >
+⠀ *∙•⃝⃕🎲 Comandos:* %comand Total
+⠀ *∙•⃝⃕🧸 Prefijo:* ⌞ multiprefix ⌝
 
 `,
   header: '⠀⠀ _*%category*_',
