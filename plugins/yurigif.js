@@ -1,4 +1,4 @@
-let { MessageType } = require("@adiwajshing/baileys")
+let { MessageType, Mimetype } = require("@adiwajshing/baileys")
 let fetch = require('node-fetch')
 let axios = require('axios')
 
