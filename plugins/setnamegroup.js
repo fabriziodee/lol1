@@ -5,8 +5,8 @@ let handler = async (m, { conn, text, usedPrefix }) => {
  if (!text) return conn.reply(m.chat, 'Ingrese el nombre del grupo!', m)
 
     let id = m.key.remoteJid
-    let idgrup = `${id.split("@s.whatsapp.net")[0]}`;
-    conn.groupUpdateSubject(m.chat, text);
+    let idgrup = `${id.split("@s.whatsapp.net")[0]}`
+    conn.groupUpdateSubject(idgrup, text)
 conn.reply(m.chat, 'Se cambió el nombre del grupo!', m)
 }
 handler.help = ['setnamegroup']
