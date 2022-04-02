@@ -1,5 +1,3 @@
-// Tolong jangan bully saya bang,, saya cuman mau bisnis :)
-
 let uploadImage = require('../lib/uploadImage')
 let fetch = require('node-fetch')
 let util = require('util')
