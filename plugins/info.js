@@ -53,7 +53,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
 🐋〃 Version: ${conn.browserDescription[2]}
 ❄️〃 Servidor: ${conn.browserDescription[0]}
 🐋〃 Comandos: ${totalfeatures} Total
-❄️〃 Prefijo: ${usedPrefix}
+❄️〃 Prefijo: < ∙/multiprefix/∙ >
 🐋〃 Velocidad: ${latensi.toFixed(4)} Segundos
 ❄️〃 Chat Privado: ${chats.length - groups.length}
 🐋〃 Chat de Grupos: ${groups.length}
