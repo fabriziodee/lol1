@@ -40,12 +40,14 @@ let tags = {
 const defaultMenu = {
   before: `Hola *@%user*, %greeting
 
-⠀ *• 💫 Tu info:* %bio
+⠀ *∙•⃝⃕💫 Tu info:* %bio
 
-⠀ *• 🐤 Nombre:* %name
-⠀ *• 📟 Número:* %number
-⠀ *• 📆 Fecha:* %date
-⠀ *• ⏱️ Hora:* %time
+⠀ *∙•⃝⃕🐤 Nombre:* %name
+⠀ *∙•⃝⃕📟 Número:* %number
+⠀ *∙•⃝⃕📆 Fecha:* %date
+⠀ *∙•⃝⃕⏱️ Hora:* %time
+⠀ *∙•⃝⃕🎲 Comandos:* %comand
+⠀ *∙•⃝⃕🧸 Prefijo:* < ∙/multiprefix/∙ >
 
 `,
   header: '⠀⠀ _*%category*_',
@@ -145,6 +147,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       user: m.sender.split("@s.whatsapp.net")[0],
       number: PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international'),
       ownum: ownernum.split("@s.whatsapp.net")[0],
+      comand: Object.values(global.plugins).filter( (v) => v.help && v.tags ).length,
       me: conn.user.name,
       server: conn.browserDescription[0],
       navega: conn.browserDescription[1],
