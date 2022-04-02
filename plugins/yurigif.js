@@ -1,9 +1,11 @@
-const axios = require('axios')
+let { MessageType } = require("@adiwajshing/baileys")
+let axios = require('axios')
 
 let handler = async(m, { conn }) => {
-let les = await axios.get('https://meme-api.herokuapp.com/gimme/yurigif')
-conn.sendFile(m.chat, `${les.data.url}`, 'yuri.gif', `*${les.data.title}*`, m, 0, { mimetype: 'video/gif', thumbnail: Buffer.alloc(0) })
-  }
+let les = await (await fetch('https://meme-api.herokuapp.com/gimme/yurigif').buffer()
+conn.sendMessage(m.chat, les, MessageType.video, { mimetype: Mimetype.gif, quoted : m })
+}
+
 handler.help = ['yurigif']
 handler.tags = ['nsfw']
 handler.command = /^(yurigif)$/i
