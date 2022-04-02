@@ -3,7 +3,7 @@ let axios = require('axios')
 
 let handler = async(m, { conn }) => {
 let res = await axios("https://meme-api.herokuapp.com/gimme/yurigif")
-let les = await (await fetch(res.data.url).buffer()
+let les = await (await fetch(res.data.url).buffer())
 conn.sendMessage(m.chat, les, MessageType.gif, { quoted : m })
 }
 
