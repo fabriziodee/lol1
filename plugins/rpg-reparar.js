@@ -1,6 +1,6 @@
-const Uppickaxe = 5000
-const Uprod = 3000
-const Upaxe = 4000
+const Uppickaxe = 3000
+const Uprod = 1000
+const Upaxe = 2000
 
 let handler = async (m, { conn, usedPrefix, command, args }) => {
 
