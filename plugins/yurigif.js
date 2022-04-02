@@ -1,4 +1,5 @@
 let { MessageType } = require("@adiwajshing/baileys")
+let fetch = require('node-fetch')
 let axios = require('axios')
 
 let handler = async(m, { conn }) => {
