@@ -1,5 +1,5 @@
 let handler = (m, { usedPrefix, command, text }) => {
-    if (!text) throw `Ejemplo:\n${usedPrefix + command} 2003 02 25`
+    if (!text) throw `Ejemplo: ${usedPrefix + command} 2003 02 25`
 
     const date = new Date(text)
     if (date == 'Fecha invalida, prueba con el siguiente formato AAAA MM DD Ejemplo: 2003 02 07 ') throw date
@@ -22,10 +22,10 @@ Signo zodical : ${zodiac}
 `.trim()
     m.reply(teks)
 }
-handler.help = ['zodiac *2002 02 25*']
-handler.tags = ['General']
+handler.help = ['zodiac']
+handler.tags = ['info']
 
-handler.command = /^zodia[kc]$/i
+handler.command = /^(zodiac|zodiak)$/i
 
 module.exports = handler
 
