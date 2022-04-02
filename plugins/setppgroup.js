@@ -5,6 +5,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         let img = await q.download()
         if (!img) throw 'Etiqueta una imagen!'
         await conn.updateProfilePicture(m.chat, img)
+        conn.reply(m.chat, 'Se cambió el perfil del grupo!', m)
     } else throw `Etiqueta un imagen con el comando ${usedPrefix + command}`
 }
 handler.help = ['setppgroup']
