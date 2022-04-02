@@ -37,7 +37,7 @@ case 'hacha':
       break
 
     default:
-ket rep = `
+let rep = `
 *Ingrese la herramienta que quiere reparar*
 
 - Ejemplo: ${usedPrefix + command} pico
