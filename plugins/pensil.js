@@ -27,18 +27,7 @@ gay = `sayang`
 handler.help = ['pensil']
 handler.tags = ['maker']
 handler.command = /^(pensil)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-handler.register = true
-
-handler.admin = false
-handler.botAdmin = false
 
 handler.fail = null
-handler.exp = 0
-handler.limit = true
 
 module.exports = handler
