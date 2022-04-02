@@ -89,7 +89,12 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     //  second: 'numeric'
     //})
 
-    let time = d.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+    let time = d.toLocaleString('en-US', { 
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: true 
+    })
 
     let _uptime = process.uptime() * 1000
     let _muptime
