@@ -23,7 +23,7 @@ let handler = async (m, { conn, text, participants }) => {
   await conn.relayWAMessage(msg)
 }
 handler.help = ['hidetag']
-handler.tags = ['group']
+handler.tags = ['admin']
 handler.command = /^(opengumuman|oannounce|ohiddentag|hidetag|notificar|noti|notify|notifi|tag)$/i
 
 handler.group = true
