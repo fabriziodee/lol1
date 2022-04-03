@@ -11,7 +11,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let commonfish = (rod == 1 ? Math.ceil(Math.random() * 200) : '' || rod == 2 ? Math.ceil(Math.random() * 250) : '' || rod == 3 ? Math.ceil(Math.random() * 300) : '' || rod == 4 ? Math.ceil(Math.random() * 350) : '' || rod == 5 ? Math.ceil(Math.random() * 500) : '' )
     let exp = (rod == 1 ? Math.ceil(Math.random() * 200) : '' || rod == 2 ? Math.ceil(Math.random() * 400) : '' || rod == 3 ? Math.ceil(Math.random() * 600) : '' || rod == 4 ? Math.ceil(Math.random() * 800) : '' || rod == 5 ? Math.ceil(Math.random() * 1000) : '' )
     let durability = Math.floor(Math.random() * 100)
-    let goa = (pickRandom(['un rio 🚣‍♀', 'el mar 🚤']))
+    let goa = (pickRandom(['un rio 🚣‍♀', 'el mar 🚤 de Bolivia']))
     
     if (rod > 0) {
     if (global.DATABASE._data.users[m.sender].roddurability > 99) {
