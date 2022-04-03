@@ -7,15 +7,15 @@ Contoh: ${usedPrefix}${command} jokowi
 `.trim()
   let res = await igstalk(args[0])
   let json = JSON.parse(JSON.stringify(res))
-  let iggs = `
-▢ *Username:* ${json.username}
-▢ *Nickname:* ${json.fullName}
-▢ *Followers:* ${json.followersM}
-▢ *Following:* ${json.followingM}
-▢ *Posting:* ${json.postsCountM}
-▢ *Link:* https://instagram.com/${json.username}
-▢ *Bio:* ${json.bio}
-`.trim() // tambahin sendiri json.blablabla :)
+  let iggs = `\t\t\t‧ 🍬 *Instagram stalk* 🍬 ‧
+
+*🐤 • User name:* ${json.username}
+*🐦 • Nick name:* ${json.fullName}
+*⭐ • Seguidores:* ${json.followersM}
+*💫 • Seguidos:* ${json.followingM}
+*🥮 • Posting:* ${json.postsCountM}
+*🍥 • Enlace:* https://instagram.com/${json.username}
+*🍧 • Biografía:* ${json.bio}`
   conn.sendFile(m.chat, json.profilePicHD, 'error.jpg', iggs, m)
 }
 handler.help = ['igstalk']
