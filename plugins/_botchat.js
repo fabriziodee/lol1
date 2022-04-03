@@ -136,11 +136,13 @@ if (audio15B) {
 
 if (audio16B) {
 	let vn = './storage/sticker/Bot.webp'
-        let vnn = './storage/image/menu2.jpg'
-        let pp = await conn.getProfilePicture(m.sender)
+        let pp = './storage/image/menu2.jpg'
+        try { 
+        pp = await conn.getProfilePicture(m.sender) 
+        } catch (e) {
         let ppp = (await(await fetch(pp)).buffer() || await(await fetch(vnn)).buffer())
-        conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", previewType: "PHOTO", thumbnail: ppp, sourceUrl:``}}})						
-	conn.sendFile(m.chat, vn, 'A.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+        conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", previewType: "PHOTO", thumbnail: ppp, sourceUrl:``}}})
+        }
 	}
 
 
