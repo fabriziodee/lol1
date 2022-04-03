@@ -51,6 +51,9 @@ let audio14B = audio14A.exec(m.text)
 let audio15A = /^(A|ª|ᵃ|a)$/i
 let audio15B = audio15A.exec(m.text)
 
+let audio16A = /Bot|bot/i
+let audio16B = audio16A.exec(m.text)
+
 
 if (audio1B) {
 	let vn = './storage/audio/Yamete_onii_chan.mp3'
@@ -125,6 +128,11 @@ if (audio14B) {
 
 if (audio15B) {
 	let vn = './storage/audio/A.mp3'
+	conn.sendFile(m.chat, vn, 'A.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+	}
+
+if (audio16B) {
+	let vn = './storage/sticker/Bot.webp'
 	conn.sendFile(m.chat, vn, 'A.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	}
 
