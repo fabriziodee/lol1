@@ -1,5 +1,7 @@
+let { MessageType } = require("@adiwajshing/baileys");
 let util = require('util')
 let path = require('path')
+let fs = require("fs")
 
 let handler = m => m
 
@@ -133,6 +135,9 @@ if (audio15B) {
 
 if (audio16B) {
 	let vn = './storage/sticker/Bot.webp'
+        let pp = await conn.getProfilePicture(m.sender)
+        let ppp = await(await fetch(pp)).buffer()
+        conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", previewType: "PHOTO", thumbnail: ppp, sourceUrl:``}}})						
 	conn.sendFile(m.chat, vn, 'A.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	}
 
