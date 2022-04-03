@@ -29,7 +29,7 @@ conn.sendFile(m.chat, dl_link, title + '.mp3', `
 //  asDocument: chat.useDocument
 })
 }
-handler.command = /^dlyt|dlaudio|dlytaud|dlaud$/i
+handler.command = /^(yta)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
