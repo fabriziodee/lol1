@@ -64,7 +64,10 @@
 ```bash
 > pkg update -y
 > pkg upgrade -y
-> pkg install git
+> pkg install nodejs -y
+> pkg install ffmpeg -y
+> pkg install imagemagick -y
+> pkg install git -y
 > git clone https://github.com/g4tito/lolibot
 > cd lolibot
 > npm start
