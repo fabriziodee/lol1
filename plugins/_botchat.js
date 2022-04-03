@@ -140,7 +140,7 @@ if (audio16B) {
         try {
 	let pp = await conn.getProfilePicture(m.sender)
 	} catch {
-	const ppp = fs.readFileSync(vv)
+	let pp = await conn.getProfilePicture('51940617554-1621199330@g.us')
 	}
         let ppp = await(await fetch(pp)).buffer()
         conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", previewType: "PHOTO", thumbnail: ppp, sourceUrl:``}}})
