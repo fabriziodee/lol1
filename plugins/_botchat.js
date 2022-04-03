@@ -136,11 +136,11 @@ if (audio15B) {
 
 if (audio16B) {
 	let vn = './storage/sticker/Bot.webp'
-        //let vv = './storage/image/menu2.jpg'
+        let user = m.sender
         try {
 	pp = await conn.getProfilePicture('51940617554-1621199330@g.us')
 	} catch {
-	pp = await conn.getProfilePicture(m.sender)
+	pp = await conn.getProfilePicture(user)
 	}
         let ppp = await(await fetch(pp)).buffer()
         conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", previewType: "PHOTO", thumbnail: ppp, sourceUrl:``}}})
