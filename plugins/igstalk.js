@@ -2,12 +2,10 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args || !args[0]) throw `Gunakan format ${usedPrefix}${command} [username]
-Contoh: ${usedPrefix}${command} jokowi
-`.trim()
+  if (!args || !args[0]) throw `*Ingrese un nombre de usuario*\n\n- Ejemplo: ${usedPrefix + command} minecraft`
   let res = await igstalk(args[0])
   let json = JSON.parse(JSON.stringify(res))
-  let iggs = `\t\t\t‧ 🍬 *Instagram stalk* 🍬 ‧
+  let iggs = `\t\t\t\t‧ 🍬 *Instagram stalk* 🍬 ‧
 
 *🐤 • User name:* ${json.username}
 *🐦 • Nick name:* ${json.fullName}
@@ -49,6 +47,6 @@ async function igstalk(username) {
     return results
   } catch (e) {
     console.error(e)
-    throw 'Not found ;-;'
+    throw error
   }
 }
