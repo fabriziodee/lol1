@@ -10,7 +10,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
 
 handler.help = ['imgweb']
 handler.tags = ['internet']
-handler.command = /^(imgweb)$/i
+handler.command = /^(imgweb|imageweb)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
