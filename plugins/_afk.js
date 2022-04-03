@@ -15,7 +15,8 @@ handler.before = m => {
     let afkTime = user.afk
     if (!afkTime || afkTime < 0) continue
     let reason = user.afkReason || ''
-conn.sendMessage(m.chat, `\t\t*‧ [ 🚧 Usuario en AFK 🚧 ] ‧*\n\n• Razón: ${reason ? `${reason}` : 'No hay'}\n• Tiempo: ${clockString(new Date - afkTime)}`, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [m.sender] } })
+    m.reply(`\t\t*‧ [ 📢 Usuario en AFK 📢 ] ‧*\n\n• Razón: ${reason ? `${reason}` : 'No hay'}\n• Tiempo: ${clockString(new Date - afkTime)}`)
+    //conn.sendMessage(m.chat, ``, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [m.sender] } })
   }
   return true
 }
