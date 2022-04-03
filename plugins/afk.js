@@ -5,7 +5,8 @@ let handler = async (m, { text, usedPrefix, command }) => {
   let user = global.DATABASE.data.users[m.sender]
   user.afk = + new Date
   user.afkReason = text
-  conn.sendMessage(m.chat, `\t\t*‧ ⏰ Ahora estas en AFK ⏰ ‧*\n\n• Nombre: @${m.sender.split("@s.whatsapp.net")[0]}\n• Razón: ${text ? `${text}` : 'No hay'}\n\nSi alguien te etiqueta será notificado`, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [m.sender] } }) 
+  //conn.sendMessage(m.chat, ``, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [m.sender] } }) 
+  m.reply(`\t\t*‧ ⏰ Ahora estas en AFK ⏰ ‧*\n\n• Nombre: @${m.sender.split("@s.whatsapp.net")[0]}\n• Razón: ${text ? `${text}` : 'No hay'}\n\nSi alguien te etiqueta será notificado`)
 }
 
 handler.help = ['afk']
