@@ -179,7 +179,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
      let imeu = imeg.message.imageMessage
      conn.relayWAMessage(await conn.prepareMessageFromContent(m.chat, { productMessage: { businessOwnerJid: '51940617554@s.whatsapp.net', product: { productId: '750', productImage:imeu, title: '💌 Lobita & Gatito 💫', description: text.trim(), currencyCode: 'IDR', priceAmount1000: '2022', retailerId: '750', url: 'Lolibot - OFC', productImageCount: 1, salePriceAmount1000: '7.8000', } } }, { quoted: m, contextInfo: { mentionedJid: [m.sender, ownernum] } }))
      } else if (chatp.menu == 5) {
-     let res = await conn.prepareMessageFromContent(m.chat, { "orderMessage": { "itemCount": 2022, "message": text.trim(), "orderTitle": "💌 Lobita & Gatito 💫", "footerText": "© lolibot", "thumbnail": tumbb, "surface": "CATALOG" } }, { quoted: m, sendEphemeral: true, contextInfo: { mentionedJid: [m.sender, ownernum] } })
+     let res = await conn.prepareMessageFromContent(m.chat, { "orderMessage": { "orderId":"6288215463787", "itemCount": 2022, "message": text.trim(), "orderTitle": "💌 Lobita & Gatito 💫", "footerText": "© lolibot", "token": "AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA==", "thumbnail": tumbb, "surface": "CATALOG" } }, { quoted: m, sendEphemeral: true, contextInfo: { mentionedJid: [m.sender, ownernum] } })
      conn.relayWAMessage(res)
      } else if (chatp.menu == 2) {
      let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.image, { quoted: m, thumbnail: tumb, contextInfo: { externalAdReply: { title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", previewType: "PHOTO", thumbnail: tumbb, sourceUrl: "" } } })
