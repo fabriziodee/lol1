@@ -4,7 +4,7 @@ let handler = m => m
 handler.before = m => {
   let user = global.DATABASE.data.users[m.sender]
   if (user.afk > -1) {
-    conn.sendMessage(m.chat, `\t\t*‧ ⏰ Dejaste de estar AFK ⏰ ‧*\n\n• Nombre: @${m.sender.split("@s.whatsapp.net")[0]}\n• Razón: ${user.afkReason ? `${user.afkReason}` : 'No hay'}\n\nTiempo de inactividad: ${clockString(new Date - user.afk)}`, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [m.sender] } })
+    m.reply(`\t\t*‧ ⏰ Dejaste de estar AFK ⏰ ‧*\n\n• Nombre: @${m.sender.split("@s.whatsapp.net")[0]}\n• Razón: ${user.afkReason ? `${user.afkReason}` : 'No hay'}\n\nTiempo de inactividad: ${clockString(new Date - user.afk)}`)
     user.afk = -1
     user.afkReason = ''
   }
