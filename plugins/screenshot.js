@@ -8,9 +8,10 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
   let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, url, full }))).buffer()
   conn.sendFile(m.chat, ss, 'error.png', url, m)
 }
+
 handler.help = ['screenshot']
 handler.tags = ['internet']
-handler.command = /^(screenshot)$/i
+handler.command = /^(screenshot|captura)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
