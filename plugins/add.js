@@ -1,7 +1,13 @@
 let fetch = require('node-fetch')
+
 let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
-  if (!text) throw `*Ingrese el número al que quiere añadir*\n\n- Ejemplo: ${usedPrefix + command} +51 990 181 480`
+  //if (!text) throw `*Ingrese el número al que quiere añadir*\n\n- Ejemplo: ${usedPrefix + command} +51 990 181 480`
   let _participants = participants.map(user => user.jid)
+  try {
+  let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
+  //if (!m.chat) return m.reply('Etiqueta a alguien del grupo para eliminar!')
+  await conn.groupAdd(m.chat, user)
+  } catch (err) {
   let users = (await Promise.all(
     text.split(',')
       .map(v => v.replace(/[^0-9]/g, ''))
@@ -30,6 +36,7 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
       jpegThumbnail
     } : {})
   }
+ }
 }
 
 handler.help = ['add']
