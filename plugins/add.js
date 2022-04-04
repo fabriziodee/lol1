@@ -26,7 +26,7 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
         mentionedJid: conn.parseMention(teks)
       }
     })
-    await conn.sendGroupV4Invite(m.chat, jid, invite_code, invite_code_exp, false, '\t∙ 🥧 *Invitation a un Grupo* 🥧 ∙\n\nHolaa soy una loli bot, alguien te invito para que unas a este hermoso grupo :3', jpegThumbnail ? {
+    await conn.sendGroupV4Invite(m.chat, jid, invite_code, invite_code_exp, false, '\t\t∙ 🥧 *Invitation a un Grupo* 🥧 ∙\n\nHolaa soy una loli bot, alguien te invito para que unas a este hermoso grupo :3', jpegThumbnail ? {
       jpegThumbnail
     } : {})
   }
