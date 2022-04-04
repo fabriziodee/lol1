@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 }
 
 handler.help = ['setnamegroup']
-handler.tags = ['group']
+handler.tags = ['adm']
 handler.command = /^(setnamegroup|setnamegp|setnamegc)$/i
 handler.owner = false
 handler.mods = false
