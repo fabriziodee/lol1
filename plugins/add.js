@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
-  if (!text) throw! `*Ingrese un numero o corrobore que el numero ingresado este escrito correctamente y en formato internacional*\n*Ejemplo:*\n\n*${usedPrefix + command + ' ' + global.owner[0]}*`
+  if (!text) throw `*Ingrese un numero o corrobore que el numero ingresado este escrito correctamente y en formato internacional*\n*Ejemplo:*\n\n*${usedPrefix + command + ' ' + global.owner[0]}*`
   let _participants = participants.map(user => user.jid)
   let users = (await Promise.all(
     text.split(',')
@@ -20,7 +20,7 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
       invite_code,
       invite_code_exp
     }]] = Object.entries(user)
-    let teks = `*No fue posible añadir a @${jid.split('@')[0]}*\n*Enviando invitacion a su privado...*`
+    let teks = `No se pudo añadir a *@${jid.split('@')[0]}*, se le envió una invitacion al grupo a su privado!`
     m.reply(teks, null, {
       contextInfo: {
         mentionedJid: conn.parseMention(teks)
