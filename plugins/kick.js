@@ -10,12 +10,12 @@ let handler = async (m, { conn, args }) => {
 handler.help = ['eliminar']
 handler.tags = ['admin']
 handler.command = /^(eliminar)$/i
-handler.group = true
-handler.private = false
+//handler.group = true
+//handler.private = false
 
-handler.admin = true
-handler.botAdmin = true
+//handler.admin = true
+//handler.botAdmin = true
 
-handler.fail = null
+//handler.fail = null
 
 module.exports = handler
