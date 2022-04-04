@@ -1,9 +1,6 @@
-// Thanks to TOXIC-DEVIL
-// https://github.com/TOXIC-DEVIL
-
-let handler = async (m, { conn, args }) => {
-    if (!args || !args[0] || args.length === 0) throw '*[❗] Ingrese un numero valido*\n\*Ejemplo:*\n*#scan 5219991402134*'
-    if (args[0].startsWith('0')) throw '*[❗] Ingrese un código de área!*'
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+    if (!args || !args[0] || args.length === 0) throw `*Ingrese un numero valido*\n\n- Ejemplo: ${usedPrefix + command} +51 988 050 859`
+    if (args[0].startsWith('0')) throw 'Ingrese el código de país!'
     let user = await conn.isOnWhatsApp(args[0])
     let exists = user && user.exists ? true : false
     if (exists) {
@@ -20,8 +17,8 @@ let handler = async (m, { conn, args }) => {
 *Mencion:* ${toM(user.jid)}
 *Link:* wa.me/${splitM(user.jid)}
 *Jid:* ${user.jid}
-*Whatsapp Bussines:* ${user.isBusiness ? 'Yes' : 'No'}
-*Registrado en la base datos:* ${isInDatabase ? 'Yes' : 'No'}
+*Whatsapp Bussines:* ${user.isBusiness ? 'Si' : 'No'}
+*Registrado en la base datos:* ${isInDatabase ? 'Si' : 'No'}
 *Esta en algun grupo con el BOT:* ${sameGroup.length} *Group*
 `.trim()
         m.reply(str, m.chat, { 
@@ -29,12 +26,12 @@ let handler = async (m, { conn, args }) => {
                 mentionedJid: conn.parseMention(str)
             }
         })
-    } else throw '*[ ⚠️ ] Usuario no encontrado, compruebe que el numero ingresado sea el correcto*\n\n*👉🏻 Para ver un ejemplo escribe únicamente #scan*'
+    } else throw 'El número no está registrado en WhatsApp!'
 }
     
-handler.help = ['scan'].map(v => v + ' [nomor]')
+handler.help = ['scan']
 handler.tags = ['tools']
-handler.command = /^scan$/i
+handler.command = /^(scan)$/i
 
 module.exports = handler
 
