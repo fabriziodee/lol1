@@ -16,7 +16,7 @@ let tags = {
   'xp': 'Exp & limite ✨',
   'sticker': 'Stickers 🧩',
   'quotes': 'Citas 💌',
-  'admin': 'Admins 😎',
+  'adm': 'Admins 😎',
   'group': 'Grupos 👥',
   'premium': 'Premiun 👑',
   'internet': 'Internet 📶',
