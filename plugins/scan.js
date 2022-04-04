@@ -1,17 +1,7 @@
 let handler = async (m, { conn, args, participants, usedPrefix, command }) => {
     if (!args || !args[0] || args.length === 0) throw `*Ingrese un numero valido*\n\n- Ejemplo: ${usedPrefix + command} +51 988 050 859`
     if (args[0].startsWith('0')) throw 'Ingrese el código de país!'
-    let _participants = participants.map(user => user.jid)
-    let user = (await Promise.all(
-    text.split(',')
-      .map(v => v.replace(/[^0-9]/g, ''))
-      .filter(v => v.length > 4 && v.length < 20 && !_participants.includes(v + '@s.whatsapp.net'))
-      .map(async v => [
-        v,
-        await conn.isOnWhatsApp(v + '@s.whatsapp.net')
-      ])
-  )).filter(v => v[1]).map(v => v[0] + '@c.us')
-    //let user = await conn.isOnWhatsApp(args[0])
+    let user = await conn.isOnWhatsApp(args[0])
     let exists = user && user.exists ? true : false
     if (exists) {
         let sameGroup = [], isInDatabase = false
