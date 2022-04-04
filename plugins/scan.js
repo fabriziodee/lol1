@@ -1,4 +1,4 @@
-let handler = async (m, { conn, args, usedPrefix, command }) => {
+let handler = async (m, { conn, args, participants, usedPrefix, command }) => {
     if (!args || !args[0] || args.length === 0) throw `*Ingrese un numero valido*\n\n- Ejemplo: ${usedPrefix + command} +51 988 050 859`
     if (args[0].startsWith('0')) throw 'Ingrese el código de país!'
     let _participants = participants.map(user => user.jid)
