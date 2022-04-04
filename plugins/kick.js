@@ -4,7 +4,7 @@ let handler = async (m, { command, text }) => {
   }
 
 handler.help = ['kick']
-handler.tags = ['admin']
+handler.tags = ['test']
 handler.command = /^(kick)$/i
 
 module.exports = handler
