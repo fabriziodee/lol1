@@ -9,7 +9,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     } else throw `Etiqueta un imagen con el comando ${usedPrefix + command}`
 }
 handler.help = ['setppgroup']
-handler.tags = ['group']
+handler.tags = ['adm']
 
 handler.command = /^(setppgroup|setppgp|setppgc)$/i
 
