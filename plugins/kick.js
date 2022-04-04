@@ -1,9 +1,10 @@
 let handler = async (m, { command, text }) => {
-  let txt = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : m.text
-  m.reply(Buffer.from(txt, 'utf-8').toString('base64'))
-}
-handler.help = ['base64']
-handler.tags = ['tools']
-handler.command = /^tsss$/i
+  let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
+  conn.groupRemove(m.chat, [user])
+  }
+
+handler.help = ['kick']
+handler.tags = ['admin']
+handler.command = /^(kick)$/i
 
 module.exports = handler
