@@ -23,7 +23,7 @@ let handler = async (m, { conn, text, participants }) => {
   await conn.relayWAMessage(msg)
 }
 
-handler.help = ['hidetag']
+handler.help = ['tag']
 handler.tags = ['adm']
 handler.command = /^(hidetag|tag)$/i
 
