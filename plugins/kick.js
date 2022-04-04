@@ -1,21 +1,9 @@
-let handler = async (m, { conn, args }) => {
-   m.reply('Test')
-  //let userb = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
-  //conn.groupRemove(m.chat, [userb])
-  //let ownerGroup = m.chat.split`-`[0] + '@s.whatsapp.net'
-  //let users = m.mentionedJid.filter(u => !(u == ownerGroup || u.includes(conn.user.jid)))
-  //for (let user of users) if (user.endsWith('@s.whatsapp.net')) await conn.groupRemove(m.chat, [user])
+let handler = async (m, { command, text }) => {
+  let txt = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : m.text
+  m.reply(Buffer.from(txt, 'utf-8').toString('base64'))
 }
-
-handler.help = ['eliminar']
-handler.tags = ['admin']
-handler.command = /^(eliminar)$/i
-//handler.group = true
-//handler.private = false
-
-//handler.admin = true
-//handler.botAdmin = true
-
-//handler.fail = null
+handler.help = ['base64']
+handler.tags = ['tools']
+handler.command = /^tsss$/i
 
 module.exports = handler
