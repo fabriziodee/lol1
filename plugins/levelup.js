@@ -31,3 +31,11 @@ handler.tags = ['xp']
 handler.command = /^(levelup)$/i
 
 module.exports = handler
+
+
+let time = d.toLocaleString('en-US', { 
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: true 
+    })
