@@ -12,7 +12,7 @@ let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
   //let content = (/bcgc|broadcastgroup|bcgrup|bcgrup|broadcastgc/i.test(text) ? text : text + '\n' + readMore + '「 ' + conn.getName(conn.user.jid) + ' Mensaje de difusion en grupos 」')
   await conn.copyNForward("51940617554-1600359399@g.us", await conn.loadMessage(m.chat, m.quoted.id), false, { quoted: fakereply })
   //conn.sendMessage(id, content, m.mtype, m.msg.contextInfo ? { contextInfo: m.msg.contextInfo } : {})
-  m.reply('El mensaje se envío a @573218938795!')
+  m.reply('El mensaje se envío!')
 }
 
 //handler.help = ['test']
