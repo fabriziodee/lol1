@@ -3,10 +3,10 @@ let fs = require ('fs')
 
 let handler = async (m, { conn, text, command, usedPrefix }) => {
 let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
-let test = conn.prepareMessageFromContent(m.chat, {
+let _test = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
-"title": "Test",
-"description": `xD`,
+"title": "Test Title",
+"description": 'xD',
 "buttonText": "Opciones",
 "listType": "SINGLE_SELECT",
 "sections": [
@@ -14,14 +14,14 @@ let test = conn.prepareMessageFromContent(m.chat, {
 "rows": [
 {
 "title": "Test 1",
-"rowId": `test1`
+"rowId": ".test"
 },
 {
 "title": "Test 2",
-"rowId": `test2`
+"rowId": ".test"
 }
 ]}]}}, { quoted: m })
-conn.relayWAMessage(test)
+conn.relayWAMessage(_test)
 }
 
 //handler.help = ['test']
