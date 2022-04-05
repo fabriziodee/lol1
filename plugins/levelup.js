@@ -21,7 +21,7 @@ Hola @${m.sender.split("@s.whatsapp.net")[0]} subiste de nivel
 » ⏰ Hora: ${time}
 
 Cuando mas interactues con la bot mayor sera tu nivel
-	`.trim())
+`.trim())
         }
 }
 
