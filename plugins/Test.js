@@ -23,7 +23,6 @@ let test = conn.prepareMessageFromContent(m.chat, {
 ]}]}}, { quoted: m })
 conn.relayWAMessage(test)
 }
-}
 
 //handler.help = ['test']
 //handler.tags = ['owner']
