@@ -1,7 +1,7 @@
 let handler = async (m, { usedPrefix, command }) => {
 let uptime = process.uptime()
 //let time = require('moment-timezone').tz('Asia/Kolkata').format('HH:mm:ss')
-let runnya = `\t\t\t∙ ☀️ *Runtime* ☀️ ∙
+let runnya = `\t\t\t\t∙ ☀️ *Runtime* ☀️ ∙
 
 • *Hora:* ${time}
 • *Tiempo activa:* ${runtime(uptime)}`
