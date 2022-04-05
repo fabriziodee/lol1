@@ -2,7 +2,7 @@ let fs = require ('fs')
 
 let handler  = async (m, { conn, text, participants }) => {
   let teks = m.quoted ? m.quoted : m.quoted
-  if (!teks) throw 'Etiqueta un mensaje para enviar a grupos!'
+  if (!teks) throw 'Etiqueta un mensaje para enviar a todos los chats!'
   let chats = conn.chats.all().filter(v => !v.read_only && v.message).map(v => v.jid)
   let faketumb = fs.readFileSync('./storage/image/menu2.jpg')
   let fakereply = { key : { participant : '0@s.whatsapp.net' }, message: { orderMessage: { itemCount : 2022, status: 1, surface : 1, message: '↷✦╎Anuncio lolibot╎💌˖ ⸙', orderTitle: "↷✦╎Anuncio lolibot╎💌˖ ⸙", thumbnail: faketumb, sellerJid: '0@s.whatsapp.net' } } }
