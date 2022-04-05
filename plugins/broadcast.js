@@ -9,7 +9,7 @@ let handler  = async (m, { conn, text, participants }) => {
   //let content = (/bcgc|broadcastgroup|bcgrup|bcgrup|broadcastgc/i.test(text) ? text : text + '\n' + readMore + '「 ' + conn.getName(conn.user.jid) + ' Mensaje de difusion en grupos 」')
   for (let id of chats) await conn.copyNForward(id, await conn.loadMessage(m.chat, m.quoted.id), false, { quoted: fakereply })
   //conn.sendMessage(id, content, m.mtype, m.msg.contextInfo ? { contextInfo: m.msg.contextInfo } : {})
-  conn.reply(m.chat, `El mensaje se envío a *${chats.length} grupos*!`, m)
+  conn.reply(m.chat, `El mensaje se envío a *${chats.length} chats*!`, m)
 }
 
 handler.help = ['bc']
