@@ -1,7 +1,7 @@
 let fs = require ('fs')
 
 let handler  = async (m, { conn, text, participants }) => {
-  let teks = m.quoted ? m.quoted : m.quoted && m.quoted.text ? m.quoted.text : m.quoted.text 
+  let teks = m.quoted ? m.quoted : m.quoted
   if (!teks) throw 'Etiqueta un mensaje para mandar a grupos!'
   let groups = conn.chats.all().filter(v => v.jid.endsWith('g.us') && !v.read_only && v.message).map(v => v.jid)
   let faketumb = fs.readFileSync('./storage/image/menu2.jpg')
