@@ -1,4 +1,4 @@
-let handler  = async (m, { conn, text }) => {
+let handler  = async (m, { conn, text, participants }) => {
   let groups = conn.chats.all().filter(v => v.jid.endsWith('g.us') && !v.read_only && v.message).map(v => v.jid)
   //let content = (/bcgc|broadcastgroup|bcgrup|bcgrup|broadcastgc/i.test(text) ? text : text + '\n' + readMore + '「 ' + conn.getName(conn.user.jid) + ' Mensaje de difusion en grupos 」')
   for (let id of groups) await conn.copyNForward(id, await conn.loadMessage(m.chat, m.quoted.id), true, { contextInfo: { mentionedJid: participants.map(u => u.id) }})
