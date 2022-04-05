@@ -32,7 +32,7 @@ handler.command = /^(levelup)$/i
 
 module.exports = handler
 
-
+let d = new Date(new Date + 3600000)
 let time = d.toLocaleString('en-US', { 
       hour: 'numeric',
       minute: 'numeric',
