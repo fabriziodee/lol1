@@ -5,7 +5,7 @@ let handler  = async (m, { conn, text, participants }) => {
   if (!teks) throw 'Etiqueta un mensaje para enviar a grupos!'
   let chats = conn.chats.all().filter(v => !v.read_only && v.message).map(v => v.jid)
   let faketumb = fs.readFileSync('./storage/image/menu2.jpg')
-  let fakereply = { key : { participant : '0@s.whatsapp.net' }, message: { orderMessage: { itemCount : 2022, status: 1, surface : 1, message: '↷✦╎Anuncio a Grupos╎💌˖ ⸙', orderTitle: "↷✦╎Anuncio a Grupos╎💌˖ ⸙", thumbnail: faketumb, sellerJid: '0@s.whatsapp.net' } } }
+  let fakereply = { key : { participant : '0@s.whatsapp.net' }, message: { orderMessage: { itemCount : 2022, status: 1, surface : 1, message: '↷✦╎Anuncio a Chats Privados╎💌˖ ⸙', orderTitle: "↷✦╎Anuncio a Grupos╎💌˖ ⸙", thumbnail: faketumb, sellerJid: '0@s.whatsapp.net' } } }
   //let content = (/bcgc|broadcastgroup|bcgrup|bcgrup|broadcastgc/i.test(text) ? text : text + '\n' + readMore + '「 ' + conn.getName(conn.user.jid) + ' Mensaje de difusion en grupos 」')
   for (let id of chats) await conn.copyNForward(id, await conn.loadMessage(m.chat, m.quoted.id), false, { quoted: fakereply })
   //conn.sendMessage(id, content, m.mtype, m.msg.contextInfo ? { contextInfo: m.msg.contextInfo } : {})
