@@ -5,7 +5,7 @@ let handler  = async (m, { conn, text, participants }) => {
   let faketumb = fs.readFileSync('./storage/image/menu2.jpg')
   let fakereply = { key : { participant : '0@s.whatsapp.net' }, message: { orderMessage: { itemCount : 2022, status: 1, surface : 1, message: '↷✦╎Anuncio a Grupos╎💌˖ ⸙', orderTitle: "↷✦╎Anuncio a Grupos╎💌˖ ⸙", thumbnail: faketumb, sellerJid: '0@s.whatsapp.net' } } }
   //let content = (/bcgc|broadcastgroup|bcgrup|bcgrup|broadcastgc/i.test(text) ? text : text + '\n' + readMore + '「 ' + conn.getName(conn.user.jid) + ' Mensaje de difusion en grupos 」')
-  for (let id of groups) await conn.copyNForward(m.chat, await conn.loadMessage(m.chat, m.quoted.id), false, { quoted: fakereply, contextInfo: { mentionedJid: (await conn.groupMetadata(`${id}`)).participants.map(v => v.jid) }})
+  for (let id of groups) await conn.copyNForward(id, await conn.loadMessage(m.chat, m.quoted.id), false, { quoted: fakereply, contextInfo: { mentionedJid: (await conn.groupMetadata(`${id}`)).participants.map(v => v.jid) }})
   //conn.sendMessage(id, content, m.mtype, m.msg.contextInfo ? { contextInfo: m.msg.contextInfo } : {})
   conn.reply(m.chat, `El mensaje se envío a *${groups.length} grupos*!`, m)
 }
