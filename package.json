@@ -1,7 +1,7 @@
 {
-  "name": "ShadowBotV3",
+  "name": "lolibot",
   "version": "10.8.9",
-  "description": "Subscribete a The Shadow Borkers - Bot (≧▽≦)",
+  "description": "Un simple bot para WhatsApp",
   "depecrated": false,
   "main": "index.js",
   "directories": {
@@ -36,7 +36,7 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@adiwajshing/baileys": "^3.5.3",
+    "@adiwajshing/baileys": "^4.1.0",
     "awesome-phonenumber": "^2.54.0",
     "axios": "^0.21.1",
     "brainly-scraper-v2": "^2.0.3",
