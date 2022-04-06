@@ -25,7 +25,7 @@ try {
 	}	
 }
 handler.help = ['degradar']
-handler.tags = ['group']
+handler.tags = ['adm']
 handler.command = /^(degradar|demote|quitarpoder|quitaradmin)$/i
 handler.owner = false
 handler.mods = false
