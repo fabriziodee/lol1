@@ -8,7 +8,7 @@ let handler = async (m, { command, text }) => {
     }
   const users = getGroupAdmins(participants)
   for (let ur of users) await conn.groupDemoteAdmin(m.chat, ur)
-  conn.reply(m.chat, 'Se eliminó al usuario!', m)
+  conn.reply(m.chat, 'Se quito la administración a todos!', m)
 }
 
 handler.help = ['demoteall']
