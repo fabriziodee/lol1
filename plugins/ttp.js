@@ -17,6 +17,7 @@ if (!text) throw `*Ingrese un texto*\n\n- Ejemplo: ${usedPrefix + command} lolib
    m.reply(error)
   }
 }
+
 handler.help = ['ttp']
 handler.tags = ['sticker']
 handler.command = /^(ttp)$/i
