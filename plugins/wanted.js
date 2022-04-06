@@ -11,7 +11,7 @@ let handler = async (m, { conn, text }) => {
   let img = await q.download()
   let url = await uploadImage(img)
   let wanted = `https://api.dhamzxploit.my.id/api/canvas/wanted?url=${url}`
-  let stiker = await sticker(null, wanted, 'wanted', '©The Shadow Brokers - Bot')
+  let stiker = await sticker(null, wanted, global.packname, global.author)
   conn.sendMessage(m.chat, stiker, MessageType.sticker, {
     quoted: m
   })
@@ -19,6 +19,7 @@ let handler = async (m, { conn, text }) => {
    m.reply('Conversión fallida, recuerde responder a una imagen')
   }
 }
+
 handler.help = ['wanted']
 handler.tags = ['maker']
 handler.command = /^(wanted)$/i
