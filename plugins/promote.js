@@ -25,7 +25,7 @@ try {
 	}	
 }
 handler.help = ['promover']
-handler.tags = ['group']
+handler.tags = ['adm']
 handler.command = /^(promover|promote|daradmin|admin|darpoder)$/i
 handler.owner = false
 handler.mods = false
