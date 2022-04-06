@@ -20,8 +20,8 @@ let handler = async (m, { conn, text }) => {
   }
 }
 handler.help = ['wanted']
-handler.tags = ['General']
-handler.command = /^wanted$/i
+handler.tags = ['maker']
+handler.command = /^(wanted)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
