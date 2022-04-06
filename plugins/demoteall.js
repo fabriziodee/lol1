@@ -1,4 +1,4 @@
-let handler = async (m, { command, text }) => {
+let handler = async (m, { participants, command, text }) => {
   const getGroupAdmins = (participants) => {
         admins = []
         for (let i of participants) {
