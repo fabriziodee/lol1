@@ -2,26 +2,24 @@ const fetch = require('node-fetch')
 const { sticker } = require('../lib/sticker.js')
 const { MessageType } = require('@adiwajshing/baileys')
 
-let handler  = async (m, { conn, text }) => {
-
+let handler  = async (m, { conn, text, usedPrefix, command }) => {
+if (!text) throw `*Ingrese un texto*\n\n- Ejemplo: ${usedPrefix + command} lolibot`
  try {
-  if (!text) throw '*Uhm.. y el texto?*'
   if (text) {
-   //await m.reply('*_Aguarde un momento..._*')
     let img = await (await fetch('https://leyscoders-api.herokuapp.com/api/textto-image?text=' + encodeURIComponent(text))).buffer()
     if (!img) throw img
-    let stiker = await sticker(img, false, 'TTP', 'MIMIN')
+    let stiker = await sticker(img, false, global.packname, global.author)
     conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
   }
  } catch (e) {
-   m.reply('*[❗] Agregue un texto*')
+   m.reply(error)
   }
 }
-handler.help = ['ttp <teks>']
+handler.help = ['ttp']
 handler.tags = ['sticker']
-handler.command = /^attp2|s1|sa$/i
+handler.command = /^(ttp)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
