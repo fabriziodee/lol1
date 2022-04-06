@@ -7,8 +7,8 @@ let handler = async (m, { conn,usedPrefix, text }) => {
 		var number = text
 	}
 	
-	if(!text && !m.quoted) return conn.reply(m.chat, `*[❗] USO APROPIADO*\n\n*┯┷*\n*┠≽ ${usedPrefix}quitaradmin @tag*\n*┠≽ ${usedPrefix}quitaradmin -> responder a un mensaje*\n*┷┯*`, m)
-	if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `*[ ⚠️ ] El número ingresado es incorrecto, por favor ingrese el número correcto*`, m)
+	if(!text && !m.quoted) return conn.reply(m.chat, `Etiqueta a alguien para quitarle la administración!`, m)
+	if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `El número que ingreso es incorrecto!`, m)
 	
 try {
 	if(text) {
@@ -21,12 +21,12 @@ try {
 } catch (e) {
 		} finally {
 			conn.groupDemoteAdmin(m.chat, [user]).catch(console.log)
-			conn.reply(m.chat, `*[ ✅ ] ÓRDENES RECIBIDAS*`, m)
+			conn.reply(m.chat, 'Se le quito la administración al usuario!', m)
 	}	
 }
-handler.help = ['demote']
+handler.help = ['degradar']
 handler.tags = ['group']
-handler.command = /^(demote|quitarpoder|quitaradmin)$/i
+handler.command = /^(degradar|demote|quitarpoder|quitaradmin)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
