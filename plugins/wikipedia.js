@@ -26,10 +26,13 @@ status: link.status,
 Pesan: eror}
 return notFond}}
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) throw `*[❗️] Estas usando mal el comando!*\n*Uso correcto:*\n*${usedPrefix + command}* Palabra clave a buscar*\n\n*Ejemplo:*\n*${usedPrefix + command} Estrellas*`
+if (!text) throw `*Ingre un texto para buscar en la Wikipedia*\n\n- Ejemplo: ${usedPrefix + command} Hytale`
 wikipedia(`${text}`).then(res => {
 m.reply(`*Aquí tiene la informacion encontrada:*\n\n` + res.result.isi)
 }).catch(() => { m.reply('No se encontro la información!') })}
 
-handler.command = /^(wiki|wikipedia|internet?)$/i
+handler.help = ['wikipedia']
+handler.tags = ['internet']
+handler.command = /^(wiki|wikipedia)$/i
+
 module.exports = handler
