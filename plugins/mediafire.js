@@ -18,8 +18,8 @@ m.reply(result)
 conn.sendFile(m.chat, result.link, result.filename, null, m, false, { asDocument: true, mimetype: 'application/zip' })
 }
 
-handler.help = ['mediafire']
-handler.tags = ['internet']
+//handler.help = ['mediafire']
+//handler.tags = ['internet']
 handler.command = /^(mediafire|mdfire)$/i
 
 module.exports = handler
