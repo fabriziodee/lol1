@@ -5,7 +5,7 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
 if (!text) throw '*Ingrese un link que desea acortar*\n\n- Ejemplo: ${usedPrefix + command} https://github.com/g4tito'
 let json = await (await fetch(`https://api.xteam.xyz/shorturl/tinyurl?url=${text}&apikey=cb15ed422c71a2fb`)).json()
 if (!json.status) throw json
-let hasil = `\t\t*‧ [ 🌟 Enlace Acortado 🌟 ] ‧*\n\n*• Link anterior:*\n${text}\n\n*• Link nuevo:*\n${json.result}`
+let hasil = `\t\t*‧ 🌟 Enlace Acortado 🌟‧*\n\n*• Link anterior:*\n${text}\n\n*• Link nuevo:*\n${json.result}`
 m.reply(hasil)
 }
 
