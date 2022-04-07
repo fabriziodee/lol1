@@ -7,6 +7,6 @@ let handler = async (m, { conn }) => {
 
 handler.help = ['hornycard']
 handler.tags = ['maker']
-handler.command = /^(hornycard|hornylicense))$/i
+handler.command = /^(hornycard|hornylicense)$/i
 
 module.exports = handler
