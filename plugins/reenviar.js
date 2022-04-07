@@ -8,7 +8,7 @@ let handler  = async (m, { conn, text, participants }) => {
 handler.help = ['reenviar']
 handler.tags = ['tools']
 handler.command = /^(reenviar|reenviarmsg)$/i
-handler.rowner = true
+handler.admin = true
 
 handler.fail = null
 
