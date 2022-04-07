@@ -1,9 +1,10 @@
 let handler = m => m
 
-handler.before = async function (m, { user, command, usedPrefix }) {
+handler.before = async function (m, { text, command, usedPrefix }) {
         //let q = m.quoted ? m.quoted : m
-        if (`${command}` == command) {
-            m.reply('Test comando no registrado')
+        let isCmd = text.startsWith(usedPrefix)
+        if (isCmd) {
+            m.reply('Test de comando no registrado')
         }
 }
 
