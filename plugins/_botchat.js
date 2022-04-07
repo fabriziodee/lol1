@@ -150,7 +150,7 @@ if (audio16B) {
 
 //Mensaje new
 if (texto1B) {
-        m.reply('En ese caso el tuyo 7w7')
+        conn.sendMessage(m.chat, 'En ese caso el tuyo 7w7', MessageType.text, { sendEphemeral: true, quoted: m })
         }
 
 
