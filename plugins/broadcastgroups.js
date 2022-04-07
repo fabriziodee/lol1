@@ -11,7 +11,7 @@ let handler  = async (m, { conn, text, participants }) => {
 }
 
 handler.help = ['bcgc']
-handler.tags = ['bcgc']
+handler.tags = ['owner']
 handler.command = /^(bcgc|broadcastgroup)$/i
 handler.rowner = true
 
