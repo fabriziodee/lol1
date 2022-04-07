@@ -1,19 +1,21 @@
 let handler = async (m, { conn, text, usedPrefix }) => {
+    if (!text) throw `*Escriva un texto para la votación*\m\n- Ejemplo: ${usedPrefix + command} soy gay`
     conn.vote = conn.vote ? conn.vote : {}
     let id = m.chat
     if (id in conn.vote) {
-        throw `_Masih ada vote di chat ini!_\n\n*${usedPrefix}hapusvote* - untuk menghapus vote`
+        throw `Todavía hay votos e este chat, si quieres eliminar escriba ${usedPrefix + command}delvote`
     }
-    m.reply(`Vote dimulai!\n\n*${usedPrefix}upvote* - untuk ya\n*${usedPrefix}devote* - untuk tidak\n*${usedPrefix}cekvote* - untuk mengecek vote\n*${usedPrefix}hapusvote* - untuk menghapus vote`)
+    conn.send2Button(m.chat, `*🗳️ Votación iniciada!*\n\n*Voto:* ${text}`, `Si quieres eliminar la votación escriba *${usedPrefix + command}delvote*`, '✅ Si', `${usedPrefix}upvote`, '❌ No', `${usedPrefix}devote`)
     conn.vote[id] = [
         text,
         [],
         []
     ]
 }
+
 handler.help = ['startvote']
 handler.tags = ['vote']
-handler.command = /^(start|mulai)vote$/i
+handler.command = /^(startvote|mulaivote)$/i
 handler.limit = true
 handler.group = true
 handler.admin = true
