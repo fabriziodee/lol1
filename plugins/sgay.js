@@ -5,7 +5,7 @@ const { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, text }) => {
  try {
   let q = m.quoted ? m.quoted : m
-  let (!q) throw 'Etiqueta una imagen!'
+  if (!q) throw 'Etiqueta una imagen!'
   let mime = (q.msg || q).mimetype || ''
   if (!mime) throw 'Etiqueta una imagen!'
   if (!/image\/(jpe?g|png)/.test(mime)) throw `Tamaño o formato no soportado!`
