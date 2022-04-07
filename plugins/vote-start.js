@@ -2,15 +2,9 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     conn.vote = conn.vote ? conn.vote : {}
     let id = m.chat
     if (id in conn.vote) {
-        await conn.sendButton(m.chat, '_Masih ada vote di chat ini!_', 'Nana-BOT', 'HAPUS VOTE', `${usedPrefix}hapusvote`, m)
-        throw false
+        throw `_Masih ada vote di chat ini!_\n\n*${usedPrefix}hapusvote* - untuk menghapus vote`
     }
-    await conn.sendButton(m.chat, `Vote dimulai!
-
-*${usedPrefix}upvote* - untuk ya
-*${usedPrefix}devote* - untuk tidak
-*${usedPrefix}cekvote* - untuk mengecek vote
-*${usedPrefix}hapusvote* - untuk menghapus vote`, 'Nana-BOT', 'UPVOTE', `${usedPrefix}upvote`, 'DEVOTE', `${usedPrefix}devote`, m)
+    m.reply(`Vote dimulai!\n\n*${usedPrefix}upvote* - untuk ya\n*${usedPrefix}devote* - untuk tidak\n*${usedPrefix}cekvote* - untuk mengecek vote\n*${usedPrefix}hapusvote* - untuk menghapus vote`)
     conn.vote[id] = [
         text,
         [],
@@ -19,7 +13,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
 }
 handler.help = ['startvote']
 handler.tags = ['vote']
-handler.command = /^(startvote|mulaivote)$/i
+handler.command = /^(start|mulai)vote$/i
 handler.limit = true
 handler.group = true
 handler.admin = true
