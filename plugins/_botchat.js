@@ -58,6 +58,10 @@ let audio16A = /Bot|bot/i
 let audio16B = audio16A.exec(m.text)
 
 
+//Mensaje new
+let texto1A = /No tengo hermana|No tengo ermana/i
+let texto1B = texto1A.exec(m.text)
+
 if (audio1B) {
 	let vn = './storage/audio/Yamete_onii_chan.mp3'
 	conn.sendFile(m.chat, vn, 'Yamete_onii_chan.mp3', null, m, true, { type: 'audioMessage', ptt: true })
@@ -115,8 +119,9 @@ if (audio11B) {
 	} else
 
 if (audio12B) {
-	let vn = './storage/audio/Eres_muy_chistoso.mp3'
-	conn.sendFile(m.chat, vn, 'Eres_muy_chistoso.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+        let tt = ["./storage/audio/Eres_muy_chistoso.mp3", "./storage/audio/Gracioso_te_crees.mp3"]
+	let vn = tt[Math.floor(Math.random() * tt.length)]
+	conn.sendFile(m.chat, vn, 'Gracioso.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio13B) {
@@ -139,6 +144,13 @@ if (audio16B) {
         let pp = await conn.getProfilePicture(m.sender) 
         let ppp = await(await fetch(pp)).buffer()
         conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", previewType: "PHOTO", thumbnail: ppp, sourceUrl:``}}})
+        }
+
+
+
+//Mensaje new
+if (texto1B) {
+        m.reply('En ese caso el tuyo 7w7')
         }
 
 
