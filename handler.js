@@ -263,12 +263,7 @@ module.exports = {
             let user = global.DATABASE._data.users[m.sender]
             if (!['unbanchat.js', 'link.js', 'pengumuman.js', 'creator.js'].includes(name) && chat && chat.isBanned && !isROwner) return // Except this
             if (!['unbanuser.js', 'inventario.js', 'link.js', 'creator.js', 'perfil.js'].includes(name) && user && user.banned && !isROwner) {
-              if (!opts['msgifbanned']) m.reply(`*⚠️ ESTAS BANEADO ⚠️* ${user.bannedReason ? `\n*Motivo:* *${user.bannedReason}*` : ''}
-
-*👉🏻 Puedes contactar al propietario del Bot si crees que se trata de un error o para charlar sobre tu desbaneo*
-
-${global.owner.map((v, i) => '*Contacto ' + (i + 1) + ':* wa.me/' + v).join('\n')}
-`.trim())
+              if (!opts['msgifbanned']) m.reply(`Estas baneado de la bot por lo tanto no podrás usar ningun comando\n\n*Razón:* ${user.BannedReason ? user.BannedReason : 'No hay'}`.trim())
               return
             }
           }
