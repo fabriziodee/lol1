@@ -1,7 +1,7 @@
 const { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text, participants }) => {
-  if (!m.quoted) throw 'Etiqueta un mensaje para mencionar a todos!'
+  if (!m.quoted && text) throw 'Etiqueta un mensaje para mencionar a todos!'
   let users = participants.map(u => u.jid)
   let q = m.quoted ? m.quoted : m
   let c = m.quoted ? m.quoted : m.msg
