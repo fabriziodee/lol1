@@ -9,7 +9,6 @@ handler.help = ['reenviar']
 handler.tags = ['tools']
 handler.command = /^(reenviar|reenviarmsg)$/i
 handler.admin = true
-handler.owner = true
 
 handler.fail = null
 
