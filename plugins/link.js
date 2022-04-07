@@ -4,7 +4,7 @@ let handler = async (m, { conn, args }) => {
 
 handler.help = ['linkgc']
 handler.tags = ['group']
-handler.command = /^(linkgroup|linkgc|linkgrupo|linkgp)$/i
+handler.command = /^(linkgroup|linkgc|link|linkgrupo|linkgp)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
