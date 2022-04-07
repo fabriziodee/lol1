@@ -3,8 +3,8 @@ const { sticker } = require('../lib/sticker')
 const { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text }) => {
-  let q = m.quoted ? m.quoted : m.quoted
-  if (!q) throw 'Etiqueta una imagen!'
+  //let q = m.quoted ? m.quoted : m.quoted
+  //if (!q) throw 'Etiqueta una imagen!'
  try {
   let q = m.quoted ? m.quoted : m.quoted
   if (!q) throw 'Etiqueta una imagen!'
