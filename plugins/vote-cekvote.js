@@ -1,32 +1,27 @@
 let handler = async (m, { conn, usedPrefix }) => {
     let id = m.chat
     conn.vote = conn.vote ? conn.vote : {}
-    if (!(id in conn.vote)) {
-        await conn.sendButton(m.chat, `_*tidak ada voting digrup ini!*_`, 'Nana-BOT', 'MULAI VOTE', `${usedPrefix}mulaivote`, m)
-        throw false
-    }
-
+    if (!(id in conn.vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${usedPrefix}mulaivote* - untuk memulai vote`
+    
     let [reason, upvote, devote] = conn.vote[id]
     let mentionedJid = [...upvote, ...devote]
-    let caption = `
-    〔 VOTE 〕
+    let vt = `\t\t*‧ 🗳️ VOTACIÓN 🗳️ ‧*
 
-*Alasan:* ${reason}
+*Motivo:* ${reason}
 
-*UPVOTE*
-_Total: ${upvote.length}_
-${upvote.map(u => '@' + u.split('@')[0]).join('\n')}
+*Votos a favor (✅)*
+Total: ${upvote.length} votos
+${upvote.map(u => '- @' + u.split('@')[0]).join('\n')}
 
-*DEVOTE*
-_Total: ${devote.length}_
-${devote.map(u => '@' + u.split('@')[0]).join('\n')}
-
-_by Adul Alhy_
-    `.trim()
-    await conn.send3Button(m.chat, caption, 'Nana-BOT', 'UPVOTE', `${usedPrefix}upvote`, 'DEVOTE', `${usedPrefix}devote`, 'HAPUS VOTE', `${usedPrefix}hapusvote`, m, { contextInfo: { mentionedJid } })
+*Votos en contra (❌)*
+Total: ${devote.length} votos
+${devote.map(u => '- @' + u.split('@')[0]).join('\n')}}`
+    conn.send2Button(m.chat, vt, `Si quiere eliminar la votación\nescriba *${usedPrefix}delvote*`, '✅ Si', `${usedPrefix}upvote`, '❌ No', `${usedPrefix}devote`, m { contextInfo: { mentionedJid } })
 }
+
 handler.help = ['cekvote']
 handler.tags = ['vote']
 handler.command = /^(cekvote)$/i
 handler.group = true
+
 module.exports = handler
