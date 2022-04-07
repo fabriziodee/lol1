@@ -1,4 +1,4 @@
-let handler = async (m, { conn, text, usedPrefix }) => {
+let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `*Escriva un texto para la votación*\m\n- Ejemplo: ${usedPrefix + command} soy gay`
     conn.vote = conn.vote ? conn.vote : {}
     let id = m.chat
