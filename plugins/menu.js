@@ -42,12 +42,14 @@ const defaultMenu = {
 
 ⠀ *∙•⃝⃕💫 Tu info:* %bio
 
-⠀ *∙•⃝⃕🐤 Nombre:* %name
-⠀ *∙•⃝⃕📟 Número:* %number
-⠀ *∙•⃝⃕📆 Fecha:* %date
-⠀ *∙•⃝⃕⏱️ Hora:* %time
-⠀ *∙•⃝⃕🎲 Comandos:* %comand Total
-⠀ *∙•⃝⃕🧸 Prefijo:* ⌞ multiprefix ⌝
+⠀ *∙╭❑*
+⠀ *∙│• 🐤 Nombre:* %name
+⠀ *∙│• 📟 Número:* %number
+⠀ *∙│• 📆 Fecha:* %date
+⠀ *∙│• ⏱️ Hora:* %time
+⠀ *∙│• 🎲 Comandos:* %comand Total
+⠀ *∙│• 🧸 Prefijo:* ⌞ multiprefix ⌝
+⠀ *∙╰❑*
 
 `,
   header: '⠀⠀ _*%category*_',
