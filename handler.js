@@ -298,7 +298,7 @@ ${global.owner.map((v, i) => '*Contacto ' + (i + 1) + ':* wa.me/' + v).join('\n'
           } else if (plugin.botAdmin && !isBotAdmin) { // You Admin
             fail('botAdmin', m, this)
             continue
-          } else if (plugin.admin && !isAdmin) { // User Admin
+          } else if (plugin.admin && !isAdmin && !isOwner) { // User Admin & owner
             fail('admin', m, this)
             continue
           }
