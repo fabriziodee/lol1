@@ -7,7 +7,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   let stiker = false
   try {
     let q = m.quoted ? m.quoted : m
-    let (!q) throw 'Etiqueta una imagen o gif!'
+    if (!q) throw 'Etiqueta una imagen o gif!'
     let mime = (q.msg || q).mimetype || ''
     if (/webp|image|video/g.test(mime)) {
       if (/video/g.test(mime)) if ((q.msg || q).seconds > 11) return m.reply('El video debe durar máximo 10 segundos!')
