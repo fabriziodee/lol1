@@ -61,9 +61,9 @@ let handler = async (m, { conn, usedPrefix }) => {
     conn.sendFile(m.chat, pp, 'lp.jpg', str, m, false, { contextInfo: { mentionedJid }})
   }
 }
-handler.help = ['menusimple']
-handler.tags = ['General']
-handler.command = /^(CajaFuerte)$/i
+//handler.help = ['menusimple']
+//handler.tags = ['General']
+handler.command = /^(CajaFuertexxx)$/i
 handler.rowner = true
 handler.mods = false
 handler.premium = false
