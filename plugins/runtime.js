@@ -27,8 +27,8 @@ const runtime = function (seconds) {
   return dDisplay + hDisplay + mDisplay + sDisplay;
 };
 
-let d = new Date(new Date + 3600000)
-let time = d.toLocaleString('en-US', { 
+const d = new Date(new Date + 3600000)
+const time = d.toLocaleString('en-US', { 
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric',
