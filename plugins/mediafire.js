@@ -40,9 +40,10 @@ try {
   m.reply('Formato no compatible!')
    }
 }
-handler.help = ['mediafire']
-handler.tags = ['downloader']
-handler.command = /^(mediafire|mdfire)$/i
+
+//handler.help = ['mediafire']
+//handler.tags = ['downloader']
+handler.command = /^(mediafirexxx|mdfirexxx)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
