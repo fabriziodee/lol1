@@ -7,7 +7,7 @@ let { frase } = json
 conn.reply(m.chat, `“${frase}”`, m)}
 
 handler.help = ['frase']
-handler.tags = ['fun']
+handler.tags = ['quotes']
 handler.command = /^(frase|frases|frace|fraces)$/i
 
 module.exports = handler
