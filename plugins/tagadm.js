@@ -1,6 +1,7 @@
 const { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text, participants }) => {
+  if (!m.quoted) throw 'Etiqueta un mensaje para mencionar a todos!'
   const getGroupAdmins = (participants) => {
         admins = []
         for (let i of participants) {
