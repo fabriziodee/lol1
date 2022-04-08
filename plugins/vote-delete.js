@@ -2,16 +2,18 @@ let handler = async (m, { conn, usedPrefix }) => {
     let id = m.chat
     conn.vote = conn.vote ? conn.vote : {}
     if (!(id in conn.vote)) {
-        await conn.sendButton(m.chat, `_*tidak ada voting digrup ini!*_`, 'Nana-BOT', 'MULAI VOTE', `${usedPrefix}mulaivote`, m)
+        await conn.reply(m.chat, `No hay ninguna votación, escribe ${usedPrefix}startvote para iniciar una!`, m)
         throw false
     }
     delete conn.vote[id]
-    m.reply(`Berhasil!`)
+    m.reply(`Se eliminó la votación!`)
 
 }
-handler.help = ['deletevote']
+
+handler.help = ['delvote']
 handler.tags = ['vote']
 handler.command = /^(deletevote|delvote|hapusvote)$/i
 handler.group = true
 handler.admin = true
+
 module.exports = handler
