@@ -1,6 +1,7 @@
 let { MessageType } = require('@adiwajshing/baileys')
 
-async function handler(m, { conn, args, isROwner }) {
+async function handler(m, { conn, args, text, usedPrefix, command }) {
+    if (!text) return m.reply(`*Ingrese la cantidad de dinero que desea apostar*\n\n- Ejemplo: ${usedPrefix + command} 100`)
     let user = global.DATABASE._data.users[m.sender]
     let count = (args[0] && number(parseInt(args[0])) ? Math.max(parseInt(args[0]), 1) : /all/i.test(args[0]) ? Math.floor(parseInt(user.money)) : 1) * 1
     if ((user.money * 1) < count) return conn.sendMessage(m.chat, button('*Tu dinero no es suficiente para apostar*', user), MessageType.buttonsMessage, { quoted: m })
