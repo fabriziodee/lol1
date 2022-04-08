@@ -16,7 +16,7 @@ Total: ${devote.length} votos
 ${devote.map(u => '- @' + u.split('@')[0]).join('\n')}`
 let _vote = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
-"title": "\t\t\n*‧ 🗳️ VOTACIÓN 🗳️ ‧*",
+"title": "\t\t\t*‧ 🗳️ VOTACIÓN 🗳️ ‧*",
 "description": `${vt}\n\nSi quiere eliminar la votación\nescriba *${usedPrefix}delvote*`,
 "buttonText": "Opciones",
 "listType": "SINGLE_SELECT",
