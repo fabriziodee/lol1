@@ -2,26 +2,9 @@ let { MessageType } = require("@adiwajshing/baileys")
 let fs = require ('fs')
 
 let handler = async (m, { conn, text, command, usedPrefix }) => {
-let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
-let _test = conn.prepareMessageFromContent(m.chat, {
-"listMessage":  {
-"title": "Test Title",
-"description": 'xD',
-"buttonText": "Opciones",
-"listType": "SINGLE_SELECT",
-"sections": [
-{
-"rows": [
-{
-"title": "Test 1",
-"rowId": ".test"
-},
-{
-"title": "Test 2",
-"rowId": ".test"
-}
-]}]}}, { quoted: m })
-conn.relayWAMessage(_test)
+let tumb = fs.readFileSync('./storage/image/menu2.jpg')
+let tumbb = fs.readFileSync('./storage/gif/shop.gif')
+await conn.sendFile(m.chat, tumbb, 'out.gif', '*Test*', m, 0, { mimetype: 'video/gif', thumbnail: Buffer.alloc(0) })
 }
 
 //handler.help = ['test']
