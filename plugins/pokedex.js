@@ -1,7 +1,7 @@
 let fetch = require("node-fetch");
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) throw `Pokemonnya mana?`;
+  if (!text) throw `*Ingrese el nombre de un pokemon*\n\n- Ejemplo: ${usedPrefix + command} pikachu`;
   let res = await fetch(
     API("https://some-random-api.ml", "/pokedex", { pokemon: text })
   );
