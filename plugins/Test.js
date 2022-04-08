@@ -4,7 +4,8 @@ let fs = require ('fs')
 let handler = async (m, { conn, text, command, usedPrefix }) => {
 let tumb = fs.readFileSync('./storage/image/menu2.jpg')
 let tumbb = fs.readFileSync('./storage/gif/Shop.gif')
-await conn.sendFile(m.chat, tumbb, 'out.gif', '*Test*', m, 0, { mimetype: 'video/gif', thumbnail: Buffer.alloc(0) })
+conn.sendMessage(m.chat, tumbb, MessageType.video, { mimetype: Mimetype.gif, quoted: m })
+//await conn.sendFile(m.chat, tumbb, 'out.gif', '*Test*', m, 0, { mimetype: 'video/gif', thumbnail: Buffer.alloc(0) })
 }
 
 //handler.help = ['test']
