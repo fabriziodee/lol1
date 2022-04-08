@@ -2,7 +2,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 	
 	let user = global.DATABASE._data.users[m.sender]
 	let axe = global.DATABASE._data.users[m.sender].axe
-	let adurability = global.DATABASE._data.users[m.sender].axedurability
+	let pdurability = global.DATABASE._data.users[m.sender].axedurability
     let __waktur = (new Date - global.DATABASE._data.users[m.sender].lastcutting)
     let _waktur = (180000 - __waktur)
     let waktur = clockString(_waktur)
@@ -14,8 +14,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     if (axe > 0) {
     if (global.DATABASE._data.users[m.sender].axedurability > 99) {
     if (new Date - global.DATABASE._data.users[m.sender].lastcutting > 180000) {
-     
-global.DATABASE._data.users[m.sender].lastcutting = new Date * 1 
+       
+global.DATABASE._data.users[m.sender].lastcutting = new Date * 1
 global.DATABASE._data.users[m.sender].oak += oak * 1 
 global.DATABASE._data.users[m.sender].axedurability -= durability * 1
 global.DATABASE._data.users[m.sender].exp += exp * 1
@@ -34,16 +34,11 @@ global.DATABASE._data.users[m.sender].exp += exp * 1
      } else m.reply(`Todavía no tienes una hacha, compralo escribiendo ${usedPrefix}comprar hacha`)
  }
 
-//Update
-//- Roble: ${oak}
-//- Abedul: ${birch}
-//- Jungla: ${jungle}
-//- Exp: ${exp}
 
 handler.help = ['talar']
 handler.tags = ['rpg']
-
 handler.command = /^(cut|talar)$/i
+
 handler.disabled = false
 
 module.exports = handler
