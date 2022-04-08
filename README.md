@@ -92,9 +92,9 @@
 - [x] Juegos, tictɑctoe, mɑte, etc
 - [x] Chɑtbot (simsimi)
 - [x] Creɑr sticker de imɑge/video/gif/url
-- [ ] Votɑcion 
-- [ ] Juego RPG
-
+- [x] Votɑcion 
+- [x] Juego RPG [Beta]
+- [ ] Otros
 ---------
 
 ## <img src="https://i.gifer.com/origin/71/719ea2f44c791fc07e0e811940a0232b_w200.gif" width="35px"> Donɑciones
