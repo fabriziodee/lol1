@@ -94,6 +94,7 @@
 - [x] Creɑr sticker de imɑge/video/gif/url
 - [x] Votɑcion 
 - [x] Juego RPG [Beta]
+- [ ] Descarga de música y video de YT
 - [ ] Otros
 ---------
 
