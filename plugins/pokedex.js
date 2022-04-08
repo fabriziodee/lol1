@@ -7,7 +7,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   );
   if (!res.ok) throw `${res.status} ${res.statusText}`;
   let json = await res.json();
-  let pokedex = `\t\t\t*‧ 📟 Pokedex 📟 ‧*
+  let pokedex = `\t\t\t\t*‧ 📟 Pokedex 📟 ‧*
 
 *• Nombre:* ${json.name}
 *• Id:* ${json.id}
@@ -30,7 +30,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 *• Velocidad:* ${json.stats.speed}
 *• Total:* ${json.stats.total}
 
-\t\t\t*‧ 🍥 FAMILIA 🍥 ‧*
+\t\t\t\t*‧ 🍥 FAMILIA 🍥 ‧*
 
 *Etapa de evolución:* ${json.family.evolutionStage}
 *Línea de evolución:* ${json.family.evolutionLine}
