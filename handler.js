@@ -74,9 +74,9 @@ module.exports = {
             if (!isNumber(user.rod)) user.rod = 0
             if (!isNumber(user.roddurability)) user.roddurability = 0
 
-            if (!isNumber(user.energy)) user.lastadventure = 0
+            if (!isNumber(user.lastadventure)) user.lastadventure = 0
             if (!isNumber(user.lastmining)) user.lastmining = 0
-            if (!isNumber(user.lastcut)) user.lastcutting = 0
+            if (!isNumber(user.lastcutting)) user.lastcutting = 0
             if (!isNumber(user.lastfishing)) user.lastfishing = 0
             if (!('registered' in user)) user.registered = false
             if (!user.registered) {
