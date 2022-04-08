@@ -31,7 +31,7 @@ let _vote = conn.prepareMessageFromContent(m.chat, {
 "title": '❌ No',
 "rowId": `${usedPrefix}devote`
 }
-]}]}}, { quoted: m, { contextInfo: { mentionedJid } } })
+]}]}}, { quoted: m, contextInfo: { mentionedJid } })
 conn.relayWAMessage(_vote)
 //conn.send2Button(m.chat, vt, ``, ', ``, ', , m, { contextInfo: { mentionedJid } })
 }
