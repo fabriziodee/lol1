@@ -1,4 +1,4 @@
-let { MessageType } = require("@adiwajshing/baileys")
+let { MessageType, Mimetype } = require("@adiwajshing/baileys")
 let fs = require ('fs')
 
 let handler = async (m, { conn, text, command, usedPrefix }) => {
