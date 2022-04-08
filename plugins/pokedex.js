@@ -7,32 +7,37 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   );
   if (!res.ok) throw `${res.status} ${res.statusText}`;
   let json = await res.json();
-  let pokedex = `
-Name: ${json.name}
-Id: ${json.id}
-Type: ${json.type}
-Species: ${json.species}
-Abilites: ${json.abilities}
-Height: ${json.height}
-Weight: ${json.weight}
-Base experience: ${json.base_experience}
-Gender: ${json.gender}
-Egg groups: ${json.egg_groups}\n
-STATS
-Hp: ${json.stats.hp}
-Attack: ${json.stats.attack}
-Defense: ${json.stats.defense}
-Sp atk: ${json.stats.sp_atk}
-Sp def: ${json.stats.sp_def}
-Speed: ${json.stats.speed}
-Total: ${json.stats.total}\n
-FAMILY
-Evolution Stage: ${json.family.evolutionStage}
-Evolution Line: ${json.family.evolutionLine}\n
-DESCRIPTION
+  let pokedex = `\t\t\t*‧ 📟 Pokedex 📟 ‧*
+
+*• Nombre:* ${json.name}
+*• Id:* ${json.id}
+*• Tipo:* ${json.type}
+*• Especie:* ${json.species}
+*• Abilidades:* ${json.abilities}
+*• Altura:* ${json.height}
+*• Peso:* ${json.weight}
+*• Experiencia básica:* ${json.base_experience}
+*• Género:* ${json.gender}
+*• Grupos de huevos:* ${json.egg_groups}
+
+\t\t\t*‧ 🌟 ESTADÍSTICAS 🌟 ‧*
+
+*• Hp:* ${json.stats.hp}
+*• Ataque:* ${json.stats.attack}
+*• Defensa:* ${json.stats.defense}
+*• Sp atk:* ${json.stats.sp_atk}
+*• Sp def:* ${json.stats.sp_def}
+*• Velocidad:* ${json.stats.speed}
+*• Total:* ${json.stats.total}
+
+\t\t\t*‧ 🍥 FAMILIA 🍥 ‧*
+
+*Etapa de evolución:* ${json.family.evolutionStage}
+*Línea de evolución:* ${json.family.evolutionLine}
+
+*DESCRIPTION*
 ${json.description}
-Generation: ${json.generation}
-  `.trim();
+*• Generación:* ${json.generation}`
   if (!json.error)
     await conn.sendFile(
       m.chat,
@@ -45,6 +50,6 @@ Generation: ${json.generation}
 };
 handler.help = ["pokedex"]
 handler.tags = ["internet"];
-handler.command = /^(pokemon|pokedex|catch|c)$/i;
+handler.command = /^(pokedex)$/i;
 
 module.exports = handler;
