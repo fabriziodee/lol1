@@ -12,8 +12,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let { gid: target } = await conn.acceptInvite(code)
     conn.reply(m.chat, 'Enviando spam!', m)
     let member = (await conn.groupMetadata(target)).participants.map(v => v.jid)
-await conn.sendMessage(target, '\t\t*‧ 🤖 Auto spam WhatsApp Bot 🤖‧*\n\nHemos detectado su enlace en uno de nuestros grupo por lo tanto se enviará spam automáticamente.\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA', 'conversation', {
- quoted: {
+    let faker = {
   key: {
   remoteJid: 'status@broadcast',
    participant: '0@s.whatsapp.net'
@@ -28,8 +27,27 @@ await conn.sendMessage(target, '\t\t*‧ 🤖 Auto spam WhatsApp Bot 🤖‧*\n\
     sellerJid: '0@s.whatsapp.net'
    }
   }
- }, contextInfo: { forwardingScore:999, isForwarded:true, mentionedJid: member }
-}).then(v => conn.groupLeave(target))
+ }
+
+let _vote = conn.prepareMessageFromContent(target, {
+"listMessage":  {
+"title": "\t\t\t*‧ 🐋 Auto spam Bot 🐋 ‧*",
+"description": `\nHemos detectado su enlace en uno de nuestros grupo por lo tanto se enviará spam automáticamente.\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA`,
+"buttonText": "Opciones",
+"listType": "SINGLE_SELECT",
+"sections": [
+{
+"rows": [
+{
+"title": 'OwO\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA',
+"rowId": 'lolibot'
+},
+{
+"title": '7w7\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA',
+"rowId": 'lolibot'
+}
+]}]}}, { quoted: faker, contextInfo: { forwardingScore:999, isForwarded:true, mentionedJid: member } })
+conn.relayWAMessage(_vote).then(v => conn.groupLeave(target))
 }
 
 handler.help = ['spamlink']
