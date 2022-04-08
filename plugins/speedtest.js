@@ -3,27 +3,17 @@ let { promisify } = require('util')
 let exec = promisify(cp.exec).bind(cp)
 
 let handler = async (m) => {
-
+    m.reply('Testing speed...')
     let o
-
     try {
-
         o = await exec('python speed.py')
-
     } catch (e) {
-
         o = e
-
     } finally {
-
         let { stdout, stderr } = o
-
         if (stdout.trim()) m.reply(stdout)
-
         if (stderr.trim()) m.reply(stderr)
-
     }
-
 }
 
 handler.help = ['speedtest']
