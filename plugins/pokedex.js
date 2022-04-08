@@ -40,7 +40,7 @@ ${json.description}
 *• Generación:* ${json.generation}`
   if (!json.error)
     //await conn.sendFile(m.chat, json.sprites.animated, "pokemon.gif", pokedex, m);
-    await conn.sendFile(m.chat, json.sprites.animated, 'pokemon.gif', pokedex, m, 0, { mimetype: 'video/gif' })
+    await conn.sendFile(m.chat, json.sprites.animated, 'pokemon.gif', pokedex, m, 0, { mimetype: 'video/gif', thumbnail: Buffer.alloc(0) })
   else throw json.error;
 };
 
