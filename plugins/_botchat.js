@@ -42,7 +42,7 @@ let audio10B = audio10A.exec(m.text)
 let audio11A = /leche/i
 let audio11B = audio11A.exec(m.text)
 
-let audio12A = /jajajaja/i
+let audio12A = /jaja/i
 let audio12B = audio12A.exec(m.text)
 
 let audio13A = /suicidar/i
