@@ -7,7 +7,7 @@ let handler  = async (m, { conn }) => {
 }
 
 handler.help = ['stop']
-handler.tags = ['host']
+handler.tags = ['jadibot']
 handler.command = /^(stopjadibot|stop)$/i
 handler.owner = true
 handler.mods = false
