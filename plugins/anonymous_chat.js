@@ -1,6 +1,6 @@
 const { MessageType } = require("@adiwajshing/baileys")
 
-async function handler(m, { command }) {
+async function handler(m, { usedPrefix, command }) {
     command = command.toLowerCase()
     this.anonymous = this.anonymous ? this.anonymous : {}
     switch (command) {
@@ -36,15 +36,15 @@ async function handler(m, { command }) {
                         return who === this.a ? this.b : who === this.b ? this.a : ''
                     },
                 }
-                m.reply('En espera de que un usuario use el comando para poder vincularlos.. esto puede demorar si desea salir use #leave')
+                m.reply(`En espera de que un usuario use el comando para poder vincularlos.. esto puede demorar si desea salir use ${usedPrefix}leave`)
             }
             break
         }
     }
 }
-handler.help = ['start', 'leave', 'next']
-handler.tags = 'anonymous'
 
+handler.help = ['start', 'leave', 'next']
+handler.tags = ['anonymous']
 handler.command = ['start', 'leave', 'next']
 handler.private = true
 
