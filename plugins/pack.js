@@ -1,20 +1,18 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn }) => {
-	let url = pack[Math.floor(Math.random() * pack.length)]
-	await conn.sendMessage(m.chat, {
-		contentText: '*_©The Shadow Brokers - Bot_*',
-		footerText: 'Agradecimientos a Bot tiburón',
-		buttons: [
-			{ buttonId: '.pack', buttonText: { displayText: 'SIGUIENTE' }, type: 1 }
-		],
-		headerType: 4,
-		imageMessage: (await conn.prepareMessageMedia(await (await fetch(url)).buffer(), 'imageMessage', {})).imageMessage
-	}, 'buttonsMessage', { quoted: m })
+let url = pack[Math.floor(Math.random() * pack.length)]
+let chat = global.DATABASE._data.chats[m.chat]
+if (!chat.nsfw) return m.reply(global.nsfw)
+conn.reply(m.chat, wait, m)
+let pk = await (await fetch(url)).buffer()
+conn.sendFile(m.chat, pk, 'pack', '*PACK*', m)
 }
-handler.command = /^(packxxx)$/i
-//handler.tags = ['internet']
-//handler.help = ['pack']
+
+handler.help = ['pack']
+handler.tags = ['nsfw']
+handler.command = /^(pack)$/i
+
 module.exports = handler
 
 global.pack = [
