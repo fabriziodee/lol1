@@ -1,9 +1,16 @@
 let fetch = require('node-fetch')
-     let handler  = async (m, { conn, usedPrefix, command }) => {
+
+    let handler  = async (m, { conn, usedPrefix, command }) => {
+    if (chat.nsfw) {
+    conn.reply(m.chat, wait, m)
     heum = await fetch(`https://server-api-rey.herokuapp.com/api/nsfw/ass?apikey=apirey`)
     json = await heum.buffer()
-   conn.sendButtonImg(m.chat, json, '*Disfrutalo!!*', '©The Shadow Brokers - Bot', 'SIGUIENTE', `${usedPrefix + command}`, m, false)
+    conn.sendFile(m.chat, json, 'wass', '*WASS*', m)
+} else m.reply('En este grupo no se permite el contenido +18')
 }
-handler.command = /^(nsfwass)$/i
+
+handler.help = ['wass']
+handler.tags = ['nsfw']
+handler.command = /^(wass)$/i
 
 module.exports = handler
