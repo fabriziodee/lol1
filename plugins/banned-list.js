@@ -6,6 +6,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 Total:  ${chats.length} Chats${chats ? '\n' + chats.map(([jid], i) => `${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
 ID: ${jid}`.trim()).join('\n') : ''}
 
+
 *❛ 📧 Lista de usuarios Baneados 📧 ❜*
 Total: ${users.length} Usuarios${users ? '\n' + users.map(([jid], i) => `${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
 ID: ${jid}`.trim()).join('\n') : ''}
