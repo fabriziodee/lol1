@@ -6,18 +6,11 @@ let handler = async (m, { conn, text }) => {
     conn.reply(m.chat, stdout.toString(), m)
   }
 }
+
 handler.help = ['update']
 handler.tags = ['host']
 handler.command = /^(update|fix|actualizar)$/i
 handler.rowner = false
-handler.mods = false
-handler.premium = true
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
 handler.fail = null
 handler.exp = 0
 
