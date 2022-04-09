@@ -63,7 +63,7 @@ Internet OUT : *${netsOut}*
         console.log(OS)
     } catch (e) {
         console.log(e)
-        conn.reply(m.chat, eror, m)
+        conn.reply(m.chat, error, m)
         if (DevMode) {
             for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
                 conn.reply(jid, 'Status.js error\nNo: *' + m.sender.split `@` [0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', m)
