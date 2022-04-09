@@ -12,6 +12,5 @@ conn.sendFile(m.chat, json.url, 'cum', '*CUM*', m)
 handler.help = ['cum']
 handler.tags = ['nsfw']
 handler.command = /^(cum)$/i
-handler.limit = true
 
 module.exports = handler
