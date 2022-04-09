@@ -9,8 +9,8 @@ let fetch = require('node-fetch')
 } else m.reply('En este grupo no se permite el contenido +18')
 }
 
-handler.help = ['wass']
+handler.help = ['ass']
 handler.tags = ['nsfw']
-handler.command = /^(wass)$/i
+handler.command = /^(ass)$/i
 
 module.exports = handler
