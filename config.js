@@ -57,8 +57,7 @@ global.wm = '©The Shadow Brokers - Bot'
 
 global.wait = '↻ Espere un momento...'
 global.error = '☓ Ocurrió un error inesperado'
-global._limit = 'Te quedaste sin limites, compra más escribiendo ${usedPrefix}buylimit'
-global.limit = ''
+global.nsfw = 'En este grupo no está permitido el contenido +18'
 
 
 global.botname = 'Lolibot - OFC'
