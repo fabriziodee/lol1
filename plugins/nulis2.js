@@ -1,10 +1,10 @@
 let util = require('util')
 let path = require('path')
 let { spawn } = require('child_process')
-
-// Font By MFarelS:V
 let fontPath = 'src/font/Zahraaa.ttf'
-let handler  = async (m, { conn, args }) => {
+
+let handler  = async (m, { conn, args, text, usedPrefix, command }) => {
+  if (!text) throw `*Escribe un texto*\n\n- Ejemplo: ${usedPrefix + command} Hola`
   if (!global.support.convert &&
       !global.support.magick &&
       !global.support.gm) return handler.disabled = true // Disable if doesnt support
@@ -62,25 +62,16 @@ let handler  = async (m, { conn, args }) => {
   spawn(_spawnprocess, _spawnargs)
     .on('error', e => conn.reply(m.chat, util.format(e), m))
     .on('close', () => {
-      conn.sendFile(m.chat, Buffer.concat(bufs), 'nulis.jpg', '*_Aqui tienes_*', m)
+      conn.sendFile(m.chat, Buffer.concat(bufs), 'nulis.jpg', 'Es mejor de lo que escribes tu', m)
     })
     .stdout.on('data', chunk => bufs.push(chunk))
 }
-handler.help = ['n'].map(v => v + 'ulis2 <teks>')
-handler.tags = ['tools']
-handler.command = /^nulis2$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
 
-handler.admin = false
-handler.botAdmin = false
+handler.help = ['nulis2']
+handler.tags = ['tools']
+handler.command = /^(nulis2)$/i
 
 handler.fail = null
 
 module.exports = handler
 
-// BY MFARELS
-// https://GitHub.com/MFarelS/
