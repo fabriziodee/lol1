@@ -12,6 +12,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
 *• Recuperados:* ${json.recovered.value}
 *• Muertes:* ${json.deaths.value}
 *• Actualizado:* ${json.lastUpdate}`
+)
   else throw json
 }
 
