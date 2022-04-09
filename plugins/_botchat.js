@@ -57,6 +57,8 @@ let audio15B = audio15A.exec(m.text)
 let audio16A = /Bot|bot/i
 let audio16B = audio16A.exec(m.text)
 
+let audio17A = /Aver el poto|el poto|tu poto/i
+let audio17B = audio17A.exec(m.text)
 
 //Mensaje new
 let texto1A = /No tengo hermana|No tengo ermana/i
@@ -146,6 +148,10 @@ if (audio16B) {
         conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", previewType: "PHOTO", thumbnail: ppp, sourceUrl:``}}})
         }
 
+if (audio17B) {
+	let vn = './storage/audio/No_te_dare_mi_poto.mp3'
+	conn.sendFile(m.chat, vn, 'No_te_dare_mi_poto.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+	}
 
 
 //Mensaje new
