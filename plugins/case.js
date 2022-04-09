@@ -15,6 +15,7 @@ function handler(m, { text, usedPrefix, command }) {
         }
     }))
 }
+
 handler.command = ['alay', 'case']
 
 module.exports = handler
