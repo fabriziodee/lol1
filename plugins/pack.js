@@ -1,10 +1,10 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn }) => {
-let url = pack[Math.floor(Math.random() * pack.length)]
 let chat = global.DATABASE._data.chats[m.chat]
 if (!chat.nsfw) return m.reply(global.nsfw)
 conn.reply(m.chat, wait, m)
+let url = pack[Math.floor(Math.random() * pack.length)]
 let pk = await (await fetch(url)).buffer()
 conn.sendFile(m.chat, pk, 'pack', '*PACK*', m)
 }
