@@ -1,10 +1,16 @@
 let axios = require("axios")
+
 let handler = async (m, { conn, usedPrefix, command }) => {
+let chat = global.DATABASE._data.chats[m.chat]
+if (!chat.nsfw) return m.reply(global.nsfw)
+conn.reply(m.chat, wait, m)
 let res = await axios("https://meme-api.herokuapp.com/gimme/panties")
 let json = res.data
-let url = json.url
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let mentionedJid = [who]
-conn.send2ButtonImg(m.chat, url, "*Panties*", '©The Shadow Borkers - Bot', '🥵 SIGUIENTE 🥵', `${usedPrefix + command}`, '🔥 LABIBLIA 🔥', `${usedPrefix}labiblia`, m, false, { contextInfo: { mentionedJid }}) }
+conn.sendFile(m.chat, json.url, 'panties', '*PANTIES*', m)
+}
+
+handler.help = ['panties']
+handler.tags = ['nsfw']
 handler.command = /^(panties)$/i
+
 module.exports = handler
