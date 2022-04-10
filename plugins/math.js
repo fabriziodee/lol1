@@ -9,14 +9,7 @@ let handler  = async (m, { conn, args, command, usedPrefix }) => {
 - ${Object.keys(modes).join('\n- ')}
 `.trim(), m)
   let mode = args[0].toLowerCase()
-  if (!(mode in modes)) return conn.reply(m.chat, `
-*Ingrese una dificultad*
-
-- Ejemplo: ${usedPrefix + command} medium
-
-*Dificultades:*
-- ${Object.keys(modes).join('\n- ')}
-`.trim(), m)
+  if (!(mode in modes)) return conn.reply(m.chat, `Dificultad *${text}* no encontrada!`, m)
   let id = m.chat
   if (id in global.math) return conn.reply(m.chat, 'Todavía hay preguntas sin respuesta en este chat.', global.math[id][0])
   let math = genMath(mode)
