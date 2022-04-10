@@ -40,14 +40,15 @@ let tags = {
 const defaultMenu = {
   before: `Hola *@%user*, %greeting
 
-⠀ ∙•⃝⃕💫 *Tu info:* %bio
+⠀ ∙•⃝⃕💫 *Bio:* %bio
 
-⠀ ∙•⃝⃕🐤 *Nombre:* %name
-⠀ ∙•⃝⃕📟 *Número:* %number
-⠀ ∙•⃝⃕📆 *Fecha:* %date
-⠀ ∙•⃝⃕⏰ *Hora:* %time
-⠀ ∙•⃝⃕🎲 *Comandos:* %comand Total
+⠀ ∙•⃝⃕🐤 *Bot Nɑme:* %botname
+⠀ ∙•⃝⃕🐤 *Lenguɑje:* %lang
+⠀ ∙•⃝⃕🐤 *Libreriɑ:* %lib
 ⠀ ∙•⃝⃕🧸 *Prefijo:* ⌞∙ multiprefix ∙⌝
+⠀ ∙•⃝⃕🎲 *Comɑndos:* %comand Totɑl
+⠀ ∙•⃝⃕📆 *Fechɑ:* %date
+⠀ ∙•⃝⃕⏰ *Horɑ:* %time
 
 `,
   header: '⠀⠀ _*%category*_',
@@ -162,6 +163,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       version: conn.browserDescription[2],
       bio: biot.status == 401 ? 'Sin info' : biot.status,
       greeting: saludo,
+      lang: 'JavaScript',
+      botname: 'lolibot',
+      lib: 'Baileys',
       rmoji: ramoji,
       npmname: package.name,
       npmdesc: package.description,
