@@ -42,13 +42,13 @@ const defaultMenu = {
 
 ⠀ ∙•⃝⃕💫 *Bio:* %bio
 
-⠀ ∙•⃝⃕🐤 *Bot Nɑme:* %botname
-⠀ ∙•⃝⃕🐤 *Lenguɑje:* %lang
-⠀ ∙•⃝⃕🐤 *Libreriɑ:* %lib
-⠀ ∙•⃝⃕🧸 *Prefijo:* ⌞∙ multiprefix ∙⌝
-⠀ ∙•⃝⃕🎲 *Comɑndos:* %comand Totɑl
-⠀ ∙•⃝⃕📆 *Fechɑ:* %date
-⠀ ∙•⃝⃕⏰ *Horɑ:* %time
+⠀ ∙•⃝⃕🐤 *Bot Nɑme :* %botname
+⠀ ∙•⃝⃕🐤 *Lenguɑje :* %lang
+⠀ ∙•⃝⃕🐤 *Libreriɑ :* %lib
+⠀ ∙•⃝⃕🧸 *Prefijo :* ⌞∙ multiprefix ∙⌝
+⠀ ∙•⃝⃕🎲 *Comɑndos :* %comand Totɑl
+⠀ ∙•⃝⃕📆 *Fechɑ :* %date
+⠀ ∙•⃝⃕⏰ *Horɑ :* %time
 
 `,
   header: '⠀⠀ _*%category*_',
