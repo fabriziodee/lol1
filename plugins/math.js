@@ -1,13 +1,21 @@
 global.math = global.math ? global.math : {}
 let handler  = async (m, { conn, args, usedPrefix }) => {
   if (args.length < 1) return conn.reply(m.chat, `
-*Modo:* ${Object.keys(modes).join(' | ')}
-*Ejemplo de uso:* ${usedPrefix}math medium
+*Ingrese una dificultad*
+
+- Ejemplo: ${usedPrefix + command} medium
+
+*Dificultades:*
+${Object.keys('- ' + modes).join('\n')}
 `.trim(), m)
   let mode = args[0].toLowerCase()
   if (!(mode in modes)) return conn.reply(m.chat, `
-*Mode:* ${Object.keys(modes).join(' | ')}
-*Ejemplos de uso:* ${usedPrefix}math medium
+*Ingrese una dificultad*
+
+- Ejemplo: ${usedPrefix + command} medium
+
+*Dificultades:*
+${Object.keys('- ' + modes).join('\n')}
 `.trim(), m)
   let id = m.chat
   if (id in global.math) return conn.reply(m.chat, 'Todavía hay preguntas sin respuesta en este chat.', global.math[id][0])
