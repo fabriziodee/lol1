@@ -8,7 +8,7 @@ let handler = async function (m, { conn }) {
     })
   }
   await conn.sendMessage(m.chat, {
-    "displayName": '100 Contact',
+    "displayName": '7 Contact',
     "contacts": list
   }, 'contactsArrayMessage', { quoted: m })
 }
