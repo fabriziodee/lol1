@@ -39,7 +39,7 @@ let handler = async (m, { conn }) => {
   let neww = performance.now()
   let speed = neww - old
   let txt = `
-Velocidad de respuesta ${speed} milisegundos
+Responde en ${speed} milisegundos
 
 💻 *Server Info* :
 RAM: ${format(os.totalmem() - os.freemem())} / ${format(os.totalmem())}
