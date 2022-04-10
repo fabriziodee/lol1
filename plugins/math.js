@@ -29,10 +29,10 @@ ${Object.keys('- ' + modes).join('\n')}
     }, math.time)
   ]
 }
-handler.help = ['math <mode>']
+
+handler.help = ['math']
 handler.tags = ['game']
-handler.registrar = true
-handler.command = /^math|mates|matemáticas/i
+handler.command = /^(math|mates|matemáticas)$/i
 
 module.exports = handler
 
