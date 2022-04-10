@@ -6,7 +6,7 @@ let { webp2png } = require('../lib/webp2mp4')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   let qq = m.quoted ? m.quoted : m
   let mimee = (qq.msg || qq).mimetype || '' 
-  if (!/webp|image|video/g.test(mimee)) throw 'Etiqueta una imagen o gif!'
+  if (!/webp|image|video/g.test(mimee)) throw 'Etiqueta una imagen o gif para convertirlo a sticker!'
   let stiker = false
   try {
     let q = m.quoted ? m.quoted : m
