@@ -9,13 +9,13 @@ let handler = m => m
 handler.before = async function (m, { conn, command }) {
 if ((m.isBaileys && m.fromMe) || m.fromMe ) return true
 
-let audio1A = /onichan|senpai|sempai|yamete/i
+let audio1A = /onichan|senpai|sempai|yamete|onii-chan|oni-chan/i
 let audio1B = audio1A.exec(m.text)
 
 let audio2A = /bot te amo|te amo bot/i
 let audio2B = audio2A.exec(m.text)
 
-let audio3A = /bot eres hombre o mujer/i
+let audio3A = /eres hombre o mujer|eres ombre o mujer/i
 let audio3B = audio3A.exec(m.text)
 
 let audio4A = /a mimir/i
@@ -24,7 +24,7 @@ let audio4B = audio4A.exec(m.text)
 let audio5A = /pasen hentai|pasen hentay|antojen/i
 let audio5B = audio5A.exec(m.text)
 
-let audio6A = /eres gay|que gay/i
+let audio6A = /eres gay|que gay|un gay/i
 let audio6B = audio6A.exec(m.text)
 
 let audio7A = /mirame/i
