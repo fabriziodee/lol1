@@ -1,6 +1,6 @@
 let handler = async function (m, { conn, participants }) {
   let list = []
-  for (let i of owner.map(v => v + '@s.whatsapp.net')) {
+  for (let i of participants.map(u => u.jid))) {
     let users = participants.map(u => u.jid)
     let name = this.getName(users)
     list.push({
