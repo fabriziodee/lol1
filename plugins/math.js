@@ -1,5 +1,5 @@
 global.math = global.math ? global.math : {}
-let handler  = async (m, { conn, args, usedPrefix }) => {
+let handler  = async (m, { conn, args, command, usedPrefix }) => {
   if (args.length < 1) return conn.reply(m.chat, `
 *Ingrese una dificultad*
 
