@@ -6,7 +6,7 @@ let handler  = async (m, { conn, args, command, usedPrefix }) => {
 - Ejemplo: ${usedPrefix + command} medium
 
 *Dificultades:*
-${Object.keys(modes).join('\n')}
+- ${Object.keys(modes).join('\n- ')}
 `.trim(), m)
   let mode = args[0].toLowerCase()
   if (!(mode in modes)) return conn.reply(m.chat, `
@@ -15,7 +15,7 @@ ${Object.keys(modes).join('\n')}
 - Ejemplo: ${usedPrefix + command} medium
 
 *Dificultades:*
-${Object.keys(modes).join('\n')}
+- ${Object.keys(modes).join('\n- ')}
 `.trim(), m)
   let id = m.chat
   if (id in global.math) return conn.reply(m.chat, 'Todavía hay preguntas sin respuesta en este chat.', global.math[id][0])
