@@ -121,37 +121,37 @@ if (audio11B) {
 	} else
 
 if (audio12B) {
-        let tt = ["./storage/audio/Eres_muy_chistoso.mp3", "./storage/audio/Gracioso_te_crees.mp3"]
+        let tt = ["./storage/audio/Gracioso_te_crees.mp3", "./storage/audio/Eres_muy_chistoso.mp3"]
 	let vn = tt[Math.floor(Math.random() * tt.length)]
-	conn.sendFile(m.chat, vn, 'Gracioso.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+	conn.sendFile(m.chat, vn, 'Gracioso_Chistoso.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio13B) {
 	let vn = './storage/audio/El_suicidio_no_es_una_opcion.mp3'
 	conn.sendFile(m.chat, vn, 'El_suicidio_no_es_una_opcion.mp3', null, m, true, { type: 'audioMessage', ptt: true })
-	}
+	} else
 
 if (audio14B) {
 	let vn = './storage/audio/Deje_de_insultarme.mp3'
 	conn.sendFile(m.chat, vn, 'Deje_de_insultarme.mp3', null, m, true, { type: 'audioMessage', ptt: true })
-	}
+	} else
 
 if (audio15B) {
 	let vn = './storage/audio/A.mp3'
 	conn.sendFile(m.chat, vn, 'A.mp3', null, m, true, { type: 'audioMessage', ptt: true })
-	}
+	} else
 
 if (audio16B) {
 	let vn = './storage/sticker/Bot.webp'
         let pp = await conn.getProfilePicture(m.sender) 
         let ppp = await(await fetch(pp)).buffer()
         conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", previewType: "PHOTO", thumbnail: ppp, sourceUrl:``}}})
-        }
+        } else
 
 if (audio17B) {
 	let vn = './storage/audio/No_te_dare_mi_poto.mp3'
 	conn.sendFile(m.chat, vn, 'No_te_dare_mi_poto.mp3', null, m, true, { type: 'audioMessage', ptt: true })
-	}
+	} else
 
 
 //Mensaje new
