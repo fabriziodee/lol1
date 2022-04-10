@@ -25,6 +25,4 @@ handler.help = ["ocr"];
 handler.tags = ["tools"];
 handler.command = /^(ocr|atexto|totext)$/i;
 
-handler.limit = true;
-
 module.exports = handler;
