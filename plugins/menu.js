@@ -47,7 +47,7 @@ const defaultMenu = {
 ⠀ ∙•⃝⃕📚 *• Libreriɑ :* %lib
 ⠀ ∙•⃝⃕🧸 *• Prefijo :* ⌞∙ multiprefix ∙⌝
 ⠀ ∙•⃝⃕🎲 *• Comɑndos :* %comand Totɑl
-⠀ ∙•⃝⃕📆 *• Fechɑ :* %date
+⠀ ∙•⃝⃕☀️ *• Fechɑ :* %date
 ⠀ ∙•⃝⃕⏰ *• Horɑ :* %time
 
 `,
