@@ -2,7 +2,7 @@ let handler = async function (m, { conn, participants }) {
   let users = participants.map(u => u.jid)
   let list = []
   for (let i of participants.map(u => u.jid)) {
-    let _bio = conn.getStatus(`${i.split('@')[0]}@c.us`)
+    let _bio = await conn.getStatus(`${i.split('@')[0]}@c.us`)
     let bio = _bio.status == 401 ? 'Sin info' : _bio.status
     let name = conn.getName(i)
     list.push({
