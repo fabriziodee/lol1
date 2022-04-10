@@ -42,14 +42,12 @@ let handler = async (m, { conn, text, participants }) => {
 	conn.reply(m.chat, 'Se eliminó a todos los fantasmas con éxito', m)
 }
 handler.help = ['kicksider']
-handler.tags = ['group']
+handler.tags = ['adm']
 handler.command = /^(kicksider)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
 handler.group = true
 handler.private = false
 handler.admin = true
 handler.botAdmin = true
 handler.fail = null
+
 module.exports = handler
