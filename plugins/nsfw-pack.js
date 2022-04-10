@@ -7,7 +7,7 @@ if (!chat.nsfw) return m.reply(global.nsfw)
 conn.reply(m.chat, wait, m)
 let ra = Math.floor(Math.random() * 74)
 let pack = fs.readFileSync(`./storage/image/pack/gawr_gura/0${ra}.jpg`)
-conn.sendFile(m.chat, pack, 'pack', '*PACK*', m)
+conn.sendFile(m.chat, pack, 'pack', '*Patreon Umeko J hololive Gawr gura - COSPLAY*', m)
 }
 
 handler.help = ['pack']
