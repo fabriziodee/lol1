@@ -11,11 +11,13 @@ let handler = async function (m, { conn, participants }) {
   await conn.sendMessage(m.chat, {
     "displayName": `${list.length} Contact`,
     "contacts": list
-  }, 'contactsArrayMessage', { quoted: m })
+  }, 'contactsArrayMessage', { quoted: m, contextInfo: { mentionedJid: users } })
 }
 
-handler.help = ['contacall']
+handler.help = ['contagall']
 handler.tags = ['group']
-handler.command = /^(contacall|contactall|conall)$/i
+handler.command = /^(contagall|contacall|contactall|conall)$/i
+handler.group = true
+handler.admin = true
 
 module.exports = handler
