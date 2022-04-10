@@ -1,6 +1,6 @@
 let { MessageType, Presence } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, text, participants }) => {
-	conn.reply('Iniciando la eliminación de fantasmas..')
+	await m.reply('Iniciando la eliminación de fantasmas..')
 	let member = participants.map(u => u.jid)
 	if(!text) {
 		var sum = member.length
