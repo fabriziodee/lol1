@@ -60,6 +60,23 @@ let audio16B = audio16A.exec(m.text)
 let audio17A = /Aver el poto|el poto|tu poto/i
 let audio17B = audio17A.exec(m.text)
 
+let audio18A = /5 cm|5 centímetros|5 centimetros|5 sentímetros|5 sentimetros/i
+let audio18B = audio18A.exec(m.text)
+
+let audio19A = /pajea|pajero|paja/i
+let audio19B = audio19A.exec(m.text)
+
+let audio20A = /quiero/i
+let audio20B = audio20A.exec(m.text)
+
+let audio21A = /pija|piga/i
+let audio21B = audio21A.exec(m.text)
+
+let audio22A = /saquenme/i
+let audio22B = audio22A.exec(m.text)
+
+
+
 //Mensaje new
 let texto1A = /No tengo hermana|No tengo ermana/i
 let texto1B = texto1A.exec(m.text)
@@ -151,6 +168,31 @@ if (audio16B) {
 if (audio17B) {
 	let vn = './storage/audio/No_te_dare_mi_poto.mp3'
 	conn.sendFile(m.chat, vn, 'No_te_dare_mi_poto.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+	} else
+
+if (audio18B) {
+	let vn = './storage/audio/5cm_.mp3'
+	conn.sendFile(m.chat, vn, '5cm_.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+	} else
+
+if (audio19B) {
+	let vn = './storage/audio/El_admin_se_pajea.mp3'
+	conn.sendFile(m.chat, vn, 'El_admin_se_pajea.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+	} else
+
+if (audio20B) {
+	let vn = './storage/audio/Me_dieron_ganas.mp3'
+	conn.sendFile(m.chat, vn, 'Me_dieron_ganas.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+	} else
+
+if (audio21B) {
+	let vn = './storage/audio/Pija.mp3'
+	conn.sendFile(m.chat, vn, 'Pija.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+	} else
+
+if (audio22B) {
+	let vn = './storage/audio/Saquenme_del_tercer_mundo.mp3'
+	conn.sendFile(m.chat, vn, 'Saquenme_del_tercer_mundo.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 
