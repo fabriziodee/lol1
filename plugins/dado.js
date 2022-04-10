@@ -2,8 +2,9 @@ let { MessageType } = require("@adiwajshing/baileys")
 let fs = require('fs')
 
 let handler = async (m, { conn }) => {
-let num = Math.floor(Math.random() * 6)
-let dado = fs.readFileSync(`./storage/sticker/dado${num}.webp`)
+let dd = ["1", "2", "3", "4", "5", "6"]
+let ra = dd[Math.floor(Math.random() * dd.length)]
+let dado = fs.readFileSync(`./storage/sticker/dado${ra}.webp`)
 conn.sendMessage(m.chat, dado, MessageType.sticker, { quoted: m })
 }
 
