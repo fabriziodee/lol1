@@ -7,10 +7,13 @@ let handler = async (m, { conn, command, usedPrefix }) => {
   let txt = `\t\t\t\t*‧ 💌 Info Mensaje 💌 ‧*
 
 *👀 Leído por ${members > 1 ? `${members - reads.length} Miembros` : ''}*
+
 ${reads.sort((a, b) => b.t - a.t).map(({ jid, t }) => `*• Usuario:* @${jid.split`@`[0]}\n*• Fecha:* ${formatDate(t * 1000)}\n*• Hora:* ${formatHour(t * 1000)}`).join('\n\n')}
 
+⠀ ╶
 
 *✅ Enviado a ${members > 1 ? `${members - reads.length - deliveries.length} Miembros*` : ''}
+
 ${deliveries.sort((a, b) => b.t - a.t).map(({ jid, t }) => `*• Usuario:* @${jid.split`@`[0]}\n*• Fecha:* ${formatDate(t * 1000)}\n*• Hora:* ${formatHour(t * 1000)}`).join('\n\n')}`
   m.reply(txt, null, {
     contextInfo: {
