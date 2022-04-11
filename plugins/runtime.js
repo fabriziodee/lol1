@@ -5,7 +5,7 @@ let runnya = `\t\t\t\t*∙ ☀️ Runtime ☀️ ∙*
 
 • *Hora:* ${time}
 • *Tiempo activa:* ${runtime(uptime)}`
-await m.reply(runnya)
+await await await await await m.reply(runnya)
 }
 
 handler.help = ['runtime']
