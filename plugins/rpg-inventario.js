@@ -104,6 +104,7 @@ if (text.includes('simple')) {
 handler.help = ['inventario']
 handler.tags = ['rpg']
 handler.command = /^(inventario|inventory|inv)$/i
+
 module.exports = handler
 
 const more = String.fromCharCode(8206)
