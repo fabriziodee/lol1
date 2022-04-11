@@ -9,7 +9,7 @@ let handler = async (m, { conn, text }) => {
     let users = global.DATABASE._data.users
     users[buser].banned = true
     users[buser].BannedReason = `${text.replace(_buser, '')}`
-    conn.sendMessage(m.chat, `*🔕 El usuario @${buser.split("@s.whatsapp.net")[0]} fue baneado*\n\n*Razón:* ${text}\n\n- Ahora ya no podrá utilizar los comandos`, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [buser] } })
+    conn.sendMessage(m.chat, `*🔕 El usuario @${buser.split("@s.whatsapp.net")[0]} fue baneado*\n\n*Razón:* ${text.replace(_buser, '')}\n\n- Ahora ya no podrá utilizar los comandos`, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [buser] } })
 }
 
 handler.help = ['banuser']
