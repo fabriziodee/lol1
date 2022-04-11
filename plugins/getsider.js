@@ -1,5 +1,5 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
-  if (!m.quoted) throw `Balas pesan bot dengan perintah *${usedPrefix + command}*`
+  if (!m.quoted) throw 'Etiqueta un mensaje mio!'
   if (!m.quoted.fromMe) throw false
   if (!m.quoted.id) throw false
   let members = m.quoted.chat.endsWith('g.us') ? (await conn.groupMetadata(m.quoted.chat)).participants.length - 1 : m.quoted.chat.endsWith('@broadcast') ? -1 : 1
@@ -40,6 +40,7 @@ function formatHour(n, locale = 'en-US') {
   return d.toLocaleString(locale, {
     hour: 'numeric',
     minute: 'numeric',
-    second: 'numeric'
+    second: 'numeric',
+    hour12: true
   })
 }
