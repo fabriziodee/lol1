@@ -5,7 +5,7 @@ let handler = async (m, { conn, text }) => {
     //if (!m.chat) return m.reply('Etiqueta a alguien del grupo para eliminar!')
     //let buser = m.quoted.sender ? m.quoted.sender : m.quoted.sender && m.mentionedJid[0] ? m.quoted.sender : m.mentionedJid[0]
     if (!buser) throw 'Etiqueta a alguien del grupo!'
-    let _buser = `${buser.split("@s.whatsapp.net")[0]}`
+    let _buser = `@${buser.split("@s.whatsapp.net")[0]}`
     let users = global.DATABASE._data.users
     users[buser].banned = true
     users[buser].BannedReason = `${text.replace(_buser, '')}`
