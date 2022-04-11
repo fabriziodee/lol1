@@ -10,7 +10,7 @@ ${reads.sort((a, b) => b.t - a.t).map(({ jid, t }) => `*• Usuario:* @${jid.spl
 
 
 *Enviado a ${members > 1 ? `${members - reads.length - deliveries.length} Miembros` : ''}
-${deliveries.sort((a, b) => b.t - a.t).map(({ jid, t }) => `*• Usuario:* @${jid.split`@`[0]}\n*• Fecha:*${formatDate(t * 1000)}\n*• Hora:* ${formatHour(t * 1000)}`).join('\n\n')}
+${deliveries.sort((a, b) => b.t - a.t).map(({ jid, t }) => `*• Usuario:* @${jid.split`@`[0]}\n*• Fecha:* ${formatDate(t * 1000)}\n*• Hora:* ${formatHour(t * 1000)}`).join('\n\n')}
 `.trim()
   m.reply(txt, null, {
     contextInfo: {
@@ -37,7 +37,7 @@ function formatDate(n, locale = 'es-US') {
 
 function formatHour(n, locale = 'en-US') {
   let d = new Date(n)
-  return d.toLocaleDateString(locale, {
+  return d.toLocaleString(locale, {
     hour: 'numeric',
     minute: 'numeric',
     second: 'numeric'
