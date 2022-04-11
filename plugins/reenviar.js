@@ -2,7 +2,8 @@ let fs = require ('fs')
 
 let handler  = async (m, { conn, text, participants }) => {
   if (!m.quoted) throw 'Etiqueta un mensaje para reenviar!'
-  await conn.copyNForward(m.chat, await conn.loadMessage(m.chat, m.quoted.id), false, { quoted: m })
+  let rr = (args[0] ? `${args[0]}` : m.chat)
+  await conn.copyNForward(rr, await conn.loadMessage(m.chat, m.quoted.id), false, { quoted: m })
   }
 
 handler.help = ['reenviar']
