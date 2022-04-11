@@ -1,7 +1,7 @@
 let handler = async (m, { usedPrefix, command }) => {
 let uptime = process.uptime()
 //let time = require('moment-timezone').tz('Asia/Kolkata').format('HH:mm:ss')
-let runnya = `\t\t\t\t∙ ☀️ *Runtime* ☀️ ∙
+let runnya = `\t\t\t\t*∙ ☀️ Runtime ☀️ ∙*
 
 • *Hora:* ${time}
 • *Tiempo activa:* ${runtime(uptime)}`
@@ -28,7 +28,7 @@ const runtime = function (seconds) {
 };
 
 const d = new Date(new Date + 3600000)
-const time = d.toLocaleString('en-US', { 
+const time = await d.toLocaleString('en-US', { 
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric',
