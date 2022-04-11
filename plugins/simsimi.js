@@ -10,7 +10,6 @@ let handler = async (m, { text }) => {
 handler.help = ['simi']
 handler.tags = ['fun']
 handler.command = /^(simi|simsimi)$/i
-handler.register = false
 
 module.exports = handler
 
