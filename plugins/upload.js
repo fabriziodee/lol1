@@ -8,9 +8,11 @@ let handler = async (m, { usedPrefix, command }) => {
   let media = await q.download()
   let isTele = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
   let link = await (isTele ? uploadImage : uploadFile)(media)
-  m.reply(`${link}
-${media.length} Byte(s)
-${isTele ? '(Tidak Ada Tanggal Kedaluwarsa)' : '(Tidak diketahui)'}`)
+  m.reply(`\t\t\t\t*‧ 🖼️ Imagen Subida 🖼️ ‧*
+
+*• Link:* ${link} 
+*• Peso:* ${media.length} Bytes
+*• Vencimiento:* ${isTele ? 'Nunca' : 'Desconocido'}`)
 }
 
 handler.help = ['upload']
