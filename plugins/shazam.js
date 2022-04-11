@@ -7,7 +7,7 @@ const options = {
   method: 'GET',
   headers: {
     'X-RapidAPI-Host': 'shazam.p.rapidapi.com',
-    'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY'
+    'X-RapidAPI-Key': '9788db139bmshbc53a57232bd948p1e485fjsnf528f39d11ed'
   }
 };
 
