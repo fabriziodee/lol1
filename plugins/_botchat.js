@@ -24,7 +24,7 @@ let audio4B = audio4A.exec(m.text)
 let audio5A = /pasen hentai|pasen hentay|antojen/i
 let audio5B = audio5A.exec(m.text)
 
-let audio6A = /eres gay|que gay|un gay/i
+let audio6A = /eres gay|es gay|que gay|un gay/i
 let audio6B = audio6A.exec(m.text)
 
 let audio7A = /mirame/i
