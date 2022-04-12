@@ -13,12 +13,12 @@ let handler = async (m, { args, usedPrefix, command }) => {
     if (!text && m.quoted && m.quoted.text) text = m.quoted.text
 
     try {
-        res = await fetch(global.API('bg', '/translate', { q: text, lang }))
-        json = await res.json()
+        let res = await fetch(global.API('bg', '/translate', { q: text, lang }))
+        let json = await res.json()
         if (json.status !== true) throw json
     } catch (e) {
-        res = await fetch(global.API('bg', '/translate', { q: text, defaultLang }))
-        json = await res.json()
+        let res = await fetch(global.API('bg', '/translate', { q: text, defaultLang }))
+        let json = await res.json()
         if (json.status !== true) throw json
     } finally {
         conn.reply(m.chat, `\t\t*‧ 🌐 Google Traductor 🌐 ‧*\n\n*${json.result.from.language.iso}:* ${text}\n*${lang}:* ${json.result.text}`, m)
