@@ -1,7 +1,7 @@
 let webp = require('node-webpmux')
 
 let handler = async (m, { conn }) => {
-    if (!m.quoted) return m.reply('balas stikernya!')
+    if (!/sticker/.test(m.quoted.mtype)) return m.reply('Etiqueta un sticker con el comando!')
     let q = { message: { [m.quoted.mtype]: m.quoted } }
     if (/sticker/.test(m.quoted.mtype)) {
         let img = new webp.Image()
@@ -11,7 +11,7 @@ let handler = async (m, { conn }) => {
 }
 
 handler.help = ['getexif']
-handler.tags = ['sticker']
+handler.tags = ['tools']
 handler.command = /^(getexif)$/i
 
 module.exports = handler
