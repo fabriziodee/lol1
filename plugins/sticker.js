@@ -10,7 +10,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   try {
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
-    if (!/webp|image|video/g.test(mime)) throw 'Etiqueta una imagen o gif para convertirlo a sticker!'
+    //if (!/webp|image|video/g.test(mime)) throw 'Etiqueta una imagen o gif para convertirlo a sticker!'
     if (/webp|image|video/g.test(mime)) {
       if (/video/g.test(mime)) if ((q.msg || q).seconds > 11) return m.reply('El video debe durar máximo 10 segundos!')
       let img = await q.download()
@@ -25,7 +25,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         console.error(e)
         stiker = await sticker(img, false, global.packname, global.author)
       }
-    if (!args[0]) throw 'Ingrese el link de una imagen!'
+    //if (!args[0]) throw 'Ingrese el link de una imagen!'
     } else if (args[0]) {
       if (isUrl(args[0])) stiker = await sticker(false, args[0], global.packname, global.author)
       else return m.reply('Link invalido')
