@@ -411,13 +411,13 @@ module.exports = {
     let chat = global.DATABASE._data.chats[jid] || {}
     let text = ''
     switch (action) {
-     let userr = participants
+     let puser = participants
      let d = new Date(new Date + 3600000)
      let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
      let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
      let botimg = fs.readFileSync('./storage/image/menu2.jpg')
      try {
-	userimg = await this.getProfilePicture(userr)
+	userimg = await this.getProfilePicture(puser)
      } catch {
 	userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
      }
@@ -425,11 +425,11 @@ module.exports = {
       case 'add':
         let ppuser = await(await fetch(userimg)).buffer()
         let _text = 'Bienvenido\'a al grupo *@subject*\n\n*• Nombre:* @user\n*• Bio:* @bio\n*• Fecha:* @date\n*• Hora:* @time\n\n- *recuerda leer las reglas del grupo* -'
-        let text = (chat.sWelcome || this.welcome || conn.welcome || _text).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', await this.getStatus(`${userr.split('@')[0]}@c.us`)).replace('@date', date).replace('@time', time) 
+        let text = (chat.sWelcome || this.welcome || conn.welcome || _text).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', await this.getStatus(`${puser.split('@')[0]}@c.us`)).replace('@date', date).replace('@time', time) 
         let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}} })
         let _button = [{ buttonId: 'gracias', buttonText: { displayText: 'Gracias 💖' }, type: 1 }, { buttonId: 'descripción', buttonText: { displayText: 'Descripción ☕' }, type: 1 }]
         let button = { imageMessage: __button.message.imageMessage, contentText: text, footerText: 'lolibot © 2022', buttons: _button, headerType: 4 }
-        await this.sendMessage(jid, button, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [userr] } })
+        await this.sendMessage(jid, button, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [puser] } })
       break
 
       case 'remove':
