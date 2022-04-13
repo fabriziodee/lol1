@@ -3,7 +3,7 @@ let handler = async function (m, { conn, text, participants }) {
   for (let i of owner.map(v => v + '@s.whatsapp.net')) {
     list.push({
       "displayName": text,
-      "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:;${text};;;\nFN:${text}\nitem1.EMAIL;type=INTERNET:${text}\nitem1.X-ABLabel:Pack\n`
+      "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:山田;太郎;(旧姓田中);Mr.;さん\nX-PHONETIC-LAST-NAME:ﾔﾏﾀﾞﾀﾛｳ\nitem1.EMAIL;type=INTERNET:xxxx@ezweb.ne.jp\nitem1.X-ABLabel:_$!!$_\nTITLE:\nURL;type=HOME:\nPHOTO:\nitem3.X-ABDATE:\nitem3.X-ABLabel:_$!!$_\nitem4.X-ABDATE:\nitem4.X-ABLabel:_$!!$_\nBDAY;value=date:\nNICKNAME:\nTEL;type=OTHER;type=VOICE:09012345678\nitem2.ADR;type=OTHER:;;;;;;\nORG:\nEND:VCARD"
     })
   }
   await conn.sendMessage(m.chat, {
