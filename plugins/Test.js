@@ -1,4 +1,5 @@
 let handler = async function (m, { conn, text, participants }) {
+  let list = []
   for (let i of owner.map(v => v + '@s.whatsapp.net')) {
     list.push({
       "displayName": name,
