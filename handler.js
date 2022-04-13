@@ -411,12 +411,30 @@ module.exports = {
     let chat = global.DATABASE._data.chats[jid] || {}
     let text = ''
     switch (action) {
+     let user = participants
+     let d = new Date(new Date + 3600000)
+     let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
+     let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
+     let botimg = fs.readFileSync('./storage/image/menu2.jpg')
+     try {
+	userimg = await this.getProfilePicture(user)
+     } catch {
+	userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
+     }
+
       case 'add':
-      this.sendMessage(jid, `*User add:* ${participants}`, MessageType.extendedText)
+        let ppuser = await(await fetch(userimg)).buffer()
+        let wel = 'Bienvenido\'a al grupo *@subject*\n\n*• Nombre:* @user\n*• Bio:* @bio\n*• Fecha:* @date\n*• Hora:* @time\n\n- *recuerda leer las reglas del grupo* -'
+        let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}} })
+        let _button = [{ buttonId: 'gracias', buttonText: { displayText: 'Gracias 💖' }, type: 1 }, { buttonId: 'descripción', buttonText: { displayText: 'Descripción ☕' }, type: 1 }]
+        let button = { imageMessage: __button.message.imageMessage, contentText: wel, footerText: 'lolibot © 2022', buttons: _button, headerType: 4 }
+        await this.sendMessage(jid, badd, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [user] } })
       break
+
       case 'remove':
-      this.sendMessage(jid, `*User remove:* ${participants}`, MessageType.extendedText)
+      this.sendMessage(jid, `*User remove:* ${user}`, MessageType.extendedText)
       break
+
       case 'promote':
       text = (chat.sPromote || this.spromote || conn.spromote || '@user ```ahora es administrador```')
       case 'demote':
