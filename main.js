@@ -130,7 +130,7 @@ Bienvenido\'a al grupo *@subject*
 *• Hora:* @time 
 
 - *recuerda leer las reglas del grupo* -
-'.trim()
+'
   conn.bye = '@user un gay salio del grupo'
   conn.spromote = '@user ahora es administrador!'
   conn.sdemote = '@user ya no es un administrador!'
