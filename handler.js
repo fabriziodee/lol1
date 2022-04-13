@@ -424,10 +424,11 @@ module.exports = {
 
       case 'add':
         let ppuser = await(await fetch(userimg)).buffer()
-        let wel = 'Bienvenido\'a al grupo *@subject*\n\n*• Nombre:* @user\n*• Bio:* @bio\n*• Fecha:* @date\n*• Hora:* @time\n\n- *recuerda leer las reglas del grupo* -'
+        let _text = 'Bienvenido\'a al grupo *@subject*\n\n*• Nombre:* @user\n*• Bio:* @bio\n*• Fecha:* @date\n*• Hora:* @time\n\n- *recuerda leer las reglas del grupo* -'
+        let text = (chat.sWelcome || this.welcome || conn.welcome || _text).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', await this.getStatus(`${user.split('@')[0]}@c.us`)).replace('@date', date).replace('@time', time) 
         let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}} })
         let _button = [{ buttonId: 'gracias', buttonText: { displayText: 'Gracias 💖' }, type: 1 }, { buttonId: 'descripción', buttonText: { displayText: 'Descripción ☕' }, type: 1 }]
-        let button = { imageMessage: __button.message.imageMessage, contentText: wel, footerText: 'lolibot © 2022', buttons: _button, headerType: 4 }
+        let button = { imageMessage: __button.message.imageMessage, contentText: text, footerText: 'lolibot © 2022', buttons: _button, headerType: 4 }
         await this.sendMessage(jid, badd, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [user] } })
       break
 
