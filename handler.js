@@ -432,7 +432,8 @@ module.exports = {
                 (chat.sBye || this.bye || conn.bye || '@user un gay salio del grupo')).replace('@user', '@' + user.split('@')[0])
               let ppp = await(await fetch(pp)).buffer()
               let py = await this.prepareMessage(jid, ppp, MessageType.image, {contextInfo: { externalAdReply:{title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: lolisg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}}})
-              let gbutsan = [ {buttonId: 'qqq', buttonText: {displayText: [[action === 'add' ? 'Gracias 💖' : 'Adios 👋']]}, type: 1} ]
+              let action = ([[action === 'add' ? "{ buttonId: 'gracias', buttonText: { displayText: 'Gracias 💖' }, type: 1 }, { buttonId: 'descripción', buttonText: { displayText: 'Descripción ☕' }, type: 1 }" : "{ buttonId: 'gracias', buttonText: { displayText: 'Adios 👋' }, type: 1 }"]])
+              let gbutsan = [action]
               let gbuttonan = { imageMessage: py.message.imageMessage, contentText: text, footerText: 'lolibot © 2022', buttons: gbutsan, headerType: 4 }
               this.sendMessage(jid, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [user] } })
             }
