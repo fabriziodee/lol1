@@ -412,10 +412,10 @@ module.exports = {
     let text = ''
     switch (action) {
       case 'add':
-      this.sendMessage(jid, '*User add:* Text', MessageType.extendedText)
+      this.sendMessage(jid, '*User add:* ${participants}', MessageType.extendedText)
       break
       case 'remove':
-      this.sendMessage(jid, '*User remove:* Test', MessageType.extendedText)
+      this.sendMessage(jid, '*User remove:* ${participants}', MessageType.extendedText)
       break
       case 'promote':
       text = (chat.sPromote || this.spromote || conn.spromote || '@user ```ahora es administrador```')
