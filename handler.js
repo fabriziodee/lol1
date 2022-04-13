@@ -418,7 +418,7 @@ module.exports = {
           for (let user of participants) {
             let userr = user
             let well = '
-Bienvenido'a al grupo *@subject*
+Bienvenido\'a al grupo *@subject*
 
 *• Nombre:* @user
 *• Bio:* @bio
