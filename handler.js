@@ -409,7 +409,8 @@ module.exports = {
   },
   async participantsUpdate({ jid, participants, action }) {
     let chat = global.DATABASE._data.chats[jid] || {}
-    let text = ''
+    //let text = ''
+    let groupMetadata = await this.groupMetadata(jid)
     let user = participants
     let d = new Date(new Date + 3600000)
     let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
