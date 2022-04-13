@@ -159,7 +159,8 @@ if (audio15B) {
 	} else
 
 if (audio16B) {
-	let vn = './storage/sticker/Bot.webp'
+        let ss = ["./storage/sticker/Bot.webp", "./storage/sticker/Bot1.webp"]
+	let vn = ss[Math.floor(Math.random() * ss.length)]
         let pp = await conn.getProfilePicture(m.sender) 
         let ppp = await(await fetch(pp)).buffer()
         conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", previewType: "PHOTO", thumbnail: ppp, sourceUrl:``}}})
