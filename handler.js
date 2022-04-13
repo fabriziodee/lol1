@@ -417,16 +417,7 @@ module.exports = {
           let groupMetadata = await this.groupMetadata(jid)
           for (let user of participants) {
             let userr = user
-            let well = '
-Bienvenido\'a al grupo *@subject*
-
-*• Nombre:* @user
-*• Bio:* @bio
-*• Fecha:* @date
-*• Hora:* @time 
-
-- *recuerda leer las reglas del grupo* -
-'
+            let well = 'Bienvenido\'a al grupo *@subject*\n\n*• Nombre:* @user\n*• Bio:* @bio\n*• Fecha:* @date\n*• Hora:* @time\n\n- *recuerda leer las reglas del grupo* -'
             let d = new Date(new Date + 3600000)
             let date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })
             let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
