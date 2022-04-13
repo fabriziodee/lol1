@@ -412,32 +412,10 @@ module.exports = {
     let text = ''
     switch (action) {
       case 'add':
+      this.sendMessage(jid, `*User add:* ${participants}`, MessageType.buttonsMessage, { contextInfo: { mentionedJid: participants } })
+      break
       case 'remove':
-        if (chat.welcome) {
-          let groupMetadata = await this.groupMetadata(jid)
-          for (let user of participants) {
-            let userr = user
-            let well = 'Bienvenido\'a al grupo *@subject*\n\n*• Nombre:* @user\n*• Bio:* @bio\n*• Fecha:* @date\n*• Hora:* @time\n\n- *recuerda leer las reglas del grupo* -'
-            let d = new Date(new Date + 3600000)
-            let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
-            let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
-            
-            let pp = await this.getProfilePicture("51940617554-1604073088@g.us")
-            let lolisg = fs.readFileSync('./storage/image/menu2.jpg')
-            try {
-              pp = await this.getProfilePicture(userr)
-            } catch (e) {
-            } finally {
-              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || well).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', await this.getStatus(`${user.split('@')[0]}@c.us`)).replace('@date', date).replace('@time', time) :
-                (chat.sBye || this.bye || conn.bye || '@user un gay salio del grupo')).replace('@user', '@' + user.split('@')[0])
-              let ppp = await(await fetch(pp)).buffer()
-              let py = await this.prepareMessage(jid, ppp, MessageType.image, {contextInfo: { externalAdReply:{title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: lolisg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}}})
-              let gbutsan = [[action === 'add' ? "[{ buttonId: 'gracias', buttonText: { displayText: 'Gracias 💖' }, type: 1 }, { buttonId: 'descripción', buttonText: { displayText: 'Descripción ☕' }, type: 1 }]" : "[{ buttonId: 'gracias', buttonText: { displayText: 'Adios 👋' }, type: 1 }]"]]
-              let gbuttonan = { imageMessage: py.message.imageMessage, contentText: text, footerText: 'lolibot © 2022', buttons: gbutsan, headerType: 4 }
-              this.sendMessage(jid, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [user] } })
-            }
-          }
-        }
+      this.sendMessage(jid, `*User remove:* ${participants}`, MessageType.buttonsMessage, { contextInfo: { mentionedJid: participants } })
         break
       case 'promote':
         text = (chat.sPromote || this.spromote || conn.spromote || '@user ```ahora es administrador```')
