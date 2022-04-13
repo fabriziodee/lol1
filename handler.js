@@ -422,7 +422,7 @@ module.exports = {
       case 'demote':
         if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```ya no es administrador```')
         text = text.replace('@user', '@' + participants[0].split('@')[0])
-        if (chat.detect) this.sendMessage(jid, text, MessageType.extendedText, {
+        this.sendMessage(jid, text, MessageType.extendedText, {
           contextInfo: {
             mentionedJid: this.parseMention(text)
           }
