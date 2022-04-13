@@ -1,7 +1,7 @@
 <h1 align="center">‧ 💌 LOLIBOT 💌 ‧
 </p>
 <p>
-        <img src= "https://i.ibb.co/cgGLf2k/loli.gif">
+        <img src= "https://i.pinimg.com/originals/d5/48/4f/d5484f103deec4337249bd1654ef4c43.gif">
     </p>
     <p align="center">
         <a href="#"><img title="whatsapp-bot-termux" src="https://img.shields.io/badge/-WHATSAPP--BOT--TERMUX-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
