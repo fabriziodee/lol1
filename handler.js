@@ -417,13 +417,27 @@ module.exports = {
           let groupMetadata = await this.groupMetadata(jid)
           for (let user of participants) {
             let userr = user
+            let well = '
+Bienvenido'a al grupo *@subject*
+
+*• Nombre:* @user
+*• Bio:* @bio
+*• Fecha:* @date
+*• Hora:* @time 
+
+- *recuerda leer las reglas del grupo* -
+'
+            let d = new Date(new Date + 3600000)
+            let date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })
+            let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
+            
             let pp = await this.getProfilePicture("51940617554-1604073088@g.us")
             let lolisg = fs.readFileSync('./storage/image/menu2.jpg')
             try {
               pp = await this.getProfilePicture(userr)
             } catch (e) {
             } finally {
-              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Hola 😙, *@user*\n───────────────────\n*🎊Bienvenido/a al grupo* :\n@subject\n\n• *Descripción* :\n\n@desc').replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc) :
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || well).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', await this.getStatus(`${user.split('@')[0]}@c.us`)).replace('@date', date).replace('@time', time) :
                 (chat.sBye || this.bye || conn.bye || '@user un gay salio del grupo')).replace('@user', '@' + user.split('@')[0])
               let ppp = await(await fetch(pp)).buffer()
               let py = await this.prepareMessage(jid, ppp, MessageType.image, {contextInfo: { externalAdReply:{title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: lolisg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}}})
