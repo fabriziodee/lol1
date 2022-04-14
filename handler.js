@@ -410,16 +410,6 @@ module.exports = {
   async participantsUpdate({ jid, participants, action }) {
     let chat = global.DATABASE._data.chats[jid] || {}
     let text = ''
-    let duser = user
-    let groupMetadata = await this.groupMetadata(jid)
-    let _biot = await this.getStatus(duser)
-    let bio = _biot.status == 401 ? 'Sin info' : _biot.status
-    let d = new Date(new Date + 3600000)
-    let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
-    let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
-    let botimg = fs.readFileSync('./storage/image/menu2.jpg')
-    let userimg = await this.getProfilePicture(duser)
-    //let userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
 switch (action) {
       case 'add':
         for (let user of participants) {
