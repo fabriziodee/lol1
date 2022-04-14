@@ -41,7 +41,7 @@ conn.sendMessage(m.chat, cd, MessageType.text, { quoted: m})
 
 handler.help = ['energía']
 handler.tags = ['rpg']
-handler.command = /^(energía|energia|temporizador|cd)$/i
+handler.command = /^(energía|energia|energy|temporizador|cd)$/i
 
 module.exports = handler
 
