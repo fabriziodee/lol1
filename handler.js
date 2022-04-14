@@ -410,7 +410,7 @@ module.exports = {
   async participantsUpdate({ jid, participants, action }) {
     let chat = global.DATABASE._data.chats[jid] || {}
     let text = ''
-    let duser = m.participants
+    let duser = participants
     let groupMetadata = await this.groupMetadata(jid)
     let _biot = await this.getStatus(duser.replace('@s.whatsapp.net', '@g.us'))
     let bio = _biot.status == 401 ? 'Sin info' : _biot.status
