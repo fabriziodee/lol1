@@ -423,8 +423,11 @@ switch (action) {
         let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
         let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
         let botimg = fs.readFileSync('./storage/image/menu2.jpg')
+        try {
         let userimg = await this.getProfilePicture(duser)
-        //let userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
+        } catch {
+        let userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
+        }
         let ppuser = await(await fetch(userimg)).buffer()
         let _text = 'Bienvenido\'a al grupo *@subject*\n\n*• Nombre:* @user\n*• Bio:* @bio\n*• Fecha:* @date\n*• Hora:* @time\n\n- *recuerda leer las reglas del grupo* -'
         let text = (chat.sWelcome || this.welcome || conn.welcome || _text).replace('@user', '@' + duser.split('@')[0]).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', bio).replace('@date', date).replace('@time', time) 
@@ -446,10 +449,13 @@ switch (action) {
         let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
         let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
         let botimg = fs.readFileSync('./storage/image/menu2.jpg')
+        try {
         let userimg = await this.getProfilePicture(duser)
-        //let userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
+        } catch {
+        let userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
+        }
         let ppuser = await(await fetch(userimg)).buffer()
-        let _text = '@user un gay salio del grupo'
+        let _text = '@user un gay salio del grupo @group'
         let text = (chat.sBye || this.bye || conn.bye || _text).replace('@user', '@' + duser.split('@')[0]).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', bio).replace('@date', date).replace('@time', time) 
         let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}} })
         let _button = [{ buttonId: 'adios', buttonText: { displayText: 'Adios 👋' }, type: 1 }]
