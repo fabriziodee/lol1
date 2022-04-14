@@ -3,6 +3,9 @@ let fetch = require('node-fetch')
 let util = require('util')
 
 let handler = async(m, { conn, args }) => {
+let qq = m.quoted ? m.quoted : m
+let mime = (qq.msg || qq).mimetype || ''
+if (!/image/g.test(mime)) throw 'Etiqueta una imagen para hacerlo borroso!'
 try {
 gay = `sayang`
 
@@ -20,24 +23,15 @@ gay = `sayang`
 
 } catch (e) {
 
- err = await (await fetch('https://raw.githubusercontent.com/herokuapp-com/kuhong-api/main/info/erorr.json')).json() // jika Erorr
+   err = await (await fetch('https://raw.githubusercontent.com/herokuapp-com/kuhong-api/main/info/erorr.json')).json() // jika Erorr
    throw err
   }
 }
-handler.help = ['blur']
+
+handler.help = ['borroso']
 handler.tags = ['maker']
-handler.command = /^(blur)$/i
+handler.command = /^(borroso|blur)$/i
 handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-handler.register = false
-
-handler.admin = false
-handler.botAdmin = false
-
 handler.fail = null
-handler.limit = false
 
 module.exports = handler
