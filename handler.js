@@ -410,6 +410,7 @@ module.exports = {
   async participantsUpdate({ jid, participants, action }) {
     let chat = global.DATABASE._data.chats[jid] || {}
     let text = ''
+    
 switch (action) {
       case 'add':
         for (let user of participants) {
@@ -425,7 +426,7 @@ switch (action) {
         //let userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
         let ppuser = await(await fetch(userimg)).buffer()
         let _text = 'Bienvenido\'a al grupo *@subject*\n\n*• Nombre:* @user\n*• Bio:* @bio\n*• Fecha:* @date\n*• Hora:* @time\n\n- *recuerda leer las reglas del grupo* -'
-        let text = (chat.sWelcome || this.welcome || conn.welcome || _text).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', bio).replace('@date', date).replace('@time', time) 
+        let text = (chat.sWelcome || this.welcome || conn.welcome || _text).replace('@user', '@' + duser.split('@')[0]).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', bio).replace('@date', date).replace('@time', time) 
         let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}} })
         let _button = [{ buttonId: 'gracias', buttonText: { displayText: 'Gracias 💖' }, type: 1 }, { buttonId: 'descripción', buttonText: { displayText: 'Descripción ☕' }, type: 1 }]
         let button = { imageMessage: __button.message.imageMessage, contentText: text, footerText: 'lolibot © 2022', buttons: _button, headerType: 4 }
@@ -434,8 +435,26 @@ switch (action) {
       break
 
       case 'remove':
-      this.sendMessage(jid, `*User remove:* ${participants}`, MessageType.extendedText)
-      break
+      for (let user of participants) {
+        let duser = user
+        let groupMetadata = await this.groupMetadata(jid)
+        let _biot = await this.getStatus(duser)
+        let bio = _biot.status == 401 ? 'Sin info' : _biot.status
+        let d = new Date(new Date + 3600000)
+        let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
+        let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
+        let botimg = fs.readFileSync('./storage/image/menu2.jpg')
+        let userimg = await this.getProfilePicture(duser)
+        //let userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
+        let ppuser = await(await fetch(userimg)).buffer()
+        let _text = '@user un gay salio del grupo'
+        let text = (chat.sBye || this.bye || conn.bye || _text).replace('@user', '@' + duser.split('@')[0]).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', bio).replace('@date', date).replace('@time', time) 
+        let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}} })
+        let _button = [{ buttonId: 'adios', buttonText: { displayText: 'Adios 👋' }, type: 1 }]
+        let button = { imageMessage: __button.message.imageMessage, contentText: text, footerText: 'lolibot © 2022', buttons: _button, headerType: 4 }
+        this.sendMessage(jid, button, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [duser] } })
+        }
+        break
 
       case 'promote':
       text = (chat.sPromote || this.spromote || conn.spromote || '@user ```ahora es administrador```')
