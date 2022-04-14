@@ -411,15 +411,15 @@ module.exports = {
     let chat = global.DATABASE._data.chats[jid] || {}
     //let text = ''
     let groupMetadata = await this.groupMetadata(jid)
-    let user = participants
-    let _biot = await conn.getStatus(m.sender.replace('@s.whatsapp.net', '@g.us'))
+    let duser = participants
+    let _biot = await conn.getStatus(duser.replace('@s.whatsapp.net', '@g.us'))
     let bio = _biot.status == 401 ? 'Sin info' : _biot.status
     let d = new Date(new Date + 3600000)
     let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
     let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
     let botimg = fs.readFileSync('./storage/image/menu2.jpg')
     try {
-	userimg = await this.getProfilePicture(user)
+	userimg = await this.getProfilePicture(duser)
      } catch {
 	userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
      }
@@ -432,7 +432,7 @@ module.exports = {
         let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}} })
         let _button = [{ buttonId: 'gracias', buttonText: { displayText: 'Gracias 💖' }, type: 1 }, { buttonId: 'descripción', buttonText: { displayText: 'Descripción ☕' }, type: 1 }]
         let button = { imageMessage: __button.message.imageMessage, contentText: text, footerText: 'lolibot © 2022', buttons: _button, headerType: 4 }
-        await this.sendMessage(jid, button, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [user] } })
+        await this.sendMessage(jid, button, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [duser] } })
       break
 
       case 'remove':
