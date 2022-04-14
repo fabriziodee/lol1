@@ -1,4 +1,4 @@
-let handler = async (m, { conn, groupMetadata }) => {
+let handler = async (m, { conn, args, groupMetadata }) => {
 
 let type = (args[0] || ' ').toLowerCase()
 
