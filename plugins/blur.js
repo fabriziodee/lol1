@@ -5,7 +5,7 @@ let util = require('util')
 let handler = async(m, { conn, args }) => {
 let qq = m.quoted ? m.quoted : m
 let mime = (qq.msg || qq).mimetype || ''
-if (!/image/g.test(mime)) throw 'Etiqueta una imagen para hacerlo borroso!'
+if (!/image/g.test(mime)) throw 'Etiqueta una imagen con el comando para hacerlo borroso!'
 try {
 gay = `sayang`
 
