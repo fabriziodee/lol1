@@ -424,9 +424,9 @@ switch (action) {
         let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
         let botimg = fs.readFileSync('./storage/image/menu2.jpg')
         try {
-        let userimg = await this.getProfilePicture(duser)
+            userimg = await this.getProfilePicture(duser)
         } catch {
-        let userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
+            userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
         }
         let ppuser = await(await fetch(userimg)).buffer()
         let _text = 'Bienvenido\'a al grupo *@subject*\n\n*• Nombre:* @user\n*• Bio:* @bio\n*• Fecha:* @date\n*• Hora:* @time\n\n- *recuerda leer las reglas del grupo* -'
@@ -450,9 +450,9 @@ switch (action) {
         let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
         let botimg = fs.readFileSync('./storage/image/menu2.jpg')
         try {
-        let userimg = await this.getProfilePicture(duser)
+            userimg = await this.getProfilePicture(duser)
         } catch {
-        let userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
+            userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
         }
         let ppuser = await(await fetch(userimg)).buffer()
         let _text = '@user un gay salio del grupo @group'
