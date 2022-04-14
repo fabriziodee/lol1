@@ -444,7 +444,7 @@ switch (action) {
       break
 
       case 'remove':
-      this.sendMessage(jid, `*User remove:* ${duser}`, MessageType.extendedText)
+      this.sendMessage(jid, `*User remove:* ${participants}`, MessageType.extendedText)
       break
 
       case 'promote':
