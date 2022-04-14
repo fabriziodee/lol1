@@ -23,25 +23,25 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let _fishing = (fishingcd - __fishing)
     let fishing = clockString(_fishing)
 
-let cd = `\t\t\t*‧ 🕰️ Temporizador 🕰️ ‧*
+let cd = `\t\t\t\n*‧ ⚡ Energía ⚡ ‧*
 
-*[${new Date - user.lastclaim > 86400000 ? '✅' : '✖️'}] Reclamar 🧰*
-*∙ ╰➮* ${new Date - user.lastclaim > 86400000 ? 'Ya puedes reclamar': `${claim}`}
+*${new Date - user.lastclaim > 86400000 ? '❑' : '❑'} Reclamar 🧰*
+*•* ${new Date - user.lastclaim > 86400000 ? 'Ya puedes reclamar': `${claim}`}
 
-*[${new Date - user.lastmining > 180000 ? '✅' : '✖️'}] Minar ⛏️*
-*∙ ╰➮* ${new Date - user.lastmining > 180000 ? 'Ya puedes minar' : `${mining}`}
+*${new Date - user.lastmining > 180000 ? '❑' : '❑'} Minar ⛏️*
+*•* ${new Date - user.lastmining > 180000 ? 'Ya puedes minar' : `${mining}`}
 
-*[${new Date - user.lastcutting > 180000 ? '✅' : '✖️'}] Talar 🪓*
-*∙ ╰➮* ${new Date - user.lastcutting > 180000 ? 'Ya puedes talar' : `${cutting}`}
+*${new Date - user.lastcutting > 180000 ? '❑' : '❑'} Talar 🪓*
+*•* ${new Date - user.lastcutting > 180000 ? 'Ya puedes talar' : `${cutting}`}
 
-*[${new Date - user.lastfishing > 180000 ? '✅' : '✖️'}] Pescar 🎣*
-*∙ ╰➮* ${new Date - user.lastfishing > 180000 ? 'Ya puedes pescar' : `${fishing}`}`
+*${new Date - user.lastfishing > 180000 ? '❑' : '❑'} Pescar 🎣*
+*•* ${new Date - user.lastfishing > 180000 ? 'Ya puedes pescar' : `${fishing}`}`
 conn.sendMessage(m.chat, cd, MessageType.text, { quoted: m})
 }
 
-handler.help = ['temporizador']
+handler.help = ['energía']
 handler.tags = ['rpg']
-handler.command = /^(temporizador|cd)$/i
+handler.command = /^(energía|energia|temporizador|cd)$/i
 
 module.exports = handler
 
