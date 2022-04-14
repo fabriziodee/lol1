@@ -412,7 +412,7 @@ module.exports = {
     let text = ''
     let duser = m.participants
     let groupMetadata = await this.groupMetadata(jid)
-    let _biot = await conn.getStatus(duser.replace('@s.whatsapp.net', '@g.us'))
+    let _biot = await this.getStatus(duser.replace('@s.whatsapp.net', '@g.us'))
     let bio = _biot.status == 401 ? 'Sin info' : _biot.status
     let d = new Date(new Date + 3600000)
     let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
