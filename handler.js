@@ -414,6 +414,7 @@ module.exports = {
 switch (action) {
       case 'add':
         for (let user of participants) {
+        if (chat.welcome) return 
         let duser = user
         let groupMetadata = await this.groupMetadata(jid)
         let _biot = await this.getStatus(duser)
