@@ -23,7 +23,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let _fishing = (fishingcd - __fishing)
     let fishing = clockString(_fishing)
 
-let cd = `\t\t\t\n*‧ ⚡ Energía ⚡ ‧*
+let cd = `\t\t\t\t*‧ ⚡ Energía ⚡ ‧*
 
 *${new Date - user.lastclaim > 86400000 ? '❑' : '❑'} Reclamar 🧰*
 *•* ${new Date - user.lastclaim > 86400000 ? 'Ya puedes reclamar': `${claim}`}
