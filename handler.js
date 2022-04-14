@@ -410,6 +410,8 @@ module.exports = {
   async participantsUpdate({ jid, participants, action }) {
     let chat = global.DATABASE._data.chats[jid] || {}
     let text = ''
+switch (action) {
+      case 'add':
     let duser = participants
     let groupMetadata = await this.groupMetadata(jid)
     let _biot = await this.getStatus(duser)
@@ -423,9 +425,6 @@ module.exports = {
      //} catch {
 	//userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
      //}
-    switch (action) {
-
-      case 'add':
         let ppuser = await(await fetch(userimg)).buffer()
         let _text = 'Bienvenido\'a al grupo *@subject*\n\n*• Nombre:* @user\n*• Bio:* @bio\n*• Fecha:* @date\n*• Hora:* @time\n\n- *recuerda leer las reglas del grupo* -'
         let text = (chat.sWelcome || this.welcome || conn.welcome || _text).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', bio).replace('@date', date).replace('@time', time) 
