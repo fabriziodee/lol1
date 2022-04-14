@@ -418,11 +418,11 @@ module.exports = {
     let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
     let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
     let botimg = fs.readFileSync('./storage/image/menu2.jpg')
-    try {
-	userimg = await this.getProfilePicture(duser)
-     } catch {
-	userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
-     }
+    //try {
+    let userimg = await this.getProfilePicture(duser)
+     //} catch {
+	//userimg = await this.getProfilePicture("51940617554-1604073088@g.us")
+     //}
     switch (action) {
 
       case 'add':
