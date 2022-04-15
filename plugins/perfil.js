@@ -14,22 +14,24 @@ let handler = async (m, { conn, usedPrefix }) => {
     let username = conn.getName(who)
     let math = max - xp
     let prem = global.prems.includes(who.split`@`[0])
-    let str = `\t\t\t\t\t･ 【 *PERFIL INFO* 】 ･
+    let str = `\t\t\t\t\t*‧ 🐣 Perfil Info 🐣 ‧*
 
-• Nombre: ${username} ${registered ? '\n• Nombre de Reg : ' + name : ''}\n• Tag: @${who.replace(/@.+/, '')}${about ? '\n• Estado : ' + about : ''}
-• Nunero: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
-• Link: https://wa.me/${who.split`@`[0]}${registered ? '\n• *Edad* : ' + age : ''}
-• Exp: TOTAL ${exp} (${exp - min} / ${xp}) [${math <= 0 ? `Listo para subir de nivel *${usedPrefix}levelup*` : `${math} Exp restante para subir de nivel`}]
-• Nivel: ${level}
-• Limite: ${limit}
-• Registrado: ${registered ? 'Si (' + new Date(regTime) + ')': 'No'}
-• Premium: ${prem ? 'Si' : 'No'}${lastclaim > 0 ? '\nUltimo reclamo: ' + new Date(lastclaim) : ''}
-
-Quieres ver tu inventario? pon ${usedPrefix}inv`
+*• Nombre:* ${username} ${registered ? '\n*• Nombre de Reg:* ' + name : ''}
+*• Tag:* @${who.replace(/@.+/, '')}
+*• Bio:* ${about ? `${about}` : 'Sin info'}
+*• Nunero:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
+*• Link:* https://wa.me/${who.split`@`[0]}${registered ? '\n• *Edad* : ' + age : ''}
+*• Exp:* TOTAL ${exp} (${exp - min} / ${xp}) [${math <= 0 ? `Listo para subir de nivel *${usedPrefix}levelup*` : `${math} Exp restante para subir de nivel`}]
+*• Nivel:* ${level}
+*• Limite:* ${limit}
+*• Registrado:* ${registered ? 'Si (' + new Date(regTime) + ')': 'No'}
+*• Premium:* ${prem ? 'Si' : 'No'}${lastclaim > 0 ? '\n*• Ultimo reclamo:* ' + new Date(lastclaim) : ''}
+`
     let mentionedJid = [who]
     conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
   }
 }
+
 handler.help = ['perfil']
 handler.tags = ['tools']
 handler.command = /^(profile|perfil)$/i
