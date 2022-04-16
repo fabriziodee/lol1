@@ -1,4 +1,4 @@
-const { createHash } = require('crypto')
+const crypto = require('crypto')
 
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 
