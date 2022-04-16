@@ -78,6 +78,7 @@ module.exports = {
             if (!isNumber(user.lastmining)) user.lastmining = 0
             if (!isNumber(user.lastcutting)) user.lastcutting = 0
             if (!isNumber(user.lastfishing)) user.lastfishing = 0
+            if (!isNumber(user.lastraid)) user.lastraid = 0
             if (!('registered' in user)) user.registered = false
             if (!user.registered) {
                 if (!('name' in user)) user.name = this.getName(m.sender)
@@ -125,6 +126,7 @@ module.exports = {
             lastmining: 0,
             lastcutting: 0,
             lastfishing: 0,
+            lastraid: 0,
             registered: false,
             name: this.getName(m.sender),
             age: -1,
