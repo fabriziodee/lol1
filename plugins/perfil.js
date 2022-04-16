@@ -8,6 +8,10 @@ let handler = async (m, { conn, usedPrefix }) => {
   } catch (e) {
 
   } finally {
+    //let level = global.DATABASE._data.users[who].level
+    //let money = global.DATABASE._data.users[who].money
+    //let exp = global.DATABASE._data.users[who].exp
+
     let about = (await conn.getStatus(who).catch(console.error) || {}).status || ''
     let { name, limit, exp, lastclaim, registered, regTime, age, level } = global.DATABASE._data.users[who]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
@@ -23,10 +27,10 @@ let handler = async (m, { conn, usedPrefix }) => {
 *• Link:* wa.me/${who.split`@`[0]}
 *• Nivel:* ${level}
 *• Exp:* ${exp}
-*• Exp nivel:* ${who.exp - min}/${max}
+*• Exp nivel:* ${exp - min}/${max}
 *• Limite:* ${limit}
 *• Premium:* ${prem ? 'Si' : 'No'}
-*• Ultimo claim:* *${lastclaim > 0 ? `${formatDate(lastclaim)}` : '-'}
+*• Ultimo claim:* ${lastclaim > 0 ? `${formatDate(lastclaim)}` : '-'}
 
 *• Registrado:* ${registered ? 'Si': 'No'}
 *• Fecha:* ${registered ? `${formatDate(regTime)}` : '-'}
