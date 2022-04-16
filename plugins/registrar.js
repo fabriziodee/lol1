@@ -66,7 +66,7 @@ function createHash(data, len) {
 
 let d = new Date(new Date + 3600000)
 
-let date = d.toLocaleDateString('en-US', {
+let date = d.toLocaleDateString('es', {
       day: 'numeric',
       month: 'long',
       year: 'numeric'
