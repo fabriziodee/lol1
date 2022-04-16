@@ -1,7 +1,7 @@
 let crypto = require('crypto')
 
 let handler = async (m, { conn, usedPrefix }) => {
-await m.reply(`${numberto(1000)}`)
+await m.reply(`${formatNumber(999000)}`)
 }
 
 //handler.help = ['test']
@@ -10,12 +10,39 @@ handler.command = /^(test)$/i
 
 module.exports = handler
 
-function numberto(n){
-x=(''+n).length;
-p=Math.pow;
-d=p(10,true);
-x-=x%3;
-return Math.round(n*d/p(10,x))/d+" KMGTPE"[x/3];
+var ranges = [{
+      divider: 1e18,
+      suffix: 'E'
+   },
+   {
+      divider: 1e15,
+      suffix: 'P'
+   },
+   {
+      divider: 1e12,
+      suffix: 'T'
+   },
+   {
+      divider: 1e9,
+      suffix: 'G'
+   },
+   {
+      divider: 1e6,
+      suffix: 'M'
+   },
+   {
+      divider: 1e3,
+      suffix: 'k'
+   }
+];
+
+function formatNumber(n) {
+   for (var i = 0; i < ranges.length; i++) {
+      if (n >= ranges[i].divider) {
+         return (n / ranges[i].divider).toString() + ranges[i].suffix;
+      }
+   }
+   return n.toString();
 }
 
 function createHash(data, len) {
