@@ -7,8 +7,7 @@ let handler = async (m, { conn }) => {
   if (!(m.chat in global.math)) return conn.reply(m.chat, 'Esa pregunta ya ha terminado!', m)
   if (m.quoted.id == global.math[id][0].id) {
   let math = global.math[id][1]
-  let retext = m.text.replace(',','')
-  if (retext == math.result) {
+  if (m.text == math.result) {
     conn.reply(m.chat, `*Respuesta correcta!*\n+${math.bonus} Exp`, m)
     global.DATABASE._data.users[m.sender].exp += math.bonus
     clearTimeout(global.math[id][3])
