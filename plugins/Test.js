@@ -3,7 +3,7 @@ let crypto = require('crypto')
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
 let handler = async function (m, { conn, text, participants }) {
-let test = crypto.createHash('sha256', 'Test')
+let test = createHash('md5', { outputLength: 7 }).update(m.sender).digest('hex')
 await m.reply(test)
 }
 
