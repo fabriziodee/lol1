@@ -1,17 +1,20 @@
-let fs = require('fs')
 let crypto = require('crypto')
-let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
-let handler = async function (m, { conn, text, participants }) {
-let test = createHash('Test', 7)
-await m.reply(test)
+let handler = async (m, { conn, usedPrefix }) => {
+    let groups = "CcmCXks3T22J6Bc35jCKOS"
+    let group = await conn.query({ json: ["query", "invite", groups], expect200: true })
+    let reg = Object.entries(group).filter(group => group.id)
+    m.reply(`\t\t\t\t\t*‧ 📨 Grupos 📨 ‧*
+
+Total: ${reg.length} Grupos
+
+${reg ? '\n' + reg.map(([id], i) => `*• ID:* ${id}`).join('\n\n') : ''}
+`)
 }
 
 //handler.help = ['test']
-//handler.tags = ['group']
+//handler.tags = ['info']
 handler.command = /^(test)$/i
-//handler.group = true
-handler.owner = true
 
 module.exports = handler
 
