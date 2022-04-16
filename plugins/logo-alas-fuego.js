@@ -9,5 +9,5 @@ conn.sendFile(m.chat, res, 'error.jpg', `*Logo alas fuego neon*\nTexto: ${text}`
 
 handler.help = ['lalas']
 handler.tags = ['maker']
-handler.command = /^(|neonfire)$/i
+handler.command = /^(lalas|neonfire)$/i
 module.exports = handler
