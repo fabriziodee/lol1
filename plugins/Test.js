@@ -15,8 +15,6 @@ handler.owner = true
 
 module.exports = handler
 
-const crypto = require("crypto");
-
 function createHash(data, len) {
     return crypto.createHash("shake256", { outputLength: len })
       .update(data)
