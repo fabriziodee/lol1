@@ -1,5 +1,5 @@
 const { MessageType } = require("@adiwajshing/baileys");
-const { createHash } = require('crypto')
+const crypto = require('crypto')
 let fs = require('fs')
 let fetch = require('node-fetch')
 
@@ -18,7 +18,8 @@ let handler = async function (m, { conn, text, usedPrefix, command}) {
   user.age = parseInt(age)
   user.regTime = + new Date
   user.registered = true
-  let sn = createHash('md5').update(m.sender).digest('hex')
+  let sn = createHash(m.sender, 7)
+  //createHash('md5').update(m.sender).digest('hex')
   let reuser = './src/avatar_contact.png'
   try {
     reuser = await conn.getProfilePicture(m.sender)
@@ -57,6 +58,11 @@ handler.command = /^(registrar|registrarse|daftar|register|reg)$/i
 
 module.exports = handler
 
+function createHash(data, len) {
+    return crypto.createHash("shake256", { outputLength: len })
+      .update(data)
+      .digest("hex");
+}
 
 let d = new Date(new Date + 3600000)
 
