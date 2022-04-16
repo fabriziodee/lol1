@@ -1,7 +1,7 @@
 let crypto = require('crypto')
 
 let handler = async (m, { conn, usedPrefix }) => {
-await m.reply(`${numberto(65512)}`)
+await m.reply(`${numberto(655866677776666712)}`)
 }
 
 //handler.help = ['test']
