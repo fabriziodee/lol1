@@ -18,7 +18,7 @@ ${sortedlevel.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.spli
 • *💵 Top ${len} de clasificacion de dinero* •
 Posicion: *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
 
-${sortedmoney.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + ': *${shortNum(data.money)} Dinero*').join`\n`}
+${sortedmoney.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + `: *${shortNum(data.money)} Dinero*`).join`\n`}
 
 • *🎟️ Top ${len} de clasificacion de limite* •
 Posicion: *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
