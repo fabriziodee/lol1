@@ -1,14 +1,9 @@
 let handler = async (m, { conn, usedPrefix }) => {
-    let reg = Object.entries(global.DATABASE._data.chats).filter(chat => chat[1].isBanned)
-    let users = Object.entries(global.DATABASE._data.users).filter(user => user[1].Banneduser)
-    m.reply(`
-*❛ 💌 Lista de chats Baneados 💌 ❜*
-Total:  ${reg.length} Chats${chats ? '\n' + chats.map(([jid], i) => `${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
-ID: ${jid}`.trim()).join('\n') : ''}
+    //let reg = Object.entries(global.DATABASE._data.chats).filter(chat => chat[1].isBanned)
+    let reg = Object.entries(global.DATABASE._data.users).filter(user => user[1].registered)
+    m.reply(`*❛ 📧 Usuarios registrados 📧 ❜*
 
-
-*❛ 📧 Lista de usuarios Baneados 📧 ❜*
-Total: ${users.length} Usuarios${users ? '\n' + users.map(([jid], i) => `${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
+Total: ${reg.length} Usuarios${reg ? '\n' + users.map(([jid], i) => `${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
 ID: ${jid}`.trim()).join('\n') : ''}
 `.trim())
 }
