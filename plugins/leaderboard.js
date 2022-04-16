@@ -18,7 +18,7 @@ ${sortedlevel.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.spli
 • *💵 Top ${len} de clasificacion de dinero* •
 Posicion: *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
 
-${sortedmoney.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + ': *' + data.money + ' Dinero*').join`\n`}
+${sortedmoney.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + ': *${shortNum(data.money)} Dinero*').join`\n`}
 
 • *🎟️ Top ${len} de clasificacion de limite* •
 Posicion: *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
@@ -34,17 +34,11 @@ ${sortedLim.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`
 handler.help = ['lb']
 handler.tags = ['rpg']
 handler.command = /^(leaderboard|lb)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
 handler.fail = null
 handler.exp = 0
 
 module.exports = handler
 
+function shortNum(num) {
+return new Intl.NumberFormat('en-GB', { notation: "compact", compactDisplay: "short" }).format(num)
+}
