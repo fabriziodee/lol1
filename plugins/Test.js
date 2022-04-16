@@ -11,7 +11,7 @@ handler.command = /^(test)$/i
 module.exports = handler
 
 function shortNum(num) {
-return Intl.NumberFormat('en-GB', { notation: "compact", compactDisplay: "short" }).format(num)
+return new Intl.NumberFormat('en-GB', { notation: "compact", compactDisplay: "short" }).format(num)
 }
 
 function createHash(data, len) {
