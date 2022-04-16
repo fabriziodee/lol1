@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix }) => {
     let user = global.DATABASE._data.users
     let reg = Object.entries(global.DATABASE._data.users).filter(user => user[1].registered)
-    m.reply(`*❛ 📧 Usuarios registrados 📧 ❜*
+    m.reply(`\t\t\t*‧ 📨 Usuarios Registrados 📨 ‧*
 
 Total: ${reg.length} Usuarios
 ${reg ? '\n' + reg.map(([jid], i) => `
