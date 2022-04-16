@@ -3,7 +3,7 @@ let crypto = require('crypto')
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
 let handler = async function (m, { conn, text, participants }) {
-let cd = crypto.createHash('sha256', text)
+let cd = crypto.createHash('sha256', 'Test')
 m.reply(cd)
  conn.sendMessage(m.chat, { displayname: "By 「gatitoツ」", vcard: vcard }, MessageType.contact, { quoted: m })
 }
