@@ -61,7 +61,7 @@ module.exports = handler
 
 let d = new Date(new Date + 3600000)
 
-let date = d.toLocaleDateString(locale, {
+let date = d.toLocaleDateString('en-US', {
       day: 'numeric',
       month: 'long',
       year: 'numeric'
