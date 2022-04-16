@@ -1,4 +1,4 @@
-const { createHash } = require('crypto')
+const crypto = require('crypto')
 
 let handler = async function (m, { args }) {
   if (!args[0]) throw 'Ingrese el codigo que se le dio al momento de registrarse'
