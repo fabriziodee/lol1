@@ -26,8 +26,7 @@ let handler = async function (m, { conn, text, usedPrefix, command}) {
   	
   } finally {
   let repp = await(await fetch(reuser)).buffer()
-  retext = `
-\t\t\t*‧ 🧇 Usuario Registrado 🧇 ‧*
+  retext = `\t\t\t*‧ 🧇 Usuario Registrado 🧇 ‧*
 
  *◦ Nombre:* ${name}
  *◦ Edad:* ${age} años
@@ -43,7 +42,7 @@ gbutsan = [
 gbuttonan = {
 imageMessage: py.message.imageMessage,
 contentText: retext,
-footerText: 'No olvides tu *codigo* por qué será necesario para próximas actuaciones',
+footerText: 'No olvides tu *codigo* por qué sera necesario para próximas actuaciones',
 buttons: gbutsan,
 headerType: 4
 }
