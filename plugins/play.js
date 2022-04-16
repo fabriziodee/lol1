@@ -5,9 +5,12 @@ if (!text) throw `*Ingrese en nombre de una música*\n\n- Ejemplo: ${usedPrefix 
 let res = await fetch(`https://leyscoders-api.herokuapp.com/api/playmp3?q=${text}&apikey=MIMINGANZ`)
 let json = await res.json()
 await m.reply(`${JSON.stringify(json, null, 1)}`)
-//conn.sendFile(m.chat, json.result.link.link, 'error.mp4', `_The Shadow Brokers - Bot_`, m)
+//conn.sendFile(m.chat, json.audio, 'error.mp3', m)
+conn.sendFile(m.chat, json.audio, json.title + '.mp3', m, null, {})
 }
 
-handler.command = /^(testplay)$/i
+handler.help = ['play']
+handler.tags = ['download']
+handler.command = /^(play)$/i
 
 module.exports = handler
