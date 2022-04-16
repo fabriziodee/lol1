@@ -20,23 +20,23 @@ let handler = async (m, { conn, usedPrefix }) => {
     let prem = global.prems.includes(who.split`@`[0])
     let str = `\t\t\t\t\t*‧ 🐣 Perfil Info 🐣 ‧*
 
-*• Nombre:* ${username}
-*• Tag:* @${who.replace(/@.+/, '')}
-*• Bio:* ${about ? `${about}` : 'Sin info'}
-*• Nunero:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
-*• Link:* wa.me/${who.split`@`[0]}
-*• Nivel:* ${level}
-*• Exp:* ${exp}
-*• Exp nivel:* ${exp - min}/${max}
-*• Limite:* ${limit}
-*• Premium:* ${prem ? 'Si' : 'No'}
-*• Ultimo claim:* ${lastclaim > 0 ? `${formatDate(lastclaim)}` : '-'}
+⠀ *◦ Nombre:* ${username}
+⠀ *◦ Tag:* @${who.replace(/@.+/, '')}
+⠀ *◦ Bio:* ${about ? `${about}` : 'Sin info'}
+⠀ *◦ Nunero:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
+⠀ *◦ Link:* wa.me/${who.split`@`[0]}
+⠀ *◦ Nivel:* ${level}
+⠀ *◦ Exp:* ${exp}
+⠀ *◦ Exp nivel:* ${exp - min}/${max}
+⠀ *◦ Limite:* ${limit}
+⠀ *◦ Premium:* ${prem ? 'Si' : 'No'}
+⠀ *◦ Ultimo claim:* ${lastclaim > 0 ? `${formatDate(lastclaim)}` : '-'}
 
-*• Registrado:* ${registered ? 'Si': 'No'}
-*• Fecha:* ${registered ? `${formatDate(regTime)}` : '-'}
-*• Hora:* ${registered ? `${formatHour(regTime)}` : '-'}
-*• Nombre:* ${registered ? `${name}` : '-'}
-*• Edad:* ${registered ? `${age}` : '-'}`
+⠀ *◦ Registrado:* ${registered ? 'Si': 'No'}
+⠀ *◦ Fecha:* ${registered ? `${formatDate(regTime)}` : '-'}
+⠀ *◦ Hora:* ${registered ? `${formatHour(regTime)}` : '-'}
+⠀ *◦ Nombre:* ${registered ? `${name}` : '-'}
+⠀ *◦ Edad:* ${registered ? `${age}` : '-'}`
     let mentionedJid = [who]
     conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
   }
