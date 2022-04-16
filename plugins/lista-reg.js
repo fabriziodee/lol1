@@ -8,8 +8,7 @@ ${reg ? '\n' + reg.map(([jid], i) => `
 *• Nombre:* ${user[jid].name}
 *• ID:* ${jid}
 *• Edad:* ${user[jid].age}
-*• Tag:* @${jid.split("@s.whatsapp.net")[0]}
-`).join('\n\n') : ''}
+*• Tag:* @${jid.split("@s.whatsapp.net")[0]}`).join('\n\n') : ''}
 `.trim())
 }
 
