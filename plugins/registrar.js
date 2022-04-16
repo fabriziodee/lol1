@@ -1,11 +1,11 @@
-const {
-  MessageType
-} = require("@adiwajshing/baileys");
+const { MessageType } = require("@adiwajshing/baileys");
 const { createHash } = require('crypto')
 let fs = require('fs')
 let fetch = require('node-fetch')
+
 let Reg = /(.*)([.|])([0-9]*)$/i
 let Rname = /([A-Za-z])$/i
+
 let handler = async function (m, { conn, text, usedPrefix, command}) {
   let user = global.DATABASE._data.users[m.sender]
   if (user.registered === true) throw `*Ya estas registrado*, quieres volver a registrarte?\nUse ${usedPrefix}unreg su codigo`
@@ -52,7 +52,7 @@ conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { quoted: m })
 conn.sendMessage(m.sender, `Codigo de registro: ${sn}`, MessageType.text, { quoted: m })
 }
 
-handler.help = ['registrar']
+handler.help = ['reg']
 handler.tags = ['xp']
 handler.command = /^(registrar|registrarse|daftar|register|reg)$/i
 
