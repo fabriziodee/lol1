@@ -3,7 +3,7 @@ let crypto = require('crypto')
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
 let handler = async function (m, { conn, text, participants }) {
-let test = createHash('shake256', { outputLength: 7 }).update(m.sender).digest('hex')
+let test = createHash('Test', 7)
 await m.reply(test)
 }
 
@@ -14,3 +14,11 @@ handler.command = /^(test)$/i
 handler.owner = true
 
 module.exports = handler
+
+const crypto = require("crypto");
+
+function createHash(data, len) {
+    return crypto.createHash("shake256", { outputLength: len })
+      .update(data)
+      .digest("hex");
+}
