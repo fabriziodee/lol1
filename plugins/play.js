@@ -10,8 +10,8 @@ conn.sendFile(m.chat, json.result.audio, 'error.mp3', '', m)
 //conn.sendFile(m.chat, json.result.audio, json.title + '.mp3', m, null, {})
 }
 
-handler.help = ['play']
-handler.tags = ['download']
-handler.command = /^(play)$/i
+//handler.help = ['play']
+//handler.tags = ['download']
+handler.command = /^(xxxplay)$/i
 
 module.exports = handler
