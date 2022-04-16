@@ -1,7 +1,7 @@
 let crypto = require('crypto')
 
 let handler = async (m, { conn, usedPrefix }) => {
-await m.reply(`${numberto(655866677776666712)}`)
+await m.reply(`${numberto(100000)}`)
 }
 
 //handler.help = ['test']
@@ -15,7 +15,7 @@ x=(''+n).length;
 p=Math.pow;
 d=p(10,true);
 x-=x%3;
-return Math.round(n*d/p(10,x))/d+" kMGTPE"[x/3];
+return Math.round(n*d/p(10,x))/d+" KMGTPE"[x/3];
 }
 
 function createHash(data, len) {
