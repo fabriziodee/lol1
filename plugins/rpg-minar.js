@@ -28,14 +28,14 @@ global.DATABASE._data.users[m.sender].exp += exp * 1
 
           setTimeout(() => {
           	m.reply(`*Minaste en ${goa} y obtienes*
-          
-- Diamante: ${diamond}
-- Oro: ${gold}
-- Hiero: ${iron}
-- Piedra: ${stone}
-- Exp: ${exp}
 
-*⛏Durabilidad:* -${durability}`)
+◦ Diamante: ${diamond}
+◦ Oro: ${gold}
+◦ Hiero: ${iron}
+◦ Piedra: ${stone}
+◦ Exp: ${exp}
+
+*⛏ Durabilidad:* -${durability}`)
           }, 0)
           
             } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
