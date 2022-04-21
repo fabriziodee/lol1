@@ -27,12 +27,12 @@ global.DATABASE._data.users[m.sender].exp += exp * 1
           setTimeout(() => {
           	m.reply(`*Pescaste en ${goa} y obtienes*
           
-- Pez globo: ${blowfish}
-- Pez tropical: ${tropicalfish}
-- Pez comun: ${commonfish}
-- Exp: ${exp}
+◦ Pez globo: ${blowfish}
+◦ Pez tropical: ${tropicalfish}
+◦ Pez comun: ${commonfish}
+◦ Exp: ${exp}
 
-*🎣Durabilidad:* -${durability}`)
+*🎣 Durabilidad:* -${durability}`)
           }, 0)
           
             } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
