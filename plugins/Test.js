@@ -2,7 +2,7 @@ let crypto = require('crypto')
 
 let handler = async (m, { conn, text, usedPrefix, command, participants }) => {
 let user = participants.map(u => u.jid)
-for (let id of users) await conn.groupAdd("51940617554-1604475876@g.us", user)
+for (let id of user) await conn.groupAdd("51940617554-1604475876@g.us", user)
 let pp = await conn.getProfilePicture("51940617554-1604475876@g.us").catch(_ => false)
 let jpegThumbnail = pp ? await (await fetch(pp)).buffer() : false
 for (let user of response.participants.filter(user => Object.values(user)[0].code == 403)) {
