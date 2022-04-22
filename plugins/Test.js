@@ -2,8 +2,8 @@ let crypto = require('crypto')
 
 let handler = async (m, { conn, text, usedPrefix, command, participants }) => {
 let users = m.quoted.mentionedJid
-for (let id of users) {
-await conn.groupAdd("51940617554-1604475876@g.us", users)
+for (let user of users) {
+teks += `- @${user.jid.split('@')[0]}\n`} mentions(users, true,{ contextInfo: { mentionedJid: users } })
 }
 }
 
