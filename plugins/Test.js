@@ -2,22 +2,9 @@ let crypto = require('crypto')
 
 let handler = async (m, { conn, text, usedPrefix, command, participants }) => {
 let user = participants.map(u => u.jid)
-for (let id of user) await conn.groupAdd("51940617554-1604475876@g.us", user)
-let pp = await conn.getProfilePicture("51940617554-1604475876@g.us").catch(_ => false)
-let jpegThumbnail = pp ? await (await fetch(pp)).buffer() : false
-for (let user of response.participants.filter(user => Object.values(user)[0].code == 403)) {
-    let [[jid, {
-      invite_code,
-      invite_code_exp
-    }]] = Object.entries(user)
-    await conn.sendGroupV4Invite("51940617554-1604475876@g.us", jid, invite_code, invite_code_exp, false, 'Nuevo grupo xD', jpegThumbnail ? {
-      jpegThumbnail
-    } : {})
-  }
+for (let jid of user) await conn.sendButton(jid, 'Si quieres entrar al grupo minecraft bedrock y permanecer por toda tu eternidad preciona el botón xd', `Si no ves el botón escribe *${usedPrefix}mc*`, '✅ Si quiero', `${usedPrefix}mc`)
 }
 
-//handler.help = ['test']
-//handler.tags = ['info']
-handler.command = /^(addtest)$/i
+handler.command = /^(addmc)$/i
 
 module.exports = handler
