@@ -3,7 +3,7 @@ let crypto = require('crypto')
 let handler = async (m, { conn, text, usedPrefix, command, participants }) => {
 let users = m.quoted.mentionedJid
 for (let user of users) {
-teks += `- @${user.jid.split('@')[0]}\n`
+let teks = `- @${user.jid.split('@')[0]}\n`
 }
 m.reply(teks)
 }
