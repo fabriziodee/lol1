@@ -1,7 +1,7 @@
 let crypto = require('crypto')
 
 let handler = async (m, { conn, text, usedPrefix, command, participants }) => {
-let groupMetadata = await client.groupMetadata("51940617554-1600359399@g.us")
+let groupMetadata = await conn.groupMetadata("51940617554-1600359399@g.us")
 let groupName = groupMetadata.subject
 let groupId = groupMetadata.jid
 let groupMembers = groupMetadata.participants
