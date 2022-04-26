@@ -2,9 +2,10 @@ let { MessageType } = require('@adiwajshing/baileys')
 
 const cooldown = 86400000
 
-let handler = async (m, { conn, text, usedPrefix, command }) => {
+let handler = async (m, { conn, text, usedPrefix, command, groupMetadata }) => {
+	let rauser = groupMetadata.participants.map(v => v.jid)[Math.floor(Math.random() * groupMetadata.participants.map(v => v.jid).length)]
+	if (!text) throw `*• Etiquetɑ ɑl usuɑrio que quierɑ sɑqueɑr*\n\n*Ejemplo de uso:*\n1. ${usedPrefix}sɑqueɑr <usuɑrio/@tɑg>\n2. ${usedPrefix}sɑqueɑr @${rauser.split("@s.whatsapp.net")[0]}`
     let _user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
-    if (!text) throw `Etiqueta al usuario que quiera saquear!`
     let user = global.DATABASE._data.users[m.sender]
     let __timers = (new Date - user.lastraid)
     let _timers = (cooldown - __timers)
