@@ -186,7 +186,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
      let res = await conn.prepareMessageFromContent(m.chat, { "orderMessage": { "orderId":"6288215463787", "itemCount": 2022, "message": text.trim(), "orderTitle": "💌 Lobita & Gatito 💫", "footerText": "© lolibot", "token": "AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA==", "thumbnail": tumbb, "surface": "CATALOG" } }, { quoted: m, sendEphemeral: true, contextInfo: { mentionedJid: [m.sender, ownernum] } })
      conn.relayWAMessage(res)
      } else if (chatp.menu == 2) {
-     let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.image, { quoted: m, thumbnail: tumb, contextInfo: { externalAdReply: { title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", previewType: "PHOTO", thumbnail: tumbb, sourceUrl: "https://youtu.be/gk-aCL6eyGc" } } })
+     let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.image, { quoted: m, thumbnail: tumb, contextInfo: { externalAdReply: { title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", previewType: "PHOTO", thumbnail: tumbb, sourceUrl: "" } } })
      gbutsan = [{ buttonId: '.info', buttonText: { displayText: '🛰 INFO' }, type: 1 }, { buttonId: '.owner', buttonText: { displayText: '🎋 CREADOR' }, type: 1 }]
      gbuttonan = { imageMessage: menux.message.imageMessage, contentText: text.trim(), footerText: '  Lolibot - OFC', buttons: gbutsan, headerType: 4 }
      await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [m.sender, ownernum], forwardingScore: 750, isForwarded: true }, quoted: m })
