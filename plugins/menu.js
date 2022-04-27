@@ -40,19 +40,19 @@ let tags = {
 const defaultMenu = {
   before: `Hola *@%user*, %greeting
 
-⠀ %rmoji *• Bio:* %bio
+⠀ ∙•⃝⃕💫 *• Bio:* %bio
 
-⠀ %rmoji *• Bot Nɑme :* %botname
-⠀ %rmoji *• Lenguɑje :* %lang
-⠀ %rmoji *• Libreriɑ :* %lib
-⠀ %rmoji *• Prefijo :* [ multiprefix ]
-⠀ %rmoji *• Comɑndos :* %comand Totɑl
-⠀ %rmoji *• Fechɑ :* %date
-⠀ %rmoji *• Horɑ :* %time
+⠀ ∙•⃝⃕🤖 *• Bot Nɑme :* %botname
+⠀ ∙•⃝⃕🌐 *• Lenguɑje :* %lang
+⠀ ∙•⃝⃕📚 *• Libreriɑ :* %lib
+⠀ ∙•⃝⃕🧸 *• Prefijo :* [ multiprefix ]
+⠀ ∙•⃝⃕🎲 *• Comɑndos :* %comand Totɑl
+⠀ ∙•⃝⃕☀️ *• Fechɑ :* %date
+⠀ ∙•⃝⃕⏰ *• Horɑ :* %time
 
 `,
   header: '⠀⠀ _*%category*_',
-  body: '⠀ *◦ %cmd* %islimit %isPremium',
+  body: '⠀ *∙•⃝⃕%rmoji %cmd* %islimit %isPremium',
   footer: '⠀ ╶',
   after: "",
 }
