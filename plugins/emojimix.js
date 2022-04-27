@@ -10,7 +10,7 @@ try {
 const anu = await (await fetch(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)).json()
 const emix = anu.results[0].media_formats.png_transparent.url
 } catch (e) {
-return m.reply(`*No se encontro el emoji!*\n\n*Error:* ${e.replace('TypeError', '*Tipo de error:*')}`)
+return m.reply(`*No se encontro el emoji!*\n\n\n\`\`\`${e}\`\`\``)
 }
 let stiker = await sticker(null, emix, global.packname, global.author)
 conn.sendMessage(m.chat, stiker, MessageType.sticker, { quoted: m })
