@@ -467,9 +467,9 @@ switch (action) {
         break
 
       case 'promote':
-      text = (chat.sPromote || this.spromote || conn.spromote || '@user ```ahora es administrador```')
+      text = (chat.sPromote || this.spromote || conn.spromote || '@user ahora es administrador')
       case 'demote':
-        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```ya no es administrador```')
+        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ya no es administrador')
         text = text.replace('@user', '@' + participants[0].split('@')[0])
         this.sendMessage(jid, text, MessageType.extendedText, {
           contextInfo: {
@@ -483,15 +483,18 @@ switch (action) {
     if (m.key.remoteJid == 'status@broadcast') return
     if (m.key.fromMe) return
     let chat = global.DATABASE._data.chats[m.key.remoteJid]
-    if (chat.delete) return
-    await this.reply(m.key.remoteJid, `
-*‧ [ 🧇 MENSAJE ELIMINADO 🧇 ] ‧*
+    if (!chat.delete) return
+    let d = new Date(new Date + 3600000)
+    let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
+    let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
+    await this.reply(m.key.remoteJid, `\t\t\t*∙ ♻️ Mensɑje eliminɑdo ♻️ ∙*
  
 *• Nombre:* @${m.participant.split`@`[0]}
+*• Fecha:* ${date}
+*• Hora:* ${time}
 
 Para desactivar esta función escriba:
-*.disable delete*
-`.trim(), m.message, {
+*.disable delete*`, m.message, {
       contextInfo: {
         mentionedJid: [m.participant]
       }
@@ -533,15 +536,15 @@ Para desactivar esta función escriba:
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: 'Esta función solo puede ser utilizado por el *creador* de la bot!',
-    owner: 'Esta función solo puede ser utilizado por los *subbots* y el *creador* de la bot!',
-    mods: 'Esta función solo puede ser utilizado por los *moderadores/as* y el *creador* de la bot!',
-    premium: 'Esta función solo puede ser utilizado por miembros *premium*!',
-    group: 'Esta función solo puede ser utilizado en *grupos*!',
-    private: 'Esta función solo puede ser utilizado en el chat *privado*!',
-    admin: 'Esta función solo puede ser utilizado por *administradores/as* del grupo!',
-    botAdmin: 'Para ejecutar esta función tengo que ser *administradora*!',
-    unreg: '*Registrese para utilizar esta función*\n\n- Ejemplo: Nombre|edad'
+    rowner: '• Estɑ función solo puede ser utilizɑdo por el *creɑdor* de lɑ bot',
+    owner: '• Estɑ función solo puede ser utilizɑdo por el *creɑdor* de lɑ bot',
+    mods: '• Estɑ función solo puede ser utilizɑdo por los\'as *moderɑdores\'ɑs* de lɑ bot',
+    premium: '• Estɑ función solo puede ser utilizɑdo por usuɑrios *premium*',
+    group: '• Estɑ función solo puede ser utilizɑdo en *grupos*',
+    private: '• Estɑ función solo puede ser utilizɑdo en el *chɑt privɑdo*',
+    admin: '• Estɑ función solo puede ser utilizɑdo por los *ɑdministrɑdores\'ɑs* del grupo',
+    botAdmin: '• Debo ser *ɑdministrɑdorɑ* pɑrɑ utilizɑr estɑ función',
+    unreg: '*• Registrese pɑrɑ utilizɑr estɑ función*\n\n*Ejemplo de uso:*\n1. .reg <nombre|edɑd>\n2. .reg Gɑtito|17'
   }[type]
   if (msg) return m.reply(msg)
 }
