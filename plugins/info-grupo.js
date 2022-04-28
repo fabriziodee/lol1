@@ -16,30 +16,30 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
         let { isBanned, welcome, antivirtex, detect, sWelcome, sBye, sPromote, sDemote, antiLink } = global.DATABASE.data.chats[m.chat]
         const groupAdmins = getGroupAdmins(participants)
         let listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.split('@')[0]}`).join('\n')
-        let text = `*「 INFORMACIÓN DEL GRUPO 」*\n
-*ID De Registro En El Bot:* 
-${groupMetadata.id}
+        let text = `\t\t*‧ ⚗️ Información del Grupo ⚗️ ‧*
 
-*Nombre:* 
+*• Nombre:* 
 ${groupMetadata.subject}
 
-*Descripcion:* 
-${groupMetadata.desc}
+*• Jid:* 
+${groupMetadata.id}
 
-*Total De Participantes:*
+*• Participantes:*
 ${participants.length} Participantes
 
-*Creador Del Grupo:* 
+*• Creador\'a:* 
 @${m.chat.split`-`[0]}
 
-*Admins Del Grupo:*
+*• Administradores\'as:*
 ${listAdmin}
 
-*Configuraciones Del Grupo:*
-${welcome ? '✅' : '❌'} Welcome
-${global.DATABASE.data.chats[m.chat].delete ? '❌' : '✅'} Anti Delete
-${antiLink ? '✅' : '❌'} Anti Link
-`.trim()
+*• Configuraciones:*
+${welcome ? '✅' : '❌'} Bienvenida
+${global.DATABASE.data.chats[m.chat].delete ? '❌' : '✅'} Antidelete
+${antiLink ? '✅' : '❌'} Antienlace
+
+*• Descripción:* 
+${groupMetadata.desc}`
         ownernya = [`${m.chat.split`-`[0]}@s.whatsapp.net`]
         let mentionedJid = groupAdmins.concat(ownernya)
         conn.sendFile(m.key.remoteJid, pp, 'pp.jpg', text, m, false, { contextInfo: { mentionedJid } })
