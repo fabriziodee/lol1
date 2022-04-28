@@ -1,11 +1,12 @@
 const similarity = require('similarity')
+
 const threshold = 0.72
 let handler = m => m
 handler.before = async function (m) {
     let id = m.chat
     if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/^Pregunta/i.test(m.quoted.text)) return !0
     this.tekateki = this.tekateki ? this.tekateki : {}
-    if (!(id in this.tekateki)) return m.reply('Esa pregunta ya a terminado')
+    if (!(id in this.tekateki)) return m.reply('Esa pregunta ya ha terminado!')
     if (m.quoted.id == this.tekateki[id][0].id) {
         let json = JSON.parse(JSON.stringify(this.tekateki[id][1]))
         // m.reply(JSON.stringify(json, null, '\t'))
@@ -15,10 +16,11 @@ handler.before = async function (m) {
             clearTimeout(this.tekateki[id][3])
             delete this.tekateki[id]
         } else if (similarity(m.text.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) m.reply(`Casi lo logras!`)
-        else m.reply(`Respuesta incorrecta!`)
+        else m.reply('Respuesta incorrecta!')
     }
     return !0
 }
+
 handler.exp = 0
 
 module.exports = handler  
