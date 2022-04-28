@@ -6,10 +6,10 @@ let handler = async (m, { conn, command, text }) => {
   if (!text) throw '*✳️ Inserte el nombre/título del video o audio a bucar*\n\n*Ejemplo:*\n*#play Juan Solo - Querido Corazón*'
   let results = await yts(text)
    let fs = require('fs')
- let y = fs.readFileSync('./src/reproductor.jpg')
+ //let y = fs.readFileSync('./src/reproductor.jpg')
  
  
-  conn.sendMessage(m.chat, `*_🍃AGUARDE UN MOMENTITO :3🍃_*` , 'conversation', {quoted: m, thumbnail: global.thumb, contextInfo:{externalAdReply: {title: '🐢Rᴇᴘʀᴏᴅᴜᴄᴛᴏʀ Bʏ ZᴇɴBᴏᴛ', body: `Aʟʙᴇʀᴛᴏ Y Asʜʟʏ🌹`, sourceUrl: 'enviando...', thumbnail: y}}})
+  //conn.sendMessage(m.chat, `*_🍃AGUARDE UN MOMENTITO :3🍃_*` , 'conversation', {quoted: m, thumbnail: global.thumb, contextInfo:{externalAdReply: {title: '🐢Rᴇᴘʀᴏᴅᴜᴄᴛᴏʀ Bʏ ZᴇɴBᴏᴛ', body: `Aʟʙᴇʀᴛᴏ Y Asʜʟʏ🌹`, sourceUrl: 'enviando...', thumbnail: y}}})
   let vid = results.all.find(video => video.seconds < 3600)
   if (!vid) throw '*Video/Audio No encontrado* '
   let isVideo = /2$/.test(command)
