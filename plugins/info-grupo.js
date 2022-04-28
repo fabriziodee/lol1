@@ -45,9 +45,10 @@ ${antiLink ? '✅' : '❌'} Anti Link
         conn.sendFile(m.key.remoteJid, pp, 'pp.jpg', text, m, false, { contextInfo: { mentionedJid } })
     }
 }
-handler.help = ['infogrup']
+
+handler.help = ['groupinfo']
 handler.tags = ['group']
-handler.command = /^(infogroup|gc|infogrupo)$/i
+handler.command = /^(groupinfo|infogc|infogroup|gc|infogrupo)$/i
 
 handler.group = true
 
