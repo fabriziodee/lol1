@@ -13,8 +13,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     let caption = `
 Pregunta *${json.pertanyaan}*
 
-Tiempo : *${(timeout / 1000).toFixed(2)} segundos*
-Bono de respuesta correcta : ${poin} Exp
+*• Tiempo:* ${(timeout / 1000).toFixed(2)} segundos
+*• Bono:* ${poin} Exp
 
 Escriba *${usedPrefix}tete* para obtener ayuda
 `.trim()
@@ -22,11 +22,12 @@ Escriba *${usedPrefix}tete* para obtener ayuda
        await conn.reply(m.chat, caption, m),
         json, poin,
         setTimeout(async () => {
-            if (conn.tekateki[id]) await conn.reply(m.chat, `¡Se acabó el tiempo!\nLa respuesta es : *${json.jawaban}*`, conn.tekateki[id][0])
+            if (conn.tekateki[id]) await conn.reply(m.chat, `Se acabó el tiempo!\n*Respuesta:* ${json.jawaban}`, conn.tekateki[id][0])
             delete conn.tekateki[id]
         }, timeout)
     ]
 }
+
 handler.help = ['pregunta']
 handler.tags = ['game']
 handler.command = /^(pregunta|adivinanza|tekateki)$/i
