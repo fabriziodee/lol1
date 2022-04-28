@@ -25,7 +25,7 @@ ${groupMetadata.subject}
 ${groupMetadata.id}
 
 *• Participantes:*
-${participants.length} Participantes
+${participants.length} Total
 
 *• Creador\'a:* 
 @${m.chat.split`-`[0]}
