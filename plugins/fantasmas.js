@@ -25,6 +25,7 @@ let handler = async (m, { conn, text, participants, groupMetadata }) => {
 	if(total == 0) return conn.reply(m.chat, `*Este grupo no tiene fantasmas :D*`, m) 
 	conn.reply(m.chat, `\t\t*･ 🍟 REVISIÓN DE INACTIVOS 🍟 ･*\n\n*• Grupo:* ${groupMetadata.subject}\n*• Miembros:* ${sum} Total\n\nManténgase activo en el grupo porque pronto habrá limpieza de miembros.\n\n*Lista de Fantasmas:*\n${sider.map(v => '- @' + v.replace(/@.+/, '')).join('\n')}\n\n*👻 Fantasmas:* ${total} Total`, m,{ contextInfo: { mentionedJid: sider } })
 }
+
 handler.help = ['fantasmas']
 handler.tags = ['group']
 handler.command = /^(sider|fantasmas|verfantasmas)$/i
