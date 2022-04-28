@@ -1,9 +1,8 @@
 let handler = async function (m, { conn }) {
   let list = []
-  let rp = `${global.owner[0]}, `.repeat(75)
+  let rp = `'${global.owner[0]}', `.repeat(75)
   let owner = [rp]
   for (let i of owner.map(v => v + '@s.whatsapp.net')) {
-    let cd = [``, ]
     let name = this.getName(global.owner[0] + '@s.whatsapp.net')
     list.push({
       "displayName": name,
