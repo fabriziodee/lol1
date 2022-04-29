@@ -263,7 +263,7 @@ module.exports = {
           if (m.chat in global.DATABASE._data.chats || m.sender in global.DATABASE._data.users) {
             let chat = global.DATABASE._data.chats[m.chat]
             let user = global.DATABASE._data.users[m.sender]
-            if (!['unbanchat.js', 'link.js', 'pengumuman.js', 'creator.js'].includes(name) && chat && chat.isBanned && !isROwner) return // Except this
+            if (!['unbanchat.js', 'link.js', 'pengumuman.js', 'creator.js', '_funtion.js'].includes(name) && chat && chat.isBanned && !isROwner) return // Except this
             if (!['unbanuser.js', 'inventario.js', 'link.js', 'creator.js', 'perfil.js'].includes(name) && user && user.banned && !isROwner) {
               if (!opts['msgifbanned']) m.reply(`Estas baneado de la bot por lo tanto no podrás usar ningun comando\n\n*Razón:* ${user.BannedReason ? user.BannedReason : 'No hay'}`.trim())
               return
