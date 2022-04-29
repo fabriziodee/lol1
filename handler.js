@@ -499,8 +499,8 @@ Para desactivar esta función escriba:
       contextInfo: {
         mentionedJid: [m.participant]
       }
-    })
-    this.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
+    }).then((res) => await this.copyNForward(m.key.remoteJid, m.message, false, { quoted: res }))
+//this.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
   },
   async onCall(json) {
     let { from } = json[2][0][1]
