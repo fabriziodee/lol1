@@ -500,8 +500,8 @@ Para desactivar esta función escriba:
         mentionedJid: [m.participant]
       }
     })
-.then((res) => this.copyNForward(m.key.remoteJid, m.message, false, { quoted: res }) )
-//this.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
+//.then((res) => this.copyNForward(m.key.remoteJid, m.message, false, { quoted: res }) )
+this.copyNForward(m.key.remoteJid, m.message, false, { quoted: m }).catch(e => console.log(e, m))
   },
   async onCall(json) {
     let { from } = json[2][0][1]
