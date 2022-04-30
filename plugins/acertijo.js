@@ -15,7 +15,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let _clue = json.response
     let clue = _clue.replace(/[AIUEOaiueo]/g, '_')
     let caption = `
-*${json.question}*
+ⷮ*${json.question}*
 
 \`\`\`${clue}\`\`\`
 
