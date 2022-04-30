@@ -418,6 +418,17 @@ switch (action) {
         for (let user of participants) {
         if (!chat.welcome) return 
         let duser = user
+        if (user.startsWith('9')) return this.groupRemove(mdata.id, [user])
+	if (user.startsWith('1')) return this.groupRemove(mdata.id, [user])
+	if (user.startsWith('2')) return this.groupRemove(mdata.id, [user])
+	if (user.startsWith('3')) return this.groupRemove(mdata.id, [user])
+	if (user.startsWith('4')) return this.groupRemove(mdata.id, [user])
+	if (user.startsWith('55')) return this.groupRemove(mdata.id, [user])
+	if (user.startsWith('62')) return this.groupRemove(mdata.id, [user])
+	if (user.startsWith('88')) return this.groupRemove(mdata.id, [user])
+	//if (user.startsWith('5')) return this.groupRemove(mdata.id, [user]) //all
+	//if (user.startsWith('1054291')) return this.groupRemove(mdata.id, [user])
+
         let groupMetadata = await this.groupMetadata(jid)
         let _biot = await this.getStatus(duser)
         let bio = _biot.status == 401 ? 'Sin info' : _biot.status
