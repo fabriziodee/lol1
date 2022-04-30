@@ -417,17 +417,17 @@ switch (action) {
       case 'add':
         for (let user of participants) {
         let puser = user
-        if (duser.startsWith('9')) return this.groupRemove(jid, [duser])
-	if (duser.startsWith('1')) return this.groupRemove(jid, [duser])
-	if (duser.startsWith('2')) return this.groupRemove(jid, [duser])
-	if (duser.startsWith('3')) return this.groupRemove(jid, [duser])
-	if (duser.startsWith('4')) return this.groupRemove(jid, [duser])
-	if (duser.startsWith('55')) return this.groupRemove(jid, [duser])
-	if (duser.startsWith('62')) return this.groupRemove(jid, [duser])
-	if (duser.startsWith('88')) return this.groupRemove(jid, [duser])
-	if (duser.startsWith('51976')) return this.groupRemove(jid, [duser])
-	if (duser.startsWith('51963')) return this.groupRemove(jid, [duser])
-        if (duser.startsWith('51920')) return this.groupRemove(jid, [duser])
+        if (duser.startsWith('9')) return this.groupRemove(jid, [puser])
+	if (duser.startsWith('1')) return this.groupRemove(jid, [puser])
+	if (duser.startsWith('2')) return this.groupRemove(jid, [puser])
+	if (duser.startsWith('3')) return this.groupRemove(jid, [puser])
+	if (duser.startsWith('4')) return this.groupRemove(jid, [puser])
+	if (duser.startsWith('55')) return this.groupRemove(jid, [puser])
+	if (duser.startsWith('62')) return this.groupRemove(jid, [puser])
+	if (duser.startsWith('88')) return this.groupRemove(jid, [puser])
+	if (duser.startsWith('51976')) return this.groupRemove(jid, [puser])
+	if (duser.startsWith('51963')) return this.groupRemove(jid, [puser])
+        if (duser.startsWith('51920')) return this.groupRemove(jid, [puser])
         if (!chat.welcome) return 
         let duser = user
         let groupMetadata = await this.groupMetadata(jid)
