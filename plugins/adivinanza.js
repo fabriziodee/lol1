@@ -12,8 +12,12 @@ let handler = async (m, { conn, usedPrefix }) => {
     }
     let tekateki = JSON.parse(fs.readFileSync(`./storage/game/acertijo.json`))
     let json = tekateki[Math.floor(Math.random() * tekateki.length)]
+    let _clue = json.response
+    let clue = _clue.replace(/[AIUEOaiueo]/g, '_')
     let caption = `
-*${json.pertanyaan}*
+*${json.question}*
+
+\`\`\`${clue}\`\`\`
 
 *• Tiempo:* ${(timeout / 1000).toFixed(2)} segundos
 *• Bono:* +${poin} Exp
