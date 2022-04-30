@@ -10,12 +10,12 @@ handler.before = async function (m) {
     if (m.quoted.id == this.tekateki[id][0].id) {
         let json = JSON.parse(JSON.stringify(this.tekateki[id][1]))
         // m.reply(JSON.stringify(json, null, '\t'))
-        if (m.text.toLowerCase() == json.jawaban.toLowerCase().trim()) {
+        if (m.text.toLowerCase() == json.response.toLowerCase().trim()) {
             global.DATABASE._data.users[m.sender].exp += this.tekateki[id][2]
             m.reply(`*Respuesta correcta!*\n+${this.tekateki[id][2]} Exp`)
             clearTimeout(this.tekateki[id][3])
             delete this.tekateki[id]
-        } else if (similarity(m.text.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) m.reply(`Casi lo logras!`)
+        } else if (similarity(m.text.toLowerCase(), json.response.toLowerCase().trim()) >= threshold) m.reply(`Casi lo logras!`)
         else m.reply('Respuesta incorrecta!')
     }
     return !0
