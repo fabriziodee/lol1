@@ -416,8 +416,7 @@ module.exports = {
 switch (action) {
       case 'add':
         for (let user of participants) {
-        if (!chat.welcome) return 
-        let duser = user
+        let puser = user
         if (duser.startsWith('9')) return this.groupRemove(jid, [duser])
 	if (duser.startsWith('1')) return this.groupRemove(jid, [duser])
 	if (duser.startsWith('2')) return this.groupRemove(jid, [duser])
@@ -429,7 +428,8 @@ switch (action) {
 	if (duser.startsWith('51976')) return this.groupRemove(jid, [duser])
 	if (duser.startsWith('51963')) return this.groupRemove(jid, [duser])
         if (duser.startsWith('51920')) return this.groupRemove(jid, [duser])
-
+        if (!chat.welcome) return 
+        let duser = user
         let groupMetadata = await this.groupMetadata(jid)
         let _biot = await this.getStatus(duser)
         let bio = _biot.status == 401 ? 'Sin info' : _biot.status
