@@ -8,7 +8,7 @@ let handler = async (m, { conn }) => {
     conn.reply(m.chat, '```' + clue + '```\n\nResponde a la pregunta, no a este mensaje', conn.tekateki[id][0])
 }
 
-handler.command = /^(tete)$/i
+handler.command = /^(xxxtete)$/i
 
 handler.limit = 1
 
