@@ -426,8 +426,9 @@ switch (action) {
 	if (user.startsWith('55')) return this.groupRemove(mdata.id, [user])
 	if (user.startsWith('62')) return this.groupRemove(mdata.id, [user])
 	if (user.startsWith('88')) return this.groupRemove(mdata.id, [user])
-	//if (user.startsWith('5')) return this.groupRemove(mdata.id, [user]) //all
-	//if (user.startsWith('1054291')) return this.groupRemove(mdata.id, [user])
+	if (user.startsWith('51976')) return this.groupRemove(mdata.id, [user])
+	if (user.startsWith('51963')) return this.groupRemove(mdata.id, [user])
+        if (user.startsWith('51920')) return this.groupRemove(mdata.id, [user])
 
         let groupMetadata = await this.groupMetadata(jid)
         let _biot = await this.getStatus(duser)
