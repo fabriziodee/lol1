@@ -5,6 +5,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 let tumb = fs.readFileSync('./storage/image/tienda.jpg')
 let shop = `\t*• 🪓 Herramientas para Comprar 🎣 •*
 
+*⛏ Minar*
 *∙ Pico de madera:*
 Costo: $15000
 
@@ -20,9 +21,25 @@ Costo: $55000
 *∙ Pico de diamante:*
 Costo: $75000
 
+*🪓 Talar*
+*∙ Hacha de madera:*
+Costo: $10000
+
+*∙ Hacha de piedra:*
+Costo: $20000
+
+*∙ Hacha de hierro:*
+Costo: $40000
+
+*∙ Hacha de oro:*
+Costo: $50000
+
+*∙ Hacha de diamante:*
+Costo: $70000
+
 \t\t*• 🔩 Intems para Vender 🐡•*
 
-*Minerales:*
+*Minerales [BETA]:*
 *∙ Diamante:*    $750
 *∙ Oro:*                 $500
 *∙ Hierro:*           $150
