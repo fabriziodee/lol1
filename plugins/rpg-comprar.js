@@ -1,3 +1,21 @@
+//Pico
+const Pickaxe1 = 15000 //Madera
+const Pickaxe2 = 25000 //Piedra
+const Pickaxe3 = 45000 //Hierro
+const Pickaxe4 = 55000 //Oro
+const Pickaxe5 = 75000 //Diamante
+
+//Hacha
+const Axe1 = 10000 //Madera
+const Axe2 = 20000 //Piedra
+const Axe3 = 40000 //Hierro
+const Axe4 = 50000 //Oro
+const Axe5 = 70000 //Diamante
+
+//Caña
+const Rod1 = 10000 //Normal
+
+
 let { MessageType, MentionedJid } = require("@adiwajshing/baileys")
 let fs = require('fs')
 
@@ -7,15 +25,17 @@ let chat = global.DATABASE._data.chats[m.chat]
 let user = global.DATABASE._data.users[m.sender]
 
 let _pickaxe = global.DATABASE._data.users[m.sender].pickaxe
-let pickaxe = (_pickaxe == 0 ? 20000 : '' || _pickaxe == 1 ? 49999 : '' || _pickaxe == 2 ? 99999 : '' || _pickaxe == 3 ? 149999 : '' || _pickaxe == 4 ? 299999 : '')
-let cpickaxe = (_pickaxe == 0 ? 'madera' : '' || _pickaxe == 1 ? 'madera' : '' || _pickaxe == 2 ? 'piedra' : '' || _pickaxe == 3 ? 'hierro' : '' || _pickaxe == 4 ? 'oro' : '' || _pickaxe == 5 ? 'diamante': '')
+let pickaxe = (_pickaxe == 0 ? Pickaxe1 : '' || _pickaxe == 1 ? Pickaxe2 : '' || _pickaxe == 2 ? Pickaxe3 : '' || _pickaxe == 3 ? Pickaxe4 : '' || _pickaxe == 4 ? Pickaxe5 : '')
+let cpickaxe = (_pickaxe == 0 ? 'madera' : '' || _pickaxe == 1 ? 'piedra' : '' || _pickaxe == 2 ? 'hierro' : '' || _pickaxe == 3 ? 'oro' : '' || _pickaxe == 4 ? 'diamante' : '')
+let pickaxedurability = (_pickaxe == 0 ? 500 : '' || _pickaxe == 1 ? 1000 : '' || _pickaxe == 2 ? 1500 : '' || _pickaxe == 3 ? 2000 : '' || _pickaxe == 4 ? 2500 : '')
 
 let _axe = global.DATABASE._data.users[m.sender].axe
-let axe = (_axe == 0 ? 20000 : '' || _axe == 1 ? 49999 : '' || _axe == 2 ? 99999 : '' || _axe == 3 ? 149999 : '' || _axe == 4 ? 299999 : '')
-let caxe = (_axe == 0 ? 'madera' : '' || _axe == 1 ? 'madera' : '' || _axe == 2 ? 'piedra' : '' || _axe == 3 ? 'hierro' : '' || _axe == 4 ? 'oro' : '' || _axe == 5 ? 'diamante' : '')
+let axe = (_axe == 0 ? Axe1 : '' || _axe == 1 ? Axe2 : '' || _axe == 2 ? Axe3 : '' || _axe == 3 ? Axe4 : '' || _axe == 4 ? Axe5 : '')
+let caxe = (_axe == 0 ? 'madera' : '' || _axe == 1 ? 'piedra' : '' || _axe == 2 ? 'hierro' : '' || _axe == 3 ? 'oro' : '' || _axe == 4 ? 'diamante' : '')
+let axedurability = (_pickaxe == 0 ? 500 : '' || _pickaxe == 1 ? 1000 : '' || _pickaxe == 2 ? 1500 : '' || _pickaxe == 3 ? 2000 : '' || _pickaxe == 4 ? 2500 : '')
 
 let _rod = global.DATABASE._data.users[m.sender].rod
-let rod = (_rod == 0 ? 10000 : '')
+let rod = (_rod == 0 ? Rod1 : '')
 let crod = (_rod == 0 ? 'normal' : '')
 
 let imgshop = fs.readFileSync('./storage/image/shop.png')
@@ -26,45 +46,35 @@ switch (type) {
 case 'pico':
       if (global.DATABASE._data.users[m.sender].pickaxe == 5) return conn.reply(m.chat, 'Tu pico esta al nivel máximo!', m)
       if (global.DATABASE._data.users[m.sender].money > pickaxe * 1) {
-      	  global.DATABASE._data.users[m.sender].pickaxe += 1
-          global.DATABASE._data.users[m.sender].pickaxedurability += ( 0 ? 500 : '' || 1 ? 1000 : '' || 2 ? 1500 : '' || 3 ? 2000 : '' || 4 ? 2500 : '' || 5 ? 3000 : '')
-          global.DATABASE._data.users[m.sender].money -= pickaxe * 1
-          conn.reply(m.chat, `Compraste un pico de *${cpickaxe}* por ${pickaxe} de dinero` ,m)
+      	 global.DATABASE._data.users[m.sender].pickaxe += 1
+           global.DATABASE._data.users[m.sender].pickaxedurability += pickaxedurability * 1
+           global.DATABASE._data.users[m.sender].money -= pickaxe * 1
+           conn.reply(m.chat, `Compraste un pico de *${cpickaxe}* por ${pickaxe} de dinero` ,m)
           } else conn.reply(m.chat, `No tienes suficiente dinero para comprar el pico de *${cpickaxe}* que cuesta ${pickaxe} de dinero`, m)
       break
 
 case 'hacha':
       if (global.DATABASE._data.users[m.sender].axe == 5) return conn.reply(m.chat, 'Tu hacha esta al nivel máximo', m)
       if (global.DATABASE._data.users[m.sender].money > axe * 1) {
-       	  global.DATABASE._data.users[m.sender].axe += 1
-          global.DATABASE._data.users[m.sender].axedurability += ( 0 ? 500 : '' || 1 ? 1000 : '' || 2 ? 1500 : '' || 3 ? 2000 : '' || 4 ? 2500 : '' || 5 ? 3000 : '')
-          global.DATABASE._data.users[m.sender].money -= axe * 1
-          conn.reply(m.chat, 'Compraste una hacha de ' + caxe + ' por ' + axe + ' de dinero' ,m)
+       	global.DATABASE._data.users[m.sender].axe += 1
+           global.DATABASE._data.users[m.sender].axedurability += axedurability * 1
+           global.DATABASE._data.users[m.sender].money -= axe * 1
+           conn.reply(m.chat, 'Compraste una hacha de ' + caxe + ' por ' + axe + ' de dinero' ,m)
           } else conn.reply(m.chat, 'Tu dinero no es suficiente para comprar una hacha que cuesta ' + axe + ' de dinero', m)
       break
 
 case 'caña':
       if (global.DATABASE._data.users[m.sender].rod == 1) return conn.reply(m.chat, 'Tu caña de pescar esta al nivel máximo', m)
       if (global.DATABASE._data.users[m.sender].money > rod * 1) {
-      	global.DATABASE._data.users[m.sender].rod += 1
-          global.DATABASE._data.users[m.sender].roddurability += ( 0 ? 500 : '' || 1 ? 1000 : '' || 2 ? 1500 : '' || 3 ? 2000 : '' || 4 ? 2500 : '' || 5 ? 3000 : '')
-          global.DATABASE._data.users[m.sender].money -= rod * 1
-          conn.reply(m.chat, 'Compraste una caña por ' + rod + ' de dinero' ,m)
+       	global.DATABASE._data.users[m.sender].rod += 1
+           global.DATABASE._data.users[m.sender].roddurability += ( 0 ? 500 : '' || 1 ? 1000 : '' || 2 ? 1500 : '' || 3 ? 2000 : '' || 4 ? 2500 : '' || 5 ? 3000 : '')
+           global.DATABASE._data.users[m.sender].money -= rod * 1
+           conn.reply(m.chat, 'Compraste una caña por ' + rod + ' de dinero' ,m)
            } else conn.reply(m.chat, 'Tu dinero no es suficiente para comprar una caña que cuesta ' + rod + ' de dinero', m)
       break
 
     default:
-let shop = `\t\t\t*• 🗓️ INFO 🗓️ •*
-
-✖️ = No puedes comprar
-✅ = Ya puedes comprar
-
-\t\t\t*• 🏪 ITEMS 🏪 •*
-
-*[${user.money >= pickaxe ? '✅' : '✖️'}] Pico de ${cpickaxe}:*  $${pickaxe}
-*[${user.money >= axe ? '✅' : '✖️'}] Hacha de ${caxe}:*  $${axe}
-*[${user.money >= rod ? '✅' : '✖️'}] Caña ${crod}:*  $${rod}`
-return conn.reply(m.chat, shop, MessageType.text, { quoted: m, contextInfo: { externalAdReply:{title: '∙•⃝⃕🛍️ 𝗧𝗜𝗘𝗡𝗗𝗔 𝗥𝗣𝗚 🛍️⃝⃕・∙', previewType:"PHOTO",thumbnail: imgshop, sourceUrl:``}}})
+return m.reply(`El item *${args[0]}* no esta en la tienda!`)
   }
 }
 
