@@ -1,16 +1,12 @@
 let { MessageType } = require('@adiwajshing/baileys')
+let fs = require('fs')
+
 let handler = async (m, { conn }) => {
-  let q = m.quoted ? m.quoted : m 
-  let mime = (q.msg || q).mimetype || ''
-  if (/image|video/.test(mime)) {
-    let img = await q.download()
-    if (!img) throw 'Foto/Sticker tidak ditemukan'
-    conn.sendMessage(m.chat, {degreesLatitude: 25.21465, degreesLongitude: 49.33476, jpegThumbnail: img, Image: img, caption: "DZX NGEBUG:V"}, MessageType.location)
-  } else m.reply('Tag foto/videonya!!')
+let tumb = fs.readFileSync('./storage/gif/Shop.gif')
+conn.sendMessage(m.chat, tumb, MessageType.video, { mimetype: 'video/gif', filename: `Shop.gif`, quoted: m, caption: 'Test'})
 }
 
-//handler.help = ['jadilokasi']
-//handler.tags = ['tools']
 handler.command = /^(test)$/i
+handler.owner = true
 
 module.exports = handler
