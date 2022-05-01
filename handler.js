@@ -417,6 +417,7 @@ switch (action) {
       case 'add':
         for (let user of participants) {
         let puser = user
+        if (puser.startsWith(conn.user.jid)) return false
         if (puser.startsWith('9')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('1')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('2')) return this.groupRemove(jid, [puser])
