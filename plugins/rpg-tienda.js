@@ -20,7 +20,7 @@ Costo: $55000
 *∙ Pico de diamante:*
 Costo: $75000
 
-*• 🔩 Intems para Vender 🐡•*
+\t\t*• 🔩 Intems para Vender 🐡•*
 
 *Minerales:*
 *∙ Diamante:*    $750
