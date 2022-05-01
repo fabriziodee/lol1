@@ -3,7 +3,7 @@ let fs = require('fs')
 
 let handler = async (m, { conn, usedPrefix, command }) => {
 let tumb = fs.readFileSync('./storage/image/tienda.jpg')
-let shop = `\t\t*• 🪓 Herramientas para Comprar 🎣 •*
+let shop = `\t*• 🪓 Herramientas para Comprar 🎣 •*
 
 *∙ Pico de madera:*
 Costo: $15000
