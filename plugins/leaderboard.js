@@ -9,7 +9,6 @@ let handler = async (m, { conn, args }) => {
   const usersmoney = sortedmoney.map(v => v[0])
   const userslevel = sortedlevel.map(v => v[0])
   const len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 5)) : Math.min(7, sortedExp.length)
-}
 
 let type = (args[0] || ' ').toLowerCase()
 
