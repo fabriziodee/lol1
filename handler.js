@@ -512,7 +512,7 @@ switch (action) {
 
 *El ɑntidelete estɑ ɑctivo*
 Pɑrɑ evitɑr que los mensɑjes seɑn eliminɑdos`
-await this.reply(m.key.remoteJid, deltext, m.message, { quoted: m, contextInfo: { externalAdReply: { title: '🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋', body: '➤ Antidelete By Gatito', previewType:"PHOTO", thumbnail: very, sourceUrl: `${global.linkgc}` }, mentionedJid: [m.participant] } })
+await this.reply(m.key.remoteJid, deltext, m.message, { quoted: m, contextInfo: { externalAdReply: { title: '🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋', body: '➤ Antidelete By Gatito', previewType:"PHOTO", thumbnail: very, sourceUrl: `` }, mentionedJid: [m.participant] } })
 //await this.reply(m.key.remoteJid, deltext, MessageType.text, { quoted: m, contextInfo: { externalAdReply: { title: '🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋', body: '➤ Antidelete By Gatito', previewType:"PHOTO", thumbnail: very, sourceUrl:`` }} })
 this.copyNForward(m.key.remoteJid, m.message, false, { quoted: m }).catch(e => console.log(e, m))
   },
