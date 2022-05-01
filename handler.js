@@ -502,19 +502,16 @@ switch (action) {
     let d = new Date(new Date + 3600000)
     let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
     let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
-    await this.reply(m.key.remoteJid, `\t\t\t*∙ ♻️ Mensɑje eliminɑdo ♻️ ∙*
+    let deltext = `\t\t\t*∙ ♻️ Mensɑje eliminɑdo ♻️ ∙*
  
-*• Nombre:* @${m.participant.split`@`[0]}
-*• Fecha:* ${date}
-*• Hora:* ${time}
+*• Usuario:* @${m.participant.split`@`[0]}
+*• Fechɑ:* ${date}
+*• Horɑ:* ${time}
 
-Para desactivar esta función escriba:
-*.disable delete*`, m.message, {
-      contextInfo: {
-        mentionedJid: [m.participant]
-      }
-    })
-//.then((res) => this.copyNForward(m.key.remoteJid, m.message, false, { quoted: res }) )
+
+*El ɑntidelete estɑ ɑctivo*
+Pɑrɑ evitɑr que los mensɑjes seɑn eliminɑdos`
+await this.reply(m.key.remoteJid, deltext, MessageType.text, { quoted: m, contextInfo: { externalAdReply: { description: '➤ Antidelete By Gatito', title: '🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋', previewType:"PHOTO",thumbnail: false, sourceUrl:`` }} })
 this.copyNForward(m.key.remoteJid, m.message, false, { quoted: m }).catch(e => console.log(e, m))
   },
   async onCall(json) {
