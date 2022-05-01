@@ -1,15 +1,19 @@
 let { MessageType, MentionedJid } = require("@adiwajshing/baileys")
 let fs = require('fs')
 
+//Minerales
 const Sdiamond = 750
-const Sgold = 350
-const Siron = 50
-const Sstone = 4
-const Soak = 5
+const Sgold = 500
+const Siron = 150
+const Sstone = 10
 
-const Stropicalfish = 57
-const Sblowfish = 300
-const Scommonfish = 3
+//Madera
+const Soak = 10
+
+//Peces
+const Sblowfish = 500
+const Stropicalfish = 300
+const Scommonfish = 50
 
 let handler = async (m, { conn, text, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
 
