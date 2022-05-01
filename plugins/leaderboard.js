@@ -19,7 +19,11 @@ case 'money':
 
 ${sortedmoney.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + `\n*💵 Dinero:* $${shortNum(data.money)}\n\n`).join`\n`}
 `.trim()
-m.reply(dinero)
+conn.reply(m.chat, dinero, m, {
+    contextInfo: {
+      mentionedJid: [...userslevel.slice(0, len), ...usersmoney.slice(0, len), ...usersLim.slice(0, len)]
+    }
+  })
 break
 
 default:
