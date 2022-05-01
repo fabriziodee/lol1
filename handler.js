@@ -422,6 +422,7 @@ switch (action) {
 	if (puser.startsWith('2')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('3')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('4')) return this.groupRemove(jid, [puser])
+        if (puser.startsWith('7')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('55')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('62')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('88')) return this.groupRemove(jid, [puser])
