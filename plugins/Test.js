@@ -3,8 +3,10 @@ let fs = require('fs')
 
 let handler = async (m, { conn }) => {
 let tumb = fs.readFileSync('./storage/gif/Shop.gif')
-await conn.sendFile(m.chat, tumb, 'out.gif', 'Test', m, 0, { mimetype: 'video/gif' })
-//await conn.sendMessage(m.chat, "https://telegra.ph/file/1b948dd3985abfb5aecf4.mp4", MessageType.video, { mimetype: 'video/gif', filename: `Shop.gif`, quoted: m, caption: 'Test'})
+let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.video, { quoted: m, thumbnail: tumb })
+gbutsan = [{ buttonId: 'test', buttonText: { displayText: 'Test' }, type: 1 }, { buttonId: 'test', buttonText: { displayText: 'Test 2' }, type: 1 }]
+gbuttonan = { imageMessage: menux.message.imageMessage, contentText: '*Test shop*', footerText: '-', buttons: gbutsan, headerType: 4 }
+await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [m.sender], forwardingScore: 750, isForwarded: true }, quoted: m })
 }
 
 handler.command = /^(test)$/i
