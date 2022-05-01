@@ -502,7 +502,8 @@ switch (action) {
     let d = new Date(new Date + 3600000)
     let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
     let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
-    let deltext = `\t\t\t*∙ ♻️ Mensɑje eliminɑdo ♻️ ∙*
+    let very = fs.readFileSync('./storage/image/verficado.png')
+    let deltext = `\t\t\t\t*∙ ♻️ Mensɑje eliminɑdo ♻️ ∙*
  
 *• Usuario:* @${m.participant.split`@`[0]}
 *• Fechɑ:* ${date}
@@ -511,7 +512,8 @@ switch (action) {
 
 *El ɑntidelete estɑ ɑctivo*
 Pɑrɑ evitɑr que los mensɑjes seɑn eliminɑdos`
-await this.reply(m.key.remoteJid, deltext, MessageType.text, { quoted: m, contextInfo: { externalAdReply: { description: '➤ Antidelete By Gatito', title: '🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋', previewType:"PHOTO",thumbnail: false, sourceUrl:`` }} })
+await this.reply(m.key.remoteJid, text, m.message, { quoted: m, contextInfo: { externalAdReply: { title: '🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋', description: '➤ Antidelete By Gatito', previewType:"PHOTO", thumbnail: very, sourceUrl:`` }, mentionedJid: [m.participant] } })
+//await this.reply(m.key.remoteJid, deltext, MessageType.text, { quoted: m, contextInfo: { externalAdReply: { title: '🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋', description: '➤ Antidelete By Gatito', previewType:"PHOTO", thumbnail: very, sourceUrl:`` }} })
 this.copyNForward(m.key.remoteJid, m.message, false, { quoted: m }).catch(e => console.log(e, m))
   },
   async onCall(json) {
