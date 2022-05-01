@@ -3,30 +3,30 @@ let fs = require('fs')
 
 let handler = async (m, { conn, usedPrefix, command }) => {
 let tumb = fs.readFileSync('./storage/image/tienda.jpg')
-let shop = `*Herramientas para Comprar*
+let shop = `\t\t*• 🪓 Herramientas para Comprar 🎣 •*
 
-*• Pico de madera:*
+*∙ Pico de madera:*
 Costo: $15000
 
-*• Pico de piedra:*
+*∙ Pico de piedra:*
 Costo: $25000
 
-*• Pico de hierro:*
+*∙ Pico de hierro:*
 Costo: $45000
 
-*• Pico de oro:*
+*∙ Pico de oro:*
 Costo: $55000
 
-*• Pico de diamante:*
+*∙ Pico de diamante:*
 Costo: $75000
 
-*Intems para Vender*
+*• 🔩 Intems para Vender 🐡•*
 
-*• Minerales para vender:*
-Diamante:     $750
-Oro:                $500
-Hierro:           $150
-Piedra:           $10`
+*Minerales:*
+*∙ Diamante:*    $750
+*∙ Oro:*                 $500
+*∙ Hierro:*           $150
+*∙ Piedra:*           $10`
 let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.image, { quoted: m, thumbnail: tumb })
 gbutsan = [{ buttonId: `${usedPrefix}inv`, buttonText: { displayText: 'Inventario 🎒' }, type: 1 }, { buttonId: `${usedPrefix}energía`, buttonText: { displayText: 'Energía ⚡' }, type: 1 }]
 gbuttonan = { imageMessage: menux.message.imageMessage, contentText: shop, footerText: '-', buttons: gbutsan, headerType: 4 }
