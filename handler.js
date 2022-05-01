@@ -502,7 +502,7 @@ switch (action) {
     let d = new Date(new Date + 3600000)
     let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
     let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
-    let very = fs.readFileSync('./storage/image/verficado.png')
+    let very = fs.readFileSync('./storage/image/verificado.png')
     let deltext = `\t\t\t\t*∙ ♻️ Mensɑje eliminɑdo ♻️ ∙*
  
 *• Usuario:* @${m.participant.split`@`[0]}
