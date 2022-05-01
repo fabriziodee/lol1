@@ -1,19 +1,19 @@
 //Pico
-const Pickaxe1 = 15000 //Madera
-const Pickaxe2 = 25000 //Piedra
-const Pickaxe3 = 45000 //Hierro
-const Pickaxe4 = 55000 //Oro
-const Pickaxe5 = 75000 //Diamante
+const Pickaxe1 = 35000 //Madera
+const Pickaxe2 = 45000 //Piedra
+const Pickaxe3 = 65000 //Hierro
+const Pickaxe4 = 75000 //Oro
+const Pickaxe5 = 95000 //Diamante
 
 //Hacha
-const Axe1 = 10000 //Madera
-const Axe2 = 20000 //Piedra
-const Axe3 = 40000 //Hierro
-const Axe4 = 50000 //Oro
-const Axe5 = 70000 //Diamante
+const Axe1 = 20000 //Madera
+const Axe2 = 30000 //Piedra
+const Axe3 = 50000 //Hierro
+const Axe4 = 60000 //Oro
+const Axe5 = 80000 //Diamante
 
 //Caña
-const Rod1 = 10000 //Normal
+const Rod1 = 50000 //Normal
 
 
 let { MessageType, MentionedJid } = require("@adiwajshing/baileys")
