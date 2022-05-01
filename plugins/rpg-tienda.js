@@ -39,11 +39,16 @@ Costo: $80000
 
 \t\t*• 🔩 Intems para Vender 🐡•*
 
-*Minerales [BETA]:*
+*Minerales:*
 *∙ Diamante:*    $750
 *∙ Oro:*                 $500
 *∙ Hierro:*           $150
-*∙ Piedra:*           $10`
+*∙ Piedra:*           $10
+
+*Peces:*
+*∙ Globo:          $500
+*∙ Tropical:      $300
+*∙ Comun:        $50`
 let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.image, { quoted: m, thumbnail: tumb })
 gbutsan = [{ buttonId: `${usedPrefix}inv`, buttonText: { displayText: 'Inventario 🎒' }, type: 1 }, { buttonId: `${usedPrefix}energía`, buttonText: { displayText: 'Energía ⚡' }, type: 1 }]
 gbuttonan = { imageMessage: menux.message.imageMessage, contentText: shop, footerText: '-', buttons: gbutsan, headerType: 4 }
