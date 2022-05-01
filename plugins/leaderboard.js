@@ -17,8 +17,8 @@ case 'dinero':
 case 'money':
           let dinero = `\t\t\t*T O P - D I N E R O*
 
-${sortedmoney.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + `\n*💵 Dinero:* $${shortNum(data.money)}\n\n`).join`\n`}
-`.trim()
+${sortedmoney.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + `\n*💵 Dinero:* ${shortNum(data.money)}\n\n`).join`\n`}
+`
 conn.reply(m.chat, dinero, m, {
     contextInfo: {
       mentionedJid: [...userslevel.slice(0, len), ...usersmoney.slice(0, len), ...usersLim.slice(0, len)]
