@@ -45,6 +45,7 @@ ${sortedLim.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`
     }
   })
 }
+}
 
 handler.help = ['lb']
 handler.tags = ['rpg']
