@@ -16,11 +16,11 @@ let type = (args[0] || ' ').toLowerCase()
 switch (type) {
 case 'dinero':
 case 'money':
-          let text = `\t\t\t*T O P - D I N E R O*
+          let dinero = `\t\t\t*T O P - D I N E R O*
 
 ${sortedmoney.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + `\n*💵 Dinero:* $${shortNum(data.money)}\n\n`).join`\n`}
 `
-m.reply(text)
+m.reply(dinero)
 break
 
 default:
