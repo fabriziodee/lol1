@@ -11,7 +11,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let iron = (pickaxe == 1 ? Math.floor(Math.random() * 10) : '' || pickaxe == 2 ? Math.floor(Math.random() * 15) : '' || pickaxe == 3 ? Math.floor(Math.random() * 20) : '' || pickaxe == 4 ? Math.floor(Math.random() * 30) : '' || pickaxe == 5 ? Math.floor(Math.random() * 50) : '' )
     let stone = (pickaxe == 1 ? Math.ceil(Math.random() * 30) : '' || pickaxe == 2 ? Math.ceil(Math.random() * 40) : '' || pickaxe == 3 ? Math.ceil(Math.random() * 60) : '' || pickaxe == 4 ? Math.ceil(Math.random() * 80) : '' || pickaxe == 5 ? Math.ceil(Math.random() * 100) : '' )
     let exp = (pickaxe == 1 ? Math.ceil(Math.random() * 200) : '' || pickaxe == 2 ? Math.ceil(Math.random() * 400) : '' || pickaxe == 3 ? Math.ceil(Math.random() * 600) : '' || pickaxe == 4 ? Math.ceil(Math.random() * 800) : '' || pickaxe == 5 ? Math.ceil(Math.random() * 1000) : '' )
-    let durability = Math.floor(Math.random() * 100)
+    let durability = (Math.floor(Math.random() * (50 - 100) + 100) + 1)
     let err = (pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': '')
     let goa = (pickRandom(['una cueva 🏔', 'un volcan 🌋', 'jupiter 🪨', 'saturno 🪐']))
     
@@ -30,7 +30,7 @@ global.DATABASE._data.users[m.sender].exp += exp * 1
           setTimeout(() => {
           	m.reply(`*Minaste en ${goa} y obtienes*
 
-*⛏Pico:* ${err}
+*⛏Pico de:* ${err}
 
 ◦ Diamante: ${diamond}
 ◦ Oro: ${gold}
