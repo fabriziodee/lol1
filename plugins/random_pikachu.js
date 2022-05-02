@@ -8,7 +8,7 @@ let handler  = async (m, { conn, text }) => {
     conn.sendFile(m.chat, json.link, '', '*PIKACHU*', m)
    } catch (e) {
         console.log(e)
-        throw '_*Erro!*_'
+        throw error
     }
 }
 
