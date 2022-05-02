@@ -163,7 +163,7 @@ if (audio16B) {
 	let vn = ss[Math.floor(Math.random() * ss.length)]
         let pp = await conn.getProfilePicture(m.sender) 
         let ppp = await(await fetch(pp)).buffer()
-        await conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", mediaType:"2", previewType: "VIDEO", thumbnail: ppp, mediaUrl: "https://www.instagram.com/p/CcS7xWSM-5q/?utm_source=ig_web_copy_link"}}})
+        await conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", mediaType:"2", previewType: "VIDEO", thumbnail: ppp, mediaUrl: ""}}})
         } else
 
 if (audio17B) {
