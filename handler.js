@@ -427,10 +427,7 @@ switch (action) {
 	if (puser.startsWith('55')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('62')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('88')) return this.groupRemove(jid, [puser])
-	if (puser.startsWith('51976')) return this.groupRemove(jid, [puser])
-	if (puser.startsWith('51963')) return this.groupRemove(jid, [puser])
-        if (puser.startsWith('51920')) return this.groupRemove(jid, [puser])
-        if (!chat.welcome) return 
+	if (!chat.welcome) return 
         let duser = user
         let groupMetadata = await this.groupMetadata(jid)
         let _biot = await this.getStatus(duser)
@@ -513,8 +510,7 @@ switch (action) {
 *El ɑntidelete estɑ ɑctivo*
 Pɑrɑ evitɑr que los mensɑjes seɑn eliminɑdos`
 await this.reply(m.key.remoteJid, deltext, m.message, { quoted: m, contextInfo: { externalAdReply: { title: '🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋', body: '➤ Antidelete By Gatito', previewType:"PHOTO", thumbnail: very, sourceUrl: `` }, mentionedJid: [m.participant] } })
-//await this.reply(m.key.remoteJid, deltext, MessageType.text, { quoted: m, contextInfo: { externalAdReply: { title: '🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋', body: '➤ Antidelete By Gatito', previewType:"PHOTO", thumbnail: very, sourceUrl:`` }} })
-this.copyNForward(m.key.remoteJid, m.message, false, { quoted: m }).catch(e => console.log(e, m))
+await this.copyNForward(m.key.remoteJid, m.message, false, { quoted: m }).catch(e => console.log(e, m))
   },
   async onCall(json) {
     let { from } = json[2][0][1]
