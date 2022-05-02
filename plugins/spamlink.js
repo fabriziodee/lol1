@@ -10,7 +10,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let [_, code] = link.match(linkRegex) || []
     if (!code) throw 'Enlace invalido!'
     let { gid: target } = await conn.acceptInvite(code)
-    conn.reply(m.chat, 'Enviando spam!', m)
+    conn.reply(m.chat, 'Enviando spam. . .', m)
     let member = (await conn.groupMetadata(target)).participants.map(v => v.jid)
     let faker = {
   key: {
@@ -32,22 +32,24 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 let _vote = conn.prepareMessageFromContent(target, {
 "listMessage":  {
 "title": "\t\t\t*‧ 🐋 Auto spam Bot 🐋 ‧*",
-"description": `\nHemos detectado su enlace en uno de nuestros grupo por lo tanto se enviará spam automáticamente.\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA`,
+"description": `\nHemos detectado su enlace en uno de nuestros grupo por lo tanto se enviará spam automáticamente.\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/ECCCE6hiiEqF45ndjbyGBN\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA`,
 "buttonText": "Opciones",
 "listType": "SINGLE_SELECT",
 "sections": [
 {
 "rows": [
 {
-"title": 'OwO\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA',
+"title": 'OwO\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/ECCCE6hiiEqF45ndjbyGBN\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA',
 "rowId": 'lolibot'
 },
 {
-"title": '7w7\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA',
+"title": '7w7\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/ECCCE6hiiEqF45ndjbyGBN\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA',
 "rowId": 'lolibot'
 }
 ]}]}}, { quoted: faker, contextInfo: { forwardingScore:999, isForwarded:true, mentionedJid: member } })
 conn.relayWAMessage(_vote).then(v => conn.groupLeave(target))
+m.reply(`Spam enviado`)
+
 }
 
 handler.help = ['spamlink']
