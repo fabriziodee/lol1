@@ -82,6 +82,8 @@ gbuttonan = { imageMessage: menux.message.imageMessage, contentText: shop, foote
 await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [m.sender], forwardingScore: 750, isForwarded: true }, quoted: m })
 }
 
+handler.help = ['tienda']
+handler.tags = ['rpg']
 handler.command = /^(store|tienda|shop)$/i
 handler.group = true
 
