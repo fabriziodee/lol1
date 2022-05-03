@@ -1,23 +1,22 @@
-//Pico
-const Pickaxe1 = 350000 //Madera
-const Pickaxe2 = 450000 //Piedra
-const Pickaxe3 = 650000 //Hierro
-const Pickaxe4 = 750000 //Oro
-const Pickaxe5 = 950000 //Diamante
-
-//Hacha
-const Axe1 = 200000 //Madera
-const Axe2 = 300000 //Piedra
-const Axe3 = 500000 //Hierro
-const Axe4 = 600000 //Oro
-const Axe5 = 800000 //Diamante
-
-//Caña
-const Rod1 = 500000 //Normal
-
-
 let { MessageType, MentionedJid } = require("@adiwajshing/baileys")
 let fs = require('fs')
+
+//Pico
+const Pickaxe1 = 175000 //Madera
+const Pickaxe2 = 225000 //Piedra
+const Pickaxe3 = 325000 //Hierro
+const Pickaxe4 = 375000 //Oro
+const Pickaxe5 = 475000 //Diamante
+
+//Hacha
+const Axe1 = 100000 //Madera
+const Axe2 = 150000 //Piedra
+const Axe3 = 250000 //Hierro
+const Axe4 = 300000 //Oro
+const Axe5 = 400000 //Diamante
+
+//Caña
+const Rod1 = 250000 //Normal
 
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
 
