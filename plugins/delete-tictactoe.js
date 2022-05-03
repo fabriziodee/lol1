@@ -1,8 +1,8 @@
 let { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, usedPrefix, command }) => {
-let room = Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
-delete this.game[room.id]
+let room = Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
+delete conn.game[room.id]
 await m.reply('Se eliminó la partida!')
 }
 
