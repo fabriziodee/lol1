@@ -7,35 +7,35 @@ let shop = `\t*• 🪓 Herramientas para Comprar 🎣 •*
 
 *⛏ Minar*
 *∙ Pico de madera:*
-Costo: $35000
+Costo: $350000
 
 *∙ Pico de piedra:*
-Costo: $45000
+Costo: $450000
 
 *∙ Pico de hierro:*
-Costo: $65000
+Costo: $650000
 
 *∙ Pico de oro:*
-Costo: $75000
+Costo: $750000
 
 *∙ Pico de diamante:*
-Costo: $95000
+Costo: $950000
 
 *🪓 Talar*
 *∙ Hacha de madera:*
-Costo: $20000
+Costo: $200000
 
 *∙ Hacha de piedra:*
-Costo: $30000
+Costo: $300000
 
 *∙ Hacha de hierro:*
-Costo: $50000
+Costo: $500000
 
 *∙ Hacha de oro:*
-Costo: $60000
+Costo: $600000
 
 *∙ Hacha de diamante:*
-Costo: $80000
+Costo: $800000
 
 \t\t*• 🔩 Intems para Vender 🐡 •*
 
