@@ -1,41 +1,62 @@
 let { MessageType } = require('@adiwajshing/baileys')
 let fs = require('fs')
 
+//Pico
+const Pickaxe1 = 175000 //Madera
+const Pickaxe2 = 225000 //Piedra
+const Pickaxe3 = 325000 //Hierro
+const Pickaxe4 = 375000 //Oro
+const Pickaxe5 = 475000 //Diamante
+
+//Hacha
+const Axe1 = 100000 //Madera
+const Axe2 = 150000 //Piedra
+const Axe3 = 250000 //Hierro
+const Axe4 = 300000 //Oro
+const Axe5 = 400000 //Diamante
+
+//Caña
+const Rod1 = 250000 //Normal
+
 let handler = async (m, { conn, usedPrefix, command }) => {
 let tumb = fs.readFileSync('./storage/image/tienda.jpg')
 let shop = `\t*• 🪓 Herramientas para Comprar 🎣 •*
 
 *⛏ Minar*
 *∙ Pico de madera:*
-Costo: $350000
+Costo: $${Pickaxe1}
 
 *∙ Pico de piedra:*
-Costo: $450000
+Costo: $${Pickaxe2}
 
 *∙ Pico de hierro:*
-Costo: $650000
+Costo: $${Pickaxe3}
 
 *∙ Pico de oro:*
-Costo: $750000
+Costo: $${Pickax4}
 
 *∙ Pico de diamante:*
-Costo: $950000
+Costo: $${Pickaxe5}
 
 *🪓 Talar*
 *∙ Hacha de madera:*
-Costo: $200000
+Costo: $${Axe1}
 
 *∙ Hacha de piedra:*
-Costo: $300000
+Costo: $${Axe2}
 
 *∙ Hacha de hierro:*
-Costo: $500000
+Costo: $${Axe3}
 
 *∙ Hacha de oro:*
-Costo: $600000
+Costo: $${Axe4}
 
 *∙ Hacha de diamante:*
-Costo: $800000
+Costo: $${Axe5}
+
+*🎣 Pescar*
+*∙ Caña normal:*
+Costo: $${Rod1}
 
 \t\t*• 🔩 Intems para Vender 🐡 •*
 
