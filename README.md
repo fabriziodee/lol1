@@ -1,2 +1,2 @@
-<img src="https://github.com/NeKosmic/NK-BOT/blob/main/culebrita.svg" />
+<img src="https://github.com/g4tito/lolibot/culebrita.svg" />
 </div>
