@@ -33,7 +33,7 @@ Costo: $${Pickaxe2}
 Costo: $${Pickaxe3}
 
 *∙ Pico de oro:*
-Costo: $${Pickax4}
+Costo: $${Pickaxe4}
 
 *∙ Pico de diamante:*
 Costo: $${Pickaxe5}
