@@ -37,7 +37,7 @@ Costo: $60000
 *∙ Hacha de diamante:*
 Costo: $80000
 
-\t\t*• 🔩 Intems para Vender 🐡•*
+\t\t*• 🔩 Intems para Vender 🐡 •*
 
 *Minerales:*
 *∙ Diamante:*    $750
