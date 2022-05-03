@@ -69,10 +69,10 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 🌟 Exp:* ${exp}
 *∙ ✨ Exp nivel:* ${user.exp - min}/${max}
 
-*∙ ⛏️ Pico:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'Pico de madera' : '' || pickaxe == 2 ? 'Pico de piedra' : '' || pickaxe == 3 ? 'Pico de hierro' : '' || pickaxe == 4 ? 'Pico de oro' : '' || pickaxe == 5 ? 'Pico de diamante': ''}
+*∙ ⛏️ Pico de:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': ''}
 *∙ ↪️ Durabilidad:* ${pdurability}
 
-*∙ 🪓 Hacha:* ${axe == 0 ? 'No tiene' : '' || axe == 1 ? 'Hacha de madera' : '' || axe == 2 ? 'Hacha de piedra' : '' || axe == 3 ? 'Hacha de hierro' : '' || axe == 4 ? 'Hacha de oro' : '' || axe == 5 ? 'Hacha de diamante' : ''}
+*∙ 🪓 Hacha de:* ${axe == 0 ? 'No tiene' : '' || axe == 1 ? 'madera' : '' || axe == 2 ? 'piedra' : '' || axe == 3 ? 'hierro' : '' || axe == 4 ? 'oro' : '' || axe == 5 ? 'diamante' : ''}
 *∙ ↪️ Durabilidad:* ${adurability}
 
 *∙ 🎣 Caña:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'Caña normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : ''}
