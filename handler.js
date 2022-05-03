@@ -499,6 +499,7 @@ switch (action) {
     let d = new Date(new Date + 3600000)
     let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
     let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
+    let fakeq = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "393470602054-1351628616@g.us" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "*Deleted Message 🗑️*", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": false } }}
     let very = fs.readFileSync('./storage/image/verificado.png')
     let deltext = `\t\t\t\t*∙ ♻️ Mensɑje eliminɑdo ♻️ ∙*
  
@@ -509,8 +510,8 @@ switch (action) {
 
 *El ɑntidelete estɑ ɑctivo*
 Pɑrɑ evitɑr que los mensɑjes seɑn eliminɑdos`
-await this.reply(m.key.remoteJid, deltext, m.message, { quoted: m, contextInfo: { externalAdReply: { title: '🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋', body: '➤ Antidelete By Gatito', previewType:"PHOTO", thumbnail: very, sourceUrl: `` }, mentionedJid: [m.participant] } })
-await this.copyNForward(m.key.remoteJid, m.message, false, { quoted: m }).catch(e => console.log(e, m))
+await this.reply(m.key.remoteJid, deltext, m.message, { quoted: fakeq, contextInfo: { externalAdReply: { title: '🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋', body: '➤ Antidelete By Gatito', previewType:"PHOTO", thumbnail: very, sourceUrl: `` }, mentionedJid: [m.participant] } })
+await this.copyNForward(m.key.remoteJid, m.message, false, { quoted: fakeq }).catch(e => console.log(e, m))
   },
   async onCall(json) {
     let { from } = json[2][0][1]
