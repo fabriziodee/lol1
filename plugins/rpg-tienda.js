@@ -69,7 +69,10 @@ Costo: $${Rod1}
 *Peces:*
 *∙ Globo:*           $500
 *∙ Tropical:*       $300
-*∙ Comun:*         $50`
+*∙ Comun:*         $50
+
+*Maderas:*
+*∙ Roble:*           $10`
 let note = `*Nota:* Al comprar una herramienta se suben de nivel de madera hasta el diamante
 
 *No puedes comprar una herramienta en especifico*`
