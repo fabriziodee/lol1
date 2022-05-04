@@ -3,24 +3,20 @@ let levelling = require('../lib/levelling')
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn, usedPrefix }) => {
-  //let pp = './src/avatar_contact.png'
-  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-  try {
-    let pp = await conn.getProfilePicture(who)
-  } catch {
-    let pp = await conn.getProfilePicture("51940617554-1604073088@g.us")
-  }
-    //let level = global.DATABASE._data.users[who].level
-    //let money = global.DATABASE._data.users[who].money
-    //let exp = global.DATABASE._data.users[who].exp
-
+    //let pp = './src/avatar_contact.png'
+    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+    try {
+      pp = await conn.getProfilePicture(who)
+    } catch {
+      pp = await conn.getProfilePicture("51940617554-1604073088@g.us")
+    }
+    let _pp = await(await fetch(pp)).buffer()
     let about = (await conn.getStatus(who).catch(console.error) || {}).status || ''
     let { name, limit, exp, lastclaim, registered, regTime, age, level } = global.DATABASE._data.users[who]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let username = conn.getName(who)
     let math = max - xp
     let prem = global.prems.includes(who.split`@`[0])
-    let _pp = await(await fetch(pp)).buffer()
     let str = `\t\t\t\t\t*‧ 🐣 Perfil Info 🐣 ‧*
 
  *◦ Nombre:* ${username}
