@@ -13,8 +13,8 @@ switch (type) {
 case 'cofre':
                     let diamond = (Math.floor(Math.random() * (17 - 20) + 20) + 1)
                     let money = (Math.floor(Math.random() * (5000 - 7000) + 7000) + 1)
-                    let exp = (Math.floor(Math.random() * 200) + 600)
-                    let potion = pickRandom(['0', '1', '0', '2', '0', '3', '0', '2', '0', '1', '0'])
+                    let exp = (Math.floor(Math.random() * (200 - 600) + 600) + 1)
+                    let potion = (Math.floor(Math.random() * (1 - 3) + 3) + 1)
                     let Hcom = `
 *Abriste un cofre 🧰 y obtienes:*
 
@@ -31,7 +31,7 @@ case 'cofre':
                         global.DATABASE._data.users[m.sender].exp += exp * 1
                         conn.reply(m.chat, Hcom, m)
                         
-                    if (global.DATABASE._data.users[m.sender].sword > 0) {
+                    if (!global.DATABASE._data.users[m.sender].sword > 0) {
                         global.DATABASE._data.users[m.sender].sword += 1
                          conn.reply(m.chat, '*🥳 Felicidades acabas de sonseguir una espada por abrir tu primer cofre!*', m)
                         }
