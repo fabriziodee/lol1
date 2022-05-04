@@ -30,12 +30,19 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let birch = global.DATABASE._data.users[who].birch
     let oak = global.DATABASE._data.users[who].oak
     
+    //Cultivos - frutas
+    let strawberry = global.DATABASE._data.users[who].strawberry
+    let watermelon = global.DATABASE._data.users[who].watermelon
+    let grape = global.DATABASE._data.users[who].grape
+    let kiwi = global.DATABASE._data.users[who].kiwi
+    
     //Peces
     let blowfish = global.DATABASE._data.users[who].blowfish
     let tropicalfish = global.DATABASE._data.users[who].tropicalfish
     let commonfish = global.DATABASE._data.users[who].commonfish
     
     //Otros 
+    let seed = global.DATABASE._data.users[who].seed
     let potion = global.DATABASE._data.users[who].potion
     let chest = global.DATABASE._data.users[who].chest
 
@@ -99,11 +106,17 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 *∙ 🪵 Madera:* ${oak}
 
+*∙ 🍓 Fresa:* ${strawberry}
+*∙ 🍉 Sandía:* ${watermelon}
+*∙ 🍇 Uva:* ${grape}
+*∙ 🥝 Kiwi:* ${kiwi}
+
 *∙ 🐠 Pez tropical:* ${tropicalfish}
 *∙ 🐡 Pez globo:* ${blowfish}
 *∙ 🐟 Pez comun:* ${commonfish}
 
 *∙ 🧪 Poción:* ${potion}
+*∙ 🌱 Semillas:* ${seed}
 *∙ 🧰 Cofre:* ${chest}
 
 *∙ 🍱 Total inv:* ${diamond + gold + iron + stone + oak + blowfish + tropicalfish + commonfish} items`
