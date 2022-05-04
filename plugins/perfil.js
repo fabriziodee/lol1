@@ -7,9 +7,9 @@ let handler = async (m, { conn, usedPrefix }) => {
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   try {
     let pp = await conn.getProfilePicture(who)
-  } catch (e) {
+  } catch {
     let pp = await conn.getProfilePicture("51940617554-1604073088@g.us")
-  } finally {
+  }
     //let level = global.DATABASE._data.users[who].level
     //let money = global.DATABASE._data.users[who].money
     //let exp = global.DATABASE._data.users[who].exp
@@ -42,7 +42,6 @@ let handler = async (m, { conn, usedPrefix }) => {
  *◦ Edad:* ${registered ? `${age}` : '-'}`
     let mentionedJid = [who]
     conn.sendFile(m.chat, _pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
-  }
 }
 
 handler.help = ['perfil']
