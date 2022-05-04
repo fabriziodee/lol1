@@ -31,7 +31,7 @@ case 'cofre':
                         global.DATABASE._data.users[m.sender].exp += exp * 1
                         conn.reply(m.chat, Hcom, m)
                         
-                    if (sword > 0) {
+                    if (global.DATABASE._data.users[m.sender].sword > 0) {
                         global.DATABASE._data.users[m.sender].sword += 1
                          conn.reply(m.chat, '*🥳 Felicidades acabas de sonseguir una espada por abrir tu primer cofre!*', m)
                         }
