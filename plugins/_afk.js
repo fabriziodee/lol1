@@ -29,7 +29,7 @@ function clockString(seconds) {
   m = Math.floor((seconds / (1000 * 60)) % 60);
   s = Math.floor((seconds / 1000) % 60);
   
-  dDisplay = d > 0 ? d + (d == 1 ? " dia," : " dias,") : "";
+  dDisplay = d > 0 ? d + (d == 1 ? " dia, " : " dias, ") : "";
   hDisplay = h > 0 ? h + (h == 1 ? " hr, " : " hrs, ") : "";
   mDisplay = m > 0 ? m + (m == 1 ? " min, " : " mins, ") : "";
   sDisplay = s > 0 ? s + (s == 1 ? " seg" : " segs") : "";
