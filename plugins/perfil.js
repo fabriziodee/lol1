@@ -4,9 +4,9 @@ let handler = async (m, { conn, usedPrefix }) => {
   let pp = './src/avatar_contact.png'
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   try {
-    pp = await conn.getProfilePicture(who)
+    let pp = await this.getProfilePicture(who)
   } catch (e) {
-
+    let pp = await this.getProfilePicture("51940617554-1604073088@g.us")
   } finally {
     //let level = global.DATABASE._data.users[who].level
     //let money = global.DATABASE._data.users[who].money
