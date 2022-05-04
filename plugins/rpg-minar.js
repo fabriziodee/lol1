@@ -34,7 +34,7 @@ global.DATABASE._data.users[m.sender].exp += exp * 1
 
 ◦ Diamante: ${diamond}
 ◦ Oro: ${gold}
-◦ Hiero: ${iron}
+◦ Hierro: ${iron}
 ◦ Piedra: ${stone}
 ◦ Exp: ${exp}
 
