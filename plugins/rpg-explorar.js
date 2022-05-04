@@ -1,155 +1,69 @@
-let { MessageType } = require('@adiwajshing/baileys')
+let handler = async (m, { conn, usedPrefix }) => {
+	
+    let __waktur = (new Date - global.DATABASE._data.users[m.sender].lastadventure)
+    let _waktur = (180000 - __waktur)
+    let waktur = clockString(_waktur)
+    
+    let user = global.DATABASE._data.users[m.sender]
+    
+    let armor = global.DATABASE._data.users[m.sender].armor
+    let sword = global.DATABASE._data.users[m.sender].sword
+    let sdurability = global.DATABASE._data.users[m.sender].sworddurability
+    
+    let money = (sword == 1 ? (Math.floor(Math.random() * (3500 - 3700) + 3700) + 1) : '' || sword == 2 ? (Math.floor(Math.random() * (5000 - 5200) + 5200) + 1) : '' || sword == 3 ? (Math.floor(Math.random() * (7300 - 7500) + 7500) + 1) : '' || sword == 4 ? (Math.floor(Math.random() * (9500 - 9700) + 9700) + 1) : '' || sword == 5 ? (Math.floor(Math.random() * (10000 - 12000) + 12000) + 1) : '' )
+    let seed = (Math.floor(Math.random() * (10 - 15) + 15) + 1)
+    let exp = (sword == 1 ? (Math.floor(Math.random() * (100 - 200) + 200) + 1) : '' || sword == 2 ? (Math.floor(Math.random() * (300 - 400) + 400) + 1) : '' || sword == 3 ? (Math.floor(Math.random() * (500 - 600) + 600) + 1) : '' || sword == 4 ? (Math.floor(Math.random() * (700 - 800) + 800) + 1) : '' || sword == 5 ? (Math.floor(Math.random() * (900 - 1000) + 1000) + 1) : '' )
+    
+    let durability = (Math.floor(Math.random() * (50 - 100) + 100) + 1)
+    let healt = (Math.floor(Math.random() * (10 - 15) + 15) + 1)
+    let potion = pickRandom(['0', '1', '0', '2', '0', '3', '0', '2', '0', '1', '0'])
+    let err = (sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': '')
+    let word = pickRandom(['a las tierras perdidas', 'al vale de Kara', 'a Beleriand', 'a la ciudad de fuego', 'a Camorrus', 'al fin del horizonte', 'al grito de cuervo', 'al valle del anochecer'])
+    
+    let ar = (armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': '')
+    let es = (sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': '')
+    
+    //let exp = (rod == 1 ? Math.floor(Math.random() * (500 - 700) + 700) + 1 : '')
+    
+    if (sword > 0) {
+    if (global.DATABASE._data.users[m.sender].healt > 15) {
+    if (global.DATABASE._data.users[m.sender].sworddurability > 99) {
+    if (new Date - global.DATABASE._data.users[m.sender].lastadventure > 180000) {
 
-const cooldown = 300000
+    global.DATABASE._data.users[m.sender].lastadventure = new Date * 1
+    global.DATABASE._data.users[m.sender].healt -= healt * 1
+    global.DATABASE._data.users[m.sender].money += money * 1 
+    global.DATABASE._data.users[m.sender].potion += potion * 1 
+    global.DATABASE._data.users[m.sender].sworddurability -= durability * 1
+    global.DATABASE._data.users[m.sender].exp += exp * 1
 
-let handler = async (m, { conn, usedPrefix, command }) => {
-let user = global.DATABASE._data.users[m.sender]
-let ranrpg = pickRandom(['0', '11', '0', '0', '0', '10', '0'])
-let ranmap = pickRandom(['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'])
-let _ranmap = pickRandom(['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'])
-let __ranmap = pickRandom(['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'])
-let ___ranmap = pickRandom(['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'])
+          setTimeout(() => {
+          	m.reply(`*Tu vida se reduce -${healt} porque fuiste a ${word}*
 
-let healt = (Math.floor(Math.random() * 10) + 7)
-let exp = (Math.floor(Math.random() * 400) + 70)
-let wood = (Math.floor(Math.random() * 5) + 1)
-let stone = (Math.floor(Math.random() * 4) + 1)
-let mob = (user.mob == 1 ? 'Slime' : '????' || user.mob == 2 ? 'Orco' : '????')
-let hmob = (user.mob == 1 ? '40' : '0' || user.mob == 2 ? '60' : '0')
-let _potion = (Math.floor(Math.random() * 2) + 1)
-let potion = (user.healt == 0 ? _potion : '0')
+*👕 Armadura de:* ${ar}
+*🗡 Espada de:* ${es}
 
-let __timers = (new Date - global.DATABASE._data.users[m.sender].energy)
-let _timers = (cooldown - __timers)
-let timers = clockString(_timers)
+◦ Dinero: ${money}
+◦ Poción: ${potion}
+◦ Semilla: ${seed}
+◦ Exp: ${exp}
 
-if (user.rpg == 1) {
-	let dueloo = `
-*${mob}*
-- Vida: ${user.hmob}
+*Durabilidad:* -${durability}`)
+          }, 0)
+          
+             } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
+          } else m.reply(`Repara tu espada, escribiendo ${usedPrefix}reparar espada`)
+       } else m.reply(`Tienes poca vida para ir a explorar, escribe *${usedPrefix}usar pocion* para regenerar tu vida`)
+    } else m.reply(`Todavía no tienes una espada, compralo escribiendo *${usedPrefix}comprar espada* o puedes conseguir una gratis abriendo un cofre`)
+ }
 
-*Jugador*
-- Vida: ${user.healt}
-`.trim()
+handler.help = ['minar']
+handler.tags = ['rpg']
 
-let _dueloo = conn.prepareMessageFromContent(m.chat, {
-"listMessage":  {
-"title": "\t\t*‧ 🌳 Tienes un duelo pendiente! 🌳 ‧*",
-"description": dueloo,
-"buttonText": "Opciones",
-"listType": "SINGLE_SELECT",
-"sections": [
-{
-"rows": [
-{
-"title": "Atacar 🔪",
-"rowId": `${usedPrefix}selec atacar`
-},
-{
-"title": "Escapar 💨",
-"rowId": `${usedPrefix}selec escapar`
-}
-]}]}}, { quoted: m })
-conn.relayWAMessage(_dueloo)
-}
-
-if (user.healt >= 100) {
-	if (user.rpg == 1) return 
-		if (new Date - global.DATABASE._data.users[m.sender].energy > 100) {
-let str = `
-*Al explorar en el bosque encontraste*
-
-◦Exp: ${exp} 
-◦Madera: ${wood}
-◦Piedra: ${stone}${user.healt == 0 ? '\n◦Pocion: ' + potion + '' : ''}
-`.trim()
-
-global.DATABASE._data.users[m.sender].exp += exp * 1
-global.DATABASE._data.users[m.sender].wood += wood * 1
-global.DATABASE._data.users[m.sender].stone += stone * 1
-global.DATABASE._data.users[m.sender].potion += potion * 1
-global.DATABASE._data.users[m.sender].energy = new Date * 1
-
-conn.reply(m.chat, str, m)
-} else conn.reply(m.chat, 'Te quedaste sin energía vuelve dentro de *' + timers + '*', m)
-} else conn.reply(m.chat, 'Mínimo 30 de vida para poder ir a explorar', m)
-//rpg mobs
-if (ranrpg == 11) {
-global.DATABASE._data.users[m.sender].rpg = 1
-global.DATABASE._data.users[m.sender].mob = 2
-global.DATABASE._data.users[m.sender].hmob = hmob * 1
-let duelo = `
-*${mob}*
-- Vida: ${user.hmob}
-
-*Jugador*
-- Vida: ${user.healt}
-`.trim()
-let _duelo = conn.prepareMessageFromContent(m.chat, {
-"listMessage":  {
-"title": '\t\t\t*‧ 🌳 Un ' + mob + ' a aparecido! 🌳 ‧*',
-"description": duelo,
-"buttonText": "Opciones",
-"listType": "SINGLE_SELECT",
-"sections": [
-{
-"rows": [
-{
-"title": "Atacar 🔪",
-"rowId": `${usedPrefix}selec atacar`
-},
-{
-"title": "Escapar 💨",
-"rowId": `${usedPrefix}selec escapar`
-}
-]}]}}, { quoted: m })
-conn.relayWAMessage(_duelo)
-}
-
-
-
-if (ranmap == 0) {
-	if (user.map == 0) {
-global.DATABASE._data.users[m.sender].map += 1
-conn.reply(m.chat, '*Acabas de encontrar la Villa Papunika!*\n\n- Una villa, genial -', m)
-}
-}
-
-if (_ranmap == 1) {
-	if (user.map == 1) {
-global.DATABASE._data.users[m.sender].map += 1
-conn.reply(m.chat, '*Te encontraste con una cueva!*\n\n- Esto me da mala espina -', m)
-}
-}
-
-if (__ranmap == 2) {
-	if (user.map == 2) {
-global.DATABASE._data.users[m.sender].map += 1
-conn.reply(m.chat, '*Te encontraste con una Mina abandonada!*\n\n- Hora de buscar un pico -', m)
-}
-}
-
-if (___ranmap == 3) {
-	if (user.map == 3) {
-global.DATABASE._data.users[m.sender].map += 1
-conn.reply(m.chat, '*Acabas de encontrar una Aldea!*\n\n- Será el fin del viaje? -', m)
-}
-}
-
-
-}
-
-
-//handler.help = ['explorar']
-//handler.tags = ['rpg']
-handler.command = /^(explorarxxx)$/i
+handler.command = /^(mining|minar)$/i
+handler.disabled = false
 
 module.exports = handler
-
-
-function pickRandom(list) {
-    return list[Math.floor(Math.random() * list.length)]
-}
 
 function clockString(seconds) {
   d = Math.floor(seconds / (1000 * 60 * 60 * 24));
@@ -157,10 +71,13 @@ function clockString(seconds) {
   m = Math.floor((seconds / (1000 * 60)) % 60);
   s = Math.floor((seconds / 1000) % 60);
   
-  dDisplay = d > 0 ? d + (d == 1 ? " dia," : " Dias,") : "";
+  dDisplay = d > 0 ? d + (d == 1 ? " dia, " : " Dias, ") : "";
   hDisplay = h > 0 ? h + (h == 1 ? " hora, " : " Horas, ") : "";
   mDisplay = m > 0 ? m + (m == 1 ? " minuto, " : " Minutos, ") : "";
   sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " Segundos") : "";
   return dDisplay + hDisplay + mDisplay + sDisplay;
 };
- 
+
+function pickRandom(list) {
+    return list[Math.floor(Math.random() * list.length)]
+} 
