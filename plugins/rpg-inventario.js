@@ -8,12 +8,16 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
     let healt = global.DATABASE._data.users[who].healt
     
+    let armor = global.DATABASE._data.users[who].armor
+    let ardurability = global.DATABASE._data.users[who].armordurability
+    let sword = global.DATABASE._data.users[who].sword
+    let sdurability = global.DATABASE._data.users[who].sworddurability
     let pickaxe = global.DATABASE._data.users[who].pickaxe
     let pdurability = global.DATABASE._data.users[who].pickaxedurability
     let axe = global.DATABASE._data.users[who].axe
     let adurability = global.DATABASE._data.users[who].axedurability
-    let rod = global.DATABASE._data.users[m.sender].rod
-    let rdurability = global.DATABASE._data.users[m.sender].roddurability
+    let rod = global.DATABASE._data.users[who].rod
+    let rdurability = global.DATABASE._data.users[who].roddurability
     
     //Minerales
     let diamond = global.DATABASE._data.users[who].diamond
@@ -68,6 +72,12 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 📈 Nivel:* ${level}
 *∙ 🌟 Exp:* ${exp}
 *∙ ✨ Exp nivel:* ${user.exp - min}/${max}
+
+*∙ 👕 Armadura de:* ${armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': ''}
+*∙ ↪️ Durabilidad:* ${ardurability}
+
+*∙ 🗡️ Espada de:* ${sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': ''}
+*∙ ↪️ Durabilidad:* ${sdurability}
 
 *∙ ⛏️ Pico de:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': ''}
 *∙ ↪️ Durabilidad:* ${pdurability}
