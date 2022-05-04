@@ -1,5 +1,5 @@
 global.DeveloperMode = 'false'
-global.linkgc = ['https://chat.whatsapp.com/ECCCE6hiiEqF45ndjbyGBN'] 
+global.linkgc = ['https://chat.whatsapp.com/ELn6Ck7InoP6UmA3QiQsgo'] 
 global.channelYT = ['No hay xd']
 global.owner = ['51940617554']
 global.mods = ['51990181480']
