@@ -52,7 +52,6 @@ return conn.reply(m.chat, open, m)
 handler.help = ['abrir']
 handler.tags = ['rpg']
 handler.command = /^(abrir|open)$/i
-handler.owner = true
 
 module.exports = handler
 
