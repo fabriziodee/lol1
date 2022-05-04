@@ -1,7 +1,9 @@
 let PhoneNumber = require('awesome-phonenumber')
 let levelling = require('../lib/levelling')
+let fetch = require('node-fetch')
+
 let handler = async (m, { conn, usedPrefix }) => {
-  let pp = './src/avatar_contact.png'
+  //let pp = './src/avatar_contact.png'
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   try {
     let pp = await conn.getProfilePicture(who)
