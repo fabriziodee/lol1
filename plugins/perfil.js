@@ -18,6 +18,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let username = conn.getName(who)
     let math = max - xp
     let prem = global.prems.includes(who.split`@`[0])
+    let _pp = await(await fetch(pp)).buffer()
     let str = `\t\t\t\t\t*‧ 🐣 Perfil Info 🐣 ‧*
 
  *◦ Nombre:* ${username}
@@ -38,7 +39,7 @@ let handler = async (m, { conn, usedPrefix }) => {
  *◦ Nombre:* ${registered ? `${name}` : '-'}
  *◦ Edad:* ${registered ? `${age}` : '-'}`
     let mentionedJid = [who]
-    conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
+    conn.sendFile(m.chat, _pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
   }
 }
 
