@@ -118,7 +118,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 🐟 Pez comun:* ${commonfish}
 
 *∙ 🧪 Poción:* ${potion}
-*∙ 🌱 Semillas:* ${seed}
+*∙ 🌱 Semilla:* ${seed}
 *∙ 🧰 Cofre:* ${chest}
 
 *∙ 🍱 Total inv:* ${diamond + gold + iron + stone + oak + blowfish + tropicalfish + commonfish} items`
