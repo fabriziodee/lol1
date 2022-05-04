@@ -18,7 +18,7 @@ const Axe5 = 400000 //Diamante
 //Caña
 const Rod1 = 250000 //Normal
 
-let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
+let handler = async (m, { conn, usedPrefix, command, text, args, isOwner, isAdmin, isROwner, isPrems }) => {
 
 let chat = global.DATABASE._data.chats[m.chat]
 let user = global.DATABASE._data.users[m.sender]
@@ -38,6 +38,8 @@ let rod = (_rod == 0 ? Rod1 : '')
 let crod = (_rod == 0 ? 'normal' : '')
 
 let imgshop = fs.readFileSync('./storage/image/shop.png')
+
+if (!text) return m.reply(`*• Ingrese un ítem o herrɑmientɑ pɑrɑ comprɑr*\m\n*Ejemplo de uso:*\n1. ${usedPrefix + command} <ítem>\n1. ${usedPrefix + command} pico\n\nEscribe *${usedPrefix}tienda* pɑrɑ ver lɑ listɑ de ítems`)
 
 let type = (args[0] || ' ').toLowerCase()
 
