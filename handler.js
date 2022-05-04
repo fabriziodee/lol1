@@ -35,6 +35,7 @@ module.exports = {
             if (!isNumber(user.lastclaim)) user.lastclaim = 0
         
             if (!isNumber(user.potion)) user.potion = 0
+            if (!isNumber(user.seed)) user.seed = 0
             if (!isNumber(user.chest)) user.chest = 0
             
             //Minerales
@@ -48,6 +49,12 @@ module.exports = {
             if (!isNumber(user.birch)) user.birch = 0
             if (!isNumber(user.oak)) user.oak = 0
             
+            //Cultivos - frutas
+            if (!isNumber(user.strawberry)) user.strawberry = 0
+            if (!isNumber(user.watermelon)) user.watermelon = 0
+            if (!isNumber(user.grape)) user.grape = 0
+            if (!isNumber(user.kiwi)) user.kiwi = 0
+
             //Peces
             if (!isNumber(user.blowfish)) user.blowfish = 0
             if (!isNumber(user.tropicalfish)) user.tropicalfish = 0
@@ -95,6 +102,7 @@ module.exports = {
             lastclaim: 0,
             chest: 0,
             potion: 0,
+            seed: 0,
             diamond: 0,
             gold: 0,
             iron: 0,
@@ -102,6 +110,10 @@ module.exports = {
             jungle: 0,
             birch: 0,
             oak: 0,
+            strawberry: 0,
+            watermelon: 0,
+            grape: 0,
+            kiwi: 0,
             blowfish: 0,
             tropicalfish: 0,
             commonfish: 0,
