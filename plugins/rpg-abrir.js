@@ -31,8 +31,12 @@ case 'cofre':
                     break
 
     default:
-//let open = `Test`
-//return conn.reply(m.chat, open, m)
+let open = `*• Ingresɑ un objeto que quierɑ ɑbrir*
+
+*Ejemplo de uso:*
+1. ${usedPrefix + command} <objeto>
+2. ${usedPrefix + command} cofre`
+return conn.reply(m.chat, open, m)
   }
 }
 
