@@ -57,10 +57,11 @@ let handler = async (m, { conn, usedPrefix }) => {
     } else m.reply(`Todavía no tienes una espada, compralo escribiendo *${usedPrefix}comprar espada* o puedes conseguir una gratis abriendo un cofre`)
  }
 
-handler.help = ['minar']
-handler.tags = ['rpg']
+//handler.help = ['explorar']
+//handler.tags = ['rpg']
+handler.owner = true
 
-handler.command = /^(mining|minar)$/i
+handler.command = /^(explorar|adventure)$/i
 handler.disabled = false
 
 module.exports = handler
