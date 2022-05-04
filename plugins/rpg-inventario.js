@@ -35,6 +35,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let tropicalfish = global.DATABASE._data.users[who].tropicalfish
     let commonfish = global.DATABASE._data.users[who].commonfish
     
+    //Otros 
+    let potion = global.DATABASE._data.users[who].potion
     let chest = global.DATABASE._data.users[who].chest
 
     let level = global.DATABASE._data.users[who].level
@@ -101,6 +103,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 🐡 Pez globo:* ${blowfish}
 *∙ 🐟 Pez comun:* ${commonfish}
 
+*∙ 🧪 Poción:* ${potion}
 *∙ 🧰 Cofre:* ${chest}
 
 *∙ 🍱 Total inv:* ${diamond + gold + iron + stone + oak + blowfish + tropicalfish + commonfish} items`
