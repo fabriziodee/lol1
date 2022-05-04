@@ -1,4 +1,4 @@
-let handler = async (m, { conn, text, usedPrefix, command, isPrems, }) => {
+let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems, isROwner }) => {
     let user = global.DATABASE._data.users[m.sender]
     if (!text) throw `*Escriva un texto para la votación*\n\n- Ejemplo: ${usedPrefix + command} soy gay?`
     if (!isPrems && user.limit < 1) return conn.reply(m.chat, `Te quedaste sin limites, compra más escribiendo ${usedPrefix}buylimit`, m)
