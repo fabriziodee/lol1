@@ -3,8 +3,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let reg = Object.entries(global.DATABASE._data.users).filter(user => user[1].registered)
     m.reply(`\t\t\t*‧ 📨 Usuarios Registrados 📨 ‧*
 
-Total: ${reg.length} Usuarios
-${reg ? '\n' + reg.map(([jid], i) => `
+Total: ${reg.length} Usuarios${reg ? '\n' + reg.map(([jid], i) => `
 *• Nombre:* ${user[jid].name}
 *• ID:* ${jid}
 *• Edad:* ${user[jid].age}
@@ -12,8 +11,8 @@ ${reg ? '\n' + reg.map(([jid], i) => `
 `)
 }
 
-handler.help = ['reglist']
+handler.help = ['registrados']
 handler.tags = ['info']
-handler.command = /^(reglist)$/i
+handler.command = /^(registrados|reglist|listreg|totalreg|regtotal)$/i
 
 module.exports = handler
