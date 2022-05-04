@@ -11,7 +11,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     let commonfish = (rod == 1 ? Math.ceil(Math.random() * 200) : '' || rod == 2 ? Math.ceil(Math.random() * 250) : '' || rod == 3 ? Math.ceil(Math.random() * 300) : '' || rod == 4 ? Math.ceil(Math.random() * 350) : '' || rod == 5 ? Math.ceil(Math.random() * 500) : '' )
     let exp = (rod == 1 ? Math.ceil(Math.random() * 200) : '' || rod == 2 ? Math.ceil(Math.random() * 400) : '' || rod == 3 ? Math.ceil(Math.random() * 600) : '' || rod == 4 ? Math.ceil(Math.random() * 800) : '' || rod == 5 ? Math.ceil(Math.random() * 1000) : '' )
     let durability = Math.floor(Math.random() * 100)
-    let goa = (pickRandom(['un rio 🚣‍♀', 'el mar 🚤']))
+    let ca = (rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : '')
+    let word = (pickRandom(['un rio 🚣‍♀', 'el mar ⛵', 'en una playa 🏖️']))
     
     if (rod > 0) {
     if (global.DATABASE._data.users[m.sender].roddurability > 99) {
@@ -25,14 +26,16 @@ global.DATABASE._data.users[m.sender].roddurability -= durability * 1
 global.DATABASE._data.users[m.sender].exp += exp * 1
 
           setTimeout(() => {
-          	m.reply(`*Pescaste en ${goa} y obtienes*
-          
+          	m.reply(`*Pescaste en ${word} y obtienes*
+
+*🎣 Caña:* ${ca}
+
 ◦ Pez globo: ${blowfish}
 ◦ Pez tropical: ${tropicalfish}
 ◦ Pez comun: ${commonfish}
 ◦ Exp: ${exp}
 
-*🎣 Durabilidad:* -${durability}`)
+*Durabilidad:* -${durability}`)
           }, 0)
           
             } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
