@@ -8,7 +8,7 @@ let handler = async (m, { conn,usedPrefix, text, args }) => {
 	}
 	
 	if(!text && !m.quoted) return conn.reply(m.chat, `Etiqueta a alguien para darle la administración!`, m)
-	if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `*[ ⚠️ ] El número ingresado es incorrecto, por favor ingrese el número correcto*`, m)
+	if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `El número ingresado es incorrecto, por favor ingrese el número correcto`, m)
 	
 try {
 	if(text) {
@@ -20,10 +20,13 @@ try {
 	} 
 } catch (e) {
 		} finally {
+                        //let owr = m.chat.split`-`[0]
+                        //if (user.startsWith(owr)) return m.reply('No puedo eliminarlo\'a por que el creó el grupo')
 			conn.groupMakeAdmin(m.chat, [user]).catch(console.log)
 			conn.reply(m.chat, `Se le dio la administración al usuario!`, m)
 	}	
 }
+
 handler.help = ['promover']
 handler.tags = ['adm']
 handler.command = /^(promover|promote|daradmin|admin|darpoder)$/i
