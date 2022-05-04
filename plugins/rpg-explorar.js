@@ -57,9 +57,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     } else m.reply(`Todavía no tienes una espada, compralo escribiendo *${usedPrefix}comprar espada* o puedes conseguir una gratis abriendo un cofre`)
  }
 
-//handler.help = ['explorar']
-//handler.tags = ['rpg']
-handler.owner = true
+handler.help = ['explorar']
+handler.tags = ['rpg']
 
 handler.command = /^(explorar|adventure)$/i
 handler.disabled = false
