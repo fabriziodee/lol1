@@ -104,7 +104,9 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 🔩 Hierro:* ${iron}
 *∙ 🪨 Piedra:* ${stone}
 
-*∙ 🪵 Madera:* ${oak}
+*∙ 🌳 Madera de jungla:* ${jungle}
+*∙ 🌲 Madera de abedul:* ${birch}
+*∙ 🪵 Madera de roble:* ${oak}
 
 *∙ 🍓 Fresa:* ${strawberry}
 *∙ 🍉 Sandía:* ${watermelon}
