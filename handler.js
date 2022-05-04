@@ -444,7 +444,7 @@ switch (action) {
         let ppuser = await(await fetch(userimg)).buffer()
         let _text = 'Bienvenido\'a al grupo *@subject*\n\n*• Nombre:* @user\n*• Bio:* @bio\n*• Fecha:* @date\n*• Hora:* @time\n\n- *recuerda leer las reglas del grupo* -'
         let text = (chat.sWelcome || this.welcome || conn.welcome || _text).replace('@user', '@' + duser.split('@')[0]).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', bio).replace('@date', date).replace('@time', time) 
-        let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl: `${global.linkgc[0]}`}} })
+        let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl: `${global.linkgc[0]}`}} })
         let _button = [{ buttonId: '.funtion gracias', buttonText: { displayText: 'Gracias 💖' }, type: 1 }, { buttonId: '.funtion descripción', buttonText: { displayText: 'Descripción ☕' }, type: 1 }]
         let button = { imageMessage: __button.message.imageMessage, contentText: text, footerText: 'lolibot © 2022', buttons: _button, headerType: 4 }
         this.sendMessage(jid, button, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [duser] } })
@@ -471,7 +471,7 @@ switch (action) {
         //let _text = '@user un gay salio del grupo @group'
         let _text = 'Un participante salió del grupo *@subject*\n\n*• Nombre:* @user\n*• Bio:* @bio\n*• Fecha:* @date\n*• Hora:* @time\n\n- *espero que te atropelle un avión xd* -'
         let text = (chat.sBye || this.bye || conn.bye || _text).replace('@user', '@' + duser.split('@')[0]).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', bio).replace('@date', date).replace('@time', time) 
-        let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl:`${global.linkgc[0]}`}} })
+        let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "🎋 Lᴏʟɪʙᴏᴛ Tᴇᴀᴍ Sᴜᴘᴘᴏʀᴛ 🎋", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl:`${global.linkgc[0]}`}} })
         let _button = [{ buttonId: 'adios', buttonText: { displayText: 'Adios 👋' }, type: 1 }]
         let button = { imageMessage: __button.message.imageMessage, contentText: text, footerText: 'lolibot © 2022', buttons: _button, headerType: 4 }
         this.sendMessage(jid, button, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [duser] } })
