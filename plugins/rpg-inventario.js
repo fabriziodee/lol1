@@ -94,7 +94,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 🪓 Hacha de:* ${axe == 0 ? 'No tiene' : '' || axe == 1 ? 'madera' : '' || axe == 2 ? 'piedra' : '' || axe == 3 ? 'hierro' : '' || axe == 4 ? 'oro' : '' || axe == 5 ? 'diamante' : ''}
 *∙ ↪️ Durabilidad:* ${adurability}
 
-*∙ 🎣 Caña:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'Caña normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : ''}
+*∙ 🎣 Caña:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : ''}
 *∙ ↪️ Durabilidad:* ${rdurability}
 
 \t\t\t*• 🎒 INVENTARIO 🎒 •*
