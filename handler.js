@@ -558,7 +558,8 @@ global.dfail = (type, m, conn) => {
     botAdmin: '• Debo ser *ɑdministrɑdorɑ* pɑrɑ utilizɑr estɑ función',
     unreg: '*• Registrese pɑrɑ utilizɑr estɑ función*\n\n*Ejemplo de uso:*\n1. .reg <nombre|edɑd>\n2. .reg Gɑtito|17'
   }[type]
-  if (msg) return m.reply(msg)
+  if (msg) return m.reply(msg, false, { sendEphemeral: true })
+  //m.reply(msg)
 }
 
 let fs = require('fs')
