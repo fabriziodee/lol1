@@ -9,7 +9,8 @@ let handler = async (m, { conn, usedPrefix }) => {
 
 *Usuarios*
 *Total:* ${users.length} Usuarios${users ? '\n\n' + users.map(([jid], i) => `${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
-*Jid:* ${jid}`.trim()).join('\n\n') : ''}`
+*Jid:* ${jid}`.trim()).join('\n\n') : ''}
+`
 }
 
 handler.help = ['banlist']
