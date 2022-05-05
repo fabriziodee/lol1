@@ -159,7 +159,7 @@ if (audio15B) {
 	} else
 
 if (audio16B) {
-        let ss = ["./storage/sticker/Bot.webp", "./storage/sticker/Bot1.webp"]
+        let ss = ["./storage/sticker/Bot.webp", "./storage/sticker/Bot1.webp", "./storage/sticker/Bot3.webp", "./storage/sticker/Bot4.webp"]
 	let vn = ss[Math.floor(Math.random() * ss.length)]
         let pp = await conn.getProfilePicture(m.sender) 
         let ppp = await(await fetch(pp)).buffer()
