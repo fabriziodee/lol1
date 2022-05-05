@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 *• Jid:* ${jid}`.trim()).join('\n\n') : ''}
 
 *Usuarios*
-*Total:* ${users.length} Usuarios${users ? '\n\n' + users.map(([jid], i) => `*• Tag:* ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
+*Total:* ${users.length} Usuarios${users ? '\n\n' + users.map(([jid], i) => `*• Usuario:* ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
 *• Jid:* ${jid}`.trim()).join('\n\n') : ''}`)
 }
 
