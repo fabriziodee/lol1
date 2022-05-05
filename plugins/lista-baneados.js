@@ -9,7 +9,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 
 \t\t*‧ 📧 Lista de usuarios Baneados 📧 ‧*
 
-Total: ${users.length} Usuarios${users ? '\n\n' + users.map(([jid], i) => `${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
+*Total:* ${users.length} Usuarios${users ? '\n\n' + users.map(([jid], i) => `${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
 *Jid:* ${jid}`.trim()).join('\n\n') : ''}`
 }
 
