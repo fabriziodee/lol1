@@ -4,7 +4,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     m.reply(`\t\t*‧ 📝 Lista de Baneados 📝 ‧*
 
 *Grupos*
-*Total:*  ${chats.length} Chats${chats ? '\n\n' + chats.map(([jid], i) => `${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
+*Total:* ${chats.length} Chats${chats ? '\n\n' + chats.map(([jid], i) => `${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
 *Jid:* ${jid}`.trim()).join('\n\n') : ''}
 
 *Usuarios*
