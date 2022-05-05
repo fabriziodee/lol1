@@ -4,12 +4,12 @@ let handler = async (m, { conn, usedPrefix }) => {
     m.reply(`\t\t\t\t*‧ 📝 Lista de Baneados 📝 ‧*
 
 *Grupos*
-*Total:* ${chats.length} Chats${chats ? '\n\n' + chats.map(([jid], i) => `${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
-*Jid:* ${jid}`.trim()).join('\n\n') : ''}
+*Total:* ${chats.length} Chats${chats ? '\n\n' + chats.map(([jid], i) => `*• Grupo:* ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
+*• Jid:* ${jid}`.trim()).join('\n\n') : ''}
 
 *Usuarios*
-*Total:* ${users.length} Usuarios${users ? '\n\n' + users.map(([jid], i) => `${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
-*Jid:* ${jid}`.trim()).join('\n\n') : ''}`)
+*Total:* ${users.length} Usuarios${users ? '\n\n' + users.map(([jid], i) => `*• Tag:* ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
+*• Jid:* ${jid}`.trim()).join('\n\n') : ''}`)
 }
 
 handler.help = ['banlist']
