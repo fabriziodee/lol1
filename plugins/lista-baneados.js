@@ -1,6 +1,6 @@
 let handler = async (m, { conn, usedPrefix }) => {
     let chats = Object.entries(global.DATABASE._data.chats).filter(chat => chat[1].isBanned)
-    let users = Object.entries(global.DATABASE._data.users).filter(user => user[1].Banneduser)
+    let users = Object.entries(global.DATABASE._data.users).filter(user => user[1].banned)
     m.reply(`\t\t\t\t*‧ 📝 Lista de Baneados 📝 ‧*
 
 *Grupos*
