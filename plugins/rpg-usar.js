@@ -16,8 +16,8 @@ case 'poción':
                     let npotion = (pickRandom(['No tienes suficientes pociones', 'Te quedaste sin pociones', 'No te queda mas pociones', 'Te que das te sin po ci o nes :v', 'No tienes pociones', 'No tienes mas pociones'])) 
                     let puse = (pickRandom(['Tu vida ya esta llena', 'Ya no puedes beber mas pociones', 'Tu vida esta llena :v', 'Ya no puedes usar mas pociones'])) 
                     let usep = (pickRandom(['Acabas de beber', 'Bebiste cum digo,', 'Glu glu glu... bebiste', 'Tu usas', 'Acabas de usar']) + ` *${potion <= 1 ? 'una pocion' : `${potion} pociones`}*`) 
-                    if (global.DATABASE._data.users[m.sender].healt < 100) return m.reply(puse)
-                    if (global.DATABASE._data.users[m.sender].chest >= 1) {
+                    if (global.DATABASE._data.users[m.sender].healt > 90) return m.reply(puse)
+                    if (global.DATABASE._data.users[m.sender].potion >= 1) {
                         global.DATABASE._data.users[m.sender].potion -= potion * 1
                         global.DATABASE._data.users[m.sender].healt += 50
                         conn.reply(m.chat, usep, m)
