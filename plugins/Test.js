@@ -1,21 +1,41 @@
-let { MessageType } = require('@adiwajshing/baileys')
-let util = require('util')
-let path = require('path')
-let fs = require("fs")
-let fetch = require('node-fetch')
+let linkRegex = /chat\.whatsapp\.com\/(?:invite\/)?([0-9A-Za-z]{20,24})/i
 
-let handler = async (m, { conn }) => {
+let handler = async (m, { conn, text }) => {
+  let [, code] = text.match(linkRegex) || []
+  if (!code) throw 'Link invalid'
+  let res = await conn.query({
+    json: ["query", "invite", code],
+    expect200: true
+  })
+  if (!res) throw res
+  let caption = `*Miembros unidos de este Grupo*
 
-let ss = ["./storage/sticker/Bot.webp", "./storage/sticker/Bot1.webp"]
-let vn = ss[Math.floor(Math.random() * ss.length)]
-let pp = await conn.getProfilePicture(m.sender) 
-let ppp = await(await fetch(pp)).buffer()
-await conn.sendMessage(m.chat, `*Test*`, MessageType.text, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", mediaType:"2", previewType: "VIDEO", thumbnail: ppp, mediaUrl: "https://youtu.be/3_5zlC6NExY"}}})
-//conn.sendMessage(m.chat, { contentText: `*Test*`, footerText: `-`, buttons: [{buttonId: ``, buttonText: {displayText: 'Test'}, type: 1}], "headerType": "DOCUMENT", "documentMessage": { "url": "https://mmg.whatsapp.net/d/f/Ano5cGYOFQnC51uJaqGBWiCrSJH1aDCi8-YPQMMb1N1y.enc", "mimetype": "application/vnd.ms-excel", "title": "- - -", "fileSha256": "8Xfe3NQDhjwVjR54tkkShLDGrIFKR9QT5EsthPyxDCI=", "fileLength": 99999999999, "pageCount": "0", "mediaKey": "XWv4hcnpGY51qEVSO9+e+q6LYqPR3DbtT4iqS9yKhkI=", "fileName": "- - -⁩", "fileEncSha256": "NI9ykWUcXKquea4BmH7GgzhMb3pAeqqwE+MTFbH/Wk8=", "directPath": "/v/t62.7119-24/35160407_568282564396101_3119299043264875885_n.enc?ccb=11-4&oh=d43befa9a76b69d757877c3d430a0752&oe=61915CEC", "mediaKeyTimestamp": "1634472176", "jpegThumbnail": false }}, MessageType.buttonsMessage, { quoted: m, thumbnail: false, contextInfo: { mentionedJid: [m.sender], forwardingScore: 750, isForwarded: true, externalAdReply: { title: conn.getName(m.sender), body:"© lolibot", thumbnail: invt, mediaType:"2", previewType: "VIDEO", mediaUrl: "https://youtu.be/3_5zlC6NExY" } }})
-       
+${res.participants ? '\n' + res.participants.map((user, i) => ++i + '. @' + user.id.split`@`[0]).join('\n').trim() : 'No hay'}
+`.trim()
+  let pp = await conn.getProfilePicture(res.id).catch(console.error)
+  if (pp) conn.sendFile(m.chat, pp, 'pp.jpg', null, m)
+  m.reply(caption, false, {
+    contextInfo: {
+      mentionedJid: conn.parseMention(caption)
+    }
+  })
 }
+//handler.help = ['test']
+//handler.tags = ['tools']
 
 handler.command = /^(test)$/i
-handler.owner = true
 
 module.exports = handler
+
+function formatDate(n, locale = 'id') {
+  let d = new Date(n)
+  return d.toLocaleDateString(locale, {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+  })
+}
