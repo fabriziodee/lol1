@@ -34,10 +34,10 @@ case 'cofre':
                     if (!global.DATABASE._data.users[m.sender].sword > 0) {
                         global.DATABASE._data.users[m.sender].sword += 1
                         global.DATABASE._data.users[m.sender].sworddurability += 500
-                         conn.reply(m.chat, '*🥳 Felicidades acabas de sonseguir una espada de madera por abrir tu primer cofre!*', m)
+                         conn.reply(m.chat, '*🥳 Felicidades acabas de conseguir una espada de madera por abrir tu primer cofre!*', m)
                         }
                         
-                    } else conn.reply(m.chat, 'Ya no tienes mas cofres!', m)
+                    } else conn.reply(m.chat, 'No tienes mas cofres para abrir!', m)
                     break
 
     default:
