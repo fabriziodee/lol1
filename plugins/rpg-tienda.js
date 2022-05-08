@@ -20,59 +20,41 @@ const Rod1 = 250000 //Normal
 
 let handler = async (m, { conn, usedPrefix, command }) => {
 let tumb = fs.readFileSync('./storage/image/tienda.jpg')
+let tt = "```"
 let shop = `\t*• 🪓 Herramientas para Comprar 🎣 •*
 
-*⛏ Minar*
-*∙ Pico de madera:*
-Costo: $${Pickaxe1}
+*⛏ Picos para Minar*
+${tt}∙ Madera:   $${Pickaxe1}
+∙ Piedra:   $${Pickaxe2}
+∙ Hierro:   $${Pickaxe3}
+∙ Oro:      $${Pickaxe4}
+∙ Diamante: $${Pickaxe5}${tt}
 
-*∙ Pico de piedra:*
-Costo: $${Pickaxe2}
+*🪓 Hachas para Talar*
+${tt}∙ Madera:   $${Axe1}
+∙ Piedra:   $${Axe2}
+∙ Hierro:   $${Axe3}
+∙ Oro:      $${Axe4}
+∙ Diamante: $${Axe5}${tt}
 
-*∙ Pico de hierro:*
-Costo: $${Pickaxe3}
-
-*∙ Pico de oro:*
-Costo: $${Pickaxe4}
-
-*∙ Pico de diamante:*
-Costo: $${Pickaxe5}
-
-*🪓 Talar*
-*∙ Hacha de madera:*
-Costo: $${Axe1}
-
-*∙ Hacha de piedra:*
-Costo: $${Axe2}
-
-*∙ Hacha de hierro:*
-Costo: $${Axe3}
-
-*∙ Hacha de oro:*
-Costo: $${Axe4}
-
-*∙ Hacha de diamante:*
-Costo: $${Axe5}
-
-*🎣 Pescar*
-*∙ Caña normal:*
-Costo: $${Rod1}
+*🎣 Caña para Pescar*
+${tt}∙ Normal:   $${Rod1}${tt}
 
 \t\t*• 🔩 Intems para Vender 🐡 •*
 
-*Minerales:*
-*∙ Diamante:*    $750
-*∙ Oro:*                 $500
-*∙ Hierro:*           $150
-*∙ Piedra:*           $10
+*💎 Minerales:*
+${tt}∙ Diamante: $750
+∙ Oro:      $500
+∙ Hierro:   $150
+∙ Piedra:   $10${tt}
 
-*Peces:*
-*∙ Globo:*           $500
-*∙ Tropical:*       $300
-*∙ Comun:*         $50
+*🐟 Peces:*
+${tt}∙ Globo:    $500
+∙ Tropical: $300
+∙ Comun:    $50${tt}
 
 *Maderas:*
-*∙ Roble:*           $10`
+${tt}∙ Roble:    $10${tt}`
 let note = `*Nota:* Al comprar una herramienta se suben de nivel de madera hasta el diamante
 
 *No puedes comprar una herramienta en especifico*`
