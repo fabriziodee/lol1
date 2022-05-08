@@ -179,7 +179,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
      let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
      let tumbv = fs.readFileSync('./storage/gif/loli_logo.gif')
      let chatp = global.DATABASE._data.chats[m.chat]
-     await conn.sendMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', filename: 'loli_logo.gif', quoted: m, thumbnail: tumbv, caption:  })
+     await conn.sendMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', filename: 'loli_logo.gif', quoted: m, thumbnail: tumbv, caption: text.trim() }) return 
      if (chatp.menu == 1) {
      let imeg = await conn.prepareMessage(m.chat, tumbb, 'imageMessage')
      let imeu = imeg.message.imageMessage
