@@ -14,6 +14,15 @@ case 'welcome':
       m.reply('Se activó la *bienvenida* en este grupo!')
       break
 
+case 'despedida':
+case 'leave':
+      if (chat.welcome) return m.reply('La *bienvenida* ya está *activado* en este grupo!')
+      if (!m.isGroup) return global.dfail('group', m, conn)
+      if (!isOwner) return global.dfail('owner', m, conn)
+      chat.welcome = true
+      m.reply('Se activó la *bienvenida* en este grupo!')
+      break
+
 case 'antienlace':
 case 'antilink':
       if (chat.antilink) return m.reply('La función *anti-enlace* ya está *activado* en este grupo!')
