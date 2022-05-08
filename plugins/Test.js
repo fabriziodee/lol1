@@ -5,10 +5,10 @@ let fs = require("fs")
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn }) => {
-let giftest = fs.readFileSync('./storage/gif/Shop.gif')
+let giftest = fs.readFileSync('./storage/gif/loli_logo.gif')
 let out = 'https://raw.githubusercontent.com/g4tito/lolibot/master/storage/gif/Shop.gif'
-conn.sendFile(m.chat, out, 'out.gif', '*Se convirtió a GIF*', m, 0, { mimetype: 'video/gif' })
-//conn.sendMessage(m.chat, giftest, MessageType.video, { mimetype: 'video/gif', filename: 'stick.gif', quoted: m, caption: 'Test' })    
+//conn.sendFile(m.chat, out, 'out.gif', '*Se convirtió a GIF*', m, 0, { mimetype: 'video/gif' })
+conn.sendMessage(m.chat, giftest, MessageType.video, { mimetype: 'video/gif', filename: 'stick.gif', quoted: m, caption: 'Test' })    
 //conn.sendMessage(m.chat, giftest, MessageType.video, { mimetype: 'video/mp4', filename: 'stick.gif', quoted: m, caption: 'Test' })
 }
 
