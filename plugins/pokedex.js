@@ -39,8 +39,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 ${json.description}
 *• Generación:* ${json.generation}`
   if (!json.error)
-    await conn.sendFile(m.chat, json.sprites.animated, "pokemon.gif", pokedex, m);
-    //await conn.sendFile(m.chat, json.sprites.animated, 'pokemon.gif', pokedex, m, 0, { mimetype: 'video/gif', thumbnail: Buffer.alloc(0) })
+    //await conn.sendFile(m.chat, json.sprites.animated, "pokemon.gif", pokedex, m);
+    //await conn.sendFile(m.chat, `${json.sprites.animated}`, 'pokemon.gif', pokedex, m, 0, { mimetype: 'video/gif' })
+    await conn.sendFile(m.chat, `${json.sprites.animated}`, 'pokemon.gif', pokedex, m, 0, { mimetype: 'video/gif' })
   else throw json.error;
 };
 
