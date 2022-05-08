@@ -177,6 +177,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
      let tumb = fs.readFileSync('./storage/image/menu.jpg')
      let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
+     let tumbv = fs.readFileSync('./storage/gif/loli_logo.gif')
      let chatp = global.DATABASE._data.chats[m.chat]
      if (chatp.menu == 1) {
      let imeg = await conn.prepareMessage(m.chat, tumbb, 'imageMessage')
@@ -186,9 +187,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
      let res = await conn.prepareMessageFromContent(m.chat, { "orderMessage": { "orderId":"6288215463787", "itemCount": 2022, "message": text.trim(), "orderTitle": "💌 Lobita & Gatito 💫", "footerText": "© lolibot", "token": "AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA==", "thumbnail": tumbb, "surface": "CATALOG" } }, { quoted: m, sendEphemeral: true, contextInfo: { externalAdReply: { title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", previewType: "PHOTO", thumbnail: tumbb, sourceUrl: "" }, mentionedJid: [m.sender, ownernum] } })
      conn.relayWAMessage(res)
      } else if (chatp.menu == 2) {
-     let menux =  await conn.prepareMessage(m.chat, tumb, MessageType.image, { quoted: m, thumbnail: tumb, contextInfo: { externalAdReply: { title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", previewType: "PHOTO", thumbnail: tumbb, sourceUrl: "" } } })
+     let menux =  await conn.prepareMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', filename: 'stick.gif', quoted: m, thumbnail: tumbv })
      gbutsan = [{ buttonId: '.info', buttonText: { displayText: '🛰 INFO' }, type: 1 }, { buttonId: '.owner', buttonText: { displayText: '🎋 CREADOR' }, type: 1 }]
-     gbuttonan = { imageMessage: menux.message.imageMessage, contentText: text.trim(), footerText: '  Lolibot - OFC', buttons: gbutsan, headerType: 4 }
+     gbuttonan = { videoMessage: menux.message.videoMessage, contentText: text.trim(), footerText: '  Lolibot - OFC', buttons: gbutsan, headerType: 4 }
      await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [m.sender, ownernum], forwardingScore: 750, isForwarded: true }, quoted: m })
      } else if (chatp.menu == 3) {
      conn.sendMessage(m.chat, { contentText: text.trim(), footerText: '  Lolibot - OFC', buttons: [{buttonId: '.info', buttonText: {displayText: '🛰 INFO'}, type: 1},{buttonId: '.owner', buttonText: {displayText: '🎋 CREADOR'}, type: 1}], "headerType": "DOCUMENT", "documentMessage": { "url": "https://mmg.whatsapp.net/d/f/Ano5cGYOFQnC51uJaqGBWiCrSJH1aDCi8-YPQMMb1N1y.enc", "mimetype": "application/vnd.ms-excel", "title": "Dibuat Oleh: Arifi Razzaq", "fileSha256": "8Xfe3NQDhjwVjR54tkkShLDGrIFKR9QT5EsthPyxDCI=", "fileLength": 99999999999, "pageCount": 25791, "mediaKey": "XWv4hcnpGY51qEVSO9+e+q6LYqPR3DbtT4iqS9yKhkI=", "fileName": "𝕷𝖔𝖑𝖎𝖇𝖔𝖙 - 𝕺𝖋𝖎𝖈𝖎𝖆𝖑™.⁖⃟•᭄", "fileEncSha256": "NI9ykWUcXKquea4BmH7GgzhMb3pAeqqwE+MTFbH/Wk8=", "directPath": "/v/t62.7119-24/35160407_568282564396101_3119299043264875885_n.enc?ccb=11-4&oh=d43befa9a76b69d757877c3d430a0752&oe=61915CEC", "mediaKeyTimestamp": "1634472176", "jpegThumbnail": tumb }}, MessageType.buttonsMessage, { quoted: m, thumbnail: tumbb, contextInfo: { mentionedJid: [m.sender, ownernum], forwardingScore: 750, isForwarded: true, externalAdReply: { title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", thumbnail: tumbb, mediaType: "2", previewType: "VIDEO", mediaUrl: "" } } })
