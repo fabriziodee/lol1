@@ -1,8 +1,25 @@
 let fetch = require('node-fetch')
-let handler = async (m, { conn, args, usedPrefix, command, text }) => {
-if (!args[0]) throw `*Ingrese un enlace de YouTube*`
-let res = await fetch("https://api.lolhuman.xyz/api/ytvideo?apikey=9b817532fadff8fc7cb86862&url="+args[0])
-let json = await res.json()
-conn.sendFile(m.chat, json.result.link.link, 'error.mp4', `_The Shadow Brokers - Bot_`, m)}
-handler.command = /^(ytmp4.2?)$/i
+const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
+let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
+  if (!text) throw `_URL Not Found_`
+  let ras = `wrong url, this command to download video/shorts`
+  if (!args[0].match(/(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)\/(watch|shorts)|(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)/gi)) throw ras
+  let limit
+  if((isOwner || isPrems)) limit = 300
+  else limit = 100
+  if (!args || !args[0]) throw 'Uhm ... where\'s the URL?'
+  let vid = await youtubedlv2(args[0])
+  let { thumbnail } = vid
+  let det = vid.video['360p']
+  let { fileSize } = det
+  let url = await det.download()
+  await conn.sendFile(m.chat, url , `${vid.title}.mp3`, m)
+}
+
+handler.help = ['ytmp4']
+handler.tags = ['downloader']
+handler.command = /^(ytmp4)$/i
+
+
+
 module.exports = handler
