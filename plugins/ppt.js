@@ -12,39 +12,40 @@ let handler = async (m, { text, usedPrefix, command }) => {
     }
 
     if (text == astro) {
-        m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Empate 😐!*`)
+            global.DATABASE._data.users[m.sender].exp += 100
+            m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Empate 😐!*\n+100 Exp`)
         } else if (text == 'papel') {
         if (astro == 'piedra') {
-            global.DATABASE._data.users[m.sender].exp += 100
-            m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Ganaste 🥳!*\n+100 Exp`)
+            global.DATABASE._data.users[m.sender].exp += 500
+            m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Ganaste 🥳!*\n+500 Exp`)
         } else {
             m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Perdiste 😕!*`)
         }
         } else if (text == 'tijera') {
         if (astro == 'papel') {
-            global.DATABASE._data.users[m.sender].exp += 100
-            m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Ganaste 🥳!*\n+100 Exp`)
+            global.DATABASE._data.users[m.sender].exp += 500
+            m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Ganaste 🥳!*\n+500 Exp`)
         } else {
             m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Perdiste 😕!*`)
         }
             } else if (text == 'tijera') {
         if (astro == 'papel') {
-            global.DATABASE._data.users[m.sender].exp += 100
-            m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Ganaste 🥳!*\n+100 Exp`)
+            global.DATABASE._data.users[m.sender].exp += 500
+            m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Ganaste 🥳!*\n+500 Exp`)
         } else {
             m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Perdiste 😕!*`)
         }
         } else if (text == 'papel') {
         if (astro == 'piedra') {
-            global.DATABASE._data.users[m.sender].exp += 100
-            m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Ganaste 🥳!*\n+100 Exp`)
+            global.DATABASE._data.users[m.sender].exp += 500
+            m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Ganaste 🥳!*\n+500 Exp`)
         } else {
             m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Perdiste 😕!*`)
         }
         } else if (text == 'piedra') {
         if (astro == 'tijera') {
-            global.DATABASE._data.users[m.sender].exp += 100
-            m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Ganaste 🥳!*\n+100 Exp`)
+            global.DATABASE._data.users[m.sender].exp += 500
+            m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Ganaste 🥳!*\n+500 Exp`)
         } else {
             m.reply(`*_🎮 Juego ppt 🎳_*\n\nUser: ${text}\nBot: ${astro}\n\n*Perdiste 😕!*`)
         }
