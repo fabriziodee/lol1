@@ -196,7 +196,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
      } else if (chatp.menu == 4) {
      conn.reply(m.chat, text.trim(), text, { quoted: m, contextInfo: { externalAdReply:{title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", previewType:"PHOTO", thumbnail: tumbb, sourceUrl: "" }, mentionedJid: [m.sender, ownernum] }})
      } else if (chatp.menu == 6) {
-     conn.sendMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', filename: 'loli_logo.gif', quoted: m, thumbnail: tumbv, caption: text.trim() })
+     conn.sendMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', filename: 'loli_logo.gif', quoted: m, thumbnail: tumbv, caption: text.trim(), contextInfo: { mentionedJid: [m.sender, ownernum] } })
      }
   } catch (e) {
     conn.reply(m.chat, 'Lo siento, ocurrió un error al mostrar el menú', m)
