@@ -8,7 +8,7 @@ let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let ownernum = `global.owner[0].whatsapp.net`
-let emoji = ["🍭", "🍬", "💐"] //["🐋", "🍅", "🥮", "⛲", "🎃"]
+let emoji = ["🍬"] //["🐋", "🍅", "🥮", "⛲", "🎃"]
 let tags = {
   'main': 'Menu 🍟',
   'rpg': 'Juego - RPG ⚔️',
