@@ -7,10 +7,10 @@ let handler = async (m, { conn, usedPrefix }) => {
     let _waktur = (180000 - __waktur)
     let waktur = clockString(_waktur)
     let diamond = (pickaxe == 1 ? (Math.floor(Math.random() * (3 - 5) + 5) + 1) : '' || pickaxe == 2 ? (Math.floor(Math.random() * (5 - 7) + 7) + 1) : '' || pickaxe == 3 ? (Math.floor(Math.random() * (8 - 10) + 10) + 1) : '' || pickaxe == 4 ? (Math.floor(Math.random() * (11 - 13) + 13) + 1) : '' || pickaxe == 5 ? (Math.floor(Math.random() * (15 - 17) + 17) + 1) : '' )
-    let gold = (pickaxe == 1 ? Math.floor(Math.random() * 6) : '' || pickaxe == 2 ? Math.floor(Math.random() * 9) : '' || pickaxe == 3 ? Math.floor(Math.random() * 13) : '' || pickaxe == 4 ? Math.floor(Math.random() * 15) : '' || pickaxe == 5 ? Math.floor(Math.random() * 19) : '' )
-    let iron = (pickaxe == 1 ? Math.floor(Math.random() * 10) : '' || pickaxe == 2 ? Math.floor(Math.random() * 15) : '' || pickaxe == 3 ? Math.floor(Math.random() * 20) : '' || pickaxe == 4 ? Math.floor(Math.random() * 30) : '' || pickaxe == 5 ? Math.floor(Math.random() * 50) : '' )
-    let stone = (pickaxe == 1 ? Math.ceil(Math.random() * 30) : '' || pickaxe == 2 ? Math.ceil(Math.random() * 40) : '' || pickaxe == 3 ? Math.ceil(Math.random() * 60) : '' || pickaxe == 4 ? Math.ceil(Math.random() * 80) : '' || pickaxe == 5 ? Math.ceil(Math.random() * 100) : '' )
-    let exp = (pickaxe == 1 ? Math.ceil(Math.random() * 200) : '' || pickaxe == 2 ? Math.ceil(Math.random() * 400) : '' || pickaxe == 3 ? Math.ceil(Math.random() * 600) : '' || pickaxe == 4 ? Math.ceil(Math.random() * 800) : '' || pickaxe == 5 ? Math.ceil(Math.random() * 1000) : '' )
+    let gold = (pickaxe == 1 ? (Math.floor(Math.random() * (4 - 6) + 6) + 1) : '' || pickaxe == 2 ? (Math.floor(Math.random() * (7 - 9) + 9) + 1) : '' || pickaxe == 3 ? (Math.floor(Math.random() * (11 - 13) + 13) + 1) : '' || pickaxe == 4 ? (Math.floor(Math.random() * (13 - 15) + 15) + 1) : '' || pickaxe == 5 ? (Math.floor(Math.random() * (17 - 19) + 19) + 1) : '' )
+    let iron = (pickaxe == 1 ? (Math.floor(Math.random() * (8 - 10) + 10) + 1) : '' || pickaxe == 2 ? (Math.floor(Math.random() * (13 - 15) + 15) + 1) : '' || pickaxe == 3 ? (Math.floor(Math.random() * (18 - 20) + 20) + 1) : '' || pickaxe == 4 ? (Math.floor(Math.random() * (28 - 30) + 30) + 1) : '' || pickaxe == 5 ? (Math.floor(Math.random() * (48 - 50) + 50) + 1) : '' )
+    let stone = (pickaxe == 1 ? (Math.floor(Math.random() * (28 - 30) + 30) + 1) : '' || pickaxe == 2 ? (Math.floor(Math.random() * (38 - 40) + 40) + 1) : '' || pickaxe == 3 ? (Math.floor(Math.random() * (58 - 60) + 60) + 1) : '' || pickaxe == 4 ? (Math.floor(Math.random() * (78 - 80) + 80) + 1) : '' || pickaxe == 5 ? (Math.floor(Math.random() * (97 - 100) + 100) + 1) : '' )
+    let exp = (pickaxe == 1 ? (Math.floor(Math.random() * (150 - 200) + 200) + 1) : '' || pickaxe == 2 ? (Math.floor(Math.random() * (300 - 400) + 400) + 1) : '' || pickaxe == 3 ? (Math.floor(Math.random() * (500 - 600) + 600) + 1) : '' || pickaxe == 4 ? (Math.floor(Math.random() * (700 - 800) + 800) + 1) : '' || pickaxe == 5 ? (Math.floor(Math.random() * (900 - 1000) + 1000) + 1) : '' )
     let durability = (Math.floor(Math.random() * (50 - 100) + 100) + 1)
     let err = (pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': '')
     let goa = (pickRandom(['una cueva 🏔', 'un volcan 🌋', 'jupiter 🪨', 'saturno 🪐']))
@@ -60,7 +60,7 @@ function clockString(seconds) {
   m = Math.floor((seconds / (1000 * 60)) % 60);
   s = Math.floor((seconds / 1000) % 60);
   
-  dDisplay = d > 0 ? d + (d == 1 ? " dia," : " Dias,") : "";
+  dDisplay = d > 0 ? d + (d == 1 ? " dia, " : " Dias, ") : "";
   hDisplay = h > 0 ? h + (h == 1 ? " hora, " : " Horas, ") : "";
   mDisplay = m > 0 ? m + (m == 1 ? " minuto, " : " Minutos, ") : "";
   sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " Segundos") : "";
