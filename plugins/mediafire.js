@@ -9,13 +9,13 @@ let handler = async (m, { isOwner, isPrems, command, usedPrefix, text, args, con
      await conn.reply(m.chat, `Downloading media from Mediafire`, 0, {
      contextInfo: { mentionedJid: [m.sender],
     externalAdReply :{
-    mediaUrl: linkig,
+    mediaUrl: ``,
     mediaType: 2,
-    description: deslink , 
-    title: titlink,
-    body: wm, //`${fileSizeH}`,
-    thumbnail: await(await fetch(img)).buffer(),
-    sourceUrl: linkgc
+    description: ``, 
+    title: `Test`,
+    body: `${fileSizeH}`,
+    thumbnail: false,
+    sourceUrl: ``
       }}
      })
      let full = /f$/i.test(command)
