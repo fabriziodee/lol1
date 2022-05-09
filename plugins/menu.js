@@ -160,7 +160,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       navega: conn.browserDescription[1],
       version: conn.browserDescription[2],
       bio: biot.status == 401 ? 'Sin info' : biot.status,
-      greeting: saludo,
+      greeting: ucapan,
       lang: 'JavaScript',
       botname: 'lolibot',
       lib: 'Baileys',
@@ -228,7 +228,7 @@ function clockString(ms) {
 }
 
 function ucapan() {
-  const saludo = moment.tz('Asia/Jakarta').format('HH')
+  const time = moment.tz('Asia/Jakarta').format('HH')
   res = "Feliz mañana"
   if (time >= 4) {
     res = "Buenos dias"
