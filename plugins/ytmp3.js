@@ -10,11 +10,11 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   else limit = 100
   if (!args || !args[0]) throw 'Uhm ... where\'s the URL?'
   let vid = await aiovideodl(args[0])
-  let { thumbnail } = vid
-  let det = vid.video['360p']
-  let { fileSize } = det
-  let url = await det.download()
-  conn.sendFile(m.chat, vid.medias[0].url, `${vid.title}.mp3`, ``, m)
+  //let { thumbnail } = vid
+  //let det = vid.video['360p']
+  //let { fileSize } = det
+  let url = await vid.medias[0].url.download()
+  conn.sendFile(m.chat, url, `${vid.title}.mp3`, ``, m)
   //await conn.sendFile(m.chat, ``, `${vid.title}.mp3`, m)
 }
 
