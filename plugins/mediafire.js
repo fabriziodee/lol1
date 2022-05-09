@@ -13,7 +13,7 @@ let handler = async (m, { isOwner, isPrems, command, usedPrefix, text, args, con
     mediaType: 2,
     description: ``, 
     title: `Test`,
-    body: `${fileSizeH}`,
+    body: ``,
     thumbnail: false,
     sourceUrl: ``
       }}
