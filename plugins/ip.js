@@ -27,7 +27,7 @@ let iptext = `\t\t\t\t*‧ 🖥️ Información IP 🖥️ ‧*
 🕐 *Zona horaria:* ${ip.timezone}
 
 🌐 *Proveedor de servicios de Internet:*
-${ip.isp}
+        ${ip.isp}
 
 🕋 *Organización:* ${ip.org}`
 conn.reply(m.chat, iptext, m)
