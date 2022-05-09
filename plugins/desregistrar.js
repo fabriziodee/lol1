@@ -17,3 +17,10 @@ handler.register = true
 
 module.exports = handler
 
+function createHash(data, len) {
+    return crypto.createHash("shake256", { outputLength: len })
+      .update(data)
+      .digest("hex");
+}
+
+
