@@ -51,7 +51,7 @@ const defaultMenu = {
 `,
   header: '  ❒ *%category*',
   body: '  │∙ *%cmd* %islimit %isPremium',
-  footer: '  ╰•',
+  footer: '  ╰•\n',
   after: "",
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
