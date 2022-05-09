@@ -1,5 +1,5 @@
-//import { youtubeSearch } from '@bochilteam/scraper'
-let { youtubeSearch } = require('@bochilteam/scraper')
+import { youtubeSearch } from '@bochilteam/scraper'
+//let { youtubeSearch } = require('@bochilteam/scraper')
 
 let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) throw `✳️ *Ingresa el título de una canción*\n\n📌Ejemplo *${usedPrefix + command}* Lil Peep hate my life `
