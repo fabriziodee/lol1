@@ -164,6 +164,7 @@ module.exports = {
           if (!('antidelete' in chat)) chat.antidelete = false
           if (!('antilink' in chat)) chat.antiLink = false
           if (!('simih' in chat)) chat.antiLink = false
+          if (!('event' in chat)) chat.event = false
           if (!('antitoxic' in chat)) chat.antiToxic = false
         } else global.DATABASE._data.chats[m.chat] = {
           isBanned: false,
@@ -179,6 +180,7 @@ module.exports = {
           antidelete: false,
           antilink: false,
           simih: false,
+          event: false,
           antitoxic: false,
         }
       } catch (e) {
