@@ -8,7 +8,7 @@ let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let ownernum = `global.owner[0].whatsapp.net`
-let emoji = ["🐋", "🍅", "🥮", "⛲", "🎃"]
+let emoji = ["🍭", "🍬", "💐"] //["🐋", "🍅", "🥮", "⛲", "🎃"]
 let tags = {
   'main': 'Menu 🍟',
   'rpg': 'Juego - RPG ⚔️',
@@ -40,15 +40,15 @@ let tags = {
 const defaultMenu = {
   before: `Hola @%user, *¡%greeting!*
 
-*%rmoji • Biografía:* %bio
+*• Biografía:* %bio
 
-*%rmoji • Bot Nɑme :* %botname
-*%rmoji • Lenguɑje :* %lang
-*%rmoji • Libreriɑ :* %lib
-*%rmoji • Prefijo :* [ multiprefix ]
-*%rmoji • Comɑndos :* %comand Totɑl
-*%rmoji • Fechɑ :* %date
-*%rmoji • Horɑ :* %time
+*%rmojiᐦ Bot Nɑme:* %botname
+*%rmojiᐦ Lenguɑje:* %lang
+*%rmojiᐦ Libreriɑ:* %lib
+*%rmojiᐦ Prefijo:* [ multiprefix ]
+*%rmojiᐦ Comɑndo:* %comand Totɑl
+*%rmojiᐦ Fechɑ:* %date
+*%rmojiᐦ Horɑ:* %time
 `,
   header: '❒ *%category*',
   body: '│∙ *%cmd* %islimit %isPremium',
