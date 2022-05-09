@@ -38,6 +38,7 @@ module.exports = {
             if (!isNumber(user.seed)) user.seed = 0
             if (!isNumber(user.chest)) user.chest = 0
             if (!isNumber(user.box)) user.box = 0
+            if (!isNumber(user.trash)) user.trash = 0
             
             //Minerales
             if (!isNumber(user.diamond)) user.diamond = 0
@@ -104,6 +105,7 @@ module.exports = {
             chest: 0,
             box: 0,
             potion: 0,
+            trash: 0,
             seed: 0,
             diamond: 0,
             gold: 0,
