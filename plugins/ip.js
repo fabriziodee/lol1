@@ -9,7 +9,7 @@ let ip = await (await fetch(`http://ip-api.com/json/${text}`)).json()
 if(ip.status == 'fail') return reply('*ip incorrecta*')
 let iptext = `\t\t\t\t*‧ 🖥️ Información IP 🖥️ ‧*
 
-🔍 *Ip:* ${ip.lat}
+🔍 *Ip:* ${ip.query}
 
         *Latitud de ip:* ${ip.lat}
         *Longitud de ip:* ${ip.lon}
