@@ -46,6 +46,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let potion = global.DATABASE._data.users[who].potion
     let chest = global.DATABASE._data.users[who].chest
     let box = global.DATABASE._data.users[who].box
+    let trash = global.DATABASE._data.users[who].trash
 
     let level = global.DATABASE._data.users[who].level
     let money = global.DATABASE._data.users[who].money
@@ -121,6 +122,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 🧪 Poción:* ${potion}
 *∙ 🌱 Semilla:* ${seed}
 *∙ 📦 Caja:* ${box}
+*∙ 🗑️ Basura:* ${trash}
 *∙ 🧰 Cofre:* ${chest}
 
 *∙ 🍱 Total inv:* ${diamond + gold + iron + stone + oak + blowfish + tropicalfish + commonfish} items`
