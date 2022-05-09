@@ -227,6 +227,23 @@ function clockString(ms) {
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 
+function ucapan() {
+  const time = moment.tz('Asia/Jakarta').format('HH')
+  res = "Feliz mañana"
+  if (time >= 4) {
+    res = "Buenos dias"
+  }
+  if (time > 10) {
+    res = "Buenas tardes"
+  }
+  if (time >= 15) {
+    res = "Buenas noches"
+  }
+  if (time >= 18) {
+    res = "Buenas noches"
+  }
+  return res
+}
 
 var ase = new Date();
                         var waktoonyabro = ase.getHours();
