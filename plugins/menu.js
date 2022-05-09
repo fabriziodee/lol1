@@ -160,7 +160,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       navega: conn.browserDescription[1],
       version: conn.browserDescription[2],
       bio: biot.status == 401 ? 'Sin info' : biot.status,
-      greeting: ucapan,
+      greeting: ucapan(),
       lang: 'JavaScript',
       botname: 'lolibot',
       lib: 'Baileys',
