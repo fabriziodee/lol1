@@ -49,6 +49,15 @@ case 'articulo':
       m.reply('Se cambió el menu a *artículo*!')
       break
 
+case 'gif':
+//case 'articulo':
+      if (chat.menu == 6) return m.reply('Ya está cambiado el menu a *gif*!')
+      if (!m.isGroup) return global.dfail('group', m, conn)
+      if (!isOwner) return global.dfail('owner', m, conn)
+      chat.menu = 6
+      m.reply('Se cambió el menu a *gif*!')
+      break
+
     default:
 let opc = `
 *Ingrese un tipo de menú*
@@ -61,6 +70,7 @@ let opc = `
 - Imagen
 - Documento
 - Simple
+- Gif
 `.trim()
 return m.reply(opc)
   }
