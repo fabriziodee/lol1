@@ -1,29 +1,15 @@
-import { youtubeSearch } from '@bochilteam/scraper'
-//let { youtubeSearch } = require('@bochilteam/scraper')
+let scraper = require('@bochilteam/scraper')
 
-let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `✳️ *Ingresa el título de una canción*\n\n📌Ejemplo *${usedPrefix + command}* Lil Peep hate my life `
-  let vid = (await youtubeSearch(text)).video[0]
-  if (!vid) throw '✳️ Vídeo/Audio no encontrado'
-  let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
-  const url = 'https://www.youtube.com/watch?v=' + videoId
-  await m.reply(`
-  ≡ *FG MUSIC*
-┌──────────────
-▢ 📌  *Título* : ${title}
-▢ 📆 *Publicado:* ${publishedTime}
-▢ ⌚ *Duración:* ${durationH}
-▢ 👀 *Vistas:* ${viewH}
-▢ 🔗 *Url:* ${url}
-└──────────────
-  `.trim())
+let handler = async (m, { conn, args }) => {
+  if (!args[0]) throw 'Uhm...url nya mana?'
+  await m.reply('Loading...')
+  let res = await scraper.instagramdl(args[0])
+  for (let i = 0; i < res.length; i++) await conn.sendFile(m.chat, res[i].url, '', '', m)
 }
 
-handler.help = ['play']
+handler.help = ['ig']
 handler.tags = ['downloader']
-handler.command = ['play', 'playvid', 'play2'] 
+handler.limit = true
+handler.command = /^(ig(dl)?)$/i
 
-handler.exp = 0
-handler.limit = false
-
-export default handler
+module.exports = handler
