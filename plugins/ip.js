@@ -7,29 +7,27 @@ let handler = async(m, { conn, text }) => {
 if (!text) return conn.reply(m.chat, 'Masukan Alamat IP yang akan dicek', m)
 let ip = await (await fetch(`http://ip-api.com/json/${text}`)).json()
 if(ip.status == 'fail') return reply('*ip incorrecta*')
-let iptext = `*🔍Ip:* _${text}_
+let iptext = `🔍 *Ip:* ${ip.lat}
 
-      *Latitud de ip*: ${ip.lat}
-      *Longitud de ip*: ${ip.lon}
+        *Latitud de ip:* ${ip.lat}
+        *Longitud de ip:* ${ip.lon}
 
-🌆 *País*: _${ip.country}_
-      *Código de país*: ${ip.countryCode}
+🌆 *País:* ${ip.country}
+        *Código de país:* ${ip.countryCode}
 
-🏡 *Región*: _${ip.region}_
-      *Nombre de región*: ${ip.regionName}
+🏡 *Región:* ${ip.region}
+        *Nombre de región:* ${ip.regionName}
 
-🏙️  *Ciudad*: _${ip.city}_
+🏙️ *Ciudad:* ${ip.city}
 
-📚 *Código postal*: _${ip.zip}_
+📚 *Código postal:* ${ip.zip}
 
-🕐 *Zona horaria*: _${ip.timezone}_
+🕐 *Zona horaria:* ${ip.timezone}
 
-🌐 *Proveedor de servicios de Internet*:
-_${ip.isp}_
+🌐 *Proveedor de servicios de Internet:*
+${ip.isp}
 
-🕋 *Organización*: _${ip.org}_
-
-${JSON.stringify(ip, null, 1)}`
+🕋 *Organización:* ${ip.org}`
 conn.reply(m.chat, iptext, m)
     
 }
