@@ -57,10 +57,10 @@ function clockString(seconds) {
   m = Math.floor((seconds / (1000 * 60)) % 60);
   s = Math.floor((seconds / 1000) % 60);
   
-  dDisplay = d > 0 ? d + (d == 1 ? " dia, " : " Dias, ") : "";
-  hDisplay = h > 0 ? h + (h == 1 ? " hora, " : " Horas, ") : "";
-  mDisplay = m > 0 ? m + (m == 1 ? " minuto, " : " Minutos, ") : "";
-  sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " Segundos") : "";
+  dDisplay = d > 0 ? d + (d == 1 ? " dia, " : " Dias, ") : "0 Dias";
+  hDisplay = h > 0 ? h + (h == 1 ? " hora, " : " Horas, ") : "0 Horas";
+  mDisplay = m > 0 ? m + (m == 1 ? " minuto, " : " Minutos, ") : "0 Minutos";
+  sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " Segundos") : "0 Segundos";
   return dDisplay + hDisplay + mDisplay + sDisplay;
 };
 
