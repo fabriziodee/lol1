@@ -125,7 +125,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 🗑️ Basura:* ${trash}
 *∙ 🧰 Cofre:* ${chest}
 
-*∙ 🍱 Total inv:* ${diamond + gold + iron + stone + oak + blowfish + tropicalfish + commonfish} items`
+*∙ 🍱 Total inv:* ${shortNum(diamond + gold + iron + stone + oak + blowfish + tropicalfish + commonfish + potion + seed + trash)} items`
 
     let type = (args[0] || ' ').toLowerCase()
     
@@ -142,3 +142,7 @@ module.exports = handler
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
+
+function shortNum(num) {
+return new Intl.NumberFormat('en-GB', { notation: "compact", compactDisplay: "short" }).format(num)
+}
