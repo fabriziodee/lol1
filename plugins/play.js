@@ -12,7 +12,7 @@ await conn.send2ButtonImg(m.chat, thumbnail, `
 ⏲️ *Publicado:* ${publishedTime}
 ⌚ *Duración:* ${durationH}
 👁️ *Vistas:* ${viewH}
-`.trim(), author, '𝐀𝐔𝐃𝐈𝐎', `${usedPrefix}play.1 ${url}`, '𝐕𝐈𝐃𝐄𝐎', `${usedPrefix}play.2 ${url}`, m)
+`.trim(), author, 'AUDIO', `${usedPrefix}play.1 ${url}`, 'VIDEO', `${usedPrefix}ytmp4 ${url}`, m)
 }
 
 handler.command = /^(play)$/i
