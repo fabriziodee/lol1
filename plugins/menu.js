@@ -47,8 +47,8 @@ const defaultMenu = {
 *%rmojiᐦ Libreriɑ:* %lib
 *%rmojiᐦ Prefijo:* [ multiprefix ]
 *%rmojiᐦ Comɑndo:* %comand Totɑl
-*%rmojiᐦ Fechɑ:* %date
 *%rmojiᐦ Horɑ:* %time
+*%rmojiᐦ Fechɑ:* %date
 `,
   header: '❒ *%category*',
   body: '│∙ *%cmd* %islimit %isPremium',
@@ -163,7 +163,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       bio: biot.status == 401 ? 'Sin info' : biot.status,
       greeting: ucapan(),
       lang: 'JavaScript',
-      botname: 'lolibot',
+      botname: 'IoIibot-ofc',
       lib: 'Baileys',
       rmoji: ramoji,
       npmname: package.name,
