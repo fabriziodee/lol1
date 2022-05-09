@@ -86,7 +86,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
 }
 //handler.help = ['ʏᴛᴍᴘ4 <ᴜʀʟ>']
 //handler.tags = ['downloader']
-handler.command = /^yt(v?(ideo)?|mpp?4|v?short)(d(oc(ument)?)?)?$/i
+handler.command = /^(ytmp4ttt)$/i
 
 
 
