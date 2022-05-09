@@ -14,7 +14,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   let det = vid.video['360p']
   let { fileSize } = det
   let url = await det.download()
-  conn.sendFile(m.chat, url, `${vid.title}.mp4`, ``.trim(), m, false, { ..._thumb })
+  conn.sendFile(m.chat, url, `${vid.title}.mp4`, ``)
   //await conn.sendFile(m.chat, `${url}`, `${vid.title}.mp4`, m)
 }
 
