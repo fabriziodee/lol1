@@ -38,20 +38,19 @@ let tags = {
 const defaultMenu = {
   before: `Hola @%user, *¡%greeting!*
 
- *%rmoji • Bio:* %bio
+⠀ *%rmoji • Biografía:* %bio
 
- *%rmoji • Bot Nɑme :* %botname
- *%rmoji • Lenguɑje :* %lang
- *%rmoji • Libreriɑ :* %lib
- *%rmoji • Prefijo :* [ multiprefix ]
- *%rmoji • Comɑndos :* %comand Totɑl
- *%rmoji • Fechɑ :* %date
- *%rmoji • Horɑ :* %time
-
+⠀ *%rmoji • Bot Nɑme :* %botname
+⠀ *%rmoji • Lenguɑje :* %lang
+⠀ *%rmoji • Libreriɑ :* %lib
+⠀ *%rmoji • Prefijo :* [ multiprefix ]
+⠀ *%rmoji • Comɑndos :* %comand Totɑl
+⠀ *%rmoji • Fechɑ :* %date
+⠀ *%rmoji • Horɑ :* %time
 `,
-  header: '  ❒ *%category*',
-  body: '  │∙ *%cmd* %islimit %isPremium',
-  footer: '  ╰•\n',
+  header: '⠀ ❒ *%category*',
+  body: '⠀ │∙ *%cmd* %islimit %isPremium',
+  footer: '⠀ ╰•\n',
   after: "",
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
