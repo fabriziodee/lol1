@@ -1,42 +1,93 @@
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 let fetch = require('node-fetch')
-const { servers, ytv } = require('../lib/y2mate')
-let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
-  if (!args || !args[0]) throw '*Inserte un enlace de YT*'
- // let chat = global.db.data.chats[m.chat]
-  let server = (args[1] || servers[0]).toLowerCase()
+const { servers } = require('../lib/y2mate')
+const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
+let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
+  if (!text) throw `_URL Not Found_`
+  let ras = `wrong url, this command to download video/shorts`
+  if (!args[0].match(/(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)\/(watch|shorts)|(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)/gi)) throw ras
+  let limit
+  if((isOwner || isPrems)) limit = 300
+  else limit = 100
+  if (!args || !args[0]) throw 'Uhm ... where\'s the URL?'
   try {
-    let { dl_link, thumb, title, filesize, filesizeF } = await ytv(args[0], servers.includes(server) ? server : servers[0])
-    //let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-    //m.reply(isLimit ? `*🔰 Tamaño del video: ${filesizeF}*\n\n*✳️ Tamaño máximo para poder enviar: ${limit} MB*\n\n*Puede descargar usted mismo el video a través de este enlace:*\n*→ ${dl_link}*\n*👉🏻 Al entrar automáticamente se le descargará*` : global.wait)
-    let _thumb = {}
-    try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
-    catch (e) { }
-    await m.reply(`*✳️ Espere un momento, estoy descargando su video*\n\n*⚠️ Si su vídeo no es envíado después de 5 minutos, por favor inténtelo nuevamente, si el error perdura intente con un video de menor tamaño*`)
-conn.sendFile(m.chat, dl_link, '', `
-*🔰 Aquí tienes tu video*
-  `.trim(), m, 0, {
-      ..._thumb,
-    //  asDocument: chat.useDocument
-    })
-  } catch (e) {
-    return await conn.sendButton(m.chat, '*El servidor 1 fallo*\n\n*Quiere volver a intentarlo con otro servidor?*', '', 'VOLVER A INTENTAR', `${usedPrefix + command} ${args[0]}`)
+  let vid = await youtubedl(args[0])
+  let { thumbnail, title } = vid
+  let det = vid.video['480p']
+  let url = await det.download()
+   await conn.sendMedia(m.chat, url, 0, {
+  contextInfo: { mentionedJid: [m.sender],
+    externalAdReply :{
+    mediaUrl: `${args[0]}`,
+    mediaType: 2,
+    description: deslink, 
+    title: title,
+    body: global.name, //`${fileSizeH}`,
+    thumbnail: await(await fetch(thumbnail)).buffer(),
+   }} 
+  }) 
+  } catch {
+  try {
+  let vid = await youtubedlv2(args[0])
+  let { thumbnail } = vid
+  let det = vid.video['360p']
+  let { fileSize } = det
+  let url = await det.download()
+   await conn.sendMedia(m.chat, url, 0, {
+  contextInfo: { mentionedJid: [m.sender],
+    externalAdReply :{
+    mediaUrl: `${args[0]}`,
+    mediaType: 2,
+    description: deslink, 
+    title: titlink,
+    body: bodlink, //`${fileSizeH}`,
+    thumbnail: await(await fetch(thumbnail)).buffer(),
+   }}
+  }) 
+  } catch {
+  try {
+  let vid = await youtubedlv3(args[0])
+  let { thumbnail } = vid
+  let det = vid.video['360p']
+  let { fileSize } = det
+  let url = await det.download()
+   await conn.sendMedia(m.chat, url, 0, {
+  contextInfo: { mentionedJid: [m.sender],
+    externalAdReply :{
+    mediaUrl: `${args[0]}`,
+    mediaType: 2,
+    description: deslink, 
+    title: titlink,
+    body: bodlink, //`${fileSizeH}`,
+    thumbnail: await(await fetch(thumbnail)).buffer(),
+   }}
+  }) 
+  } catch {
+  try {
+  let server = (args[1] || servers[0]).toLowerCase()
+  let { dl_link, thumb: thumbnail, filesize } = await yta(args[0], servers.includes(server) ? server : servers[0])
+  let isLimit = (isPrems || isOwner ? limit : limit) * 1024 < filesize
+  if(!isLimit) await conn.sendMedia(m.chat, dl_link, null, {
+  contextInfo: { mentionedJid: [m.sender],
+    externalAdReply :{
+    mediaUrl: `${args[0]}`,
+    mediaType: 2,
+    description: deslink, 
+    title: titlink,
+    body: bodlink, //`${fileSizeH}`,
+    thumbnail: await(await fetch(thumbnail)).buffer(),
+   }}
+  })
+  } catch {
+    throw eror 
+        }
+      }
+    }
   }
 }
-//handler.help = ['ytmp4']
+//handler.help = ['ʏᴛᴍᴘ4 <ᴜʀʟ>']
 //handler.tags = ['downloader']
-handler.command = /^(ytv)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
+handler.command = /^yt(v?(ideo)?|mpp?4|v?short)(d(oc(ument)?)?)?$/i
 
-handler.admin = false
-handler.botAdmin = false
 
-handler.fail = null
-handler.exp = 0
-handler.limit = false
 
 module.exports = handler
