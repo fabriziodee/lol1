@@ -15,6 +15,20 @@ const Axe3 = 250000 //Hierro
 const Axe4 = 300000 //Oro
 const Axe5 = 400000 //Diamante
 
+//Espada
+const Sword1 = 50000 //Madera
+const Sword2 = 75000 //Piedra
+const Sword3 = 125000 //Hierro
+const Sword4 = 150000 //Oro
+const Sword5 = 200000 //Diamante
+
+//Armadura 
+const Armor1 = 350000 //Madera
+const Armor2 = 450000 //Piedra
+const Armor3 = 650000 //Hierro
+const Armor4 = 750000 //Oro
+const Armor5 = 950000 //Diamante
+
 //Caña
 const Rod1 = 250000 //Normal
 
@@ -36,6 +50,20 @@ ${tt}∙ Madera:   $${Axe1}
 ∙ Hierro:   $${Axe3}
 ∙ Oro:      $${Axe4}
 ∙ Diamante: $${Axe5}${tt}
+
+*🗡️ Espada*
+${tt}∙ Madera:   $${Sword1}
+∙ Piedra:   $${Sword2}
+∙ Hierro:   $${Sword3}
+∙ Oro:      $${Sword4}
+∙ Diamante: $${Sword5}${tt}
+
+*👕 Armadura*
+${tt}∙ Cuero:    $${Armor1}
+∙ Malla:    $${Armor2}
+∙ Hierro:   $${Armor3}
+∙ Oro:      $${Armor4}
+∙ Diamante: $${Armor5}${tt}
 
 *🎣 Caña para Pescar*
 ${tt}∙ Normal:   $${Rod1}${tt}
