@@ -23,11 +23,11 @@ const Sword4 = 150000 //Oro
 const Sword5 = 200000 //Diamante
 
 //Armadura 
-const Armor1 = 350000 //Madera
-const Armor2 = 450000 //Piedra
+const Armor1 = 250000 //Cuero
+const Armor2 = 450000 //Malla
 const Armor3 = 650000 //Hierro
-const Armor4 = 750000 //Oro
-const Armor5 = 950000 //Diamante
+const Armor4 = 850000 //Oro
+const Armor5 = 1050000 //Diamante
 
 //Caña
 const Rod1 = 250000 //Normal
