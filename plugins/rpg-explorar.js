@@ -40,8 +40,8 @@ let handler = async (m, { conn, usedPrefix }) => {
           setTimeout(() => {
           	m.reply(`*Tu vida se reduce -${healt} porque fuiste a ${word}*
 
-*👕 Armadura de:* ${ar}
 *🗡 Espada de:* ${es}
+*👕 Armadura de:* ${ar}
 
 ◦ Dinero: ${money}
 ◦ Poción: ${potion}
