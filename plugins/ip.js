@@ -30,9 +30,9 @@ let iptext = `\t\t\t\t*‧ 🖥️ Información IP 🖥️ ‧*
         ${ip.isp}
 
 🕋 *Organización:* ${ip.org}`
-conn.reply(m.chat, iptext, m)
-    
+await m.reply(iptext)
 }
+
 handler.help = ['ip']
 handler.tags = ['tools']
 handler.command = /^(ip)$/i
