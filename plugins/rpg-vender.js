@@ -106,21 +106,7 @@ case 'comúnes':
 
 
     default:
-let sell = `
-*Que item quieres vender?*
-
-- Ejemplo: ${usedPrefix + command} diamante 7
-
-*Lista de items para vender*
-- Diamante
-- Oro
-- Hierro
-- Piedra
-- Pez tropical
-- Pez comun
-- Pez globo
-`.trim()
-return conn.reply(m.chat, sell, m)
+return m.reply(`El artículo *${args[0]}* no esta para vender!`)
   }
 }
 
