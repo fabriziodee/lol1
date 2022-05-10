@@ -6,7 +6,7 @@ let handler = async(m, { conn, text }) => {
 
 if (!text) return conn.reply(m.chat, 'Masukan Alamat IP yang akan dicek', m)
 let ip = await (await fetch(`http://ip-api.com/json/${text}`)).json()
-if(ip.status == 'fail') return m.reply('No se encontro la ip!')
+if(ip.status == 'fail') return m.reply('No se encontró la Ip!')
 let iptext = `\t\t\t\t*‧ 🖥️ Información IP 🖥️ ‧*
 
 🔍 *Ip:* ${ip.query}
