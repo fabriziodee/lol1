@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix }) => {
 	
     let __waktur = (new Date - global.DATABASE._data.users[m.sender].lastadventure)
-    let _waktur = (900000 - __waktur)
+    let _waktur = (300000 - __waktur)
     let waktur = clockString(_waktur)
     
     let user = global.DATABASE._data.users[m.sender]
