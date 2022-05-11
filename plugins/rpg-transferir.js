@@ -34,22 +34,15 @@ let handler = async (m, { conn, args, text, usedPrefix, command, DevMode }) => {
                 break
 
             default:
+            let test = 55
                 //return conn.reply(m.chat, `, m)
         }
     
 handler.help = ['transferir']
 handler.tags = ['rpg']
 handler.command = /^(transferir|transfer)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
+handler.group = true 
 
 handler.fail = null
-handler.money = 0
 
 module.exports = handler
