@@ -37,7 +37,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command, DevMode }) => {
             let test = 55
                 //return conn.reply(m.chat, `, m)
         }
-    
+}
+
 handler.help = ['transferir']
 handler.tags = ['rpg']
 handler.command = /^(transferir|transfer)$/i
