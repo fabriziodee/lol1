@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command, groupMetadata }) => {
     let _user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
     if (!_user in global.DATABASE._data.users) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
     if (rauser.startsWith(conn.user)) {
-    global.DATABASE._data.users[_user].money -= 500
+    global.DATABASE._data.users[m.sender].money -= 500
     m.reply('Se te quito 500 de dinero por pendejo\'a :I')
     } return 
     let user = global.DATABASE._data.users[m.sender]
