@@ -126,5 +126,41 @@
     {
         "question": "¿Qué se necesita para encender una vela?",
         "response": "Que esté apagada"
+    },
+    {
+        "question": "¿Cuál es el país donde termina todo?",
+        "response": "Finlandia"
+    },
+    {
+        "question": "La respuesta a esta pregunta es #######",
+        "response": "#######"
+    },
+    {
+        "question": "Cuál es el final de todo",
+        "response": "La letra o"
+    },
+    {
+        "question": "¿Dónde se encuentra una pared con otra pared?",
+        "response": "En la esquina"
+    },
+    {
+        "question": "¿Qué tiene muchas palabras, pero nunca habla?",
+        "response": "Un libro"
+    },
+    {
+        "question": "¿Qué cosa te pertenece, pero los demás usan más que tú?",
+        "response": "Tu nombre"
+    },
+    {
+        "question": "¿En qué momento una persona se convierte en fruta?",
+        "response": "Cuando espera"
+    },
+    {
+        "question": "Los padres de José tienen tres hijos: Luis, Raúl y…, ¿cómo se llama el tercero?",
+        "response": "José"
+    },
+    {
+        "question": "¿Qué palabra del diccionario se escribe incorrectamente?",
+        "response": "Incorrectamente"
     }
 ]
