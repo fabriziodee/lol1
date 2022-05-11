@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
-  //if (!text) throw `*Ingrese el número al que quiere añadir*\n\n- Ejemplo: ${usedPrefix + command} +51 990 181 480`
+  if (!text) throw `*Ingrese el número al que quiere añadir*\n\n- Ejemplo: ${usedPrefix + command} +51 990 181 480`
   let _participants = participants.map(user => user.jid)
   //try {
   //let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
@@ -16,7 +16,7 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
         v,
         await conn.isOnWhatsApp(v + '@s.whatsapp.net')
       ])
-  )).filter(v => v[1]).map(v => v[0] + '@c.us') || m.quoted.sender
+  )).filter(v => v[1]).map(v => v[0] + '@c.us')
   let response = await conn.groupAdd(m.chat, users)
   if (response[users] == 408) throw `*El usuario se salio recientemente*\nLa unica manera de añadirlo es por medio del enlace del grupo. Usa ${usedPrefix}link para obtener el enlace`
   let pp = await conn.getProfilePicture(m.chat).catch(_ => false)
