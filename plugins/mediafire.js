@@ -1,4 +1,6 @@
 const { mediafiredl } = require('@bochilteam/scraper')
+let fetch = require('node-fetch')
+
 let handler = async (m, { isOwner, isPrems, command, usedPrefix, text, args, conn }) => {
      var limit
      if((isOwner || isPrems)) limit = 250
@@ -39,10 +41,9 @@ ${isLimit ? `❌ *File size above ${limit} MB, download it yourself*\n` : ''}�
       throw eror 
   }
 }
-handler.help = ['ᴍᴇᴅɪᴀғɪʀᴇ'].map(v => v + ' <ᴜʀʟ>')
+
+handler.help = ['mediafire']
 handler.tags = ['downloader']
-handler.command = /^(me?d(ia)?f(ire)?)$/i
-
-
+handler.command = /^(mediafire|mdfire)$/i
 
 module.exports = handler
