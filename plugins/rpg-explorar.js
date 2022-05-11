@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix }) => {
 	
     let __waktur = (new Date - global.DATABASE._data.users[m.sender].lastadventure)
-    let _waktur = (180000 - __waktur)
+    let _waktur = (900000 - __waktur)
     let waktur = clockString(_waktur)
     
     let user = global.DATABASE._data.users[m.sender]
@@ -46,7 +46,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 ◦ Semilla: ${seed}
 ◦ Exp: ${exp}
 
-*Durabilidad:* -${durability}`)
+*Durabilidad total:* -${durability}`)
           }, 0)
           
              } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
@@ -58,7 +58,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 handler.help = ['explorar']
 handler.tags = ['rpg']
 
-handler.command = /^(explorar|adventure)$/i
+handler.command = /^(explorar|adventure|work)$/i
 handler.disabled = false
 
 module.exports = handler
