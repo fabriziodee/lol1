@@ -1,6 +1,8 @@
-const Uppickaxe = 3000
+const Uppickaxe = 4000
 const Uprod = 1000
 const Upaxe = 2000
+const Upsword = 3000
+const Uparmor = 5000
 
 let handler = async (m, { conn, usedPrefix, command, args }) => {
 
@@ -42,18 +44,30 @@ case 'hacha':
           } else conn.reply(m.chat, `Todavía no tienes una hacha, compralo escribiendo ${usedPrefix}comprar hacha`, m)
       break
 
+case 'espada':
+      if (global.DATABASE._data.users[m.sender].sword > 0) { 
+      if (global.DATABASE._data.users[m.sender].sworddurability >= 5000) return conn.reply(m.chat, 'Tu espada tiene la durabilidad máxima', m)
+      if (global.DATABASE._data.users[m.sender].money > Upsword * 1) {
+      	global.DATABASE._data.users[m.sender].sworddurability += 500
+          global.DATABASE._data.users[m.sender].money -= Upsword * 1
+          conn.reply(m.chat, `Se aumento la *durabilidad de tu espada* por ${Upsword} de dinero` ,m)
+          } else conn.reply(m.chat, `Tu dinero no es suficiente para aumentar la durabilidad de tu espada que cuesta ${Upsword} de dinero`, m)
+          } else conn.reply(m.chat, `Todavía no tienes una espada, compralo escribiendo ${usedPrefix}comprar espada`, m)
+      break
+      
+case 'armadura':
+      if (global.DATABASE._data.users[m.sender].armor > 0) { 
+      if (global.DATABASE._data.users[m.sender].armordurability >= 5000) return conn.reply(m.chat, 'Tu armadura tiene la durabilidad máxima', m)
+      if (global.DATABASE._data.users[m.sender].money > Uparmor * 1) {
+      	global.DATABASE._data.users[m.sender].armordurability += 500
+          global.DATABASE._data.users[m.sender].money -= Uparmor * 1
+          conn.reply(m.chat, `Se aumento la *durabilidad de tu armadura* por ${Uparmor} de dinero` ,m)
+          } else conn.reply(m.chat, `Tu dinero no es suficiente para aumentar la durabilidad de tu armadura que cuesta ${Uparmor} de dinero`, m)
+          } else conn.reply(m.chat, `Todavía no tienes una armadura, compralo escribiendo ${usedPrefix}comprar armadura`, m)
+      break
+
     default:
-let rep = `
-*Ingrese la herramienta que quiere reparar*
-
-- Ejemplo: ${usedPrefix + command} pico
-
-*Lista de herramientas*
-- Pico
-- Hacha
-- Caña
-`.trim()
-return m.reply(rep)
+return m.reply(`La herramienta *${args[0]}* no esta para reparar!`)
   }
 }
 
