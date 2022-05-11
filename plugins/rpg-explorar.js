@@ -34,7 +34,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     global.DATABASE._data.users[m.sender].healt -= healt * 1
     global.DATABASE._data.users[m.sender].money += money * 1 
     global.DATABASE._data.users[m.sender].potion += potion * 1 
-    //global.DATABASE._data.users[m.sender].sworddurability -= durability * 1
+    global.DATABASE._data.users[m.sender].sworddurability -= durability * 1
     global.DATABASE._data.users[m.sender].exp += exp * 1
 
           setTimeout(() => {
