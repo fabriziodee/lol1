@@ -1,5 +1,6 @@
 const { mediafiredl } = require('@bochilteam/scraper')
 let fetch = require('node-fetch')
+let axios = require('axios')
 
 let handler = async (m, { isOwner, isPrems, command, usedPrefix, text, args, conn }) => {
      var limit
@@ -8,18 +9,6 @@ let handler = async (m, { isOwner, isPrems, command, usedPrefix, text, args, con
      if (!args[0]) throw `${nolink}\n\nExample:\n${usedPrefix + command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`
      if (!args[0].match(/mediafire/gi)) throw `URL Invalid`
      const sentMsg = await m.reply(wait)
-     await conn.reply(m.chat, `Downloading media from Mediafire`, 0, {
-     contextInfo: { mentionedJid: [m.sender],
-    externalAdReply :{
-    mediaUrl: ``,
-    mediaType: 2,
-    description: ``, 
-    title: `Test`,
-    body: ``,
-    thumbnail: false,
-    sourceUrl: ``
-      }}
-     })
      let full = /f$/i.test(command)
      let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
      let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, url: u }))).buffer()
