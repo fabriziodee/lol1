@@ -42,7 +42,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 *🗡 Espada de:* ${es}
 *👕 Armadura de:* ${ar}
 
-◦ Dinero: $${money}${potion == 0 ? '' : `◦ Poción: ${potion}`}
+◦ Dinero: $${money}${potion == 0 ? '' : `\n◦ Poción: ${potion}`}
 ◦ Semilla: ${seed}
 ◦ Exp: ${exp}
 
