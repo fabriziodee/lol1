@@ -13,7 +13,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   if (m.chat in conn.play) throw 'Todavia hay un video pendiente descargandode, intente de nuevo mas tarde'
   else conn.play[m.chat] = true
   try {
-  await conn.reply(m.chat, `*↓ Descɑrgɑndo video:* ${args[0]}`, m)
+  await conn.reply(m.chat, `*↓ Descɑrgɑndo video:* ${args[0].replace('https://', '')}`, m)
   let vid = await youtubedlv2(args[0])
   let { thumbnail } = vid
   let det = vid.video['360p']
