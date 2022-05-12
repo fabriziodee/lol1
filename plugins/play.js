@@ -19,5 +19,8 @@ let ptxt = `
 await conn.send2ButtonImg(m.chat, thumbnail, ptxt, author, 'AUDIO', `${usedPrefix}ytmp3 ${url}`, 'VIDEO', `${usedPrefix}ytmp4 ${url}`, m)
 }
 
+handler.help = ['play']
+handler.tags = ['downloader']
 handler.command = /^(play)$/i
+
 module.exports = handler
