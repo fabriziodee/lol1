@@ -19,7 +19,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   let det = vid.video['360p']
   let { fileSize } = det
   let url = await det.download()
-  conn.sendFile(m.chat, url, `${vid.title}.mp4`, ``, m)
+  await conn.sendFile(m.chat, url, `${vid.title}.mp4`, ``, m)
   } finally {
     conn.reply(m.chat, '*✓* Video descargado', m)
     delete conn.play[m.chat]
