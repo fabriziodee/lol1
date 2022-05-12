@@ -5,17 +5,18 @@ if (!text) throw `*[❗𝐈𝐍𝐅𝐎❗] 𝙽𝙾𝙼𝙱𝚁𝙴 𝙳𝙴 �
 let vid = (await youtubeSearch(text)).video[0]
 if (!vid) throw '*[❗𝐈𝐍𝐅𝐎❗] 𝙻𝙾 𝚂𝙸𝙴𝙽𝚃𝙾, 𝙽𝙾 𝙿𝚄𝙳𝙴 𝙴𝙽𝙲𝙾𝙽𝚃𝚁𝙰𝚁 𝙴𝙻 𝙰𝚄𝙳𝙸𝙾/𝚅𝙸𝙳𝙴𝙾, 𝙸𝙽𝚃𝙴𝙽𝚃𝙴 𝙲𝙾𝙽 𝙾𝚃𝚁𝙾 𝙽𝙾𝙼𝙱𝚁𝙴/𝚃𝙸𝚃𝚄𝙻𝙾*'
 conn.play = conn.play ? conn.play : {}
-if (m.chat in conn.play) throw 'Todavia hay un video pendiente descargandode, intente de nuevo mas tarde'
+if (conn.user.jid in conn.play) throw 'Todavia hay un video pendiente descargandode, intente de nuevo mas tarde'
 let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
-const url = 'https://www.youtube.com/watch?v=' + videoId
-await conn.send2ButtonImg(m.chat, thumbnail, `
+let url = 'www.youtube.com/watch?v=' + videoId
+let ptxt = `
 📌 *Titulo:* ${title}
 🔗 *Url:* ${url}
-🗒️ *Descrición:* ${description}
 ⏲️ *Publicado:* ${publishedTime}
 ⌚ *Duración:* ${durationH}
 👁️ *Vistas:* ${viewH}
-`.trim(), author, 'AUDIO', `${usedPrefix}ytmp3 ${url}`, 'VIDEO', `${usedPrefix}ytmp4 ${url}`, m)
+🗒️ *Descripción:* ${description}
+`.trim()
+await conn.send2ButtonImg(m.chat, thumbnail, ptxt, author, 'AUDIO', `${usedPrefix}ytmp3 ${url}`, 'VIDEO', `${usedPrefix}ytmp4 ${url}`, m)
 }
 
 handler.command = /^(play)$/i
