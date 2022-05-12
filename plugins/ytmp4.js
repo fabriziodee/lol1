@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
-
 const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
+
 let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   if (!text) throw `_URL Not Found_`
   let ras = `wrong url, this command to download video/shorts`
@@ -9,12 +9,15 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   if((isOwner || isPrems)) limit = 300
   else limit = 100
   if (!args || !args[0]) throw 'Uhm ... where\'s the URL?'
+  conn.play = conn.play ? conn.play : {}
+  if (m.chat in conn.play) throw 'Todavia hay un video pendiente descargandode, intente de nuevo mas tarde'
   let vid = await youtubedlv2(args[0])
   let { thumbnail } = vid
   let det = vid.video['360p']
   let { fileSize } = det
   let url = await det.download()
   conn.sendFile(m.chat, url, `${vid.title}.mp4`, ``, m)
+  delete conn.play[m.chat]
   //await conn.sendFile(m.chat, `${url}`, `${vid.title}.mp4`, m)
 }
 
