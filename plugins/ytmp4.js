@@ -9,6 +9,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   if((isOwner || isPrems)) limit = 300
   else limit = 100
   if (!args || !args[0]) throw 'Uhm ... where\'s the URL?'
+  try {
   conn.play = conn.play ? conn.play : {}
   if (m.chat in conn.play) throw 'Todavia hay un video pendiente descargandode, intente de nuevo mas tarde'
   else conn.play[m.chat] = true
@@ -18,8 +19,9 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   let { fileSize } = det
   let url = await det.download()
   conn.sendFile(m.chat, url, `${vid.title}.mp4`, ``, m)
-  delete conn.play[m.chat]
-  //await conn.sendFile(m.chat, `${url}`, `${vid.title}.mp4`, m)
+  } finally {
+    delete conn.play[m.chat]
+  }
 }
 
 handler.help = ['ytmp4']
