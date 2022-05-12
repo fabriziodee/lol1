@@ -7,10 +7,11 @@ if (!vid) throw '*[❗𝐈𝐍𝐅𝐎❗] 𝙻𝙾 𝚂𝙸𝙴𝙽𝚃𝙾, �
 conn.play = conn.play ? conn.play : {}
 if (conn.user.jid in conn.play) throw 'Todavia hay un video pendiente descargandode, intente de nuevo mas tarde'
 let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
-let url = 'www.youtube.com/watch?v=' + videoId
+let _url = 'www.youtube.com/watch?v=' + videoId
+let url = 'http://www.youtube.com/watch?v=' + videoId
 let ptxt = `
 📌 *Titulo:* ${title}
-🔗 *Url:* ${url}
+🔗 *Url:* ${_url}
 ⏲️ *Publicado:* ${publishedTime}
 ⌚ *Duración:* ${durationH}
 👁️ *Vistas:* ${viewH}
