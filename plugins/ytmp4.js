@@ -11,6 +11,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   if (!args || !args[0]) throw 'Uhm ... where\'s the URL?'
   conn.play = conn.play ? conn.play : {}
   if (m.chat in conn.play) throw 'Todavia hay un video pendiente descargandode, intente de nuevo mas tarde'
+  else conn.play[m.chat] = true
   let vid = await youtubedlv2(args[0])
   let { thumbnail } = vid
   let det = vid.video['360p']
