@@ -4,7 +4,7 @@ let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems, isR
     if (!isPrems && user.limit < 1) return conn.reply(m.chat, `Te quedaste sin limites, compra más escribiendo ${usedPrefix}buylimit`, m)
     if (!isOwner || !isPrems || !isROwner) {
     global.DATABASE._data.users[m.sender].limit -= 1
-    conn.reply(m.chat, `🎟️ Se utilizó *1* de su limite!`, m)
+    conn.reply(m.chat, `🎟️ Se utilizó *uno* de su *limite* por utilizar esta función!`, m)
     }
     conn.vote = conn.vote ? conn.vote : {}
     let id = m.chat
