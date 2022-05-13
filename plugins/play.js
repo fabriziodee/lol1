@@ -1,3 +1,4 @@
+let fetch = require('node-fetch')
 let { youtubeSearch } = require('@bochilteam/scraper')
 
 let handler = async (m, { conn, command, text, usedPrefix }) => {
