@@ -15,6 +15,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   try {
   await conn.reply(m.chat, `*↓ Descɑrgɑndo video:* ${args[0].replace('https://', '')}`, m)
   let vid = await youtubedlv2(args[0])
+  await m.reply(`${JSON.stringify(vid, null, 1)}`)
   let { thumbnail } = vid
   let det = vid.video['360p']
   let { fileSize } = det
