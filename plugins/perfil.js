@@ -35,7 +35,7 @@ let handler = async (m, { conn, usedPrefix }) => {
  *◦ Fecha:* ${registered ? `${formatDate(regTime)}` : '-'}
  *◦ Hora:* ${registered ? `${formatHour(regTime)}` : '-'}
  *◦ Nombre:* ${registered ? `${name}` : '-'}
- *◦ Edad:* ${registered ? `${age}` : '-'}`
+ *◦ Edad:* ${registered ? `${age} años` : '-'}`
     let mentionedJid = [who]
     conn.sendFile(m.chat, _pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
 }
