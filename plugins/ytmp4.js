@@ -10,7 +10,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   else limit = 100
   if (!args || !args[0]) throw 'Uhm ... where\'s the URL?'
   conn.play = conn.play ? conn.play : {}
-  if (conn.user.jid in conn.play) throw 'Todavia hay un video pendiente descargandode, intente de nuevo mas tarde'
+  if (conn.user.jid in conn.play) throw 'Todavia hay un video pendiente descargandose, intente de nuevo mas tarde'
   else conn.play[conn.user.jid] = true
   try {
   let vid = await youtubedlv2(args[0])
