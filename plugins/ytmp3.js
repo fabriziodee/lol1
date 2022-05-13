@@ -21,8 +21,8 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   //let { thumbnail } = vid
   //let det = vid.video['360p']
   //let { fileSize } = det
-  let url = await urld.download()
-  await conn.sendFile(m.chat, url, `${vid.title}.mp3`, ``, m)
+  //let url = await urld.download()
+  await conn.sendFile(m.chat, urld, `${vid.title}.mp3`, ``, m)
   //await conn.sendFile(m.chat, ``, `${vid.title}.mp3`, m)
   } finally {
     //await conn.reply(m.chat, '*✓* Video descargado', m)
