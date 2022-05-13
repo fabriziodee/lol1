@@ -22,7 +22,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, isROwner }) => {
   if (!isOwner || !isPrems || !isROwner) {
   global.DATABASE._data.users[m.sender].limit -= 1
   }
-  await conn.reply(m.chat, `*↓ Descɑrgɑndo video:* www.youtube.com/watch?v=${vid.id}${!isOwner || !isPrems || !isROwner ? '\n\n🎟️ Se utilizó *uno* de su *limite* por utilizar esta función!' : ''}`, m)
+  await conn.reply(m.chat, `*↓ Descɑrgɑndo video:* www.youtube.com/watch?v=${vid.id}${!isOwner || !isPrems || !isROwner ? '\n\n🎟️ Se utilizó *uno* de su *limite*!' : ''}`, m)
   //await m.reply(`${JSON.stringify(vid, null, 1)}`)
   let url = await det.download()
   let yp4 = `
