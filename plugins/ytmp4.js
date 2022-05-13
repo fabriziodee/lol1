@@ -17,7 +17,11 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   let { fileSizeH } = det
   let size = fileSizeH
   if (Number(size.split(' MB')[0]) >= isLimitYt) return m.reply('El video pesa más de 27 MB!')
-  await conn.reply(m.chat, `*↓ Descɑrgɑndo video:* www.youtube.com/watch?v=${vid.id}`, m)
+  if (!isPrems && user.limit < 1) return conn.reply(m.chat, `Te quedaste sin limites, compra más escribiendo ${usedPrefix}buylimit`, m)
+  if (!isOwner || !isPrems || !isROwner) {
+  global.DATABASE._data.users[m.sender].limit -= 1
+  }
+  await conn.reply(m.chat, `*↓ Descɑrgɑndo video:* www.youtube.com/watch?v=${vid.id}${!isOwner || !isPrems || !isROwner ? '\n\n🎟️ Se utilizó *uno* de su *limite* por utilizar esta función!' : ''}`, m)
   //await m.reply(`${JSON.stringify(vid, null, 1)}`)
   let url = await det.download()
   let yp4 = `
