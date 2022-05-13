@@ -16,7 +16,7 @@ let ptxt = `\t\t\t*× 📻 Descɑrgɑ de YouTube 📻 ×*
 *• Visitɑs:* ${viewH}
 *• Publicɑdo:* ${publishedTime}
 *• Url:* ${_url}`
-let thumbyt = await (await fetch(vid.thumbnail)).buffer()
+let thumbyt = await (await fetch(thumbnail)).buffer()
 await conn.send2ButtonImg(m.chat, thumbnail, ptxt, author, 'AUDIO', `${usedPrefix}ytmp3 ${url}`, 'VIDEO', `${usedPrefix}ytmp4 ${url}`, m, false, { thumbnail: thumbyt })
 }
 
