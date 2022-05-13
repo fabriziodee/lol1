@@ -13,14 +13,18 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   if (conn.user.jid in conn.play) throw 'Todavia hay un video pendiente descargandode, intente de nuevo mas tarde'
   else conn.play[conn.user.jid] = true
   try {
-  await conn.reply(m.chat, `*↓ Descɑrgɑndo video:* ${args[0].replace('https://', '')}`, m)
+  await conn.reply(m.chat, `*↓ Descɑrgɑndo video:* ${args[0]}`.replace('https://', ''), m)
   let vid = await youtubedlv2(args[0])
   await m.reply(`${JSON.stringify(vid, null, 1)}`)
   let { thumbnail } = vid
   let det = vid.video['360p']
   let { fileSize } = det
   let url = await det.download()
+  let yp4 = `
+
+`.string()
   await conn.sendFile(m.chat, url, `${vid.title}.mp4`, ``, m)
+  await conn.sendFile(m.chat, url, `${vid.title}.mp4`, `*🔥Título:* ${title}*📂Tamaño del archivo:* ${filesizeF}`.trim(), m, false, _thumb || {})
   } finally {
     await conn.reply(m.chat, '*✓* Video descargado', m)
     delete conn.play[conn.user.jid]
