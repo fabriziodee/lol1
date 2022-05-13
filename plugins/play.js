@@ -10,12 +10,13 @@ let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } 
 let _url = 'www.youtube.com/watch?v=' + videoId
 let url = 'http://www.youtube.com/watch?v=' + videoId
 let ptxt = `
-📌 *Titulo:* ${title}
-🔗 *Url:* ${_url}
-⏲️ *Publicado:* ${publishedTime}
-⌚ *Duración:* ${durationH}
-👁️ *Vistas:* ${viewH}
-🗒️ *Descripción:* ${description}
+\t\t*‧ 📻 Descarga de YouTube 📻 ‧*
+
+*• Titulo:* ${title}
+*• Duración:* ${durationH}
+*• Visitas:* ${viewH}
+*• Publicado:* ${publishedTime}
+*• Url:* ${_url}
 `.trim()
 await conn.send2ButtonImg(m.chat, thumbnail, ptxt, author, 'AUDIO', `${usedPrefix}ytmp3 ${url}`, 'VIDEO', `${usedPrefix}ytmp4 ${url}`, m)
 }
