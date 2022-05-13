@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
 
-let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
+let handler = async (m, { conn, text, args, isPrems, isOwner, isROwner }) => {
   if (!text) throw `_URL Not Found_`
   let ras = `wrong url, this command to download video/shorts`
   if (!args[0].match(/(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)\/(watch|shorts)|(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)/gi)) throw ras
