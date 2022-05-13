@@ -5,18 +5,19 @@ if (!text) throw `*[❗𝐈𝐍𝐅𝐎❗] 𝙽𝙾𝙼𝙱𝚁𝙴 𝙳𝙴 �
 let vid = (await youtubeSearch(text)).video[0]
 if (!vid) throw '*[❗𝐈𝐍𝐅𝐎❗] 𝙻𝙾 𝚂𝙸𝙴𝙽𝚃𝙾, 𝙽𝙾 𝙿𝚄𝙳𝙴 𝙴𝙽𝙲𝙾𝙽𝚃𝚁𝙰𝚁 𝙴𝙻 𝙰𝚄𝙳𝙸𝙾/𝚅𝙸𝙳𝙴𝙾, 𝙸𝙽𝚃𝙴𝙽𝚃𝙴 𝙲𝙾𝙽 𝙾𝚃𝚁𝙾 𝙽𝙾𝙼𝙱𝚁𝙴/𝚃𝙸𝚃𝚄𝙻𝙾*'
 conn.play = conn.play ? conn.play : {}
-if (conn.user.jid in conn.play) throw 'Todavia hay un video pendiente descargandode, intente de nuevo mas tarde'
+if (conn.user.jid in conn.play) throw 'Todɑviɑ hɑy un video pendiente descɑrgɑndode, intente de nuevo mɑs tɑrde'
 let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
 let _url = 'www.youtube.com/watch?v=' + videoId
 let url = 'http://www.youtube.com/watch?v=' + videoId
-let ptxt = `\t\t\t*‧ 📻 Descarga de YouTube 📻 ‧*
+let ptxt = `\t\t\t*× 📻 Descɑrgɑ de YouTube 📻 ×*
 
 *• Titulo:* ${title}
-*• Duración:* ${durationH}
-*• Visitas:* ${viewH}
-*• Publicado:* ${publishedTime}
+*• Durɑción:* ${durationH}
+*• Visitɑs:* ${viewH}
+*• Publicɑdo:* ${publishedTime}
 *• Url:* ${_url}`
-await conn.send2ButtonImg(m.chat, thumbnail, ptxt, author, 'AUDIO', `${usedPrefix}ytmp3 ${url}`, 'VIDEO', `${usedPrefix}ytmp4 ${url}`, m)
+let thumbyt = await (await fetch(vid.thumbnail)).buffer()
+await conn.send2ButtonImg(m.chat, thumbnail, ptxt, author, 'AUDIO', `${usedPrefix}ytmp3 ${url}`, 'VIDEO', `${usedPrefix}ytmp4 ${url}`, m, false, { thumbnail: thumbyt })
 }
 
 handler.help = ['play']
