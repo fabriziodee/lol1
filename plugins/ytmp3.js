@@ -10,6 +10,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   else limit = 100
   if (!args || !args[0]) throw 'Uhm ... where\'s the URL?'
   let vid = await aiovideodl(args[0])
+  m.reply(`${JSON.stringify(vid, null, 1)}`)
   let urld = vid.medias[0].url
   m.reply(urld)
   //let { thumbnail } = vid
