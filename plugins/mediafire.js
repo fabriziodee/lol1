@@ -15,19 +15,20 @@ let handler = async (m, { isOwner, isPrems, command, usedPrefix, text, args, con
      let res = await mediafiredl(args[0])
      let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
      let isLimit = (isPrems || isOwner ? limit : limit) * 1024 < filesize
-     let capt = `📭 *Mediafire Downloader*
+     m.reply(`${JSON.stringify(res, null, 1)}`)
+     /*let capt = `📭 *Mediafire Downloader*
 
 📝 *Name:* ${filename}
 🎚 *Size:* ${filesizeH}
 🗃 *Extension:* ${ext}
 📤 *Uploaded:* ${aploud}
-${isLimit ? `❌ *File size above ${limit} MB, download it yourself*\n` : ''}🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}` 
+${isLimit ? `❌ *File size above ${limit} MB, download it yourself*\n` : ''}🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}`*/ 
      
-     if(ss) await conn.sendFile(m.chat, ss, 'screenshot.png', capt, sentMsg, 0, {jpegThumbnail: ss})
+     //if(ss) await conn.sendFile(m.chat, ss, 'screenshot.png', capt, sentMsg, 0, {jpegThumbnail: ss})
      try {
-     if(!isLimit) await conn.sendMedia(m.chat, url, 0, {fileName: `${filename}`, mentions: [m.sender]})
+     //if(!isLimit) await conn.sendMedia(m.chat, url, 0, {fileName: `${filename}`, mentions: [m.sender]})
      } catch {
-      throw eror 
+      throw error 
   }
 }
 
