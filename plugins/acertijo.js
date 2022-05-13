@@ -17,8 +17,6 @@ let handler = async (m, { conn, usedPrefix }) => {
     let caption = `
 ⷮ *${json.question}*
 
-\`\`\`${clue}\`\`\`
-
 *• Tiempo:* ${(timeout / 1000).toFixed(2)} segundos
 *• Bono:* +${poin} Exp
 `.trim()
