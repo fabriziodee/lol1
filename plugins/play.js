@@ -19,10 +19,10 @@ let ptxt = `\t\t\t*× 📻 Descɑrgɑ de YouTube 📻 ×*
 *• Publicɑdo:* ${publishedTime}
 *• Url:* ${_url}`
 let ytimg = await (await fetch(thumbnail)).buffer()
-let ytplay =  await conn.prepareMessage(m.chat, ytimg, MessageType.image)
+let ytplay =  await conn.prepareMessage(m.chat, ytimg, MessageType.image, { thumbnail: ytimg })
 let gbutsan = [ {buttonId: `${usedPrefix}ytmp3 ${url}`, buttonText: {displayText: 'AUDIO'}, type: 1}, {buttonId: `${usedPrefix}ytmp4 ${url}`, buttonText: {displayText: 'VIDEO'}, type: 1} ]
 let gbuttonan = { imageMessage: ytplay.message.imageMessage, contentText: ptxt, footerText: '-', buttons: gbutsan, headerType: 4 }
-await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { quoted: m, thumbnail: ytimg })
+await conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { quoted: m })
 //await conn.send2ButtonImg(m.chat, thumbnail, ptxt, author, 'AUDIO', `${usedPrefix}ytmp3 ${url}`, 'VIDEO', `${usedPrefix}ytmp4 ${url}`, m, false, { thumbnail: thumbyt })
 }
 
