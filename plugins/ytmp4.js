@@ -18,7 +18,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   let det = vid.video['360p']
   let { fileSizeH } = det
   let size = fileSizeH
-  if (Number(size.split(' MB')[0]) >= 25.00) return m.reply('El archivo pesa más de 25 MB!')
+  if (Number(size.split(' MB')[0]) >= 25.00) return m.reply('El video pesa más de 25 MB!')
   await conn.reply(m.chat, `*↓ Descɑrgɑndo video:* www.youtube.com/watch?v=${vid.id}`, m)
   //await m.reply(`${JSON.stringify(vid, null, 1)}`)
   let url = await det.download()
@@ -29,7 +29,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   //await m.reply(`Error al descargar el video :/`)
   conn.sendFile(m.chat, url, `${vid.title}.mp4`, `${yp4}`, m)
   } finally {
-    await conn.reply(m.chat, '*✓* Video descargado', m)
+    //await conn.reply(m.chat, '*✓* Video descargado', m)
     delete conn.play[conn.user.jid]
   }
 }
