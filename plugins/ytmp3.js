@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
-
 const { aiovideodl, savefrom } = require('@bochilteam/scraper')
+
 let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   if (!text) throw `_URL Not Found_`
   let ras = `wrong url, this command to download video/shorts`
