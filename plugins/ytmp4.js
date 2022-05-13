@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
 
-let handler = async (m, { conn, text, args, isPrems, isOwner, isROwner }) => {
+let handler = async (m, { conn, text, args, isPrems, isOwner, isROwner, usedPrefix }) => {
   let user = global.DATABASE._data.users[m.sender]
   if (!text) throw `_URL Not Found_`
   let ras = `wrong url, this command to download video/shorts`
