@@ -9,7 +9,7 @@ if (conn.user.jid in conn.play) throw 'Todavia hay un video pendiente descargand
 let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
 let _url = 'www.youtube.com/watch?v=' + videoId
 let url = 'http://www.youtube.com/watch?v=' + videoId
-let ptxt = `\t\t*‧ 📻 Descarga de YouTube 📻 ‧*
+let ptxt = `\t\t\t*‧ 📻 Descarga de YouTube 📻 ‧*
 
 *• Titulo:* ${title}
 *• Duración:* ${durationH}
