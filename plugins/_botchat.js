@@ -54,7 +54,7 @@ let audio14B = audio14A.exec(m.text)
 let audio15A = /^(A|ª|ᵃ|a)$/i
 let audio15B = audio15A.exec(m.text)
 
-let audio16A = /Bot|bot/i
+let audio16A = /Bot |bot /i
 let audio16B = audio16A.exec(m.text)
 
 let audio17A = /Aver el poto|el poto|tu poto/i
