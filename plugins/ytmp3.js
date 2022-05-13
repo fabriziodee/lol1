@@ -2,7 +2,8 @@ let fetch = require('node-fetch')
 const { aiovideodl, savefrom } = require('@bochilteam/scraper')
 
 let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
-  if (!text) throw `_URL Not Found_`
+  m.reply(`En mantenimiento. . .`)
+  /*if (!text) throw `_URL Not Found_`
   let ras = `wrong url, this command to download video/shorts`
   if (!args[0].match(/(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)\/(watch|shorts)|(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)/gi)) throw ras
   //let limit
@@ -27,7 +28,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   } finally {
     //await conn.reply(m.chat, '*✓* Video descargado', m)
     delete conn.play[conn.user.jid]
-  }
+  }*/
 }
 
 handler.help = ['ytmp3']
