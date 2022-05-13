@@ -24,9 +24,10 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
 *🍄 Título:* {vid.title}
 *⭐ Link:* ${args[0]}
 `.trim()
-  await conn.sendFile(m.chat, url, `${vid.title}.mp4`, `${yp4}`, m)
+  await m.reply(`Error al descargar el video:/`)
+  //conn.sendFile(m.chat, url, `${vid.title}.mp4`, `${yp4}`, m)
   } finally {
-    await conn.reply(m.chat, '*✓* Video descargado', m)
+    //await conn.reply(m.chat, '*✓* Video descargado', m)
     delete conn.play[conn.user.jid]
   }
 }
