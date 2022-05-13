@@ -151,6 +151,6 @@ return new Intl.NumberFormat('en-GB', { notation: "compact", compactDisplay: "sh
 }
 
 function priceNum(num) {
-return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(global.DATABASE._data.users[m.quoted.sender].money).replace('.00', '').replace(/,/g, '.')
+return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num).replace('.00', '').replace(/,/g, '.')
 }
 
