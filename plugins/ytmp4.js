@@ -23,7 +23,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner }) => {
   //await m.reply(`${JSON.stringify(vid, null, 1)}`)
   let url = await det.download()
   let yp4 = `
-*🍄 Título:* {vid.title}
+*🍄 Título:* ${vid.title}
 *⭐ Link:* ${args[0]}
 `.trim()
   //await m.reply(`Error al descargar el video :/`)
