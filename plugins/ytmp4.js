@@ -30,9 +30,9 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, isROwner, usedPref
 *⭐ Link:* ${args[0]}
 `.trim()
   let thumbyt = await (await fetch(vid.thumbnail)).buffer()
-  await conn.sendFile(m.chat, url, `${vid.title}.mp4`, `${yp4}`, m, false, { thumbnail: thumbyt })
+  conn.sendFile(m.chat, url, `${vid.title}.mp4`, `${yp4}`, m, false, { thumbnail: thumbyt })
   } finally {
-    //await conn.reply(m.chat, '*✓* Video descargado', m)
+    await conn.reply(m.chat, '*✓* Video descargado!', m)
     delete conn.play[conn.user.jid]
   }
 }
