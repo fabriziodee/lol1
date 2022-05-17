@@ -46,8 +46,8 @@ const defaultMenu = {
 │◦ *Nombre:* Lolibot
 │◦ *Versión:* 7.0
 │◦ *Prefijo:* 「 *%p* 」
-│◦ *Batería:* 45%
-│◦ *Estado:* Cargando...
+│◦ *Batería:* %batery
+│◦ *Estado:* %batery2
 │◦ *Lenguɑje:* JavaScript
 │◦ *Libreria:* Baileys
 │◦ *Comandos:* %comand Totɑl
@@ -169,6 +169,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       navega: conn.browserDescription[1],
       version: conn.browserDescription[2],
       bio: biot.status == 401 ? 'Sin info' : biot.status,
+      batery: conn.battery ? `${conn.battery.value}%` : 'Desconocido',
+      batery2: conn.battery.live ? 'Cargando...' : 'Desconectado',
       greeting: ucapan(),
       lang: 'JavaScript',
       botname: 'LoliBot',
