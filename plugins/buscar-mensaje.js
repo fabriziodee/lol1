@@ -16,7 +16,7 @@ let handler  = async (m, { conn, text, participants }) => {
             //await conn.sendMessage(m.chat, "🔍 Mensaje", text, { quoted: el[i] });
           }
         } catch (e) {
-          m.reply("Mensaje no encontrado!");
+          m.reply(e) //"Mensaje no encontrado!");
         }
 }
 
