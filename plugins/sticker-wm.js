@@ -32,7 +32,7 @@ let handler = async (m, { conn, text }) => {
     if (stiker) await conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
-    else throw 'Balas stikernya!'
+    else throw error
   }
 }
 
