@@ -8,7 +8,7 @@ let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let ownernum = `global.owner[0].whatsapp.net`
-let emoji = ["🍬"] //["🐋", "🍅", "🥮", "⛲", "🎃"]
+let emoji = ["🍬", "🐋", "🍅", "🥮", "⛲", "🎃"]
 let tags = {
   'main': 'Menu 🍟',
   'rpg': 'Juego - RPG ⚔️',
@@ -38,17 +38,25 @@ let tags = {
   '': 'Sin - categoría 🏵️',
 }
 const defaultMenu = {
-  before: `Hola @%user, *¡%greeting!*
+  before: `Holɑ @%user, *¡%greeting!*
 
-*• Biografía:* %bio
+*• Biografíɑ:* %bio
 
-*%rmojiᐦ Bot Nɑme:* %botname
-*%rmojiᐦ Lenguɑje:* %lang
-*%rmojiᐦ Libreriɑ:* %lib
-*%rmojiᐦ Prefijo:* [ multiprefix ]
-*%rmojiᐦ Comɑndo:* %comand Totɑl
-*%rmojiᐦ Horɑ:* %time
-*%rmojiᐦ Fechɑ:* %date
+❒  *B O T - I N F O*
+│◦ *Nombre:* Lolibot
+│◦ *Versión:* 7.0
+│◦ *Prefijo:* 「 *%p* 」
+│◦ *Batería:* 45%
+│◦ *Estado:* Cargando...
+│◦ *Lenguɑje:* JavaScript
+│◦ *Libreria:* Baileys
+│◦ *Comandos:* %comand Totɑl
+╰•
+
+*• Fechɑ:* %date
+*• Horɑ:* %time
+
+Cuɑlquier bug o error en un comɑndo reportɑr con el comɑndo *%preport <bug/error>*
 `,
   header: '❒ *%category*',
   body: '│∙ *%cmd* %islimit %isPremium',
@@ -163,7 +171,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       bio: biot.status == 401 ? 'Sin info' : biot.status,
       greeting: ucapan(),
       lang: 'JavaScript',
-      botname: 'IoIibot-ofc',
+      botname: 'LoliBot',
       lib: 'Baileys',
       rmoji: ramoji,
       npmname: package.name,
