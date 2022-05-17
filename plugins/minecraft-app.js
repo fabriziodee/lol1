@@ -4,9 +4,9 @@ let handler  = async (m, { args, conn, text, participants }) => {
 await conn.copyNForward(m.chat, await conn.loadMessage("51940617554-1621199330@g.us", "3EB07C9628CE"), false, { quoted: m })
 }
 
-handler.help = ['minecraft']
-handler.tags = ['tools']
-handler.command = /^(mcpe|minecraft)$/i
+//handler.help = ['minecraft']
+//handler.tags = ['tools']
+handler.command = /^(mcpexxx|minecraftxxx)$/i
 
 handler.fail = null
 
