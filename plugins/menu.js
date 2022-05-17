@@ -43,7 +43,7 @@ const defaultMenu = {
 *• Biografíɑ:* %bio
 
 🍬 *Nombre:* Lolibot
-🍬 *Versión:* 7.0
+🍬 *Versión:* 7.0.0
 🍬 *Prefijo:* 「 *%p* 」
 🍬 *Batería:* %batery
 🍬 *Estado:* %batery2
