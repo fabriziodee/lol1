@@ -12,9 +12,8 @@ let handler  = async (m, { conn, text, participants }) => {
           m.reply(`✅ ${el.length} Mensajes encontrados`);
           await sleep(3000);
           for (let i = 0; i < el.length; i++) {
-            await conn.sendMessage(m.chat, "🔍 Mensaje", text, {
-              quoted: el[i],
-            });
+            await m.reply('🔍 Mensaje', false, { quoted: el[i] })
+            //await conn.sendMessage(m.chat, "🔍 Mensaje", text, { quoted: el[i] });
           }
         } catch (e) {
           m.reply("Mensaje no encontrado!");
