@@ -170,7 +170,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       version: conn.browserDescription[2],
       bio: biot.status == 401 ? 'Sin info' : biot.status,
       batery: conn.battery ? `${conn.battery.value}%` : 'Desconocido',
-      batery2: conn.battery.live ? 'Cargando...' : 'Desconectado',
+      batery2: conn.battery ? `${conn.battery.live ? 'Cargando...' : 'Desconectado'}` : 'Desconocido',
       greeting: ucapan(),
       lang: 'JavaScript',
       botname: 'LoliBot',
