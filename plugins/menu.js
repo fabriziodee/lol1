@@ -10,8 +10,8 @@ let levelling = require('../lib/levelling')
 let ownernum = `global.owner[0].whatsapp.net`
 let emoji = ["🍬", "🐋", "🍅", "🥮", "⛲", "🎃"]
 let tags = {
-  'main': 'Menu 🍟',
-  'rpg': 'Juego - RPG ⚔️',
+  'main': 'Menu 🧇',
+  'rpg': 'Juego - RPG 🌋',
   'game': 'Juegos 🎮',
   'xp': 'Exp & limite ✨',
   'sticker': 'Stickers 🧩',
@@ -38,7 +38,7 @@ let tags = {
   '': 'Sin - categoría 🏵️',
 }
 const defaultMenu = {
-  before: `Holɑ @%user, *¡%greeting!*
+  before: `Holɑ @%user 👋, *¡%greeting!*
 
 *• Biografíɑ:* %bio
 
