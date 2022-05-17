@@ -1,34 +1,23 @@
-let fs = require ('fs')
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+    if (!text) throw 'Ingrese el mensaje que quiera buscar!'
+    let split = text.split`|`
+    let result = await conn.searchMessages(split[0], m.chat, split[1] ? split[1] : 7, 1)
+    if (result.messages.length > 0) {
+        let total = result.messages.length
+        let sp = total < Number(split[1]) ? `Solo se encontró *${total}* mensaje` : `Se encontró *${total}* mensajes`
+        m.reply(sp)
 
-let handler  = async (m, { conn, text, participants }) => {
-  let teks = m.quoted ? m.quoted : m.quoted
-  if (!text) throw 'Ingrese el mensaje para buscar en este grupo!'
-  let v = await conn.searchMessages(text, m.chat, 10, 1);
-  let s = v.messages;
-  let el = s.filter((v) => v.message);
-        el.shift();
-        try {
-          if (el[0].message.conversation == undefined) return;
-          m.reply(`✅ ${el.length} Mensajes encontrados`);
-          await sleep(3000);
-          for (let i = 0; i < el.length; i++) {
-            await m.reply('🔍 Mensaje', false, { quoted: el[i] })
-            //await conn.sendMessage(m.chat, "🔍 Mensaje", text, { quoted: el[i] });
-          }
-        } catch (e) {
-          m.reply(e) //"Mensaje no encontrado!");
-        }
+        result.messages.map(async ({ key }) => {
+            let { remoteJid: _remoteJid, id: _ids } = key
+            let _message = await conn.loadMessage(_remoteJid, _ids)
+            conn.reply(m.chat, '🔍 Mensaje', _message)
+        })
+    }
 }
 
 handler.help = ['buscarmsg']
-handler.tags = ['group']
+handler.tags = ['tools']
 handler.command = /^(buscarmensaje|buscarmsg|searchmsg)$/i
 handler.group = true
 
-handler.fail = null
-
 module.exports = handler
-
-const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
-
