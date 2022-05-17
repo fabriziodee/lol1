@@ -42,7 +42,6 @@ const defaultMenu = {
 
 *• Biografíɑ:* %bio
 
-*B O T - I N F O*
 🍬 *Nombre:* Lolibot
 🍬 *Versión:* 7.0
 🍬 *Prefijo:* 「 *%p* 」
