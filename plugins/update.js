@@ -10,8 +10,7 @@ let handler = async (m, { conn, text }) => {
 handler.help = ['update']
 handler.tags = ['host']
 handler.command = /^(update|fix|actualizar)$/i
-handler.rowner = false
+handler.owner = true
 handler.fail = null
-handler.exp = 0
 
 module.exports = handler
