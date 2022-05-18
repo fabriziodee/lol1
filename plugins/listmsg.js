@@ -2,13 +2,22 @@
 let handler = async (m, { conn, command, usedPrefix, text }) => {
     let msgs = global.DATABASE._data.msgs
     let totalmsg = Object.keys(msgs).length
-    let msga = Object.entries(global.DATABASE._data.msgs).filter(ms => ms[1].mtype == 'image/webp')
+    let msgaa = Object.entries(global.DATABASE._data.msgs).filter(ms => ms[1].mtype == 'image/webp')
+    let msgbb = Object.entries(global.DATABASE._data.msgs).filter(ms => ms[1].mtype == 'image/jpeg')
+    let msgbb = Object.entries(global.DATABASE._data.msgs).filter(ms => ms[1].mtype == 'conversation')
+    
     m.reply(`\t\t\t*‧ 📂 Almɑcenɑmiento 📂 ‧*
 
 *Totɑl:* ${totalmsg} mensajes
 
 *• Stickers:*
-${msga ? '' + msga.map(([msgt], i) => `- ${!msgt.mtype == 'image/webp' ? '```Error```' : `${msgt}` }`).join('\n') : ''}
+${msgaa ? '' + msgaa.map(([msgt], i) => `- ${!msgt.mtype == 'image/webp' ? '```Error```' : `${msgt}` }`).join('\n') : ''}
+
+*• Imágenes:*
+${msgbb ? '' + msgbb.map(([msgt], i) => `- ${!msgt.mtype == 'image/jpeg' ? '```Error```' : `${msgt}` }`).join('\n') : ''}
+
+*• Mensajes:*
+${msgcc ? '' + msgcc.map(([msgt], i) => `- ${!msgt.mtype == 'conversation' ? '```Error```' : `${msgt}` }`).join('\n') : ''}
 
 Escriba *${usedPrefix}getmsg < mensaje >* para
 enviar un archivo del almacenamiento`)
