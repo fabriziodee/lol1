@@ -36,13 +36,13 @@ let handler = async (m, { conn, command, text, groupMetadata }) => {
 var top = 'INDEFINIDO'
        if (command.includes('gay')) {
        top = '🏳‍🌈 TOP 10 GAYS/LESBIANAS DEL GRUPO 🏳‍🌈'
-} else if (command.includes('furr@s')) {
+} else if (command.includes('furr')) {
        top = '🦊 TOP 10 FURROS/AS DEL GRUPO 🦊'
-} else if (command.includes('pajer@s')) {
+} else if (command.includes('pajer')) {
        top = '💦 TOP 10 PAJEROS/AS DEL GRUPO 💦'
 } else if (command.includes('otakus')) {
 	   top = '🏵️ TOP 10 OTAKUS DEL GRUPO 🏵️'
-} else if (command.includes('lindos')) {
+} else if (command.includes('lind')) {
        top = '🤩 TOP 10 LINDOS/AS DEL GRUPO 🤩'
 }
 
@@ -67,17 +67,11 @@ m.reply(_top, null, {
     })
 
 }
+
 handler.help = ['gays', 'pajer@s', 'furr@s', 'otakus'].map(v => 'top' + v + '')
 handler.tags = ['fun']
-handler.command = /^top(gays|pajer@s|furr@s|otakus|lindos)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
+handler.command = /^top(gays|pajer@s|pajeros|furr@s|furros|otakus|lindos|lindas|lindo)$/i
+handler.group = true
 
 handler.fail = null
 
