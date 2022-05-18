@@ -10,6 +10,6 @@ let handler = async (m, { command, usedPrefix, text }) => {
 handler.help = ['delmsg']
 handler.tags = ['database']
 handler.command = /^del|eliminar(msg|mensaje)$/
-handler.rowner = true
+//handler.rowner = true
 
 module.exports = handler
