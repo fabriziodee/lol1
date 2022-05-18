@@ -12,6 +12,6 @@ let handler = async (m, { command, usedPrefix, text }) => {
 handler.help = ['addmsg']
 handler.tags = ['database']
 handler.command = /^add|añadir(mensaje|msg)$/
-handler.rowner = true
+//handler.rowner = true
 
 module.exports = handler
