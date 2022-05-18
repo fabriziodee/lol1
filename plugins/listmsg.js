@@ -8,7 +8,7 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
 *Totɑl:* ${totalmsg} mensajes
 
 *• Stickers:*
-${msga ? '\n\n' + msga.map(([msgt], i) => `- ${msgt.mtype == 'image/webp' ? '```Error```' : `${msgt}``).join('\n\n') : ''}
+${msga ? '\n\n' + msga.map(([msgt], i) => `- ${msgt.mtype == 'image/webp' ? '```Error```' : `${msgt}`}`).join('\n\n') : ''}
 
 Escriba *${usedPrefix}getmsg < mensaje >* para
 enviar un archivo del almacenamiento`)
