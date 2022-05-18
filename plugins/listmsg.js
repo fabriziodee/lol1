@@ -9,7 +9,8 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
 *• Mensɑjes:*
 ${Object.keys(msgs).map(v => '- ' + v).join('\n')}
 
-Escriba *${usedPrefix}getmsg < mensaje >* para enviar un archivo del almacenamiento`)
+Escriba *${usedPrefix}getmsg < mensaje >* para
+enviar un archivo del almacenamiento`)
 }
 
 handler.help = ['listmsg']
