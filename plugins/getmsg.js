@@ -12,6 +12,6 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
 handler.help = ['getmsg']
 handler.tags = ['database']
 handler.command = /^ver|get(msg|mensaje)$/
-handler.rowner = true
+//handler.rowner = true
 
 module.exports = handler
