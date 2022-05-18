@@ -6,7 +6,7 @@ let handler = m => {
 ${Object.keys(msgs).map(v => '- ' + v).join('\n')}`)
 }
 
-handler.help = ['vn', 'msg', 'video', 'audio', 'img', 'sticker'].map(v => 'list' + v)
+handler.help = ['listmsg']
 handler.tags = ['database']
 handler.command = /^list|lista(msg|mensaje)$/
 
