@@ -1,14 +1,16 @@
 let handler = async (m, { conn, command, usedPrefix, text }) => {
-    let which = command.replace(/ver/i, '')
-    if (!text) throw `*✳️ Usar *${usedPrefix}list${which}* para ver la lista*`
+    //let which = command.replace(/ver/i, '')
+    if (!text) throw `Escriba ${usedPrefix}listmsg para ver la lista de mensajes!`
     let msgs = global.DATABASE._data.msgs
-    if (!text in msgs) throw `*'❗${text}' no registrado en la lista de mensajes*`
-    let _m = await conn.serializeM(msgs[text])
-    await _m.copyNForward(m.chat, true)
+    if (!text in msgs) throw `El mensaje *${text}* no esta registrado`
+    //let _m = await conn.serializeM(msgs[text])
+    //await _m.copyNForward(m.chat, true)
+    await conn.copyNForward(m.chat, await conn.loadMessage(msgs.jid, msgs.msg), false, { quoted: m })
 }
-handler.help = ['vn', 'msg', 'video', 'audio', 'img', 'sticker'].map(v => 'get' + v + '')
+
+handler.help = ['getmsg']
 handler.tags = ['database']
-handler.command = /^get(vn|msg|video|audio|img|sticker)$/
+handler.command = /^ver|get(msg|mensaje)$/
 handler.rowner = true
 
 module.exports = handler
