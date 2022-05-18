@@ -28,7 +28,7 @@ let tags = {
   'downloader': 'Descargas 📥',
   'tools': 'Ajustes ⚙️',
   'fun': 'Diverción 🎡',
-  'database': 'Database 📂',
+  'database': 'Almacenamiento 📂',
   'vote': 'Votación 🗳️',
   'jadibot': 'Jadi - bot 🤖',
   'owner': 'Creador 🐈',
