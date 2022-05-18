@@ -49,16 +49,16 @@ var top = 'INDEFINIDO'
 let _top = `
 *${top}*
     
-• 1. ${toM(a)}
-• 2. ${toM(b)}
-• 3. ${toM(c)}
-• 4. ${toM(d)}
-• 5. ${toM(e)}
-• 6. ${toM(f)}
-• 7. ${toM(g)}
-• 8. ${toM(h)}
-• 9. ${toM(i)}
-• 10. ${toM(j)}
+*• 01.* ${toM(a)}
+*• 02.* ${toM(b)}
+*• 03.* ${toM(c)}
+*• 04.* ${toM(d)}
+*• 05.* ${toM(e)}
+*• 06.* ${toM(f)}
+*• 07.* ${toM(g)}
+*• 08.* ${toM(h)}
+*• 09.* ${toM(i)}
+*• 10.* ${toM(j)}
 `.trim()
 m.reply(_top, null, {
         contextInfo: {
