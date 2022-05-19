@@ -13,7 +13,7 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
 
 handler.help = ['getmsg']
 handler.tags = ['database']
-handler.command = /^ver|get|envi(msg|mensaje|ar)$/
+handler.command = /^(ver|get|envi(msg|mensaje|ar))$/
 //handler.rowner = true
 
 module.exports = handler
