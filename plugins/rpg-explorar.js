@@ -15,7 +15,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let seed = (Math.floor(Math.random() * (5 - 10) + 10) + 1)
     let exp = (sword == 1 ? (Math.floor(Math.random() * (100 - 200) + 200) + 1) : '' || sword == 2 ? (Math.floor(Math.random() * (300 - 400) + 400) + 1) : '' || sword == 3 ? (Math.floor(Math.random() * (500 - 600) + 600) + 1) : '' || sword == 4 ? (Math.floor(Math.random() * (700 - 800) + 800) + 1) : '' || sword == 5 ? (Math.floor(Math.random() * (900 - 1000) + 1000) + 1) : '' )
     
-    let rann = (Math.floor(Math.random() * 17))
+    let rann = (Math.floor(Math.random() * 10))
     
     let durability = (Math.floor(Math.random() * (50 - 100) + 100) + 1)
     let healt = (Math.floor(Math.random() * (10 - 15) + 15) + 1)
@@ -63,8 +63,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     let mhealt = (sword == 1 ? (Math.floor(Math.random() * (10 - 20) + 20) + 1) : '' || sword == 2 ? (Math.floor(Math.random() * (30 - 40) + 40) + 1) : '' || sword == 3 ? (Math.floor(Math.random() * (50 - 60) + 60) + 1) : '' || sword == 4 ? (Math.floor(Math.random() * (70 - 80) + 80) + 1) : '' || sword == 5 ? (Math.floor(Math.random() * (90 - 100) + 100) + 1) : '' )
     let rmob = pickRandom(['slime de lava', 'slime de piedra', 'slime de hielo'])
     conn.rpg = conn.rpg ? conn.rpg : { }
-    if (m.chat in conn.rpg) return false
-    conn.rpg[m.chat] = { healt: 0, mob: rmob }
+    if (m.sender in conn.rpg) return false
+    conn.rpg[m.sender] = { healt: 0, mob: rmob }
     let _rpg = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
 "description": '*🌋 Pronto . . .*',
