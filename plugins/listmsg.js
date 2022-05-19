@@ -31,6 +31,6 @@ un mensɑje del ɑlmɑcenɑmiento`)
 
 handler.help = ['listmsg']
 handler.tags = ['database']
-handler.command = /^list|lista(msg|mensaje)$/
+handler.command = /^list|lista|stora|almacenami(ento|ge|msg|mensaje)$/
 
 module.exports = handler
