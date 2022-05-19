@@ -23,8 +23,8 @@ ${msgcc ? '' + msgcc.map(([msgt], i) => `- ${!msgt.mtype == 'conversation' ? '``
 *• Archivos:*
 ${msgdd ? '' + msgdd.map(([msgt], i) => `- ${!msgt.mtype == 'application/vnd.android.package-archive' ? '```Error```' : `${msgt}` }`).join('\n') : ''}
 
-Escribɑ *${usedPrefix}getmsg < mensɑje >* pɑrɑ
-enviɑr un ɑrchivo del ɑlmɑcenɑmiento`)
+Escribɑ *${usedPrefix}getmsg < mensɑje >* pɑrɑ enviɑr
+un mensɑje del ɑlmɑcenɑmiento`)
 }
 
 //${Object.keys(msgs).map(v => '- ' + v).join('\n')}
