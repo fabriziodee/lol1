@@ -76,8 +76,8 @@ return m.reply(opc)
   }
 }
 
-handler.help = ['menutype']
-handler.tags = ['owner']
-handler.command = /^(menutype)$/i
+//handler.help = ['menutype']
+//handler.tags = ['owner']
+handler.command = /^(menutypexxx)$/i
 
 module.exports = handler
