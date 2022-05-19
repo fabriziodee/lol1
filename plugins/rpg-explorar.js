@@ -57,11 +57,14 @@ let handler = async (m, { conn, usedPrefix }) => {
           } else m.reply(`Repara tu espada, escribiendo ${usedPrefix}reparar espada`)
        } else m.reply(`Tienes poca vida para ir a explorar, escribe *${usedPrefix}usar pocion* para regenerar tu vida`)
     } else m.reply(`Todavía no tienes una espada, compralo escribiendo *${usedPrefix}comprar espada* o puedes conseguir una gratis abriendo un cofre`)
- }
-
+    
+    
     if (rann == 0) {
     m.reply('Se hacerca...')
     }
+    
+
+}
 
 handler.help = ['explorar']
 handler.tags = ['rpg']
