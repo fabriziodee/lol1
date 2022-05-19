@@ -15,6 +15,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     let seed = (Math.floor(Math.random() * (5 - 10) + 10) + 1)
     let exp = (sword == 1 ? (Math.floor(Math.random() * (100 - 200) + 200) + 1) : '' || sword == 2 ? (Math.floor(Math.random() * (300 - 400) + 400) + 1) : '' || sword == 3 ? (Math.floor(Math.random() * (500 - 600) + 600) + 1) : '' || sword == 4 ? (Math.floor(Math.random() * (700 - 800) + 800) + 1) : '' || sword == 5 ? (Math.floor(Math.random() * (900 - 1000) + 1000) + 1) : '' )
     
+    let rann = (Math.floor(Math.random() * 17))
+    
     let durability = (Math.floor(Math.random() * (50 - 100) + 100) + 1)
     let healt = (Math.floor(Math.random() * (10 - 15) + 15) + 1)
     let potion = pickRandom(['0', '1', '0', '2', '0', '3', '0', '2', '0', '1', '0'])
@@ -56,6 +58,10 @@ let handler = async (m, { conn, usedPrefix }) => {
        } else m.reply(`Tienes poca vida para ir a explorar, escribe *${usedPrefix}usar pocion* para regenerar tu vida`)
     } else m.reply(`Todavía no tienes una espada, compralo escribiendo *${usedPrefix}comprar espada* o puedes conseguir una gratis abriendo un cofre`)
  }
+
+    if (rann == 0) {
+    m.reply('Se hacerca...')
+    }
 
 handler.help = ['explorar']
 handler.tags = ['rpg']
