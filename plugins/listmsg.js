@@ -6,6 +6,7 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
     let msgbb = Object.entries(global.DATABASE._data.msgs).filter(ms => ms[1].mtype == 'image/jpeg')
     let msgcc = Object.entries(global.DATABASE._data.msgs).filter(ms => ms[1].mtype == 'conversation')
     let msgdd = Object.entries(global.DATABASE._data.msgs).filter(ms => ms[1].mtype == 'application/vnd.android.package-archive')
+    let msgee = Object.entries(global.DATABASE._data.msgs).filter(ms => ms[1].mtype == 'audio/ogg; codecs=opus')
     
     m.reply(`\t\t\t*‧ 📂 Almɑcenɑmiento 📂 ‧*
 
@@ -22,6 +23,9 @@ ${msgcc ? '' + msgcc.map(([msgt], i) => `- ${!msgt.mtype == 'conversation' ? '``
 
 *• Archivos:*
 ${msgdd ? '' + msgdd.map(([msgt], i) => `- ${!msgt.mtype == 'application/vnd.android.package-archive' ? '```Error```' : `${msgt}` }`).join('\n') : ''}
+
+*• Audios:*
+${msgee ? '' + msgee.map(([msgt], i) => `- ${!msgt.mtype == 'audio/ogg; codecs=opus' ? '```Error```' : `${msgt}` }`).join('\n') : ''}
 
 Escribɑ *${usedPrefix}getmsg < mensɑje >* pɑrɑ enviɑr
 un mensɑje del ɑlmɑcenɑmiento`)
