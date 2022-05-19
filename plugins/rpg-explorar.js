@@ -19,7 +19,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let healt = (Math.floor(Math.random() * (10 - 15) + 15) + 1)
     let potion = pickRandom(['0', '1', '0', '2', '0', '3', '0', '2', '0', '1', '0'])
     let err = (sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': '')
-    let word = pickRandom(['a las tierras perdidas', 'a un volcan 🌋', 'al bosque 🌳 profundo', 'al fin del horizonte', 'al grito de cuervo', 'al valle del anochecer'])
+    let word = pickRandom(['a las tierras perdidas 🏯', 'a un volcan 🌋', 'al bosque 🌳 profundo'])
     
     let ar = (armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': '')
     let es = (sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': '')
@@ -32,7 +32,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     global.DATABASE._data.users[m.sender].lastadventure = new Date * 1
     global.DATABASE._data.users[m.sender].healt -= healt * 1
     global.DATABASE._data.users[m.sender].money += money * 1 
-    global.DATABASE._data.users[m.sender].money += trash * 1 
+    global.DATABASE._data.users[m.sender].trash += trash * 1 
     global.DATABASE._data.users[m.sender].potion += potion * 1 
     global.DATABASE._data.users[m.sender].seed += seed * 1
     global.DATABASE._data.users[m.sender].sworddurability -= durability * 1
