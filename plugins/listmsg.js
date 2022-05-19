@@ -14,17 +14,17 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
 *• Stickers:*
 ${msgaa ? '' + msgaa.map(([msgt], i) => `- ${!msgt.mtype == 'image/webp' ? '```Error```' : `${msgt}` }`).join('\n') : ''}
 
-*• Imágenes:*
+*• Imάgenes:*
 ${msgbb ? '' + msgbb.map(([msgt], i) => `- ${!msgt.mtype == 'image/jpeg' ? '```Error```' : `${msgt}` }`).join('\n') : ''}
 
-*• Mensajes:*
+*• Mensɑjes:*
 ${msgcc ? '' + msgcc.map(([msgt], i) => `- ${!msgt.mtype == 'conversation' ? '```Error```' : `${msgt}` }`).join('\n') : ''}
 
 *• Archivos:*
 ${msgdd ? '' + msgdd.map(([msgt], i) => `- ${!msgt.mtype == 'application/vnd.android.package-archive' ? '```Error```' : `${msgt}` }`).join('\n') : ''}
 
-Escriba *${usedPrefix}getmsg < mensaje >* para
-enviar un archivo del almacenamiento`)
+Escribɑ *${usedPrefix}getmsg < mensɑje >* pɑrɑ
+enviɑr un ɑrchivo del ɑlmɑcenɑmiento`)
 }
 
 //${Object.keys(msgs).map(v => '- ' + v).join('\n')}
