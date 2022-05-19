@@ -53,18 +53,12 @@ let handler = async (m, { conn, usedPrefix }) => {
 *Durabilidad:* -${durability}`)
           }, 0)
           
-             } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
-          } else m.reply(`Repara tu espada, escribiendo ${usedPrefix}reparar espada`)
-       } else m.reply(`Tienes poca vida para ir a explorar, escribe *${usedPrefix}usar pocion* para regenerar tu vida`)
-    } else m.reply(`Todavía no tienes una espada, compralo escribiendo *${usedPrefix}comprar espada* o puedes conseguir una gratis abriendo un cofre`)
-    
-    
     if (rann == 0) {
     let mhealt = (sword == 1 ? (Math.floor(Math.random() * (10 - 20) + 20) + 1) : '' || sword == 2 ? (Math.floor(Math.random() * (30 - 40) + 40) + 1) : '' || sword == 3 ? (Math.floor(Math.random() * (50 - 60) + 60) + 1) : '' || sword == 4 ? (Math.floor(Math.random() * (70 - 80) + 80) + 1) : '' || sword == 5 ? (Math.floor(Math.random() * (90 - 100) + 100) + 1) : '' )
     let rmob = pickRandom(['slime de lava', 'slime de piedra', 'slime de hielo'])
     conn.rpg = conn.rpg ? conn.rpg : { }
     if (m.sender in conn.rpg) return false
-    conn.rpg[m.sender] = { healt: 0, mob: rmob }
+    conn.rpg[m.sender] = { healt: mhealt, mob: rmob }
     let _rpg = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
 "description": '*🌋 Pronto . . .*',
@@ -85,6 +79,11 @@ let handler = async (m, { conn, usedPrefix }) => {
 conn.relayWAMessage(_rpg)
     }
     
+             } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
+          } else m.reply(`Repara tu espada, escribiendo ${usedPrefix}reparar espada`)
+       } else m.reply(`Tienes poca vida para ir a explorar, escribe *${usedPrefix}usar pocion* para regenerar tu vida`)
+    } else m.reply(`Todavía no tienes una espada, compralo escribiendo *${usedPrefix}comprar espada* o puedes conseguir una gratis abriendo un cofre`)
+
 
 }
 
