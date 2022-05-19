@@ -65,8 +65,24 @@ let handler = async (m, { conn, usedPrefix }) => {
     conn.rpg = conn.rpg ? conn.rpg : { }
     if (m.chat in conn.rpg) return false
     conn.rpg[m.chat] = { healt: 0, mob: rmob }
-    m.reply('Pronto...')
-    
+    let _rpg = conn.prepareMessageFromContent(m.chat, {
+"listMessage":  {
+"description": '*🌋 Pronto . . .*',
+"buttonText": "Opciones",
+"listType": "SINGLE_SELECT",
+"sections": [
+{
+"rows": [
+{
+"title": "Test",
+"rowId": `Test`
+},
+{
+"title": "Test 2",
+"rowId": `Test`
+}
+]}]}}, { quoted: m })
+conn.relayWAMessage(_rpg)
     }
     
 
