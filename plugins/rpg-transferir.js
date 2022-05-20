@@ -12,9 +12,9 @@ let handler = async (m, { conn, args, text, usedPrefix, command, DevMode }) => {
             case 'dinero':
             case 'dineros':
                 if (global.DATABASE._data.users[m.sender].money >= count * 1) {
-                        global.DATABASE._data.users[m.sender].money -= count * 1
-                        global.DATABASE._data.users[who].money += count * 1
-                        conn.reply(m.chat, `Se transfirió *${count}* de dinero`, m)
+                    global.DATABASE._data.users[m.sender].money -= count * 1
+                    global.DATABASE._data.users[who].money += count * 1
+                    conn.reply(m.chat, `Se transfirió *${count}* de dinero`, m)
                 } else conn.reply(m.chat, `No tienes suficiente *dinero* para transferir`, m)
                 break
                 
@@ -23,18 +23,18 @@ let handler = async (m, { conn, args, text, usedPrefix, command, DevMode }) => {
             case 'pociones':
             case 'pociónes':
                 if (global.DATABASE._data.users[m.sender].potion >= count * 1) {
-                        global.DATABASE._data.users[m.sender].potion -= count * 1
-                        global.DATABASE._data.users[who].potion += count * 1
-                        conn.reply(m.chat, `Se transfirió *${count}* de pocion`.trim(), m)
+                    global.DATABASE._data.users[m.sender].potion -= count * 1
+                    global.DATABASE._data.users[who].potion += count * 1
+                    conn.reply(m.chat, `Se transfirió *${count}* de pocion`.trim(), m)
                 } else conn.reply(m.chat, `No tienes suficientes pociones para transferir`.trim(), m)
                 break
                 
             case 'diamante':
             case 'diamantes':
                 if (global.DATABASE._data.users[m.sender].diamond >= count * 1) {
-                        global.DATABASE._data.users[m.sender].diamond -= count * 1
-                        global.DATABASE._data.users[who].diamond += count * 1
-                        conn.reply(m.chat, `Se transfirió *${count}* de diamante`.trim(), m)
+                    global.DATABASE._data.users[m.sender].diamond -= count * 1
+                    global.DATABASE._data.users[who].diamond += count * 1
+                    conn.reply(m.chat, `Se transfirió *${count}* de diamante`.trim(), m)
                 } else conn.reply(m.chat, `No tienes suficientes diamantes para transferir`.trim(), m)
                 break
 
