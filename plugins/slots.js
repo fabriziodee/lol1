@@ -2,11 +2,11 @@ let { MessageType } = require('@adiwajshing/baileys')
 
 let num = /([0-9])$/i
 
-let handler = async (m, { conn, text, isOwner }) => {
+let handler = async (m, { conn, text }) => {
     if (!text) throw 'Ingrese la una cantidad de dinero!'
     if (!num.test(text)) throw 'La cantidad debe ser un número'
     let money = text * 1
-    let _money = (isOwner ? 0 : money / 2)
+    let _money = text / 2
     let jackpot = Math.ceil(money * 5)
     let win = Math.ceil(money * 2)
     if (money < 70) throw 'Minimo 70 de dinero'
@@ -50,8 +50,8 @@ let handler = async (m, { conn, text, isOwner }) => {
         await conn.fakeReply(m.chat, `*[ 🎰 SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
     } else {
         end = "";
-        hasil = `${isOwner ? `*Ganaste x2!*\n+${win} de Dinero` : `*Suerte la próxima!*\n-${_money} de Dinero`}`;
-        gcha = `${x[0]} | ${y[0]} | ${z[0]}\n${isOwner ? '🥥 | 🥥 | 🥥' : `${x[1]} | ${y[1]} | ${z[1]}`} *⇐*\n${x[2]} | ${y[2]} | ${z[2]}`;
+        hasil = `*Suerte la próxima!*\n-${_money} de Dinero`;
+        gcha = `${x[0]} | ${y[0]} | ${z[0]}\n${x[1]} | ${y[1]} | ${z[1]} *⇐*\n${x[2]} | ${y[2]} | ${z[2]}`;
         global.DATABASE._data.users[m.sender].money -= _money * 1
         await conn.fakeReply(m.chat, `*[ 🎰 SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
     }
