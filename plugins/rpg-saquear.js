@@ -10,6 +10,8 @@ let handler = async (m, { conn, text, usedPrefix, command, groupMetadata }) => {
     if (global.DATABASE._data.users[_user] == undefined) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
     if (_user.startsWith(conn.user.jid.split`@`[0])) return m.reply('No puedes saquear a la bot :I')
     let user = global.DATABASE._data.users[m.sender]
+    let uuser = global.DATABASE._data.users[_user]
+    If (uuser.diamond >= 5) return m.reply('El usuario no tiene suficientes recursos')
     let __timers = (new Date - user.lastraid)
     let _timers = (cooldown - __timers)
     let timers = clockString(_timers)
