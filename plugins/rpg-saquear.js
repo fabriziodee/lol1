@@ -11,7 +11,6 @@ let handler = async (m, { conn, text, usedPrefix, command, groupMetadata }) => {
     if (_user.startsWith(conn.user.jid.split`@`[0])) return m.reply('No puedes saquear a la bot :I')
     let user = global.DATABASE._data.users[m.sender]
     let uuser = global.DATABASE._data.users[_user]
-    if (uuser.diamond <= 5) return m.reply('El usuario no tiene suficientes recursos')
     let __timers = (new Date - user.lastraid)
     let _timers = (cooldown - __timers)
     let timers = clockString(_timers)
@@ -28,6 +27,7 @@ let raid = `*Has saqueado ⚔️ a @${_user.split("@s.whatsapp.net")[0]}*
 ◦ Oro: ${gold}
 ◦ Madera: ${oak}`
     if (new Date - user.lastraid > cooldown) {
+      if (uuser.diamond <= 5) return m.reply('El usuario no tiene suficientes recursos!')
         global.DATABASE._data.users[_user].money -= money * 1
         global.DATABASE._data.users[_user].oak -= oak * 1
         global.DATABASE._data.users[_user].diamond -= diamond * 1
