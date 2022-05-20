@@ -1,4 +1,4 @@
-const { MessageType } = require("@adiwajshing/baileys");
+/*const { MessageType } = require("@adiwajshing/baileys");
 let { youtubeSearch } = require('@bochilteam/scraper')
 let fetch = require('node-fetch')
 
@@ -30,4 +30,4 @@ handler.help = ['play']
 handler.tags = ['downloader']
 handler.command = /^(play)$/i
 
-module.exports = handler
+module.exports = handler*/
