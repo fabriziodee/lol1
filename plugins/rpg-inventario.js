@@ -74,6 +74,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let usersmythic = sortedmythic.map(v => v[0])
     let userslegendary = sortedlegendary.map(v => v[0])
     let invt = fs.readFileSync('./storage/image/inventario.png')
+    if (global.DATABASE._data.users[who] == undefined) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
     let str = `\t\t\t\t*× 🌋 ESTADO 🌋 ×*
 
 *∙ 👤 Nombre:* @${who.split("@s.whatsapp.net")[0]}
