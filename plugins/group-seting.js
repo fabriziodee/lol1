@@ -8,13 +8,13 @@ switch (type) {
 case 'abrir':
 case 'open':
       conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, false)
-      m.reply('Grupo *abierto* ahora *todos los participantes* pueden escribir!')
+      m.reply('Grupo *abierto* ahora todos los *participantes* pueden escribir!')
       break
 
 case 'cerrar':
 case 'close':
       conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, true)
-      m.reply('Grupo *cerrado* ahora *solo los administradores/as* pueden escribir!')
+      m.reply('Grupo *cerrado* ahora solo los *administradores\'as* pueden escribir!')
       break
 
     default:
