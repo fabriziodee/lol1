@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, isOwner }) => {
     if (!text) throw 'Ingrese la una cantidad de dinero!'
     if (!num.test(text)) throw 'La cantidad debe ser un número'
     let money = text * 1
-    let _money = (isOwner ? money * 2 : money / 2)
+    let _money = (isOwner ? 0 : money / 2)
     let jackpot = Math.ceil(money * 5)
     let win = Math.ceil(money * 2)
     if (money < 70) throw 'Minimo 70 de dinero'
