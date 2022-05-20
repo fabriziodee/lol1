@@ -32,10 +32,13 @@ return m.reply(opc)
 
 }
 
+handler.help = ['grupo']
+handler.tags = ['group']
 handler.command = /^(grupo|group)$/i
+
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
 handler.fail = null
-handler.exp = 0
+
 module.exports = handler
