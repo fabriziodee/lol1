@@ -11,7 +11,7 @@ let handler = async (m) => {
 }
 
 handler.help = ['codigo']
-handler.tags = ['exp']
+handler.tags = ['xp']
 handler.command = /^(código|sn|codigo)$/i
 handler.register = true
 
