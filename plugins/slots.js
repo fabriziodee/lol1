@@ -51,7 +51,7 @@ let handler = async (m, { conn, text, isOwner }) => {
     } else {
         end = "";
         hasil = `${isOwner ? `*Ganaste x2!*\n+${win} de Dinero` : `*Suerte la próxima!*\n-${_money} de Dinero`}`;
-        gcha = `${x[0]} | ${y[0]} | ${z[0]}\nlet isLimitYt = ${isOwner ? '🥥 | 🥥 | 🥥' : `${x[1]} | ${y[1]} | ${z[1]}`} *⇐*\n${x[2]} | ${y[2]} | ${z[2]}`;
+        gcha = `${x[0]} | ${y[0]} | ${z[0]}\n${isOwner ? '🥥 | 🥥 | 🥥' : `${x[1]} | ${y[1]} | ${z[1]}`} *⇐*\n${x[2]} | ${y[2]} | ${z[2]}`;
         global.DATABASE._data.users[m.sender].money -= _money * 1
         await conn.fakeReply(m.chat, `*[ 🎰 SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
     }
