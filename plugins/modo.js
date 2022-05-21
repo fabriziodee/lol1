@@ -7,12 +7,14 @@ if (!text) return conn.send2Button(m.chat, `*Modo privado o público*`, 'elija u
 switch (type) {
 case 'publico':
 case 'public':
+      if (global.opts["self"]) return m.reply('El modo *público* ya está activado')
       global.opts["self"] = false
       m.reply('Se cambió a modo *público*!')
       break
 
 case 'self':
 case 'privado':
+      if (global.opts["self"]) return m.reply('El modo *privado* ya está activado')
       global.opts["self"] = true
       m.reply('Se cambió a modo *privado*!')
       break
