@@ -4,7 +4,7 @@ let num = /([0-9])$/i
 
 let handler = async (m, { conn, text }) => {
 
-    conn.slot = conn.slot ? conn.slot : {}
+    conn.slot = conn.slot ? conn.slot : { lastslot: 0 }
     let __waktur = (new Date - conn.slot[m.chat].lastslot || 0)
     let _waktur = (180000 - __waktur)
     let waktur = clockString(_waktur)
@@ -76,3 +76,16 @@ handler.tags = ['game']
 handler.command = /^(slot|girar)$/i
 
 module.exports = handler
+
+function clockString(seconds) {
+  d = Math.floor(seconds / (1000 * 60 * 60 * 24));
+  h = Math.floor((seconds / (1000 * 60 * 60)) % 24);
+  m = Math.floor((seconds / (1000 * 60)) % 60);
+  s = Math.floor((seconds / 1000) % 60);
+  
+  dDisplay = d > 0 ? d + (d == 1 ? " dia, " : " Dias, ") : "";
+  hDisplay = h > 0 ? h + (h == 1 ? " hora, " : " Horas, ") : "";
+  mDisplay = m > 0 ? m + (m == 1 ? " minuto, " : " Minutos, ") : "";
+  sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " Segundos") : "";
+  return dDisplay + hDisplay + mDisplay + sDisplay;
+};
