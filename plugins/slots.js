@@ -3,6 +3,11 @@ let { MessageType } = require('@adiwajshing/baileys')
 let num = /([0-9])$/i
 
 let handler = async (m, { conn, text }) => {
+
+    if let __waktur = (new Date - conn.slot[m.chat].lastslot)
+    let _waktur = (180000 - __waktur)
+    let waktur = clockString(_waktur)
+
     if (!text) throw 'Ingrese la una cantidad de dinero!'
     if (isNaN(Number(text))) return m.reply(`La cantidad debe ser un número`)
     let money = text * 1
@@ -15,6 +20,9 @@ let handler = async (m, { conn, text }) => {
     if (money < 70) throw 'Minimo 70 de dinero'
     let users = global.DATABASE._data.users
     if (money > users[m.sender].money) throw 'Su dinero no es suficiente'
+    conn.slot = conn.slot ? conn.slot : {}
+    if (new Date - conn.slot[m.chat].lastslot > 180000) {
+    conn.slot[m.chat] = { lastslot: new Date * 1 }
     let emojis = ["🍏","🍎","🍊","🍋","🍑","🪙","🍅","🍐","🍒","🥥","🍌"];
     let a = Math.floor(Math.random() * emojis.length);
     let b = Math.floor(Math.random() * emojis.length);
@@ -58,6 +66,7 @@ let handler = async (m, { conn, text }) => {
         global.DATABASE._data.users[m.sender].money -= _money * 1
         await conn.fakeReply(m.chat, `*[ 🎰 SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
     }
+  } else m.reply(`Espere {waktur}`)
 }
 
 handler.help = ['slot']
