@@ -7,6 +7,7 @@ let handler = async (m, { conn, text }) => {
     if (!num.test(text)) throw 'La cantidad debe ser un número'
     let money = text * 1
     if (money == NaN) return m.reply(`La cantidad debe ser un número`)
+    if (money == undefined) return m.reply(`La cantidad debe ser un número`)
     /*let _money = money / 2
     let jackpot = Math.ceil(money * 5)
     let win = Math.ceil(money * 2)
