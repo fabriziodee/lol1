@@ -3,7 +3,7 @@ let { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, args, text, usedPrefix, command, DevMode }) => {
         if (!text) return m.reply(`*Ejemplo, uso del comando*\n• ${usedPrefix + command} <tipo> <cantidad> <@tag>\n\n- Ejemplo: ${usedPrefix + command} dinero 100 @tag\n\n*Tipos de transferencias:*\n\n- Dinero\n- Diamante\n- Pocion`)
         let type = (args[0] || ' ').toLowerCase()
-        let count = args[1] && args[1].length > 0 ? Math.min(9999999, Math.max(parseInt(args[1]), 1)) : Math.min(1)
+        let count = args[1] && args[1].length > 0 ? Math.min(999999999999999, Math.max(parseInt(args[1]), 1)) : Math.min(1)
         let who = m.mentionedJid ? m.mentionedJid[0] : (args[2].replace(/[@ .+-]/g, '').replace(' ', '') + '@s.whatsapp.net')
         if(!m.mentionedJid || !args[2]) throw 'Etiqueta a alguien del grupo para realizar la transferencia!'
         let users = global.DATABASE._data.users
