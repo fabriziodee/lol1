@@ -4,7 +4,7 @@ let num = /([0-9])$/i
 
 let handler = async (m, { conn, text }) => {
 
-    conn.slot = conn.slot ? conn.slot : { lastslot: 0 }
+    await conn.slot = conn.slot ? conn.slot : { lastslot: 0 }
     let __waktur = (new Date - conn.slot[m.sender].lastslot || 0)
     let _waktur = (3000 - __waktur)
     let waktur = clockString(_waktur)
@@ -23,7 +23,7 @@ let handler = async (m, { conn, text }) => {
     if (money > users[m.sender].money) throw 'Su dinero no es suficiente'
     if (new Date - conn.slot[m.sender].lastslot > 3000) {
 
-    conn.slot[m.sender] = { lastslot: new Date * 1 }
+    await conn.slot[m.sender] = { lastslot: new Date * 1 }
 
     let emojis = ["🍏","🍎","🍊","🍋","🍑","🪙","🍅","🍐","🍒","🥥","🍌"];
     let a = Math.floor(Math.random() * emojis.length);
