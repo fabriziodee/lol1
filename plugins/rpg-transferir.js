@@ -14,7 +14,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command, DevMode }) => {
                 if (global.DATABASE._data.users[m.sender].money >= count * 1) {
                     global.DATABASE._data.users[m.sender].money -= count * 1
                     global.DATABASE._data.users[who].money += count * 1
-                    m.reply(`\t\t*‧ 🏦 Transferencia 🏦 ‧*\n\n*• Usuario:* @${m.sender.split("@s.whatsapp.net")[0]}\n*• Tipo:* dinero\n*• Cantidad:* ${count}\n*• Recibido:* @${who.split("@s.whatsapp.net")[0]}`)
+                    m.reply(`\t\t*‧ 🏦 Transferencia 🏦 ‧*\n\n*• Usuario:* @${m.sender.split("@s.whatsapp.net")[0]}\n*• Tipo:* dinero\n*• Cantidad:* ${shortNum(count)}\n*• Recibido:* @${who.split("@s.whatsapp.net")[0]}`)
                 } else conn.reply(m.chat, `No tienes suficiente *dinero* para transferir`, m)
                 break
                 
@@ -25,7 +25,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command, DevMode }) => {
                 if (global.DATABASE._data.users[m.sender].potion >= count * 1) {
                     global.DATABASE._data.users[m.sender].potion -= count * 1
                     global.DATABASE._data.users[who].potion += count * 1
-                    m.reply(`\t\t*‧ 🏦 Transferencia 🏦 ‧*\n\n*• Usuario:* @${m.sender.split("@s.whatsapp.net")[0]}\n*• Tipo:* poción\n*• Cantidad:* ${count}\n*• Recibido:* @${who.split("@s.whatsapp.net")[0]}`)
+                    m.reply(`\t\t*‧ 🏦 Transferencia 🏦 ‧*\n\n*• Usuario:* @${m.sender.split("@s.whatsapp.net")[0]}\n*• Tipo:* poción\n*• Cantidad:* ${shortNum(count)}\n*• Recibido:* @${who.split("@s.whatsapp.net")[0]}`)
                 } else conn.reply(m.chat, `No tienes suficientes pociones para transferir`.trim(), m)
                 break
                 
@@ -34,7 +34,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command, DevMode }) => {
                 if (global.DATABASE._data.users[m.sender].diamond >= count * 1) {
                     global.DATABASE._data.users[m.sender].diamond -= count * 1
                     global.DATABASE._data.users[who].diamond += count * 1
-                    m.reply(`\t\t*‧ 🏦 Transferencia 🏦 ‧*\n\n*• Usuario:* @${m.sender.split("@s.whatsapp.net")[0]}\n*• Tipo:* diamante\n*• Cantidad:* ${count}\n*• Recibido:* @${who.split("@s.whatsapp.net")[0]}`)
+                    m.reply(`\t\t*‧ 🏦 Transferencia 🏦 ‧*\n\n*• Usuario:* @${m.sender.split("@s.whatsapp.net")[0]}\n*• Tipo:* diamante\n*• Cantidad:* ${shortNum(count)}\n*• Recibido:* @${who.split("@s.whatsapp.net")[0]}`)
                 } else conn.reply(m.chat, `No tienes suficientes diamantes para transferir`.trim(), m)
                 break
 
@@ -52,3 +52,7 @@ handler.group = true
 handler.fail = null
 
 module.exports = handler
+
+function shortNum(num) {
+return new Intl.NumberFormat('en-GB', { notation: "compact", compactDisplay: "short" }).format(num)
+}
