@@ -51,20 +51,20 @@ let handler = async (m, { conn, text }) => {
     let end;
     if (a == b && b == c) {
         end = "";
-        hasil = `*Ganaste x3!*\n+${jackpot} de Dinero`;
+        hasil = `*Ganaste x3!*\n+${shortNum(jackpot)} de Dinero`;
         gcha = `${x[0]} | ${y[0]} | ${z[0]}\n${x[1]} | ${y[1]} | ${z[1]} *⇐*\n${x[2]} | ${y[2]} | ${z[2]}`;
         global.DATABASE._data.users[m.sender].money += jackpot
         await conn.fakeReply(m.chat, `*[ 🎰 SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
 
     } else if (a == b || a == c || b == c) {
         end = "";
-        hasil = `*Ganaste x2!*\n+${win} de Dinero`;
+        hasil = `*Ganaste x2!*\n+${shortNum(win)} de Dinero`;
         gcha = `${x[0]} | ${y[0]} | ${z[0]}\n${x[1]} | ${y[1]} | ${z[1]} *⇐*\n${x[2]} | ${y[2]} | ${z[2]}`;
         global.DATABASE._data.users[m.sender].money += win
         await conn.fakeReply(m.chat, `*[ 🎰 SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
     } else {
         end = "";
-        hasil = `*Suerte la próxima!*\n-${_money} de Dinero`;
+        hasil = `*Suerte la próxima!*\n-${shortNum(_money)} de Dinero`;
         gcha = `${x[0]} | ${y[0]} | ${z[0]}\n${x[1]} | ${y[1]} | ${z[1]} *⇐*\n${x[2]} | ${y[2]} | ${z[2]}`;
         global.DATABASE._data.users[m.sender].money -= _money * 1
         await conn.fakeReply(m.chat, `*[ 🎰 SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
@@ -90,3 +90,7 @@ function clockString(seconds) {
   sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " Segundos") : "";
   return dDisplay + hDisplay + mDisplay + sDisplay;
 };
+
+function shortNum(num) {
+return new Intl.NumberFormat('en-GB', { notation: "compact", compactDisplay: "short" }).format(num)
+}
