@@ -4,7 +4,7 @@ let num = /([0-9])$/i
 
 let handler = async (m, { conn, text }) => {
     if (!text) throw 'Ingrese la una cantidad de dinero!'
-    if (!num.test(text)) return m.reply'La cantidad debe ser un número')
+    if (isNaN(Number(text))) return m.reply(`La cantidad debe ser un número`)
     let money = text * 1
     if (isNaN(Number(money))) return m.reply(`La cantidad debe ser un número`)
     if (money == NaN) return m.reply(`La cantidad debe ser un número`)
