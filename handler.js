@@ -329,7 +329,7 @@ module.exports = {
             fail('unreg', m, this)
             continue
           }
-          if (plugin.nsfw && m.isGroup && isNsfw) { //Modo nsfw (+18)
+          if (plugin.nsfw && m.isGroup && !isNsfw) { //Modo nsfw (+18)
             fail('nsfw', m, this)
             continue
           }
