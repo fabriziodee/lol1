@@ -190,8 +190,9 @@ module.exports = {
       } catch (e) {
         console.error(e)
       }
+      let sOwner = [global.conn.user.jid, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
       if (opts['nyimak']) return
-      if (!m.fromMe && opts['self']) return
+      if (!m.fromMe && !sOwner && opts['self']) return
       if (m.chat == 'status@broadcast') return
       if (typeof m.text !== 'string') m.text = ''
       for (let name in global.plugins) {
