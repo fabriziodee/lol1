@@ -6,7 +6,7 @@ let handler = async (m, { conn, text }) => {
 
     conn.slot = conn.slot ? conn.slot : { lastslot: 0 }
     let __waktur = (new Date - conn.slot[m.chat].lastslot || 0)
-    let _waktur = (180000 - __waktur)
+    let _waktur = (18000000000 - __waktur)
     let waktur = clockString(_waktur)
 
     if (!text) throw 'Ingrese la una cantidad de dinero!'
@@ -21,7 +21,7 @@ let handler = async (m, { conn, text }) => {
     if (money < 70) throw 'Minimo 70 de dinero'
     let users = global.DATABASE._data.users
     if (money > users[m.sender].money) throw 'Su dinero no es suficiente'
-    if (new Date - conn.slot[m.chat].lastslot > 180000) {
+    if (new Date - conn.slot[m.chat].lastslot > 18000000000) {
 
     conn.slot[m.chat] = { lastslot: new Date * 1 }
 
