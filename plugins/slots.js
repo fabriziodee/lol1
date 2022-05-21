@@ -5,7 +5,7 @@ let num = /([0-9])$/i
 let handler = async (m, { conn, text }) => {
 
     conn.slot = conn.slot ? conn.slot : {}
-    conn.slot = conn.slot ? conn.slot : conn.slot[m.sender] = { lastslot: 0 }
+    conn.slot[m.sender] = { lastslot: 0 }
     let __waktur = (new Date - conn.slot[m.sender].lastslot)
     let _waktur = (3000 - __waktur)
     let waktur = clockString(_waktur)
