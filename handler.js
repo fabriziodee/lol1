@@ -154,36 +154,38 @@ module.exports = {
         if (typeof chat !== 'object') global.DATABASE._data.chats[m.chat] = {}
         if (chat) {
           if (!('isBanned' in chat)) chat.isBanned = false
-          if (!('nsfw' in chat)) chat.isNsfw = false
           if (!('welcome' in chat)) chat.welcome = false
+          if (!('bye' in chat)) chat.bye = false
           if (!('detect' in chat)) chat.detect = false
           if (!('sWelcome' in chat)) chat.sWelcome = ''
           if (!('sBye' in chat)) chat.sBye = ''
           if (!('sPromote' in chat)) chat.sPromote = ''
           if (!('sDemote' in chat)) chat.sDemote = ''
-          if (!('menu' in chat)) chat.menu = 5
           if (!('delete' in chat)) chat.delete = false
           if (!('antidelete' in chat)) chat.antidelete = false
-          if (!('antilink' in chat)) chat.antiLink = false
-          if (!('simih' in chat)) chat.antiLink = false
+          if (!('antilink' in chat)) chat.antilink = false
+          if (!('antifake' in chat)) chat.antifake = false
+          if (!('antitoxic' in chat)) chat.antitoxic = false
+          if (!('simih' in chat)) chat.simih = false
+          if (!('nsfw' in chat)) chat.nsfw = false
           if (!('event' in chat)) chat.event = false
-          if (!('antitoxic' in chat)) chat.antiToxic = false
         } else global.DATABASE._data.chats[m.chat] = {
           isBanned: false,
-          nsfw: false,
-          welcome: false, 
+          welcome: false,
+          bye: false,
           detect: false,
           sWelcome: '',
           sBye: '',
           sPromote: '',
           sDemote: '',
-          menu: 5,
           delete: false,
           antidelete: false,
           antilink: false,
-          simih: false,
-          event: false,
+          antifake: false,
           antitoxic: false,
+          simih: false,
+          nsfw: false,
+          event: false
         }
       } catch (e) {
         console.error(e)
@@ -325,6 +327,10 @@ module.exports = {
             fail('unreg', m, this)
             continue
           }
+          if (plugin.nsfw && m.isGroup) { // Private Chat Only
+            fail('nsfw', m, this)
+            continue
+          }
 
           m.isCommand = true
           let xp = 'exp' in plugin ? parseInt(plugin.exp) : 15 // XP Earning per command
@@ -434,7 +440,7 @@ module.exports = {
 switch (action) {
       case 'add':
         for (let user of participants) {
-        let puser = user
+        if (!chat.antifake) {
         if (puser.startsWith(conn.user.jid)) return false
         if (puser.startsWith('9')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('1')) return this.groupRemove(jid, [puser])
@@ -445,7 +451,8 @@ switch (action) {
 	if (puser.startsWith('55')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('62')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('88')) return this.groupRemove(jid, [puser])
-	if (!chat.welcome) return 
+	}
+        if (!chat.welcome) return 
         let duser = user
         let groupMetadata = await this.groupMetadata(jid)
         let _biot = await this.getStatus(duser)
@@ -572,12 +579,12 @@ global.dfail = (type, m, conn) => {
     premium: '• Estɑ función solo puede ser utilizɑdo por usuɑrios *premium*',
     group: '• Estɑ función solo puede ser utilizɑdo en *grupos*',
     private: '• Estɑ función solo puede ser utilizɑdo en el *chɑt privɑdo*',
+    nsfw: '• En este grupo estɑ prohibido el contenido +18',
     admin: '• Estɑ función solo puede ser utilizɑdo por los *ɑdministrɑdores\'ɑs* del grupo',
     botAdmin: '• Debo ser *ɑdministrɑdorɑ* pɑrɑ utilizɑr estɑ función',
     unreg: '*• Registrese pɑrɑ utilizɑr estɑ función*\n\n*Ejemplo de uso:*\n1. .reg <nombre|edɑd>\n2. .reg Gɑtito|17'
   }[type]
   if (msg) return m.reply(msg, false, { sendEphemeral: true })
-  //m.reply(msg)
 }
 
 let fs = require('fs')
