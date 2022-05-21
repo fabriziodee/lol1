@@ -68,7 +68,7 @@ let handler = async (m, { conn, text }) => {
         global.DATABASE._data.users[m.sender].money -= _money * 1
         await conn.fakeReply(m.chat, `*[ 🎰 SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
     }
-  } else m.reply(`Espere {waktur}`)
+  } else m.reply(`Espere ${waktur}`)
 }
 
 handler.help = ['slot']
