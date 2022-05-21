@@ -6,7 +6,7 @@ await conn.fakeReply(m.chat, `*[ 🎰 SLOT 🎰 ]*
 🍌 | 🪙 | 🍋
 🍑 | 🍑 | 🍑 *⇐*
 🍎 | 🍅 | 🪙
-*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `*Ganaste x3*\n+${shortNum(25062811.5)} de Dinero`, 'status@broadcast')
+*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `*Ganaste x3*\n+${shortNum(75188434.5)} de Dinero`, 'status@broadcast')
 //Test
 }
 
