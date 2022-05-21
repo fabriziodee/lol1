@@ -4,7 +4,7 @@ let num = /([0-9])$/i
 
 let handler = async (m, { conn, text }) => {
 
-    if let __waktur = (new Date - conn.slot[m.chat].lastslot)
+    let __waktur = (new Date - conn.slot[m.chat].lastslot)
     let _waktur = (180000 - __waktur)
     let waktur = clockString(_waktur)
 
