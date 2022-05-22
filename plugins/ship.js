@@ -35,7 +35,7 @@ let handler = async (m, { conn, command, text, groupMetadata }) => {
 
 let crz = (pickRandom(['💖', '❤', '💞', '💓', '💗', '❣', '💟']))
 
-let ship = `${toM(a)} ${crz} ${toM(b)}`
+let ship = `*${toM(a)} ${crz} ${toM(b)}*`
 m.reply(ship)
 
 }
