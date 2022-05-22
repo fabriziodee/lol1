@@ -11,15 +11,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
 
 handler.help = ['screenshot']
 handler.tags = ['internet']
-handler.command = /^(screenshot|captura)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
+handler.command = /^(screenshot|captura|cap|capfull)$/i
 
 handler.fail = null
 
