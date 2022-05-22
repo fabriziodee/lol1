@@ -50,14 +50,12 @@ case '+18':
       break
 
     default:
-let opc = `
-\t\t\t*✗ | Activar*
+let opc = `\t\t\t*✗ | Activar*
 
 ‧ antienlace
 ‧ antifake
 ‧ nsfw
-‧ bienvenida
-`.trim()
+‧ bienvenida`
 return m.reply(opc)
   }
 }
