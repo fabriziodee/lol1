@@ -1,4 +1,5 @@
 let handler = async (m, { conn }) => {
+  if (global.opts["self"] == false) return m.reply('El modo *público* está activado!')
   if (!(m.chat in global.DATABASE._data.chats)) return m.reply('Este grupo no está registrado en la base de datos!')
   let chat = global.DATABASE._data.chats[m.chat]
   if (!chat.isBanned) return m.reply('Este grupo no está baneado!')
@@ -11,11 +12,7 @@ handler.tags = ['owner']
 handler.command = /^(unbanchat)$/i
 handler.owner = true
 handler.mods = true
-handler.premium = false
 handler.group = true
-handler.private = false
-
-handler.admin = false
 handler.botAdmin = true
 
 handler.fail = null
