@@ -18,7 +18,6 @@ handler.owner = true
 
 module.exports = handler
 
-const axios = require('axios')
 
 function convertSticker(base64, author, pack){
  return new Promise((resolve, reject) =>{
