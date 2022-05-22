@@ -4,7 +4,7 @@ let axios = require('axios')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   let [packname, ...author] = text.split`|`
-  let author = (author || []).join`|`
+  author = (author || []).join`|`
   let q = m.quoted ? m.quoted : m
   let mime = m.quoted.mimetype || ''
   if (/webp/.test(mime)) {
