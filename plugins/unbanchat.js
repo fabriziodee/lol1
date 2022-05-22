@@ -1,5 +1,5 @@
 let handler = async (m, { conn }) => {
-  if (global.opts["self"] == false) return m.reply('El modo *público* está activado!')
+  if (global.opts["self"] == true) return m.reply('El modo *privado* está activado!')
   if (!(m.chat in global.DATABASE._data.chats)) return m.reply('Este grupo no está registrado en la base de datos!')
   let chat = global.DATABASE._data.chats[m.chat]
   if (!chat.isBanned) return m.reply('Este grupo no está baneado!')
