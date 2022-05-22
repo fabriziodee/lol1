@@ -33,7 +33,9 @@ let handler = async (m, { conn, command, text, groupMetadata }) => {
     do j = ps[Fl(R() * ps.length)]
     while (b === a)
 
-let ship = `${toM(a)} + ${toM(b)}`
+let crz = (pickRandom(['💖', '❤', '💞', '💓', '💗', '❣', '💟']))
+
+let ship = `${toM(a)} ${crz} ${toM(b)}`
 m.reply(ship)
 
 }
@@ -46,3 +48,5 @@ handler.group = true
 handler.fail = null
 
 module.exports = handler
+
+function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
