@@ -2,19 +2,24 @@ let { MessageType } = require("@adiwajshing/baileys");
 let fetch = require('node-fetch')
 let axios = require('axios')
 
-let handler = async (m, { conn }) => {
-
-let encmediats = JSON.parse(JSON.stringify(m).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-let dlfile = await conn.downloadMediaMessage(encmediats)
-let bas64 = `data:image/jpeg;base64,${dlfile.toString('base64')}`
-var mantap = await convertSticker(bas64, `test`, `test 2`)
-var imageBuffer = new Buffer.from(mantap, 'base64');
-conn.sendMessage(m.chat, imageBuffer, MessageType.sticker, { quoted: m })
-
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+  let [packname, ...author] = text.split`|`
+  let author = (author || []).join`|`
+  let q = m.quoted ? m.quoted : m
+  let mime = m.quoted.mimetype || ''
+  if (/webp/.test(mime)) {
+  let encmediats = JSON.parse(JSON.stringify(m).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+  let dlfile = await conn.downloadMediaMessage(encmediats)
+  let bas64 = `data:image/jpeg;base64,${dlfile.toString('base64')}`
+  var mantap = await convertSticker(bas64, packname || '', author || '')
+  var imageBuffer = new Buffer.from(mantap, 'base64');
+  conn.sendMessage(m.chat, imageBuffer, MessageType.sticker, { quoted: m })
+  } else error
 }
 
-handler.command = /^(test)$/i
-handler.owner = true
+handler.help = ['wm']
+handler.tags = ['sticker']
+handler.command = /^(wm|take)$/i
 
 module.exports = handler
 
