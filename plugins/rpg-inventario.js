@@ -26,9 +26,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let stone = global.DATABASE._data.users[who].stone
     
     //Madera
-    let jungle = global.DATABASE._data.users[who].jungle
-    let birch = global.DATABASE._data.users[who].birch
-    let oak = global.DATABASE._data.users[who].oak
+    let wood = global.DATABASE._data.users[who].wood
     
     //Cultivos - frutas
     let strawberry = global.DATABASE._data.users[who].strawberry
@@ -107,10 +105,6 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 🔩 Hierro:* ${iron}
 *∙ 🪨 Piedra:* ${stone}
 
-*∙ 🌳 Ma. de jungla:* ${jungle}
-*∙ 🌲 Ma. de abedul:* ${birch}
-*∙ 🪵 Ma. de roble:* ${oak}
-
 *∙ 🍓 Fresa:* ${strawberry}
 *∙ 🍉 Sandía:* ${watermelon}
 *∙ 🍇 Uva:* ${grape}
@@ -120,6 +114,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 🐡 Pez globo:* ${blowfish}
 *∙ 🐟 Pez comun:* ${commonfish}
 
+*∙ 🪵 Madera:* ${wood}
 *∙ 🧪 Poción:* ${potion}
 *∙ 🌱 Semilla:* ${seed}
 *∙ 📦 Caja:* ${box}
