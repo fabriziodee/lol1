@@ -47,9 +47,7 @@ module.exports = {
             if (!isNumber(user.stone)) user.stone = 0
             
             //Madera
-            if (!isNumber(user.jungle)) user.jungle = 0
-            if (!isNumber(user.birch)) user.birch = 0
-            if (!isNumber(user.oak)) user.oak = 0
+            if (!isNumber(user.wood)) user.wood = 0
             
             //Cultivos - frutas
             if (!isNumber(user.strawberry)) user.strawberry = 0
@@ -102,25 +100,33 @@ module.exports = {
             limit: 10,
             money: 0,
             lastclaim: 0,
+
+            //Otros items
             chest: 0,
             box: 0,
             potion: 0,
             trash: 0,
             seed: 0,
+            wood: 0,
+
+            //Minerales
             diamond: 0,
             gold: 0,
             iron: 0,
             stone: 0,
-            jungle: 0,
-            birch: 0,
-            oak: 0,
+
+            //Frutas
             strawberry: 0,
             watermelon: 0,
             grape: 0,
             kiwi: 0,
+
+            //Peces
             blowfish: 0,
             tropicalfish: 0,
             commonfish: 0,
+
+            //otros
             Banneduser: false,
             BannedReason: '',
             warn: 0,
