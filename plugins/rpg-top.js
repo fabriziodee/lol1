@@ -1,10 +1,5 @@
 let handler = async (m, { conn, args }) => {
-let type = (args[0] || ' ').toLowerCase()
 
-switch (type) {
-
-case 'dinero':
-case 'money':
   let name = m.fromMe ? conn.user : conn.contacts[m.sender] 
   let sortedExp = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].exp - a[1].exp)
   let sortedLim = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].limit - a[1].limit)
@@ -15,6 +10,13 @@ case 'money':
   let usersmoney = sortedmoney.map(v => v[0])
   let userslevel = sortedlevel.map(v => v[0])
   let len = args[1] && args[1].length > 1 ? Math.min(100, Math.max(parseInt(args[1]), 5)) : Math.min(10, sortedExp.length)
+
+let type = (args[0] || ' ').toLowerCase()
+
+switch (type) {
+
+case 'dinero':
+case 'money':
   let text = `\t\t\t*乂 T O P  -  D I N E R O*
 
 *• Posicion:* *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
