@@ -49,7 +49,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 ╭──────────────────✾
 ├ *✨Exp:* ${exp - min}/${max}
 ├ *📚Nivel:* ${level}
-├ *🏅Rango:* HIERRO I
+├ *🏅Rango:* ORO III
 ╰──────────────────✾
 
 *Nota: puedes ganar exp enviando mensajes o jugando mini juegos*`
