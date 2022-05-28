@@ -17,17 +17,6 @@ let type = (args[0] || ' ').toLowerCase()
 
 switch (type) {
 
-case 'dinero':
-case 'money':
-  dinero = `\t\t\t*乂 T O P  -  D I N E R O*
-
-*• Posicion:* *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
-
-${sortedmoney.slice(0, len).map(([user, data], i) => '*' + (i + 1) + `. @${user.split`@`[0]}*\n*💵 Dinero:* ${shortNum(data.money)}`).join`\n╶\n`}
-`
-  m.reply(dinero)
-break
-
 case 'exp':
 case 'xp':
 case 'experiencia':
@@ -38,6 +27,28 @@ case 'experiencia':
 ${sortedExp.slice(0, len).map(([user, data], i) => '*' + (i + 1) + `. @${user.split`@`[0]}*\n*✨ Exp:* ${shortNum(data.exp)}`).join`\n╶\n`}
 `
   m.reply(exp)
+break
+
+case 'limit':
+case 'limite':
+  exp = `\t\t\t\t*乂 T O P  -  L I M I T E*
+
+*• Posicion:* *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
+
+${sortedLim.slice(0, len).map(([user, data], i) => '*' + (i + 1) + `. @${user.split`@`[0]}*\n*🎟️ Limite:* ${shortNum(data.limit)}`).join`\n╶\n`}
+`
+  m.reply(exp)
+break
+
+case 'dinero':
+case 'money':
+  dinero = `\t\t\t*乂 T O P  -  D I N E R O*
+
+*• Posicion:* *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
+
+${sortedmoney.slice(0, len).map(([user, data], i) => '*' + (i + 1) + `. @${user.split`@`[0]}*\n*💵 Dinero:* ${shortNum(data.money)}`).join`\n╶\n`}
+`
+  m.reply(dinero)
 break
 
 default:
