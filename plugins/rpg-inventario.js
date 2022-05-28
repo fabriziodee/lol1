@@ -73,6 +73,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let userslegendary = sortedlegendary.map(v => v[0])
     let invt = fs.readFileSync('./storage/image/inventario.png')
     if (global.DATABASE._data.users[who] == undefined) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
+    let items = (diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash)
     let str = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
 *❤ Vida:* ${healt}
@@ -80,6 +81,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *📈 Nivel:* ${level}
 *🌟 Exp:* ${exp}
 *✨ Exp nivel:* ${user.exp - min}/${max}
+
 
 *👕 Armadura de:* ${armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': ''}
 *↪️ Durabilidad:* ${ardurability}
@@ -95,6 +97,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 *🎣 Caña:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : ''}
 *↪️ Durabilidad:* ${rdurability}
+
 
 \t\t\t\t*乂 I T E M S*
 
@@ -123,7 +126,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *🗑️ Basura:* ${trash}
 *🧰 Cofre:* ${chest}
 
-*🍱 Total inv:* ${shortNum(diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash)} items`
+*🍱 Total inv:* ${shortNum(items)} items
+`
 
     let type = (args[0] || ' ').toLowerCase()
 
