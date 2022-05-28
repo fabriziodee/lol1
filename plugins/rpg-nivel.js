@@ -20,7 +20,9 @@ let handler = async (m, { conn, usedPrefix }) => {
     let prem = global.prems.includes(who.split`@`[0])
 
     var per = '□□□□□□□□□□ 0%'
-    const resl = Math.floor((exp - min * 100) / max)
+    let xl = exp - min
+    let zl = max
+    let resl = Math.floor((xl * 100) / zl)
     if (resl <= 10) {
 	per = `■□□□□□□□□□ ${resl}%`
     } else if (resl <= 20) {
