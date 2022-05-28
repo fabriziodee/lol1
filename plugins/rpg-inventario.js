@@ -149,7 +149,7 @@ handler.command = /^(inventario|inventory|inv)$/i
 module.exports = handler
 
 function reText(text) {
-return rtext
+return text.replace(/a/g, 'ɑ')
 }
 
 const more = String.fromCharCode(8206)
