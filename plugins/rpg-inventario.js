@@ -78,9 +78,9 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 *❤ Vida:* ${healt}
 *💵 Dinero:* ${shortNum(money)}
-*📈 Nivel:* ${level}
-*🌟 Exp:* ${exp}
-*✨ Exp nivel:* ${user.exp - min}/${max}
+*⭐ Nivel:* ${level}
+*✨ Exp:* ${exp}
+*🆙️ Exp nivel:* ${user.exp - min}/${max}
 
 
 *${armor == 5 ? '👕': '🎽'} Armadura de:* ${armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': ''}
@@ -114,9 +114,9 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *🥝 Kiwi:* ${kiwi}
 
 *Peces*
-*🐠 Pez tropical:* ${tropicalfish}
-*🐡 Pez globo:* ${blowfish}
-*🐟 Pez comun:* ${commonfish}
+*🐠 Tropical:* ${tropicalfish}
+*🐡 Globo:* ${blowfish}
+*🐟 Comun:* ${commonfish}
 
 *Otros items*
 *🪵 Madera:* ${wood}
