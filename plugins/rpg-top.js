@@ -31,7 +31,8 @@ break
 
 case 'limit':
 case 'limite':
-  limite = `\t\t\t\t*乂 T O P  -  L I M I T E*
+case 'límite':
+  limite = `\t\t\t*乂 T O P  -  L I M I T E*
 
 *• Posicion:* *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
 
@@ -47,6 +48,17 @@ case 'money':
 *• Posicion:* *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
 
 ${sortedmoney.slice(0, len).map(([user, data], i) => '*' + (i + 1) + `. @${user.split`@`[0]}*\n*💵 Dinero:* ${shortNum(data.money)}`).join`\n╶\n`}
+`
+  m.reply(dinero)
+break
+
+case 'nivel':
+case 'level':
+  dinero = `\t\t\t*乂 T O P  -  N I V E L*
+
+*• Posicion:* *${userslevel.indexOf(m.sender) + 1}* de *${userslevel.length}*
+
+${sortedlevel.slice(0, len).map(([user, data], i) => '*' + (i + 1) + `. @${user.split`@`[0]}*\n*⭐ Nivel:* ${shortNum(data.level)}`).join`\n╶\n`}
 `
   m.reply(dinero)
 break
