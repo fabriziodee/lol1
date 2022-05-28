@@ -128,6 +128,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 *🍱 Total inv:* ${shortNum(items)} items
 `
+const reText = m.text.replace(/a/g, 'ɑ')
 m.reply(reText(inv))
     //let type = (args[0] || ' ').toLowerCase()
 
@@ -150,8 +151,6 @@ module.exports = handler
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
-
-const reText = m.text.replace(/a/g, 'ɑ')
 
 function shortNum(num) {
 return new Intl.NumberFormat('en-GB', { notation: "compact", compactDisplay: "short" }).format(num)
