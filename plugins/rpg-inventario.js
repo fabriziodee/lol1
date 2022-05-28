@@ -73,11 +73,9 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let userslegendary = sortedlegendary.map(v => v[0])
     let invt = fs.readFileSync('./storage/image/inventario.png')
     if (global.DATABASE._data.users[who] == undefined) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
-    let str = `\t\t\t\t*× 🌋 ESTADO 🌋 ×*
+    let str = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
-*∙ 👤 Nombre:* @${who.split("@s.whatsapp.net")[0]}
-*∙ ♥️ Vida:* ${healt}
-
+*∙ ❤ Vida:* ${healt}
 *∙ 💵 Dinero:* ${priceNum(money)}
 *∙ 📈 Nivel:* ${level}
 *∙ 🌟 Exp:* ${exp}
@@ -98,22 +96,26 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 *∙ 🎣 Caña:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : ''}
 *∙ ↪️ Durabilidad:* ${rdurability}
 
-\t\t\t*× 🎒 INVENTARIO 🎒 ×*
+\t\t\t\t*乂 I T E M S*
 
+*Minerales*
 *∙ 💎 Diamante:* ${diamond}
 *∙ 🪙 Oro:* ${gold}
 *∙ 🔩 Hierro:* ${iron}
 *∙ 🪨 Piedra:* ${stone}
 
+*Frutas*
 *∙ 🍓 Fresa:* ${strawberry}
 *∙ 🍉 Sandía:* ${watermelon}
 *∙ 🍇 Uva:* ${grape}
 *∙ 🥝 Kiwi:* ${kiwi}
 
+*Peces*
 *∙ 🐠 Pez tropical:* ${tropicalfish}
 *∙ 🐡 Pez globo:* ${blowfish}
 *∙ 🐟 Pez comun:* ${commonfish}
 
+*Otros items*
 *∙ 🪵 Madera:* ${wood}
 *∙ 🧪 Poción:* ${potion}
 *∙ 🌱 Semilla:* ${seed}
@@ -128,12 +130,12 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     //application/vnd.ms-excel
     //application/vnd.ms-powerpoint
 
-if (text.includes('simple')) { 
+//if (text.includes('simple')) { 
     conn.sendMessage(m.chat, str, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [who], forwardingScore: 750, isForwarded: true }})
-    } else {
-    let res = await conn.prepareMessageFromContent(m.chat, { "orderMessage": { "orderId":"6288215463787", "itemCount": `${diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash}`, "message": str, "orderTitle": "💌 Lobita & Gatito 💫", "footerText": "© lolibot", "token": "AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA==", "thumbnail": invt, "surface": "CATALOG" } }, { quoted: m, contextInfo: { mentionedJid: [who] } })
-    conn.relayWAMessage(res)
-    }
+    //} else {
+    //let res = await conn.prepareMessageFromContent(m.chat, { "orderMessage": { "orderId":"6288215463787", "itemCount": `${diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash}`, "message": str, "orderTitle": "💌 Lobita & Gatito 💫", "footerText": "© lolibot", "token": "AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA==", "thumbnail": invt, "surface": "CATALOG" } }, { quoted: m, contextInfo: { mentionedJid: [who] } })
+    //conn.relayWAMessage(res)
+    //}
 }
 
 handler.help = ['inventario']
