@@ -1,8 +1,46 @@
-let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner, isPrems }) => {
+let handler = async (m, { conn, usedPrefix, command, args, text, isOwner, isAdmin, isROwner, isPrems }) => {
 
 let chat = global.DATABASE._data.chats[m.chat]
 let user = global.DATABASE._data.users[m.sender]
 let type = (args[0] || ' ').toLowerCase()
+
+let acti = conn.prepareMessageFromContent(m.chat, {
+"listMessage":  {
+"description": `\t\t\t*× 🎡 Activar 🎡 ×*
+
+*⌗* Antienlace 
+*⌗* Bienvenida
+*⌗* Despedida
+*⌗* Nsfw
+*⌗* Antifake`,
+"buttonText": "OPCIONES",
+"listType": "SINGLE_SELECT",
+"sections": [
+{
+"rows": [
+{
+"title": "🔗 | Activar antienlace",
+"rowId": `${usedPrefix + command} antienlace`
+},
+{
+"title": "🫂 | Activar bienvenida",
+"rowId": `${usedPrefix + command} bienvenida`
+},
+{
+"title": "👋 | Activar despedida",
+"rowId": `${usedPrefix + command} despedida`
+},
+{
+"title": "🔞 | Activar nsfw",
+"rowId": `${usedPrefix + command} nsfw`
+},
+{
+"title": "🌐 | Activar antifake",
+"rowId": `${usedPrefix + command} antifake`
+}
+]}]}}, { quoted: m })
+
+if (!text) return conn.relayWAMessage(acti)
 
 switch (type) {
 case 'bienvenida':
@@ -50,17 +88,11 @@ case '+18':
       break
 
     default:
-let opc = `\t\t\t*✗ | Activar*
-
-‧ antienlace
-‧ antifake
-‧ nsfw
-‧ bienvenida`
-return m.reply(opc)
+return conn.relayWAMessage(acti)
   }
 }
 
-handler.help = ['activar < opcion >']
+handler.help = ['activar']
 handler.tags = ['group']
 handler.command = /^(activar|enable)$/i
 
