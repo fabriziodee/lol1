@@ -76,7 +76,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let str = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
 *∙ ❤ Vida:* ${healt}
-*∙ 💵 Dinero:* ${priceNum(money)}
+*∙ 💵 Dinero:* ${shortNum(money)}
 *∙ 📈 Nivel:* ${level}
 *∙ 🌟 Exp:* ${exp}
 *∙ ✨ Exp nivel:* ${user.exp - min}/${max}
