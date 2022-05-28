@@ -46,7 +46,7 @@ default:
 
 }
 
-handler.help = ['lb']
+handler.help = ['top']
 handler.tags = ['rpg']
 handler.command = /^(leaderboard|lb|top)$/i
 handler.fail = null
