@@ -88,9 +88,9 @@ module.exports = {
             if (!isNumber(user.lastraid)) user.lastraid = 0
             if (!('registered' in user)) user.registered = false
             if (!user.registered) {
-                if (!('name' in user)) user.name = this.getName(m.sender)
-                if (!isNumber(user.age)) user.age = -1
-                if (!isNumber(user.regTime)) user.regTime = -1
+            if (!('name' in user)) user.name = this.getName(m.sender)
+            if (!isNumber(user.age)) user.age = -1
+            if (!isNumber(user.regTime)) user.regTime = -1
             }
             if (!('autolevelup' in user)) user.autolevelup = true
         } else global.DATABASE._data.users[m.sender] = {
@@ -232,6 +232,9 @@ module.exports = {
       let isAdmin = user.isAdmin || user.isSuperAdmin || false // Is User Admin?
       let isBotAdmin = bot.isAdmin || bot.isSuperAdmin || false // Are you Admin?
       let DevMode = /true/i.test(global.DeveloperMode.toLowerCase())
+
+      let lolitumb = fs.readFileSync('./storage/image/menu2.jpg')
+      let fgif = { key: {participant: `0@s.whatsapp.net`, ...("6289643739077-1613049930@g.us" ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: {"videoMessage": { "title": 'lolibot', "h": `Hmm`,'seconds': '99999', 'gifPlayback': 'true', 'caption': '*Shirobot - Anuncio 🕊️*', 'jpegThumbnail': lolitumb }}}
 
       for (let name in global.plugins) {
         let plugin = global.plugins[name]
