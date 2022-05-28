@@ -6,7 +6,7 @@ let type = (args[0] || ' ').toLowerCase()
 
 let acti = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
-"description": `\t\t\t*× 🎡 Activar 🎡 ×*
+"description": `\t\t\t\t*× 🎡 Activar 🎡 ×*
 
 *⌗* Antienlace 
 *⌗* Bienvenida
