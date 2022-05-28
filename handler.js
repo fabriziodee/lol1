@@ -233,10 +233,6 @@ module.exports = {
       let isBotAdmin = bot.isAdmin || bot.isSuperAdmin || false // Are you Admin?
       let DevMode = /true/i.test(global.DeveloperMode.toLowerCase())
 
-      function reText(text) {
-      return text.replace(/a/g, 'ɑ')
-      }
-
       for (let name in global.plugins) {
         let plugin = global.plugins[name]
         if (!plugin) continue
