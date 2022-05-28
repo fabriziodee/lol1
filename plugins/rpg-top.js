@@ -10,21 +10,12 @@ let handler = async (m, { conn, args }) => {
   let userslevel = sortedlevel.map(v => v[0])
   let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 5)) : Math.min(7, sortedExp.length)
   let text = `
-• *💫 Top ${len} de clasificacion de nivel* •
-Posicion: *${userslevel.indexOf(m.sender) + 1}* de *${userslevel.length}*
+*TOP ${len} USUARIOS CON MAS DINERO*
 
-${sortedlevel.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + ': *' + data.level + ' Nivel*').join`\n`}
-
-• *💵 Top ${len} de clasificacion de dinero* •
 Posicion: *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
 
-${sortedmoney.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + `: *${shortNum(data.money)} Dinero*`).join`\n`}
-
-• *🎟️ Top ${len} de clasificacion de limite* •
-Posicion: *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
-
-${sortedLim.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + ': *' + data.limit + ' Limite*').join`\n`}
-`.trim()
+${sortedmoney.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + `\n*Dinero:* $${shortNum(data.money)}`).join`\n\n`}
+`
   conn.reply(m.chat, text, m, {
     contextInfo: {
       mentionedJid: [...userslevel.slice(0, len), ...usersmoney.slice(0, len), ...usersLim.slice(0, len)]
@@ -34,7 +25,7 @@ ${sortedLim.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`
 
 handler.help = ['lb']
 handler.tags = ['rpg']
-handler.command = /^(leaderboard|lb)$/i
+handler.command = /^(leaderboard|lb|top)$/i
 handler.fail = null
 handler.exp = 0
 
