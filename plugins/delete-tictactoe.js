@@ -1,20 +1,24 @@
-let { MessageType } = require('@adiwajshing/baileys')
+let handler  = async (m, { conn, text }) => {
+	
+conn.game = conn.game ? conn.game : {}
 
-let handler = async (m, { conn, usedPrefix, command }) => {
-let room = Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
-//try {
-if (room == undefined) return m.reply('Todavía no estas en ninguna partida')
-delete conn.game[room.id]
-await m.reply('Se eliminó la partida!')
-//} catch (e) {
-//m.reply('Todavía no estas en ninguna partida')
-//}
+try {
+if ( conn.game = true ) {
+	delete conn.game
+	conn.reply( m.chat, 'Se eliminó la partida de tictactoe!', m)
+	} else if ( conn.game = false ) {
+		m.reply('Todavía no estas en ninguna partida')
+		} else throw '*Error*'
+	} catch (e) {
+		m.reply('Error al eliminar la partida de tictactoe!')
+		}
 }
 
-handler.help = ['delttt']
+handler.help = ['delxo']
 handler.tags = ['game']
-handler.command = /^(delttt)$/i
+handler.command = /^(delttt|dellttt|delxo)$/i
 
+handler.register = true
 handler.fail = null
 
 module.exports = handler
