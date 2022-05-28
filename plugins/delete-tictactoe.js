@@ -18,7 +18,6 @@ handler.help = ['delxo']
 handler.tags = ['game']
 handler.command = /^(delttt|dellttt|delttc|deltt|delxo)$/i
 
-handler.register = true
 handler.fail = null
 
 module.exports = handler
