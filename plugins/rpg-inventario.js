@@ -128,7 +128,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 *🍱 Total inv:* ${shortNum(items)} items
 `
-m.reply(inv)
+m.reply(inv).replace('a', 'ɑ')
     //let type = (args[0] || ' ').toLowerCase()
 
     //application/vnd.ms-excel
