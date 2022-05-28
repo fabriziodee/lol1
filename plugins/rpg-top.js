@@ -8,13 +8,12 @@ let handler = async (m, { conn, args }) => {
   let usersLim = sortedLim.map(v => v[0])
   let usersmoney = sortedmoney.map(v => v[0])
   let userslevel = sortedlevel.map(v => v[0])
-  let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 5)) : Math.min(7, sortedExp.length)
-  let text = `
-*TOP ${len} USUARIOS CON MAS DINERO*
+  let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 5)) : Math.min(10, sortedExp.length)
+  let text = `\t\t\t*乂 T O P - D I N E R O*
 
-Posicion: *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
+*• Posicion:* *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
 
-${sortedmoney.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + `\n*Dinero:* $${shortNum(data.money)}`).join`\n\n`}
+*${sortedmoney.slice(0, len).map(([user, data], i) => (i + 1) + '. @' + user.split`@`[0] + `*\n*💵 Dinero:* $${shortNum(data.money)}`).join`\n\n`}
 `
   conn.reply(m.chat, text, m, {
     contextInfo: {
