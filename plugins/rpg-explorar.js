@@ -53,7 +53,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 *Durabilidad:* -${durability}`)
           }, 0)
           
-    if (rann == 0) {
+    /*if (rann == 0) {
     let mhealt = (sword == 1 ? (Math.floor(Math.random() * (10 - 20) + 20) + 1) : '' || sword == 2 ? (Math.floor(Math.random() * (30 - 40) + 40) + 1) : '' || sword == 3 ? (Math.floor(Math.random() * (50 - 60) + 60) + 1) : '' || sword == 4 ? (Math.floor(Math.random() * (70 - 80) + 80) + 1) : '' || sword == 5 ? (Math.floor(Math.random() * (90 - 100) + 100) + 1) : '' )
     let rmob = pickRandom(['slime de lava', 'slime de piedra', 'slime de hielo'])
     conn.rpg = conn.rpg ? conn.rpg : { }
@@ -77,7 +77,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 }
 ]}]}}, { quoted: m })
 conn.relayWAMessage(_rpg)
-    }
+    }*/
     
              } else m.reply(`Te quedaste sin energía vuelve dentro de *${waktur}*`)
           } else m.reply(`Repara tu espada, escribiendo ${usedPrefix}reparar espada`)
