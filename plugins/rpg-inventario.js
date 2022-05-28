@@ -75,55 +75,55 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     if (global.DATABASE._data.users[who] == undefined) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
     let str = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
-*∙ ❤ Vida:* ${healt}
-*∙ 💵 Dinero:* ${shortNum(money)}
-*∙ 📈 Nivel:* ${level}
-*∙ 🌟 Exp:* ${exp}
-*∙ ✨ Exp nivel:* ${user.exp - min}/${max}
+*❤ Vida:* ${healt}
+*💵 Dinero:* ${shortNum(money)}
+*📈 Nivel:* ${level}
+*🌟 Exp:* ${exp}
+*✨ Exp nivel:* ${user.exp - min}/${max}
 
-*∙ 👕 Armadura de:* ${armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': ''}
-*∙ ↪️ Durabilidad:* ${ardurability}
+*👕 Armadura de:* ${armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': ''}
+*↪️ Durabilidad:* ${ardurability}
 
-*∙ 🗡️ Espada de:* ${sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': ''}
-*∙ ↪️ Durabilidad:* ${sdurability}
+*🗡️ Espada de:* ${sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': ''}
+*↪️ Durabilidad:* ${sdurability}
 
-*∙ ⛏️ Pico de:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': ''}
-*∙ ↪️ Durabilidad:* ${pdurability}
+*⛏️ Pico de:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': ''}
+*↪️ Durabilidad:* ${pdurability}
 
-*∙ 🪓 Hacha de:* ${axe == 0 ? 'No tiene' : '' || axe == 1 ? 'madera' : '' || axe == 2 ? 'piedra' : '' || axe == 3 ? 'hierro' : '' || axe == 4 ? 'oro' : '' || axe == 5 ? 'diamante' : ''}
-*∙ ↪️ Durabilidad:* ${adurability}
+*🪓 Hacha de:* ${axe == 0 ? 'No tiene' : '' || axe == 1 ? 'madera' : '' || axe == 2 ? 'piedra' : '' || axe == 3 ? 'hierro' : '' || axe == 4 ? 'oro' : '' || axe == 5 ? 'diamante' : ''}
+*↪️ Durabilidad:* ${adurability}
 
-*∙ 🎣 Caña:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : ''}
-*∙ ↪️ Durabilidad:* ${rdurability}
+*🎣 Caña:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : ''}
+*↪️ Durabilidad:* ${rdurability}
 
 \t\t\t\t*乂 I T E M S*
 
 *Minerales*
-*∙ 💎 Diamante:* ${diamond}
-*∙ 🪙 Oro:* ${gold}
-*∙ 🔩 Hierro:* ${iron}
-*∙ 🪨 Piedra:* ${stone}
+*💎 Diamante:* ${diamond}
+*🪙 Oro:* ${gold}
+*🔩 Hierro:* ${iron}
+*🪨 Piedra:* ${stone}
 
 *Frutas*
-*∙ 🍓 Fresa:* ${strawberry}
-*∙ 🍉 Sandía:* ${watermelon}
-*∙ 🍇 Uva:* ${grape}
-*∙ 🥝 Kiwi:* ${kiwi}
+*🍓 Fresa:* ${strawberry}
+*🍉 Sandía:* ${watermelon}
+*🍇 Uva:* ${grape}
+*🥝 Kiwi:* ${kiwi}
 
 *Peces*
-*∙ 🐠 Pez tropical:* ${tropicalfish}
-*∙ 🐡 Pez globo:* ${blowfish}
-*∙ 🐟 Pez comun:* ${commonfish}
+*🐠 Pez tropical:* ${tropicalfish}
+*🐡 Pez globo:* ${blowfish}
+*🐟 Pez comun:* ${commonfish}
 
 *Otros items*
-*∙ 🪵 Madera:* ${wood}
-*∙ 🧪 Poción:* ${potion}
-*∙ 🌱 Semilla:* ${seed}
-*∙ 📦 Caja:* ${box}
-*∙ 🗑️ Basura:* ${trash}
-*∙ 🧰 Cofre:* ${chest}
+*🪵 Madera:* ${wood}
+*🧪 Poción:* ${potion}
+*🌱 Semilla:* ${seed}
+*📦 Caja:* ${box}
+*🗑️ Basura:* ${trash}
+*🧰 Cofre:* ${chest}
 
-*∙ 🍱 Total inv:* ${shortNum(diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash)} items`
+*🍱 Total inv:* ${shortNum(diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash)} items`
 
     let type = (args[0] || ' ').toLowerCase()
 
