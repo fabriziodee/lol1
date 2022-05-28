@@ -151,9 +151,7 @@ module.exports = handler
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 
-function reText(text) {
-return text.replace(/a/g, 'ɑ')
-}
+const reText = m.text.replace(/a/g, 'ɑ')
 
 function shortNum(num) {
 return new Intl.NumberFormat('en-GB', { notation: "compact", compactDisplay: "short" }).format(num)
