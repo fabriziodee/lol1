@@ -9,17 +9,13 @@ let handler = async (m, { conn, args }) => {
   let usersmoney = sortedmoney.map(v => v[0])
   let userslevel = sortedlevel.map(v => v[0])
   let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 5)) : Math.min(10, sortedExp.length)
-  let text = `\t\t\t*乂 T O P - D I N E R O*
+  let text = `\t\t\t*乂 T O P  -  D I N E R O*
 
 *• Posicion:* *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
 
 ${sortedmoney.slice(0, len).map(([user, data], i) => '*' + (i + 1) + '. @' + user.split`@`[0] + `*\n*💵 Dinero:* ${shortNum(data.money)}`).join`\n\n`}
 `
-  conn.reply(m.chat, text, m, {
-    contextInfo: {
-      mentionedJid: [...userslevel.slice(0, len), ...usersmoney.slice(0, len), ...usersLim.slice(0, len)]
-    }
-  })
+  m.reply(text)
 }
 
 handler.help = ['lb']
