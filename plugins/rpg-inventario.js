@@ -74,7 +74,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     let invt = fs.readFileSync('./storage/image/inventario.png')
     if (global.DATABASE._data.users[who] == undefined) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
     let items = (diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash)
-    let str = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
+    let inv = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
 *❤ Vida:* ${healt}
 *💵 Dinero:* ${shortNum(money)}
@@ -128,14 +128,14 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 *🍱 Total inv:* ${shortNum(items)} items
 `
-
-    let type = (args[0] || ' ').toLowerCase()
+m.reply(inv)
+    //let type = (args[0] || ' ').toLowerCase()
 
     //application/vnd.ms-excel
     //application/vnd.ms-powerpoint
 
 //if (text.includes('simple')) { 
-    conn.sendMessage(m.chat, str, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [who], forwardingScore: 750, isForwarded: true }})
+    //conn.sendMessage(m.chat, str, MessageType.text, { quoted: m, contextInfo: { mentionedJid: [who], forwardingScore: 750, isForwarded: true }})
     //} else {
     //let res = await conn.prepareMessageFromContent(m.chat, { "orderMessage": { "orderId":"6288215463787", "itemCount": `${diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash}`, "message": str, "orderTitle": "💌 Lobita & Gatito 💫", "footerText": "© lolibot", "token": "AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA==", "thumbnail": invt, "surface": "CATALOG" } }, { quoted: m, contextInfo: { mentionedJid: [who] } })
     //conn.relayWAMessage(res)
