@@ -2,7 +2,7 @@ const TicTacToe = require("../lib/tictactoe")
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     conn.game = conn.game ? conn.game : {}
-    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Todavía estás en el juego'
+    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw `Todavía estás en una partida, si quieres eliminar escribe ${usedPrefix}delxo`
     let room = Object.values(conn.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
     // m.reply('[WIP Feature]')
     if (room) {
@@ -35,7 +35,7 @@ _*🕹️ Juego Tic-tac-toe 🎮*_
       ${arr.slice(3, 6).join('')}
       ${arr.slice(6).join('')}
 
-Tu turno @${room.game.currentTurn.split('@')[0]}
+Tu turno *@${room.game.currentTurn.split('@')[0]}*
 
 Escriba *rendirse* para dejar de jugar
 `.trim()
@@ -58,13 +58,13 @@ Escriba *rendirse* para dejar de jugar
             state: 'WAITING'
         }
         if (text) room.name = text
-        m.reply(`*Esperando jugador*\n\n- Si quieres entrar a la partida escriba ${usedPrefix + command}`)
+        m.reply('Espere a que un jugador se una la partida!')
         conn.game[room.id] = room
     }
 }
 
-handler.help = ['tictactoe', 'ttt'].map(v => v + '')
+handler.help = ['xo']
 handler.tags = ['game']
-handler.command = /^(tictactoe|ttt)$/
+handler.command = /^(tictactoe|ttt|xo)$/
 
 module.exports = handler
