@@ -19,7 +19,7 @@ case 'money':
 
 *• Posicion:* *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
 
-${sortedmoney.slice(0, len).map(([user, data], i) => '*' + (i + 1) + '. @' + user.split`@`[0] + `*\n*💵 Dinero:* ${shortNum(data.money)}`).join`\n╶\n`}
+${sortedmoney.slice(0, len).map(([user, data], i) => '*' + (i + 1) + `. @${user.split`@`[0]}*\n*💵 Dinero:* ${shortNum(data.money)}`).join`\n╶\n`}
 `
   m.reply(text)
 break
