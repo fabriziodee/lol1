@@ -14,7 +14,8 @@ let type = (args[0] || ' ').toLowerCase()
 
 switch (type) {
 
-case 'espada':
+case 'dinero':
+case 'money':
   let text = `\t\t\t*乂 T O P  -  D I N E R O*
 
 *• Posicion:* *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
