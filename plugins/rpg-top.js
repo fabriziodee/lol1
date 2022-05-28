@@ -19,7 +19,7 @@ switch (type) {
 
 case 'dinero':
 case 'money':
-  let text = `\t\t\t*乂 T O P  -  D I N E R O*
+  let do = `\t\t\t*乂 T O P  -  D I N E R O*
 
 *• Posicion:* *${usersmoney.indexOf(m.sender) + 1}* de *${usersmoney.length}*
 
@@ -31,7 +31,7 @@ break
 case 'exp':
 case 'xp':
 case 'experiencia':
-  let text = `\t\t\t\t*乂 T O P  -  E X P*
+  let ep = `\t\t\t\t*乂 T O P  -  E X P*
 
 *• Posicion:* *${userslevel.indexOf(m.sender) + 1}* de *${userslevel.length}*
 
