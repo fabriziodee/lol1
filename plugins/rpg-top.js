@@ -31,13 +31,13 @@ break
 
 case 'limit':
 case 'limite':
-  exp = `\t\t\t\t*乂 T O P  -  L I M I T E*
+  limite = `\t\t\t\t*乂 T O P  -  L I M I T E*
 
 *• Posicion:* *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
 
 ${sortedLim.slice(0, len).map(([user, data], i) => '*' + (i + 1) + `. @${user.split`@`[0]}*\n*🎟️ Limite:* ${shortNum(data.limit)}`).join`\n╶\n`}
 `
-  m.reply(exp)
+  m.reply(limite)
 break
 
 case 'dinero':
