@@ -1,7 +1,7 @@
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys")
 let fs = require('fs')
 let levelling = require('../lib/levelling')
-let handler = async (m, reText, { conn, args, text, usedPrefix, command }) => {
+let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let user = global.DATABASE._data.users[who]
@@ -147,6 +147,10 @@ handler.tags = ['rpg']
 handler.command = /^(inventario|inventory|inv)$/i
 
 module.exports = handler
+
+function reText(text) {
+return text.replace(rtext)
+}
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
