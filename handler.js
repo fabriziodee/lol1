@@ -233,9 +233,6 @@ module.exports = {
       let isBotAdmin = bot.isAdmin || bot.isSuperAdmin || false // Are you Admin?
       let DevMode = /true/i.test(global.DeveloperMode.toLowerCase())
 
-      let lolitumb = fs.readFileSync('./storage/image/menu2.jpg')
-      let fgif = { key: {participant: `0@s.whatsapp.net`, ...("6289643739077-1613049930@g.us" ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: {"videoMessage": { "title": 'lolibot', "h": `Hmm`,'seconds': '99999', 'gifPlayback': 'true', 'caption': '*Shirobot - Anuncio 🕊️*', 'jpegThumbnail': lolitumb }}}
-
       for (let name in global.plugins) {
         let plugin = global.plugins[name]
         if (!plugin) continue
