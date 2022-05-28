@@ -449,7 +449,7 @@ module.exports = {
 switch (action) {
       case 'add':
         for (let user of participants) {
-        if (!chat.antifake) {
+        if (chat.antifake) {
         if (puser.startsWith(conn.user.jid)) return false
         if (puser.startsWith('9')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('1')) return this.groupRemove(jid, [puser])
@@ -461,7 +461,7 @@ switch (action) {
 	if (puser.startsWith('62')) return this.groupRemove(jid, [puser])
 	if (puser.startsWith('88')) return this.groupRemove(jid, [puser])
 	}
-        if (!chat.welcome) {
+        if (chat.welcome) {
         let duser = user
         let groupMetadata = await this.groupMetadata(jid)
         let _biot = await this.getStatus(duser)
@@ -488,7 +488,7 @@ switch (action) {
 
       case 'remove':
       for (let user of participants) {
-        if (!chat.bye) {
+        if (chat.bye) {
         let duser = user
         let groupMetadata = await this.groupMetadata(jid)
         let _biot = await this.getStatus(duser)
