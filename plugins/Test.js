@@ -16,7 +16,7 @@ for (let index = 0; index < 10; index++) {
 
 for (let i = 0; i <= 10000; i++) {
   
-  let randomIndex = random(999, 9);
+  let randomIndex = random(9, 9);
   
   valueAppearances[randomIndex]++;
 }
