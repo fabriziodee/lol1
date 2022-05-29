@@ -74,6 +74,14 @@ let handler = async (m, { conn, args, text, rtext, usedPrefix, command }) => {
     let invt = fs.readFileSync('./storage/image/inventario.png')
     if (global.DATABASE._data.users[who] == undefined) return m.reply(`El usuɑrio no estά registrɑdo en lɑ bɑse de dɑtos!`)
     let items = (diamond + gold + iron + stone + wood + blowfish + tropicalfish + commonfish + potion + seed + trash)
+
+    
+    let _ardurability = Math.floor((ardurability * 100) / 5000)
+    let _sdurability = Math.floor((sdurability * 100) / 5000)
+    let _pdurability = Math.floor((pdurability * 100) / 5000)
+    let _adurability = Math.floor((adurability * 100) / 5000)
+    let _rdurability = Math.floor((rdurability * 100) / 5000)
+
     let inv = `*Inventario de @${who.split("@s.whatsapp.net")[0]}*
 
 *❤ Vida:* ${healt}
@@ -84,19 +92,19 @@ let handler = async (m, { conn, args, text, rtext, usedPrefix, command }) => {
 
 
 *${armor == 5 ? '👕': '🎽'} Armadura de:* ${armor == 0 ? 'No tiene' : '' || armor == 1 ? 'cuero' : '' || armor == 2 ? 'malla' : '' || armor == 3 ? 'hierro' : '' || armor == 4 ? 'oro' : '' || armor == 5 ? 'diamante': ''}
-*🎗 Durabilidad:* ${ardurability}
+*🎗 Durabilidad:* ${_ardurability}
 
 *🗡️ Espada de:* ${sword == 0 ? 'No tiene' : '' || sword == 1 ? 'madera' : '' || sword == 2 ? 'piedra' : '' || sword == 3 ? 'hierro' : '' || sword == 4 ? 'oro' : '' || sword == 5 ? 'diamante': ''}
-*🎗 Durabilidad:* ${sdurability}
+*🎗 Durabilidad:* ${_sdurability}
 
 *⛏️ Pico de:* ${pickaxe == 0 ? 'No tiene' : '' || pickaxe == 1 ? 'madera' : '' || pickaxe == 2 ? 'piedra' : '' || pickaxe == 3 ? 'hierro' : '' || pickaxe == 4 ? 'oro' : '' || pickaxe == 5 ? 'diamante': ''}
-*🎗 Durabilidad:* ${pdurability}
+*🎗 Durabilidad:* ${_pdurability}
 
 *🪓 Hacha de:* ${axe == 0 ? 'No tiene' : '' || axe == 1 ? 'madera' : '' || axe == 2 ? 'piedra' : '' || axe == 3 ? 'hierro' : '' || axe == 4 ? 'oro' : '' || axe == 5 ? 'diamante' : ''}
-*🎗 Durabilidad:* ${adurability}
+*🎗 Durabilidad:* ${_adurability}
 
 *🎣 Caña:* ${rod == 0 ? 'No tiene' : '' || rod == 1 ? 'normal' : '' || rod == 2 ? 'Caña ????' : '' || rod == 3 ? 'Caña ????' : '' || rod == 4 ? 'Caña ????' : '' || rod == 5 ? 'Caña ????' : ''}
-*🎗 Durabilidad:* ${rdurability}
+*🎗 Durabilidad:* ${_rdurability}
 
 
 \t\t\t\t*乂 I T E M S*
