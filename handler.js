@@ -198,7 +198,7 @@ module.exports = {
       }
       let sOwner = [global.conn.user.jid, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
       if (opts['nyimak']) return
-      if (!m.fromMe && !sOwner && opts['self']) return
+      if (!m.fromMe && !sOwner && opts['self']) return 
       if (m.chat == 'status@broadcast') return
       if (typeof m.text !== 'string') m.text = ''
       for (let name in global.plugins) {
@@ -515,6 +515,7 @@ switch (action) {
         break
 
       case 'promote':
+      if (chat.welcome) {
       text = (chat.sPromote || this.spromote || conn.spromote || '@user ahora es administrador')
       case 'demote':
         if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ya no es administrador')
@@ -524,6 +525,7 @@ switch (action) {
             mentionedJid: this.parseMention(text)
           }
         })
+      }
         break
     }
   },
@@ -542,7 +544,6 @@ switch (action) {
 *• Usuario:* @${m.participant.split`@`[0]}
 *• Fechɑ:* ${date}
 *• Horɑ:* ${time}
-
 
 *El ɑntidelete estɑ ɑctivo*
 Pɑrɑ evitɑr que los mensɑjes seɑn eliminɑdos`
