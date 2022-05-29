@@ -514,19 +514,16 @@ switch (action) {
         }
         break
 
-      case 'promote':
-      if (chat.welcome) {
+      /*case 'promote':
       text = (chat.sPromote || this.spromote || conn.spromote || '@user ahora es administrador')
+
       case 'demote':
-        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ya no es administrador')
-        text = text.replace('@user', '@' + participants[0].split('@')[0])
-        this.sendMessage(jid, text, MessageType.extendedText, {
-          contextInfo: {
-            mentionedJid: this.parseMention(text)
-          }
-        })
+      if (chat.welcome) {
+      if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ya no es administrador')
+      text = text.replace('@user', '@' + participants[0].split('@')[0])
+      this.sendMessage(jid, text, MessageType.extendedText, { contextInfo: { mentionedJid: this.parseMention(text) }})
       }
-        break
+        break*/
     }
   },
   async delete(m) {
