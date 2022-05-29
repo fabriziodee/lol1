@@ -46,16 +46,13 @@ let handler = async (m, { conn, usedPrefix }) => {
 	per = `■■■■■■■■■■ ${resl}%`
     }
 
-    let str = `👋Hola @${who.replace(/@.+/, '')}
+    let str = `*Nivel de @${who.replace(/@.+/, '')}*
 
-「 *TU NIVEL* 」
-╭──────────────────✾
-├ *✨Exp:* ${exp - min}/${max}
-├ *📚Nivel:* ${level}
-├ *🏅Rango:* ${user.role}
-╰──────────────────✾
+*✨ • Exp:* ${exp - min}/${max}
+*📚 • Nivel:* ${level}
+*🏅 • Rango:* ${user.role}
 
-*Nota: puedes ganar exp enviando mensajes o jugando mini juegos*`
+*Nota:* puedes ganar exp jugando mini juegos`
 conn.sendMessage(m.chat, str, MessageType.text, { quoted: m, contextInfo: { externalAdReply:{title: `${per}`,body:"porsentaje del nivel", previewType:"PHOTO",thumbnail: _pp, sourceUrl:``}, "mentionedJid": [who]}})
 }
 
