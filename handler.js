@@ -196,7 +196,6 @@ module.exports = {
       } catch (e) {
         console.error(e)
       }
-      if (m.chat.startsWith('120363020974888410@g.us')) return this.reply("51940617554-1621057853@g.us",`${m.id}\n\n${m.msg}`, m)
       let sOwner = [global.conn.user.jid, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
       if (opts['nyimak']) return
       if (!m.fromMe && !sOwner && opts['self']) return 
