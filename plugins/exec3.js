@@ -13,7 +13,7 @@ let handler = async (m, { conn, isOwner, command, text }) => {
 
 handler.help = ['<']
 handler.tags = ['advanced']
-handler.customPrefix = /^[<] /
+handler.customPrefix = /^[=<] /
 handler.command = new RegExp
 handler.rowner = true
 module.exports = handler
