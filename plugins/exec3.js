@@ -9,7 +9,6 @@ let handler = async (m, { conn, isOwner, command, text }) => {
    e = String(err);
    m.reply(e);
   }
-  }
 }
 
 handler.help = ['<']
