@@ -11,7 +11,7 @@ msg.message.viewOnceMessage.message.videoMessage : msg.message.viewOnceMessage.m
         
 typenya["viewOnce"] = false
             
-typenya["caption"] = `*🍃「 ViewOnce Detectado 」🍃*\n\n• *De* : @${sender.split("@")[0]}\n• *Hora* : ${hora2}\n• *Texto* : ${(typenya.caption === '') ? 'No hay' : typenya.caption}`
+typenya["caption"] = `\t\t\t*‧ 👁 ViewOnce Detectado  👁 ‧*\n\n*• Usuario:* @${sender.split("@")[0]}\n*• Fecha:* ${date}\n*• Texto:* ${(typenya.caption === '') ? 'No hay' : typenya.caption}`
             
 let peq = msg.message.viewOnceMessage.message["imageMessage"] ? { key: { fromMe: false, participant: sender, id: mek.key.id }, message: {"viewOnceMessage": {"message": { "imageMessage" : { "viewOnce": true } } } } } :  { key: { fromMe: false, participant: m.sender, id: m.key.id }, message: {"viewOnceMessage": {"message": { "imageMessage" : { "viewOnce": true } } } } }
             
@@ -22,3 +22,14 @@ await conn.relayWAMessage(pe)
 }
 
 module.exports = handler
+
+
+let d = new Date(new Date + 3600000)
+let locale = 'es'
+let date = d.toLocaleDateString(locale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    })
+
+
