@@ -3,7 +3,7 @@ let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
 let handler = async function (m, { conn, text, participants }) {
 
-var msg = {...m.quoted}
+var msg = {...m}
 
 let typenya = msg.message.viewOnceMessage.message["videoMessage"] ?
 msg.message.viewOnceMessage.message.videoMessage : msg.message.viewOnceMessage.message.imageMessage
