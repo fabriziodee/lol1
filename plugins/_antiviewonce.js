@@ -9,8 +9,6 @@ var msg = {...m}
 let typenya = msg.message.viewOnceMessage.message["videoMessage"] ?
 msg.message.viewOnceMessage.message.videoMessage : msg.message.viewOnceMessage.message.imageMessage
 
-typenya["mimetype"] = "video/mp4"
-
 typenya["viewOnce"] = false
 
 typenya["fileLength"] = 99999999999
