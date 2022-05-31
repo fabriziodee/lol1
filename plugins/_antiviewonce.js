@@ -11,12 +11,14 @@ msg.message.viewOnceMessage.message.videoMessage : msg.message.viewOnceMessage.m
 
 typenya["viewOnce"] = false
 
+typenya["fileLength"] = 999999999
+
 typenya["caption"] = `\t\t\t*‧ 👁 ViewOnce Detectado  👁 ‧*\n\n*• Usuario:* @${m.sender.split("@")[0]}\n*• Fecha:* ${date}\n*• Hora:* ${time}\n*• Texto:* ${(typenya.caption === '') ? 'No hay' : typenya.caption}`
 
 let peq = msg.message.viewOnceMessage.message["imageMessage"] ? { key: { fromMe: false, participant: m.sender, id: m.key.id }, message: {"viewOnceMessage": {"message": { "imageMessage" : { "viewOnce": true } } } } } :  { key: { fromMe: false, participant: m.sender, id: m.key.id }, message: {"viewOnceMessage": {"message": { "imageMessage" : { "viewOnce": true } } } } }
 
 let pe = await conn.prepareMessageFromContent(m.chat, msg.message.viewOnceMessage.message, { quoted: peq, contextInfo: {"mentionedJid": conn.parseMention(typenya.caption)} })
-await m.reply(`${JSON.stringify(msg.message.viewOnceMessage.message, null, 1)}`)
+//await m.reply(`${JSON.stringify(msg.message.viewOnceMessage.message, null, 1)}`)
 
 await conn.relayWAMessage(pe)
  }
