@@ -15,7 +15,7 @@ typenya["caption"] = `\t\t\t*‧ 👁 ViewOnce Detectado  👁 ‧*\n\n*• Usua
             
 let peq = msg.message.viewOnceMessage.message["imageMessage"] ? { key: { fromMe: false, participant: m.sender, id: m.key.id }, message: {"viewOnceMessage": {"message": { "imageMessage" : { "viewOnce": true } } } } } :  { key: { fromMe: false, participant: m.sender, id: m.key.id }, message: {"viewOnceMessage": {"message": { "imageMessage" : { "viewOnce": true } } } } }
             
-let pe = await conn.prepareMessageFromContent(m.chat, msg.message.viewOnceMessage.message, { quoted: peq, contextInfo: {"mentionedJid": [m.sender]} })
+let pe = await conn.prepareMessageFromContent(m.chat, msg.message.viewOnceMessage.message, { quoted: peq, contextInfo: {"mentionedJid": conn.parseMention(msg.message.viewOnceMessage.message)} })
             
 await conn.relayWAMessage(pe)
  }
