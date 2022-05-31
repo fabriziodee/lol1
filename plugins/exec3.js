@@ -4,7 +4,7 @@ let exec = promisify(cp.exec).bind(cp)
 
 let handler = async (m, { conn, isOwner, command, text }) => {
   try {
-   return m.reply(JSON.stringify(eval(budy.slice(2)), null, "\t"))
+   return m.reply(JSON.stringify(eval(text), null, "\t"))
   } catch (err) {
    e = String(err);
    m.reply(e);
