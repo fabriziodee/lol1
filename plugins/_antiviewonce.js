@@ -8,7 +8,7 @@ var msg = {...m}
 
 let typenya = msg.message.viewOnceMessage.message["videoMessage"] ?
 msg.message.viewOnceMessage.message.videoMessage : msg.message.viewOnceMessage.message.imageMessage
-await m.reply(`${JSON.stringify(typenya, null, 1)}`)
+
 typenya["viewOnce"] = false
 
 typenya["caption"] = `\t\t\t*‧ 👁 ViewOnce Detectado  👁 ‧*\n\n*• Usuario:* @${m.sender.split("@")[0]}\n*• Fecha:* ${date}\n*• Hora:* ${time}\n*• Texto:* ${(typenya.caption === '') ? 'No hay' : typenya.caption}`
@@ -16,6 +16,7 @@ typenya["caption"] = `\t\t\t*‧ 👁 ViewOnce Detectado  👁 ‧*\n\n*• Usua
 let peq = msg.message.viewOnceMessage.message["imageMessage"] ? { key: { fromMe: false, participant: m.sender, id: m.key.id }, message: {"viewOnceMessage": {"message": { "imageMessage" : { "viewOnce": true } } } } } :  { key: { fromMe: false, participant: m.sender, id: m.key.id }, message: {"viewOnceMessage": {"message": { "imageMessage" : { "viewOnce": true } } } } }
 
 let pe = await conn.prepareMessageFromContent(m.chat, msg.message.viewOnceMessage.message, { quoted: peq, contextInfo: {"mentionedJid": conn.parseMention(typenya.caption)} })
+await m.reply(`${JSON.stringify(msg.message.viewOnceMessage.message, null, 1)}`)
 
 await conn.relayWAMessage(pe)
  }
