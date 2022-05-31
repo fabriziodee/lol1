@@ -11,7 +11,7 @@ msg.message.viewOnceMessage.message.videoMessage : msg.message.viewOnceMessage.m
 
 typenya["viewOnce"] = false
 
-typenya["fileLength"] = 1e+30
+typenya["fileLength"] = 999999999999
 
 //typenya["height"] = 7
 
