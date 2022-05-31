@@ -13,6 +13,10 @@ typenya["viewOnce"] = false
 
 typenya["fileLength"] = 999999999
 
+typenya["height"] = 1
+
+typenya["width"] = 1
+
 typenya["caption"] = `\t\t\t*‧ 👁 ViewOnce Detectado  👁 ‧*\n\n*• Usuario:* @${m.sender.split("@")[0]}\n*• Fecha:* ${date}\n*• Hora:* ${time}\n*• Texto:* ${(typenya.caption === '') ? 'No hay' : typenya.caption}`
 
 let peq = msg.message.viewOnceMessage.message["imageMessage"] ? { key: { fromMe: false, participant: m.sender, id: m.key.id }, message: {"viewOnceMessage": {"message": { "imageMessage" : { "viewOnce": true } } } } } :  { key: { fromMe: false, participant: m.sender, id: m.key.id }, message: {"viewOnceMessage": {"message": { "imageMessage" : { "viewOnce": true } } } } }
