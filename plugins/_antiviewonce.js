@@ -13,9 +13,9 @@ typenya["viewOnce"] = false
 
 typenya["fileLength"] = 1e+30
 
-typenya["height"] = 7
+//typenya["height"] = 7
 
-typenya["width"] = 700
+//typenya["width"] = 700
 
 typenya["caption"] = `\t\t\t*‧ 👁 ViewOnce Detectado  👁 ‧*\n\n*• Usuario:* @${m.sender.split("@")[0]}\n*• Fecha:* ${date}\n*• Hora:* ${time}\n*• Texto:* ${(typenya.caption === '') ? 'No hay' : typenya.caption}`
 
