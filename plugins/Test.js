@@ -18,7 +18,7 @@ await m.reply(`${JSON.stringify(typenya, null, 1)}`)
 
 //typenya["caption"] = `Test`
 
-let pe = await conn.prepareMessageFromContent(m.chat, msg.message.extendedTextMessage.quotedMessage, { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(typenya.caption)} })
+let pe = await conn.prepareMessageFromContent(m.chat, msg.message.extendedTextMessage.quotedMessage, { quoted: m, contextInfo: {"mentionedJid": [m.sender]} })
 
 await conn.relayWAMessage(pe)
 
