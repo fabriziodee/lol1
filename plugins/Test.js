@@ -10,7 +10,7 @@ await m.reply(`${JSON.stringify(typenya, null, 1)}`)
 
 //typenya["viewOnce"] = true
 
-typenya["fileLength"] = 99999999999
+//typenya["fileLength"] = 99999999999
 
 //typenya["height"] = 7
 
