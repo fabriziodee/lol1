@@ -49,7 +49,7 @@ handler.before = function (m) {
             room.game._currentTurn = m.sender === room.game.playerX
             isWin = true
         }
-        let str = `\t*× 🎮 Tres En Raya 🎮 ×*
+        let str = `*🎮 Juego Tres En Raya 🎮*
 
 ❎ = @${room.game.playerX.split`@`[0]}
 ⭕ = @${room.game.playerO.split`@`[0]}
