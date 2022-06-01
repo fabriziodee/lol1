@@ -50,7 +50,7 @@ handler.before = function (m) {
             isWin = true
         }
         let str = `
-_*🕹️ Juego Tic-tac-toe 🎮*_
+*🎮 Tres En Raya 🎮*
 
 ❎ = @${room.game.playerX.split`@`[0]}
 ⭕ = @${room.game.playerO.split`@`[0]}
