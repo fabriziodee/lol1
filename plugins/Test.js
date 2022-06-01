@@ -8,7 +8,7 @@ var msg = {...m}
 let typenya = msg.quoted
 await m.reply(`${JSON.stringify(typenya, null, 1)}`)
 
-typenya["viewOnce"] = true
+//typenya["viewOnce"] = true
 
 typenya["fileLength"] = 99999999999
 
