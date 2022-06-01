@@ -5,7 +5,7 @@ let handler = async function (m, { conn, text, participants }) {
 
 var msg = {...m}
 
-let typenya = msg.message.extendedTextMessage
+let typenya = msg.message.extendedTextMessage.quotedMessage
 await m.reply(`${JSON.stringify(typenya, null, 1)}`)
 
 //typenya["viewOnce"] = true
@@ -16,9 +16,9 @@ await m.reply(`${JSON.stringify(typenya, null, 1)}`)
 
 //typenya["width"] = 700
 
-typenya["caption"] = `Test`
+//typenya["caption"] = `Test`
 
-let pe = await conn.prepareMessageFromContent(m.chat, msg.message.extendedTextMessage, { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(typenya.caption)} })
+let pe = await conn.prepareMessageFromContent(m.chat, msg.message.extendedTextMessage.quotedMessage, { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(typenya.caption)} })
 
 await conn.relayWAMessage(pe)
 
