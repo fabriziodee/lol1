@@ -12,9 +12,9 @@ let handler  = async (m, { args, conn, text, participants }) => {
   }
   }
 
-//handler.help = ['reenviar']
-//handler.tags = ['tools']
-handler.customPrefix = /Hmmms/
+handler.help = ['reenviar']
+handler.tags = ['tools']
+//handler.customPrefix = /Hmmms/
 //handler.command = /^(reenviar|reenviarmsg)$/i
 handler.admin = true
 
