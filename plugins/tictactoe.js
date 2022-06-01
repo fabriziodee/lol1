@@ -25,7 +25,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
                 9: '9️⃣',
             }[v]
         })
-        let str = `\t*× 🎮 Tres En Raya 🎮 ×*
+        let str = `*🎮 Juego Tres En Raya 🎮*
 
 ❎ = @${room.game.playerX.split`@`[0]}
 ⭕ = @${room.game.playerO.split`@`[0]}
