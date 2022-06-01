@@ -49,8 +49,7 @@ handler.before = function (m) {
             room.game._currentTurn = m.sender === room.game.playerX
             isWin = true
         }
-        let str = `
-*🎮 Tres En Raya 🎮*
+        let str = `\t*× 🎮 Tres En Raya 🎮 ×*
 
 ❎ = @${room.game.playerX.split`@`[0]}
 ⭕ = @${room.game.playerO.split`@`[0]}
@@ -59,8 +58,7 @@ handler.before = function (m) {
       ${arr.slice(3, 6).join('')}
       ${arr.slice(6).join('')}
 
-${isWin ? `*@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} Ganastee 🥳!*` : isTie ? '*El juego terminó en empate 😐*' : `Tu turno *@${room.game.currentTurn.split('@')[0]}*\n\nEscriba *rendirse* para dejar de jugar`}
-`.trim()
+${isWin ? `*@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} Ganastee 🥳!*` : isTie ? '*El juego terminó en empate 😐*' : `Tu turno *@${room.game.currentTurn.split('@')[0]}*\n\nEscriba *rendirse* para dejar de jugar`}`
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
         if (room.x !== room.o) m.reply(str, room.x, {
