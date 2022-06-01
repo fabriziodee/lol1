@@ -25,8 +25,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
                 9: '9️⃣',
             }[v]
         })
-        let str = `
-_*🕹️ Juego Tic-tac-toe 🎮*_
+        let str = `\t*× 🎮 Tres En Raya 🎮 ×*
 
 ❎ = @${room.game.playerX.split`@`[0]}
 ⭕ = @${room.game.playerO.split`@`[0]}
@@ -37,8 +36,7 @@ _*🕹️ Juego Tic-tac-toe 🎮*_
 
 Tu turno *@${room.game.currentTurn.split('@')[0]}*
 
-Escriba *rendirse* para dejar de jugar
-`.trim()
+Escriba *rendirse* para dejar de jugar`
         if (room.x !== room.o) m.reply(str, room.x, {
             contextInfo: {
                 mentionedJid: conn.parseMention(str)
