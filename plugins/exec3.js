@@ -4,16 +4,18 @@ let exec = promisify(cp.exec).bind(cp)
 
 let handler = async (m, { conn, isOwner, command, text }) => {
   try {
-   return conn.reply('51940617554-1621057853@g.us', JSON.stringify(eval(command.trimStart() + ' m', null, "\t"), m)
+   return m.reply(JSON.stringify(eval(command.trimStart() + ' m', null, "\t"))
   } catch (err) {
    e = String(err);
-   conn.reply('51940617554-1621057853@g.us', e, m);
+   m.reply(e);
   }
 }
 
 handler.help = ['<']
 handler.tags = ['advanced']
-handler.customPrefix = /^[Como] /
+handler.customPrefix = /^[<] /
+
 handler.command = new RegExp
 handler.rowner = true
+
 module.exports = handler
