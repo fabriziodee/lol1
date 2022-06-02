@@ -1,4 +1,4 @@
-let util = require('util')
+/*let util = require('util')
 let path = require('path')
 
 let handler = async (m, { conn }) => {
@@ -8,4 +8,4 @@ let handler = async (m, { conn }) => {
 handler.customPrefix = /Test/
 handler.command = new RegExp
 
-module.exports = handler
+module.exports = handler*/
