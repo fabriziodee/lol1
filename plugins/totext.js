@@ -11,7 +11,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
             await m.reply(`${JSON.stringify(media, null, 1)}`)
             let ran = getRandom('.mp3')*/
 const params = {
-    url: media,
+    url: 'https://storage.googleapis.com/assets.frapp.in/WhatsApp-Ptt-2020-10-16-at-6.02.22-PM.mp3',
     runningLength:'short'
 }
 audio2text.recognize(params).then(transcript => {
