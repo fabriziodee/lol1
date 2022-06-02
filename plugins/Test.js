@@ -3,16 +3,22 @@ let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
 let handler = async function (m, { conn, text, participants }) {
 
-let res = await conn.prepareMessageFromContent(m.chat, {
-requestPaymentMessage: {
-                    noteMessage: "Test",
-                        currencyCodeIso4217: "IDR",
-                        amount1000: "100000",
-                        requestFrom: `lolibot`,
-                        expiryTimestamp: 1,
-                        amount: `100000`,
-                  }
-    }, { quoted: m })
+let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
+
+let res = await conn.prepareMessageFromContent(m.chat,{
+"orderMessage": {
+"orderId": '155157279766079',
+"itemCount": '2022',
+"status": 'INQUIRY',
+"surface":'CATALOG',
+"message": 'Test',
+"thumbnail": tumbb,
+"orderTitle": 'SPNb',
+"sellerJid": '0@s.whatsapp.net',
+"token": 'AR5wc3iY2NY8yJaK9MMXdlK/aguUxoA8yPtSFcvt0lrE5g=='
+}
+}, 
+ { quoted: m, contextInfo: {} }) 
 await conn.relayWAMessage(res)
 
 }
