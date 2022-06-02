@@ -33,7 +33,7 @@ ${res.desc}` : '×'}
 \`\`\`${JSON.stringify(res, null, 1)}\`\`\`
 `
   let pp = await conn.getProfilePicture(res.id).catch((e)=>{ m.reply(caption) })
-  if (pp) conn.sendFile(m.chat, pp, 'pp.jpg', caption, false, { mentionedJid: conn.parseMention(caption) })
+  if (pp) conn.sendFile(m.chat, pp, 'pp.jpg', caption, m, false, { mentionedJid: conn.parseMention(caption) })
   //m.reply(caption, false, { contextInfo: { mentionedJid: conn.parseMention(caption) }})
 }
 
