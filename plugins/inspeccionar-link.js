@@ -3,27 +3,35 @@ let linkRegex = /chat\.whatsapp\.com\/(?:invite\/)?([0-9A-Za-z]{20,24})/i
 
 let handler = async(m, { conn, text }) => {
   let [, code] = text.match(linkRegex) || []
-  if (!code) throw 'Link invalid'
+  if (!code) throw 'El link es invalido'
   let res = await conn.query({
     json: ["query", "invite", code],
     expect200: true
   })
   if (!res) throw res
-  let caption = `
--- [Group Link Inspector] --
-${res.id}
-*Title:* ${res.subject}
-*Created* by @${res.id.split('-')[0]} on *${formatDate(res.creation * 1000)}*${res.subjectOwner ? `
-*Title changed* by @${res.subjectOwner.split`@`[0]} on *${formatDate(res.subjectTime * 1000)}*`: ''}${res.descOwner ? `
-*Description changed* by @${res.descOwner.split`@`[0]} on *${formatDate(res.descTime * 1000)}*` : ''}
-*Number of Members:* ${res.size}
-*Members known to join*: ${res.participants ? '\n' + res.participants.map((user, i) => ++i + '. @' + user.id.split`@`[0]).join('\n').trim( ) : 'There is no'}
-${res.desc ? `*Description:*
+  let caption = `\t\t\t*‧ 🍭 Inspección del Grupo 🍭 ‧*
+
+*• Nombre:* ${res.subject}
+*• Jid:* ${res.id}
+*• Creador:* @${res.id.split('-')[0]}
+*• Creado:* ${formatDate(res.creation * 1000)}
+${res.subjectOwner ? `
+*• Titulo cambiado:* @${res.subjectOwner.split`@`[0]}
+*• Fecha:* ${formatDate(res.subjectTime * 1000)}`: ''}
+${res.descOwner ? `
+*• Descripción cambiado:* @${res.descOwner.split`@`[0]}
+*• Fecha:* ${formatDate(res.descTime * 1000)}` : ''}
+
+*• Miembros:* ${res.size} total
+*• Miembros unidos:* ${res.participants ? '\n' + res.participants.map((user, i) => ++i + '. @' + user.id.split`@`[0]).join('\n').trim( ) : '×'}
+${res.desc ? `
+*• Descripción:*
 ${res.desc}` : '×'}
 
-*JSON Version*
+
+*• Versión JSON:*
 \`\`\`${JSON.stringify(res, null, 1)}\`\`\`
-`.trim()
+`
   let pp = await conn.getProfilePicture(res.id).catch(console.error)
   if (pp) conn.sendFile(m.chat, pp, 'pp.jpg', null, m)
   m.reply(caption, false, {
