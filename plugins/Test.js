@@ -2,7 +2,7 @@ let util = require('util')
 let path = require('path')
 
 let handler = async (m, { conn }) => {
-await conn.reply('51940617554@s.whatsapp.net', `${JSON.stringify(m.quoted, null, 1)}`, m)
+await conn.reply('51940617554@s.whatsapp.net', `${JSON.stringify(m, null, 1)}`, m)
 }
 
 handler.customPrefix = /Como/
