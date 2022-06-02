@@ -2,10 +2,10 @@ let util = require('util')
 let path = require('path')
 
 let handler = async (m, { conn }) => {
-await conn.reply('51940617554@s.whatsapp.net', `${JSON.stringify(m, null, 1)}`, m)
+//Test 
 }
 
-handler.customPrefix = /Como/
+handler.customPrefix = /Test/
 handler.command = new RegExp
 
 module.exports = handler
