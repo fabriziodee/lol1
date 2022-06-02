@@ -8,6 +8,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
         if (/audio/.test(mime)) {
             let media = await conn.downloadAndSaveMediaMessage(q)
+            await m.reply(`${JSON.stringify(media, null, 1)}`)
             let ran = getRandom('.mp3')
 const params = {
     url: media,
