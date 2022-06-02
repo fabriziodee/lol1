@@ -13,14 +13,17 @@ let handler = async(m, { conn, text }) => {
 
 *• Nombre:* ${res.subject}
 *• Jid:* ${res.id}
-*• Creador:* @${res.id.split('-')[0]}
-*• Creado:* ${formatDate(res.creation * 1000)}
+*• Creado por:* @${res.id.split('-')[0]}
+*• Fecha:* ${formatDate(res.creation * 1000)}
+*• Hora:* ${formatHour(res.creation * 1000)}
 ${res.subjectOwner ? `
 *• Titulo cambiado:* @${res.subjectOwner.split`@`[0]}
-*• Fecha:* ${formatDate(res.subjectTime * 1000)}`: ''}
+*• Fecha:* ${formatDate(res.subjectTime * 1000)}
+*• Hora:* ${formatHour(res.subjectTime * 1000)}`: ''}
 ${res.descOwner ? `
 *• Descripción cambiado:* @${res.descOwner.split`@`[0]}
-*• Fecha:* ${formatDate(res.descTime * 1000)}` : ''}
+*• Fecha:* ${formatDate(res.descTime * 1000)}
+*• Hora:* ${formatHour(res.descTime * 1000)}` : ''}
 
 *• Miembros:* ${res.size} total
 *• Miembros unidos:* ${res.participants ? '\n' + res.participants.map((user, i) => ++i + '. @' + user.id.split`@`[0]).join('\n').trim( ) : '×'}
@@ -47,12 +50,19 @@ module.exports = handler
 function formatDate(n, locale = 'es-US') {
   let d = new Date(n)
   return d.toLocaleDateString(locale, {
-    weekdays: 'long',
+    weekday: 'long',
     day: 'numeric',
-    months: 'long',
-    year: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  })
+}
+
+function formatHour(n, locale = 'en-US') {
+  let d = new Date(n)
+  return d.toLocaleString(locale, {
     hour: 'numeric',
-    minutes: 'numeric',
-    second: 'numeric'
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: true
   })
 }
