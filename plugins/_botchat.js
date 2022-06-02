@@ -1,4 +1,4 @@
-let { MessageType } = require("@adiwajshing/baileys");
+let { Presence, MessageType } = require("@adiwajshing/baileys");
 let util = require('util')
 let path = require('path')
 let fs = require("fs")
