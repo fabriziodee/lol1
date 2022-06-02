@@ -17,7 +17,7 @@ const params = {
 audio2text.recognize(params).then(transcript => {
 	console.log(transcript)
 });
-            })
+
         } else throw `Responda a una nota de voz o audio`
     } catch (e) {
         throw e
