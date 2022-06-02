@@ -3,7 +3,8 @@ let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
 let handler = async function (m, { conn, text, participants }) {
 
-let tumb = fs.readFileSync('./storage/image/menu2.jpg')
+//let tumb = fs.readFileSync('./storage/image/menu2.jpg')
+let tumb = conn.getProfilePicture("51940617554-1604073088@g.us")
 
 let res = await conn.prepareMessageFromContent(m.chat, tumb, MessageType.image, { quoted: m })
 
