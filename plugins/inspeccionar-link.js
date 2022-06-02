@@ -33,12 +33,8 @@ ${res.desc}` : '×'}
 \`\`\`${JSON.stringify(res, null, 1)}\`\`\`
 `
   let pp = await conn.getProfilePicture(res.id).catch(console.error)
-  if (pp) conn.sendFile(m.chat, pp, 'pp.jpg', null, m)
-  m.reply(caption, false, {
-    contextInfo: {
-      mentionedJid: conn.parseMention(caption)
-    }
-  })
+  if (pp) conn.sendFile(m.chat, pp, 'pp.jpg', caption, m, { mentionedJid: conn.parseMention(caption) })
+  //m.reply(caption, false, { contextInfo: { mentionedJid: conn.parseMention(caption) }})
 }
 
 handler.help = ['inspect']
