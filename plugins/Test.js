@@ -1,3 +1,4 @@
+let fetch = require('node-fetch')
 let fs = require('fs')
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
