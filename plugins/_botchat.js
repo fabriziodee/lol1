@@ -83,78 +83,93 @@ let texto1B = texto1A.exec(m.text)
 
 if (audio1B) {
 	let vn = './storage/audio/Yamete_onii_chan.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Yamete_onii_chan.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio2B) {
 	let vn = './storage/audio/Yo_igual_te_amo_pero.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Yo_igual_te_amo_pero.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio3B) {
 	let vn = './storage/audio/Tontito_soy_hombre.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Tontito_soy_hombre.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio4B) {
 	let vn = './storage/audio/Tienes_que_mimir.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Tienes_que_mimir.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio5B) {
 	let au = ["./storage/audio/Pensamientos_sexuales.mp3", "./storage/audio/No_te_da_verguenza.mp3"]
 	let vn = au[Math.floor(Math.random() * au.length)]
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Pensamientos_verguensa.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio6B) {
 	let vn = './storage/audio/Ok_maricon.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Ok_maricon.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio7B) {
 	let vn = './storage/audio/No_miro_personas_lindas.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'No_miro_personas_lindas.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio8B) {
 	let vn = './storage/audio/No_llores_onii-chan.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'No_llores_onii-chan.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio9B) {
 	let vn = './storage/audio/Me_cago_en_la_concha.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Me_cago_en_la_concha.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio10B) {
 	let vn = './storage/audio/Juguemos_al_ascensor.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Juguemos_al_ascensor.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio11B) {
 	let vn = './storage/audio/Esto_no_es_leche.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Esto_no_es_leche.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio12B) {
         let tt = ["./storage/audio/Gracioso_te_crees.mp3", "./storage/audio/Eres_muy_chistoso.mp3"]
 	let vn = tt[Math.floor(Math.random() * tt.length)]
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Gracioso_Chistoso.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio13B) {
 	let vn = './storage/audio/El_suicidio_no_es_una_opcion.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'El_suicidio_no_es_una_opcion.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio14B) {
 	let vn = './storage/audio/Deje_de_insultarme.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Deje_de_insultarme.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio15B) {
 	let vn = './storage/audio/A.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'A.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
@@ -168,31 +183,37 @@ if (audio16B) {
 
 if (audio17B) {
 	let vn = './storage/audio/No_te_dare_mi_poto.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'No_te_dare_mi_poto.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio18B) {
 	let vn = './storage/audio/5cm_.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, '5cm_.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio19B) {
 	let vn = './storage/audio/El_admin_se_pajea.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'El_admin_se_pajea.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio20B) {
 	let vn = './storage/audio/Me_dieron_ganas.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Me_dieron_ganas.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio21B) {
 	let vn = './storage/audio/Pija.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Pija.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
 if (audio22B) {
 	let vn = './storage/audio/Saquenme_del_tercer_mundo.mp3'
+        await conn.updatePresence(m.chat, Presence.recording)
 	conn.sendFile(m.chat, vn, 'Saquenme_del_tercer_mundo.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 	} else
 
