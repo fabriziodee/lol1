@@ -8,7 +8,7 @@ let handler = async function (m, { conn, text, participants }) {
 let tumbb = await conn.getProfilePicture("51940617554-1604073088@g.us")
 let tumb = await(await fetch(tumbb)).buffer()
 
-let res = await conn.prepareMessageFromContent(m.chat, tumb, MessageType.image, { quoted: m })
+let res = await conn.prepareMessageFromContent(m.chat, tumb, MessageType.image)
 
 await m.reply(`${JSON.stringify(res, null, 1)}`)
 
