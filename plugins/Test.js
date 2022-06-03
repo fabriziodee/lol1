@@ -21,9 +21,9 @@ let typenya = res.message.imageMessage
 
 typenya["fileLength"] = 99999999999
 
-typenya["height"] = 50
+//typenya["height"] = 50
 
-typenya["width"] = 100
+//typenya["width"] = 100
 
 await m.reply(`${JSON.stringify(res, null, 1)}`)
 
