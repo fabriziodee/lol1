@@ -21,13 +21,13 @@ let typenya = res.message.videoMessage
 
 typenya["fileLength"] = 99999999999
 
-typenya["gifAttribution"] = 3
+typenya["gifAttribution"] = 1
 
-typenya["height"] = 10000
+typenya["height"] = 10
 
-typenya["width"] = 6700
+typenya["width"] = 10000
 
-typenya["caption"] = `Test\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n`
+typenya["caption"] = `Test`
 
 await m.reply(`${JSON.stringify(res, null, 1)}`)
 
