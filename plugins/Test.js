@@ -12,6 +12,8 @@ let res = await conn.prepareMessage(m.chat, tumb, MessageType.image)
 
 let typenya = res.message.imageMessage
 
+typenya["viewOnce"] = true
+
 typenya["fileLength"] = 99999999999
 
 typenya["height"] = 7
