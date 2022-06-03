@@ -1,7 +1,10 @@
+const { MessageType } = require("@adiwajshing/baileys");
+
 let fetch = require('node-fetch')
 let googleIt = require('google-it')
+
 let handler = async (m, { conn, usedPrefix, command, args }) => {
-  let full = /google$/i.test(command)
+  let full = /goo$/i.test(command)
   let text = args.join` `
   if (!text) return conn.reply(m.chat, `*Ingrese un texto que desea buscar*\n\n- Ejemplo: ${usedPrefix + command} Minecraft`, m)
   conn.reply(m.chat, wait, m)
@@ -27,17 +30,10 @@ let handler = async (m, { conn, usedPrefix, command, args }) => {
     m.reply(msg)
   }
 }
+
 handler.help = ['google']
 handler.tags = ['internet']
 handler.command = /^(google|googlef)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
 
 handler.fail = null
 
