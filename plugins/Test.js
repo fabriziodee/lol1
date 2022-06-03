@@ -21,9 +21,7 @@ let typenya = res.message.videoMessage
 
 typenya["fileLength"] = 99999999999
 
-typenya["mtype"] = 'videoMessage'
-
-typenya["gifAttribution"] = 1
+typenya["gifAttribution"] = 3
 
 typenya["height"] = 10000
 
