@@ -21,6 +21,8 @@ let typenya = res.message.videoMessage
 
 typenya["fileLength"] = 99999999999
 
+typenya["gifAttribution"] = 2
+
 typenya["height"] = 10000
 
 typenya["width"] = 6700
