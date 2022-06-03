@@ -9,13 +9,13 @@ let handler = async function (m, { conn }) {
     })
   }
   let res = await conn.prepareMessage(m.chat, {
-    "displayName": `${list.length} Contact`,
+    "displayName": `77 Contacts`,
     "contacts": list
   }, 'contactsArrayMessage', { quoted: m })
 
  let typenya = res.message.contactsArrayMessage
 
- typenya["displayName"] = '77'
+ //typenya["displayName"] = '77'
 
  await conn.relayWAMessage(res)
 }
