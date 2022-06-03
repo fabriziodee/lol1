@@ -14,6 +14,10 @@ let typenya = res.message.imageMessage
 
 typenya["fileLength"] = 99999999999
 
+typenya["height"] = 7
+
+typenya["width"] = 700
+
 await m.reply(`${JSON.stringify(res, null, 1)}`)
 
 await conn.relayWAMessage(res)
