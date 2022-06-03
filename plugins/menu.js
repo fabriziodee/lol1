@@ -186,6 +186,17 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
      let tumbb = fs.readFileSync('./storage/image/menu2.jpg')
      let tumbv = fs.readFileSync('./storage/gif/loli_logo.gif')
      let chatp = global.DATABASE._data.chats[m.chat]
+
+     let res = await conn.prepareMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', quoted: m, caption: text.trim(), contextInfo: { mentionedJid: [m.sender, ownernum] } })
+     let typenya = res.message.videoMessage
+
+     typenya["fileLength"] = 99999999999
+     typenya["gifAttribution"] = 1
+     typenya["height"] = 10000
+     typenya["width"] = 6700
+
+     await conn.relayWAMessage(res)
+
      //await conn.sendMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', filename: 'loli_logo.gif', quoted: m, thumbnail: tumbv, caption: text.trim() })
      //if (chatp.menu == 1) {
      //let imeg = await conn.prepareMessage(m.chat, tumbb, 'imageMessage')
@@ -204,7 +215,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
      //} else if (chatp.menu == 4) {
      //conn.reply(m.chat, text.trim(), text, { quoted: m, contextInfo: { externalAdReply:{title: "あなたは私のすべてです", body: "💌 Lobita & Gatito 💫", previewType:"PHOTO", thumbnail: tumbb, sourceUrl: "" }, mentionedJid: [m.sender, ownernum] }})
      //} else if (chatp.menu == 6) {
-     conn.sendMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', filename: 'loli_logo.gif', quoted: m, thumbnail: tumbv, caption: text.trim(), contextInfo: { mentionedJid: [m.sender, ownernum] } })
+     //conn.sendMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', filename: 'loli_logo.gif', quoted: m, thumbnail: tumbv, caption: text.trim(), contextInfo: { mentionedJid: [m.sender, ownernum] } })
      //}
   } catch (e) {
     conn.reply(m.chat, 'Lo siento, ocurrió un error al mostrar el menú', m)
