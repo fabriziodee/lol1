@@ -12,13 +12,13 @@ let res = await conn.prepareMessage(m.chat, tumb, MessageType.image)
 
 let typenya = res.message.imageMessage
 
-typenya["viewOnce"] = true
+//typenya["viewOnce"] = true
 
 typenya["fileLength"] = 99999999999
 
-typenya["height"] = 7
+typenya["height"] = true 
 
-typenya["width"] = 700
+typenya["width"] = true
 
 await m.reply(`${JSON.stringify(res, null, 1)}`)
 
