@@ -15,7 +15,7 @@ let handler = async function (m, { conn }) {
 
  let typenya = res.message.contactsArrayMessage
 
- typenya["displayName"] = '777 contacts'
+ typenya["displayName"] = '77'
 
  await conn.relayWAMessage(res)
 }
