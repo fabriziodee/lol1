@@ -23,9 +23,9 @@ typenya["fileLength"] = 99999999999
 
 typenya["gifAttribution"] = 1
 
-typenya["height"] = 100000
+typenya["height"] = 100
 
-typenya["width"] = 10
+typenya["width"] = 7
 
 typenya["caption"] = `Test`
 
