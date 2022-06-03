@@ -25,6 +25,8 @@ typenya["height"] = 100
 
 typenya["width"] = 10
 
+typenya["caption"] = `Test`
+
 await m.reply(`${JSON.stringify(res, null, 1)}`)
 
 await conn.relayWAMessage(res)
