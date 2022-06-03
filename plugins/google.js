@@ -13,22 +13,15 @@ let handler = async (m, { conn, usedPrefix, command, args }) => {
   let msg = search.map(({ title, link, snippet}) => {
     return `*${title}*\n_${link}_\n_${snippet}_`
   }).join`\n\n─────────────────\n\n`
-  try {
-    let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, url, full }))).buffer()
-    if (ss.includes('html')) throw ''
+  let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, url, full }))).buffer()
+  if (ss.includes('html')) throw ''
+  let res = await conn.prepareMessage(m.chat, ss, MessageType.image, { quoted: m, caption: '\t\t\t\t*‧ 🔎 Google Busqueda 🔎 ‧*\n\n─────────────────\n\n' + msg})
+  let typenya = res.message.imageMessage
 
-    let res = await conn.prepareMessage(m.chat, ss, MessageType.image, { quoted: m, caption: '\t\t\t\t*‧ 🔎 Google Busqueda 🔎 ‧*\n\n─────────────────\n\n' + msg})
-    let typenya = res.message.imageMessage
+  typenya["height"] = 50
+  typenya["width"] = 100
 
-    typenya["height"] = 50
-    typenya["width"] = 100
-
-    await conn.relayWAMessage(res)
-
-    //await conn.sendFile(m.chat, ss, 'screenshot.png', '\t\t*‧ [ 🔎 Google Busqueda 🔎 ] ‧*\n\n─────────────────\n\n' + msg, m)
-  } catch (e) {
-    m.reply(msg)
-  }
+  await conn.relayWAMessage(res)
 }
 
 handler.help = ['google']
