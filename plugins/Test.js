@@ -15,15 +15,15 @@ let tumb = fs.readFileSync('./storage/gif/loli_logo.gif')
 
 let res = await conn.prepareMessage(m.chat, tumb, MessageType.video, { quoted: m, mimetype: 'video/gif' })
 
-let typenya = res.message.imageMessage
+let typenya = res.message.videoMessage
 
 //typenya["viewOnce"] = true
 
-//typenya["fileLength"] = 99999999999
+typenya["fileLength"] = 99999999999
 
-//typenya["height"] = 50
+typenya["height"] = 100
 
-//typenya["width"] = 100
+typenya["width"] = 10
 
 await m.reply(`${JSON.stringify(res, null, 1)}`)
 
