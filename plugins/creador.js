@@ -8,10 +8,16 @@ let handler = async function (m, { conn }) {
       "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:;${name};;;\nFN:${name}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Creador de la loli bot xD\nitem2.EMAIL;type=INTERNET:Gatito@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:github.com/g4tito\nitem3.X-ABLabel:Github\nitem4.ADR:;;Perú;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
     })
   }
-  await conn.sendMessage(m.chat, {
+  await conn.prepareMessage(m.chat, {
     "displayName": `${list.length} Contact`,
     "contacts": list
   }, 'contactsArrayMessage', { quoted: m })
+
+ let typenya = res.message.contactsArrayMessage
+
+ typenya["displayName"] = '777 contacts'
+
+ await conn.relayWAMessage(res)
 }
 
 handler.help = ['creador']
