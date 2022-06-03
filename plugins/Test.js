@@ -19,7 +19,7 @@ let typenya = res.message.imageMessage
 
 //typenya["viewOnce"] = true
 
-typenya["fileLength"] = 99999999999
+//typenya["fileLength"] = 99999999999
 
 //typenya["height"] = 50
 
