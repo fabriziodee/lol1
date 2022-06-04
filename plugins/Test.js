@@ -4,7 +4,7 @@ let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
 let handler = async function (m, { conn, text, participants }) {
 
-let p = conn.prepareMessageFromContent(m.chat, { requestPaymentMessage: {
+let p = conn.prepareMessage(m.chat, { requestPaymentMessage: {
                         noteMessage: "Entahlah",
                         currencyCodeIso4217: "IDR",
                         amount1000: "100000",
