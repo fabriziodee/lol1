@@ -4,15 +4,14 @@ let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
 let handler = async function (m, { conn, text, participants }) {
 
-let p = await conn.prepareMessageFromContent(m.chat, {
+let p = conn.prepareMessageFromContent(m.chat, {
      "sendPaymentMessage": {
       "noteMessage": {
        "extendedTextMessage": {
         "text": "Test"
        }
       }
-     }
-    })
+     }})
 await m.reply(`${JSON.stringify(p, null, 1)}`)
 await conn.relayWAMessage(p)
 }
