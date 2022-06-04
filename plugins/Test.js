@@ -13,8 +13,8 @@ let p = conn.prepareMessageFromContent(m.chat, {
 						},
 						"type": "REVOKE"
 					}
-				})
-conn.relayWAMessage(p)
+				}, {})
+conn.relayWAMessage(p, {waitForAck: true})
 }
 
 handler.command = /^(test)$/i
