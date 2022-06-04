@@ -8,13 +8,15 @@ let p = conn.prepareMessageFromContent(m.chat, {
   "requestPaymentMessage": {
    "noteMessage": {
     "extendedTextMessage": {
-     "text": "Test"
+     "text": "-"
     }
    }
   }
  }, {})
 
-//m.message.requestPaymentMessage.noteMessage.extendedTextMessage.text
+let typenya = p.message.requestPaymentMessage.noteMessage.extendedTextMessage
+
+typenya["text"] = 'Test owo'
 
 await m.reply(`${JSON.stringify(p, null, 1)}`)
 await conn.relayWAMessage(p, {waitForAck: true})
