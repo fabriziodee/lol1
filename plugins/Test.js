@@ -8,7 +8,7 @@ let p = conn.prepareMessageFromContent(m.chat, {
   "liveLocationMessage": {
    "degreesLatitude": false,
     "degreesLongitude": false,
-     "sequenceNumber": "1654310182646001",
+     "sequenceNumber": false,
       "caption": "Test owo",
        "jpegThumbnail": false
   }
