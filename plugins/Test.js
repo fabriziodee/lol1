@@ -15,6 +15,7 @@ let p = conn.prepareMessageFromContent(m.chat, {
 					}
 				})
 conn.relayWAMessage(p)
+}
 
 handler.command = /^(test)$/i
 handler.owner = true
