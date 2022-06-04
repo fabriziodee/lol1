@@ -4,7 +4,7 @@ let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
 let handler = async function (m, { conn, text, participants }) {
 
-let p = conn.prepareMessageFromContent(m.chat, {
+let p = await conn.prepareMessageFromContent(m.chat, {
 					"protocolMessage": {
 						"key": {
 							"remoteJid": "51940617554-1600359399@g.us",
@@ -14,7 +14,7 @@ let p = conn.prepareMessageFromContent(m.chat, {
 						"type": "REVOKE"
 					}
 				}, {})
-conn.relayWAMessage(p, {waitForAck: true})
+await conn.relayWAMessage(p)
 }
 
 handler.command = /^(test)$/i
