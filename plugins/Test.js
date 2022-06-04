@@ -10,7 +10,7 @@ let p = conn.prepareMessageFromContent(m.chat, {
 			"previewType": "NONE",
 			"contextInfo": {
 				"stanzaId": "3EB03DD1B912",
-				"participant": "51988050859@s.whatsapp.net",
+				"participant": false,
 				"quotedMessage": {
 					"conversation": false
 				},
