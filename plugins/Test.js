@@ -11,7 +11,7 @@ let p = await conn.prepareMessageFromContent(m.chat, {
         "text": "Test"
        }
       }
-     }, {})
+     })
 await m.reply(`${JSON.stringify(p, null, 1)}`)
 await conn.relayWAMessage(p)
 }
