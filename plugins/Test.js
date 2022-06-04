@@ -6,13 +6,13 @@ let handler = async function (m, { conn, text, participants }) {
 
 let p = conn.prepareMessageFromContent(m.chat, {
 		        "extendedTextMessage": {
-			"text": "*Test*",
+			"text": "Test owo",
 			"previewType": "NONE",
 			"contextInfo": {
 				"stanzaId": "3EB03DD1B912",
 				"participant": "51988050859@s.whatsapp.net",
 				"quotedMessage": {
-					"conversation": "Test owo"
+					"conversation": false
 				},
 				"remoteJid": "51940617554-1600359399@g.us"
 			}
