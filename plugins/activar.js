@@ -6,13 +6,22 @@ let type = (args[0] || ' ').toLowerCase()
 
 let acti = conn.prepareMessageFromContent(m.chat, {
 "listMessage":  {
-"description": `\t\t\t\t*× 🎡 Activar 🎡 ×*
+"description": `\t\t\t\t*× 🧃 Activadores 🧃 ×*
 
-*⌗* Antienlace 
-*⌗* Bienvenida
-*⌗* Despedida
-*⌗* Nsfw
-*⌗* Antifake`,
+*Comunes*
+  *⌗* Bienvenida
+  *⌗* Despedida
+  *⌗* Nsfw
+
+*Otros*
+  *⌗* Antilink
+  *⌗* Antifake
+  *⌗* Antirvo
+  *⌗* Anticadena
+  *⌗* Antitoxic
+
+Si quieres activar a través de un comando escriba *!off antilink*
+`,
 "buttonText": "OPCIONES",
 "listType": "SINGLE_SELECT",
 "sections": [
