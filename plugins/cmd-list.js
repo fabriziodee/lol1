@@ -12,4 +12,4 @@ handler.help = ['listcmd']
 handler.tags = ['database']
 handler.command = /^(listcmd)$/i
 
-export default handler
+module.exports = handler
