@@ -3,6 +3,7 @@ const { MessageType, newMessagesDB } = require("@adiwajshing/baileys")
 
 module.exports = {
     async all(m, chatUpdate) {
+        m.reply('Test')
         if (m.isBaileys) return
         if (!m.message) return
         if (!m.msg.fileSha256) return
