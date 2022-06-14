@@ -582,18 +582,25 @@ await this.copyNForward(m.key.remoteJid, m.message, false, { quoted: fakeq }).ca
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: '• Estɑ función solo puede ser utilizɑdo por el *creɑdor* de lɑ bot',
-    owner: '• Estɑ función solo puede ser utilizɑdo por el *creɑdor* de lɑ bot',
-    mods: '• Estɑ función solo puede ser utilizɑdo por los\'as *moderɑdores\'ɑs* de lɑ bot',
-    premium: '• Estɑ función solo puede ser utilizɑdo por usuɑrios *premium*',
-    group: '• Estɑ función solo puede ser utilizɑdo en *grupos*',
-    private: '• Estɑ función solo puede ser utilizɑdo en el *chɑt privɑdo*',
-    nsfw: '• En este grupo estɑ prohibido el contenido +18',
-    admin: '• Estɑ función solo puede ser utilizɑdo por los *ɑdministrɑdores\'ɑs* del grupo',
-    botAdmin: '• Debo ser *ɑdministrɑdorɑ* pɑrɑ utilizɑr estɑ función',
-    unreg: '*• Registrese pɑrɑ utilizɑr estɑ función*\n\n*Ejemplo de uso:*\n1. .reg <nombre|edɑd>\n2. .reg Gɑtito|17'
+    rowner: '• Esta función solo puede ser utilizado por el *creador* de la bot',
+    owner: '• Esta función solo puede ser utilizado por el *creador* de la bot',
+    mods: '• Esta función es solo para para *moderadores\'as* de la bot',
+    premium: '• Esta función es solo para miembros *premium*',
+    group: '• Esta función solo se puede usar en *grupos*',
+    private: '• Esta función solo se puede usar en el chat *privado* de la bot',
+    admin: '• Esta función es solo para *admins* del grupo',
+    botAdmin: '• Para ejecutar esta función debo ser *administradora*',
+    //unreg: 'Regístrese para usar esta función  Escribiendo:\n\n*/reg nombre.edad*\n\n📌Ejemplo : */reg dylux.16*',
+    restrict: '• Esta función está *deshabilitada* por el momento',
+    nsfw: '• En este grupo está prohibido el contenido +18'
   }[type]
-  if (msg) return m.reply(msg, false, { sendEphemeral: true })
+  if (msg) return m.reply(msg.replace(/a/g, 'ɑ').replace(/á/g, 'ά'), false, { sendEphemeral: true })
+
+  let msgg = {
+    	unreg: '*Registrese para utilizar esta función*'
+  }[type]
+  if (msgg) return conn.sendButton(m.chat, unreg, 'Click en el botón!, 'Registrarse ✅', '!reg')
+
 }
 
 let fs = require('fs')
