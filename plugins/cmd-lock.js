@@ -14,4 +14,4 @@ handler.command = /^(unlockcmd|lockcmd)$/i
 
 handler.rowner = true
 
-export default handler
+module.exports = handler
