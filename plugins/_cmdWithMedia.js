@@ -1,5 +1,6 @@
 const { MessageType, newMessagesDB } = require("@adiwajshing/baileys")
 
+
 module.exports = {
     async all(m, chatUpdate) {
         if (m.isBaileys) return
