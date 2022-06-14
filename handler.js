@@ -599,7 +599,7 @@ global.dfail = (type, m, conn) => {
   let msgg = {
     unreg: '*Registrese para utilizar esta función*'
   }[type]
-  if (msgg) return conn.sendButton(m.chat, msgg, 'Click en el botón!', 'Registrarse ✅', '!reg', m)
+  if (msgg) return conn.sendButton(m.chat, msgg, 'Click en el botón!', 'Registrarse ✅', '!reg', m, { sendEphemeral: true })
 
 }
 
