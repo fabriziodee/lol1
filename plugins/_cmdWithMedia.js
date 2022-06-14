@@ -8,7 +8,7 @@ module.exports = {
         if (!(Buffer.from(m.msg.fileSha256).toString('base64') in global.DATABASE._data.sticker)) return
         //if (!(m.msg.fileSha256.toString('hex') in global.DATABASE._data.sticker)) return
         
-        let hash = global.db.data.sticker[Buffer.from(m.msg.fileSha256).toString('base64')]
+        let hash = global.DATABASE._data.sticker[Buffer.from(m.msg.fileSha256).toString('base64')]
         //let hash = global.DATABASE._data.sticker[m.msg.fileSha256.toString('hex')]
         m.reply('Test')
         let { text, mentionedJid } = hash
