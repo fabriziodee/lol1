@@ -5,8 +5,8 @@ module.exports = {
     async all(m, chatUpdate) {
         if (m.isBaileys) return
         if (!m.message) return
-        m.reply('Test')
         if (!m.msg.fileSha256) return
+        m.reply('Test')
         if (!(m.msg.fileSha256.toString('hex') in global.DATABASE._data.sticker)) return
         let hash = global.DATABASE._data.sticker[m.msg.fileSha256.toString('hex')]
         let { text, mentionedJid } = hash
