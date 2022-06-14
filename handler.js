@@ -597,9 +597,9 @@ global.dfail = (type, m, conn) => {
   if (msg) return m.reply(msg.replace(/a/g, 'ɑ').replace(/á/g, 'ά'), false, { sendEphemeral: true })
 
   let msgg = {
-    	unreg: '*Registrese para utilizar esta función*'
+    unreg: '*Registrese para utilizar esta función*'
   }[type]
-  if (msgg) return conn.sendButton(m.chat, unreg, 'Click en el botón!, 'Registrarse ✅', '!reg')
+  if (msgg) return conn.sendButton(m.chat, unreg, 'Click en el botón!', 'Registrarse ✅', '!reg')
 
 }
 
