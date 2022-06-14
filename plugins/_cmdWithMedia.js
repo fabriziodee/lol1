@@ -1,12 +1,12 @@
 const { MessageType, newMessagesDB } = require("@adiwajshing/baileys")
 
-
 module.exports = {
     async all(m, chatUpdate) {
         if (m.isBaileys) return
         if (!m.message) return
         if (!m.msg.fileSha256) return
-        if (!(m.msg.fileSha256.toString('hex') in global.DATABASE._data.sticker)) return
+        if (!(Buffer.from(m.msg.fileSha256).toString('base64') in global.db.data.sticker)) return
+        //if (!(m.msg.fileSha256.toString('hex') in global.DATABASE._data.sticker)) return
         m.reply('Test')
         let hash = global.DATABASE._data.sticker[m.msg.fileSha256.toString('hex')]
         let { text, mentionedJid } = hash
