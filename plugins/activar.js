@@ -103,6 +103,6 @@ return conn.relayWAMessage(acti)
 
 handler.help = ['activar']
 handler.tags = ['group']
-handler.command = /^(activar|enable)$/i
+handler.command = /^(activar|enable|off)$/i
 
 module.exports = handler
