@@ -9,7 +9,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   let stiker = false
   try {
     let q = m.quoted ? m.quoted : m
-    let mime = (q.msg || q).mimetype || ''
+    let mime = (q || q.msg).mimetype || ''
     //if (!/webp|image|video/g.test(mime)) throw 'Etiqueta una imagen o gif para convertirlo a sticker!'
     if (/webp|image|video/g.test(mime)) {
       if (/video/g.test(mime)) if ((q || q.msg).seconds > 11) return m.reply('El video debe durar máximo 10 segundos!')
