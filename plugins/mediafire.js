@@ -56,7 +56,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 ▢ *Tamaño:* ${filesizeH}
 ▢ *Extension:* ${ext}
 ▢ *Subido:* ${aploud}`
-  await conn.sendFile(m.chat, ss, 'Error.jpg', caption, sentMsg, 0, { jpegThumbnail: ss })
+  await conn.sendFile(m.chat, ss, 'error.png', caption, m)
   try {
   if (ext.endsWith('ZIP')) return conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: 'application/zip', asDocument: true })
   } catch (e) {
