@@ -5,7 +5,7 @@ handler.before = async function (m, { text, command, usedPrefix }) {
   let isCmd = m.isCommand
   //await m.reply(`${JSON.stringify(isCmd, null, 1)}`)
   if (isCmd == true) {
-   m.reply(`${isCmd ? '✅' : '❎'}`)
+  //m.reply(`${isCmd ? '✅' : '❎'}`)
   }
 }
 
