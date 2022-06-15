@@ -342,13 +342,6 @@ module.exports = {
           }
           
           m.isCommand = true
-          const isCmd = m.text.startsWith(usedPrefix)
-          //m.reply(`${usedPrefix + command}`, false, { sendEphemeral: true })
-          //m.reply(!isCmd ? 'Comando no registrado' : 'Test', false, { sendEphemeral: true })
-          if (!isCmd) { //Unreg Command
-            this.reply(m.chat, 'Comando no registrado', m, { sendEphemeral: true })
-            continue
-          }
 
           let xp = 'exp' in plugin ? parseInt(plugin.exp) : 15 // XP Earning per command
           if (xp > 99999999999) m.reply('Ngecit -_-') // Hehehe
