@@ -8,11 +8,11 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   //let mimee = (qq.msg || qq).mimetype || '' 
   let stiker = false
   try {
-    let q = m ? m : m.quoted
-    let mime = (q || q.msg).mimetype || ''
+    let q = m.quoted ? m.quoted : m
+    let mime = (q.msg || q).mimetype || ''
     //if (!/webp|image|video/g.test(mime)) throw 'Etiqueta una imagen o gif para convertirlo a sticker!'
     if (/webp|image|video/g.test(mime)) {
-      if (/video/g.test(mime)) if ((q || q.msg).seconds > 11) return m.reply('El video debe durar máximo 10 segundos!')
+      if (/video/g.test(mime)) if ((q.msg || q).seconds > 11) return m.reply('El video debe durar máximo 10 segundos!')
       let img = await q.download()
       if (!img) throw `Responde a un *imagen/video/gif/sticker* con el comando ${usedPrefix + command}`
       let out
