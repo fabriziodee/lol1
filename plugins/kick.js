@@ -5,14 +5,14 @@ let handler = async (m, { command, text, groupMetadata }) => {
   let owr = m.chat.split`-`[0]
   if (user.startsWith(owr)) return m.reply('No puedo eliminarlo\'a por que el creó el grupo')
   conn.groupRemove(m.chat, [user])
-  conn.reply(m.chat, 'Se eliminó al usuario!', m)
+  m.reply(`Se eliminó a *@${user.split('@')[0]}*`)
 }
 
 handler.help = ['kick']
 handler.tags = ['adm']
-handler.command = /^(kick|ban)$/i
+handler.command = /^(kick|ban|echar)$/i
+
 handler.group = true
-handler.private = false
 handler.admin = true
 handler.botAdmin = true
 
