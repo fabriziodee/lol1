@@ -16,11 +16,11 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 ▢ *Tamaño:* ${filesizeH}
 ▢ *Extension:* ${ext}
 ▢ *Subido:* ${aploud}`
-  let res = await conn.prepareMessage(m.chat, ss, MessageType.image, { quoted: m, caption: caption })
-  let typenya = res.message.imageMessage
+  let rees = await conn.prepareMessage(m.chat, ss, MessageType.image, { quoted: m, caption: caption })
+  let typenya = rees.message.imageMessage
   typenya["height"] = 50
   typenya["width"] = 100
-  await conn.relayWAMessage(res)
+  await conn.relayWAMessage(rees)
   //await conn.sendFile(m.chat, ss, 'error.png', caption, m)
 
   if (args[0].match(/mediafire/gi)) {
