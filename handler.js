@@ -343,7 +343,8 @@ module.exports = {
           
           m.isCommand = true
           const isCmd = m.isCommand
-          m.reply(!isCmd ? 'Comando no registrado' : 'Test', false, { sendEphemeral: true })
+          m.reply(`${usedPrefix + command}`, false, { sendEphemeral: true })
+          //m.reply(!isCmd ? 'Comando no registrado' : 'Test', false, { sendEphemeral: true })
           //if (!isCmd == false) { //Unreg Command
             //this.reply(m.chat, 'Comando no registrado', m, { sendEphemeral: true })
             //continue
