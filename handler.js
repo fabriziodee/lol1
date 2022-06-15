@@ -343,12 +343,9 @@ module.exports = {
 
           m.isCommand = true
           
-          let testtt = m.text.includes(usedPrefix + command)
-          await m.reply(`${JSON.stringify(testtt, null, 1)}`)
-
-          //if (!m.isCommand == false && m.text.) {
-            //m.reply(`${isCmd ? '✅' : '❎'}`)
-          //}
+          if (m.isCommand == false && m.text.includes(usedPrefix + command)) {
+            m.reply('Comando no registrado Test')
+          }
 
 
           let xp = 'exp' in plugin ? parseInt(plugin.exp) : 15 // XP Earning per command
