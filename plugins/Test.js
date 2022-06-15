@@ -1,26 +1,67 @@
+let { spawn } = require('child_process')
 let fetch = require('node-fetch')
 let fs = require('fs')
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
 
 let handler = async function (m, { conn, text, participants }) {
+      let lvlnow = '7'
+      let teks = 'Test'
+      let str = '*By Imagemagick*'
+      if (global.support.convert || global.support.magick || global.support.gm) {
+        let fontLevel = 'storage/font/level_c.otf'
+        let fontTexts = 'storage/font/texts.otf'
+        let xtsx = 'storage/image/lvlup_template.jpg'
+        let bufs = []
+        let anotations = '+1385+260'
+        if (lvlnow > 2) anotations = '+1370+260'
+        if (lvlnow > 10) anotations = '+1330+260'
+        if (lvlnow > 50) anotations = '+1310+260'
+        if (lvlnow > 100) anotations = '+1260+260'
+       
+        const [_spawnprocess, ..._spawnargs] = [...(global.support.gm ? ['gm'] : global.support.magick ? ['magick'] : []),
+          'convert',
+          xtsx,
+          '-font',
+          fontTexts,
+          '-fill',
+          '#0F3E6A',
+          '-size',
+          '1024x784',
+          '-pointsize',
+          '68',
+          '-interline-spacing',
+          '-7.5',
+          '-annotate',
+          '+153+200',
+          teks,
+          '-font',
+          fontLevel,
+          '-fill',
+          '#0A2A48',
+          '-size',
+          '1024x784',
+          '-pointsize',
+          '140',
+          '-interline-spacing',
+          '-1.2',
+          '-annotate',
+          anotations,
+          lvlnow,
+          '-append',
+          'jpg:-'
+        ]
+        spawn(_spawnprocess, _spawnargs)
+          .on('error', e => {
+            throw e
+          })
+          .on('close', () => {
+            conn.sendFile(m.chat, Buffer.concat(bufs), 'result.jpg', str, m)
+          })
+          .stdout.on('data', chunk => bufs.push(chunk))
 
-let p = conn.prepareMessageFromContent(m.chat, {
-		        "extendedTextMessage": {
-			"text": "Test owo",
-			"previewType": "NONE",
-			"contextInfo": {
-				"stanzaId": "3EB03DD1B912",
-				"participant": "51940617554-1600359399@g.us",
-				"quotedMessage": {
-					"conversation": false
-				},
-				"remoteJid": "51940617554-1600359399@g.us"
-			}
-		}
-				}, {})
-
-await m.reply(`${JSON.stringify(p, null, 1)}`)
-await conn.relayWAMessage(p, {waitForAck: true})
+      } else {
+        m.reply(str)
+      }
 }
 
 handler.command = /^(test)$/i
