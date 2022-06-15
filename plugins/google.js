@@ -18,7 +18,7 @@ let handler = async (m, { conn, usedPrefix, command, args }) => {
   let res = await conn.prepareMessage(m.chat, ss, MessageType.image, { quoted: m, caption: '\t\t\t\t*‧ 🔎 Google Busqueda 🔎 ‧*\n\n─────────────────\n\n' + msg})
   let typenya = res.message.imageMessage
 
-  typenya["height"] = 50
+  typenya["height"] = 55
   typenya["width"] = 100
 
   await conn.relayWAMessage(res)
