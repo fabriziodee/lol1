@@ -340,14 +340,14 @@ module.exports = {
             fail('nsfw', m, this)
             continue
           }
-
+          
           m.isCommand = true
           let isCmd = m.isCommand
-          await m.reply(`${JSON.stringify(isCmd, null, 1)}`)
-          if (isCmd == false) {
-            m.reply('Comando no registrado Test')
-          }
 
+          if (!isCmd) { //Unreg Command
+            this.reply(m.chat, 'Comando no registrado', m, { sendEphemeral: true })
+            continue
+          }
 
           let xp = 'exp' in plugin ? parseInt(plugin.exp) : 15 // XP Earning per command
           if (xp > 99999999999) m.reply('Ngecit -_-') // Hehehe
