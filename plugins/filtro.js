@@ -1,27 +1,23 @@
 const uploadImage = require('../lib/uploadImage')
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  let filt = `
-┌「 *Opsi* 」
-├ greyscale
-├ invert
-├ invertgreyscale
-├ brightness
-├ threshold
-├ sepia
-├ red
-├ green
-├ blue
-├ blurple
-├ blurple2
-└────
+  let filt = `\t\t*‧ ✨Lista de filtros ✨ ‧*
 
-Pengunaan:
-${usedPrefix + command} <opsi>
+- greyscale
+- invert
+- invertgreyscale
+- brightness
+- threshold
+- sepia
+- red
+- green
+- blue
+- blurple
+- blurple2
 
-Contoh:
-${usedPrefix + command} red
-`.trim()
+*Ejemplo de uso:*
+¤ ${usedPrefix + command} <filtro>
+¤ ${usedPrefix + command} invert`
   if (!args[0]) throw filt
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
