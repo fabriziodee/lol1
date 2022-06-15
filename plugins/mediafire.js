@@ -18,7 +18,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 ▢ *Subido:* ${aploud}`
   let rees = await conn.prepareMessage(m.chat, ss, MessageType.image, { quoted: m, caption: caption })
   let typenya = rees.message.imageMessage
-  typenya["height"] = 51
+  typenya["height"] = 55
   typenya["width"] = 100
   await conn.relayWAMessage(rees)
   //await conn.sendFile(m.chat, ss, 'error.png', caption, m)
