@@ -59,7 +59,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   await conn.sendFile(m.chat, ss, 'error.png', caption, m)
   try {
   if (text.endsWith('.apk/file')) return conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
-  } catch m.reply('El formato *${ext}* no se encontro!')
+  } else m.reply('El formato *${ext}* no se encontro!')
 }
 
 handler.help = ['mediafire']
