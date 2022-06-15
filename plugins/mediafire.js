@@ -16,7 +16,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 ▢ *Tamaño:* ${filesizeH}
 ▢ *Extension:* ${ext}
 ▢ *Subido:* ${aploud}`
-  let res = await conn.prepareMessage(m.chat, ss, MessageType.image, { quoted: m, caption: caption)
+  let res = await conn.prepareMessage(m.chat, ss, MessageType.image, { quoted: m, caption: caption })
   let typenya = res.message.imageMessage
   typenya["height"] = 50
   typenya["width"] = 100
