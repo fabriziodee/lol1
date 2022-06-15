@@ -2,7 +2,7 @@ let handler = async (m, { command, text, groupMetadata }) => {
   const content = JSON.stringify(m.message)
   const type = Object.keys(m.message)[0]
   const isQuotedTag = type === "extendedTextMessage" && content.includes("mentionedJid")
-  let user = (m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender && isQuotedTag)
+  let user = (isQuotedTag && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender)
   if (!user) return m.reply('Etiqueta a alguien del grupo para eliminar!')
   if (!groupMetadata.participants.some(v => v.jid === user)) return m.reply('El usuario ya no está en el grupo!')
   let owr = m.chat.split`-`[0]
