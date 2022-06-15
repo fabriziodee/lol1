@@ -343,7 +343,7 @@ module.exports = {
 
           m.isCommand = true
           
-          if (m.isCommand == false && m.text.includes(usedPrefix + command)) {
+          if (!m.isCommand) {
             m.reply('Comando no registrado Test')
           }
 
