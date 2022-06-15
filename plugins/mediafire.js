@@ -1,4 +1,4 @@
-const { mediafiredl } = require('@bochilteam/scraper')
+/*const { mediafiredl } = require('@bochilteam/scraper')
 let fetch = require('node-fetch')
 let axios = require('axios')
 
@@ -16,17 +16,17 @@ let handler = async (m, { isOwner, isPrems, command, usedPrefix, text, args, con
      let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
      let isLimit = (isPrems || isOwner ? limit : limit) * 1024 < filesize
      m.reply(`${JSON.stringify(res, null, 1)}`)
-     /*let capt = `📭 *Mediafire Downloader*
+     let capt = `📭 *Mediafire Downloader*
 
 📝 *Name:* ${filename}
 🎚 *Size:* ${filesizeH}
 🗃 *Extension:* ${ext}
 📤 *Uploaded:* ${aploud}
-${isLimit ? `❌ *File size above ${limit} MB, download it yourself*\n` : ''}🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}`*/ 
+${isLimit ? `❌ *File size above ${limit} MB, download it yourself*\n` : ''}🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}` 
      
-     //if(ss) await conn.sendFile(m.chat, ss, 'screenshot.png', capt, sentMsg, 0, {jpegThumbnail: ss})
+     if(ss) await conn.sendFile(m.chat, ss, 'screenshot.png', capt, sentMsg, 0, {jpegThumbnail: ss})
      try {
-     //if(!isLimit) await conn.sendMedia(m.chat, url, 0, {fileName: `${filename}`, mentions: [m.sender]})
+     if(!isLimit) await conn.sendMedia(m.chat, url, 0, {fileName: `${filename}`, mentions: [m.sender]})
      } catch {
       throw error 
   }
@@ -35,5 +35,37 @@ ${isLimit ? `❌ *File size above ${limit} MB, download it yourself*\n` : ''}�
 handler.help = ['mediafire']
 handler.tags = ['downloader']
 handler.command = /^(mediafire|mdfire)$/i
+
+module.exports = handler*/
+
+
+const { mediafiredl } = require('@bochilteam/scraper')
+let fetch = require('node-fetch')
+let axios = require('axios')
+
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+    if (!args[0]) throw `✳️ Ingrese el link de mediafire junto al comando`
+    if (!args[0].match(/mediafire/gi)) throw `❎ Link incorrecto`
+    let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
+    let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, url: u }))).buffer()
+    let res = await mediafiredl(args[0])
+    let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
+    let caption = `   ≡ *MEDIAFIRE*
+
+▢ *Nombre:* ${filename}
+▢ *Tamaño:* ${filesizeH}
+▢ *Extension:* ${ext}
+▢ *Subido:* ${aploud}`
+  await conn.sendFile(m.chat, ss, 'Error.jpg', caption, sentMsg, 0, { jpegThumbnail: ss })
+  try {
+  if (ext.endsWith('ZIP')) return conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: 'application/zip', asDocument: true })
+  } catch (e) {
+   m.reply('El formato *${ext}* no se encontro!')
+  }
+}
+
+handler.help = ['mediafire']
+handler.tags = ['downloader']
+handler.command = /^(mediafire|mdfire|mfire)$/i
 
 module.exports = handler
