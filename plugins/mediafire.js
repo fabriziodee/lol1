@@ -24,7 +24,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   if (args[0].match(/mediafire/gi)) {
     if (text.endsWith('.apk/file')) return conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
     if (text.endsWith('.zip/file')) return conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: 'application/zip', asDocument: true })
-  } else m.reply(`El formato *"${m.mimetype}"* (${ext}) no se encontro!`)
+  } else m.reply(`El formato *${ext}* no se encontro!`)
 }
 
 handler.help = ['mediafire']
