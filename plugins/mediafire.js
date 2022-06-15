@@ -58,7 +58,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 ▢ *Subido:* ${aploud}`
   await conn.sendFile(m.chat, ss, 'error.png', caption, m)
   try {
-  if (ext.endsWith('APK')) return conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
+  if (ext.includes('APK')) return conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
   } catch {
    m.reply('El formato *${ext}* no se encontro!')
   }
