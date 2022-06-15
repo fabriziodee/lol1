@@ -342,7 +342,14 @@ module.exports = {
           }
 
           m.isCommand = true
-          const isCmd = m.isCommand
+          
+          let testtt = m.text.includes(usedPrefix + command)
+          await m.reply(`${JSON.stringify(testtt, null, 1)}`)
+
+          //if (!m.isCommand == false && m.text.) {
+            //m.reply(`${isCmd ? '✅' : '❎'}`)
+          //}
+
 
           let xp = 'exp' in plugin ? parseInt(plugin.exp) : 15 // XP Earning per command
           if (xp > 99999999999) m.reply('Ngecit -_-') // Hehehe
