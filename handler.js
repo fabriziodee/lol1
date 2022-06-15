@@ -343,7 +343,7 @@ module.exports = {
 
           m.isCommand = true
           let isCmd = m.isCommand
-          //m.reply(`${JSON.stringify(isCmd, null, 1)}`)
+          await m.reply(`${JSON.stringify(isCmd, null, 1)}`)
           if (isCmd == false) {
             m.reply('Comando no registrado Test')
           }
