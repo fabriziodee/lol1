@@ -8,7 +8,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   //let mimee = (qq.msg || qq).mimetype || '' 
   let stiker = false
   try {
-    let q = m.quoted ? m.quoted : m
+    let q = m ? m : m.quoted
     let mime = (q || q.msg).mimetype || ''
     //if (!/webp|image|video/g.test(mime)) throw 'Etiqueta una imagen o gif para convertirlo a sticker!'
     if (/webp|image|video/g.test(mime)) {
