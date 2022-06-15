@@ -342,9 +342,9 @@ module.exports = {
           }
           
           m.isCommand = true
-          let isCmd = m.isCommand
+          const isCmd = m.isCommand
 
-          if (!isCmd) { //Unreg Command
+          if (isCmd == false) { //Unreg Command
             this.reply(m.chat, 'Comando no registrado', m, { sendEphemeral: true })
             continue
           }
