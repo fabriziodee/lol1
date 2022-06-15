@@ -10,7 +10,7 @@ let handler = async function (m, { conn, text, participants }) {
       if (global.support.convert || global.support.magick || global.support.gm) {
         let fontLevel = 'storage/font/level_c.otf'
         let fontTexts = 'storage/font/texts.otf'
-        let xtsx = 'storage/image/menu.jpg'
+        let xtsx = 'storage/image/fondo.jpeg'
         let bufs = []
         let anotations = '+1385+260'
         if (lvlnow > 2) anotations = '+1370+260'
