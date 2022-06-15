@@ -343,9 +343,9 @@ module.exports = {
 
           m.isCommand = true
           await m.reply(`${JSON.stringify(m.isCommand, null, 1)}`)
-          if (m.isCommand) {
-            await m.reply('Comando no registrado Test')
-          }
+          //if (m.isCommand) {
+            //await m.reply('Comando no registrado Test')
+          //}
 
 
           let xp = 'exp' in plugin ? parseInt(plugin.exp) : 15 // XP Earning per command
