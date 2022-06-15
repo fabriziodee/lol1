@@ -342,7 +342,7 @@ module.exports = {
           }
 
           m.isCommand = true
-          await m.reply(`${JSON.stringify(m.isCommand, null, 1)}`)
+          
           let xp = 'exp' in plugin ? parseInt(plugin.exp) : 15 // XP Earning per command
           if (xp > 99999999999) m.reply('Ngecit -_-') // Hehehe
           else m.exp += xp
