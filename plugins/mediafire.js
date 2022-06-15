@@ -44,21 +44,22 @@ let fetch = require('node-fetch')
 let axios = require('axios')
 
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
-    if (!args[0]) throw `✳️ Ingrese el link de mediafire junto al comando`
-    if (!args[0].match(/mediafire/gi)) throw `❎ Link incorrecto`
-    let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
-    let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, url: u }))).buffer()
-    let res = await mediafiredl(args[0])
-    let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
-    let caption = `   ≡ *MEDIAFIRE*
+  if (!args[0]) throw `✳️ Ingrese el link de mediafire junto al comando`
+  if (!args[0].match(/mediafire/gi)) throw `❎ Link incorrecto`
+  let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
+  let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, url: u }))).buffer()
+  let res = await mediafiredl(args[0])
+  let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
+  let caption = `   ≡ *MEDIAFIRE*
 
 ▢ *Nombre:* ${filename}
 ▢ *Tamaño:* ${filesizeH}
 ▢ *Extension:* ${ext}
 ▢ *Subido:* ${aploud}`
   await conn.sendFile(m.chat, ss, 'error.png', caption, m)
-  try {
-  if (text.endsWith('.apk/file')) return conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
+
+  if (!args[0].match(/mediafire/gi)) {
+    conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
   } else m.reply('El formato *${ext}* no se encontro!')
 }
 
