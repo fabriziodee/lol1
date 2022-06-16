@@ -74,7 +74,10 @@ module.exports = handler*/
 let handler = m => m
 
 handler.before = async function (m, { text, command, usedPrefix, isCmd }) {
-  if (!m.isBaileys && !m.fromMe) return false
+  if (!m.quoted) throw false
+  let { chat, fromMe, isBaileys } = m.quoted
+  if (!fromMe) throw false 
+  if (!isBaileys) throw false
   m.reply(m.text)
 }
 
