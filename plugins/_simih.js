@@ -2,6 +2,25 @@ let fetch = require('node-fetch')
 
 let handler = m => m
 
+handler.before = async function (m, { text, command, usedPrefix, isCmd }) {
+  if (!m.quoted) throw false
+  let { chat, fromMe, isBaileys } = m.quoted
+  if (!fromMe) throw false 
+  if (!isBaileys) throw false
+  let res = await fetch(`https://simsimi.info/api/?text=${encodeURIComponent(text)}&lc=es`)
+  let json = await res.json()
+  if (json.success) m.reply(`${json.success}`)
+}
+
+module.exports = handler
+
+
+
+
+/*let fetch = require('node-fetch')
+
+let handler = m => m
+
 handler.before = async (m) => {
     if (m.isBaileys && m.fromMe) {
         if (/^.*false|disable|(turn)?off|0/i.test(m.text)) return
@@ -16,4 +35,4 @@ handler.before = async (m) => {
     return !0
 }
 
-module.exports = handler
+module.exports = handler*/
