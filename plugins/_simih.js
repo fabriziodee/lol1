@@ -1,4 +1,4 @@
-let fetch = require('node-fetch')
+/*let fetch = require('node-fetch')
 
 let handler = m => m
 
@@ -14,10 +14,7 @@ handler.before = async function (m, { command, usedPrefix }) {
 
 module.exports = handler
 
-
-
-
-/*let fetch = require('node-fetch')
+let fetch = require('node-fetch')
 
 let handler = m => m
 
