@@ -10,7 +10,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   let encmedianb = JSON.parse(JSON.stringify(m).replace('quotedM','m')).message.extendedTextMessage.contextInfo
   let median = await conn.downloadAndSaveMediaMessage(encmedianb)
   let keyrmbg = 'bcAvZyjYAjKkp1cmK8ZgQvWH'
-  await removeBackgroundFromImageFile({path: median, apiKey: keyrmbg, size: 'auto', type: 'auto', 'sinfondo.png'}).then(res => {
+  await removeBackgroundFromImageFile({ path: median, apiKey: keyrmbg, size: 'auto', type: 'auto' }).then(res => {
   fs.unlinkSync(median)
   let buffer = Buffer.from(res.base64img, 'base64')
   conn.sendMessage(m.chat, buffer, MessageType.image, { quoted: m, caption: '✅ Listo'})
