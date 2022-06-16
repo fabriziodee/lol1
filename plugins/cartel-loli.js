@@ -1,7 +1,8 @@
 let { spawn } = require('child_process')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (text.length > 19) return m.reply('El texto es demɑsiɑdo lɑrgo mínimo 19 cɑrɑcteres')
+  if (!text) throw 'Ingrese un texto junto al comando'
+  if (text.length > 19) throw 'El texto es demasiado largo mínimo 19 caracteres'
   let str = '*Cartel loli kawaii 🪧*'
   if (global.support.convert || global.support.magick || global.support.gm) {
   let fontTexts = 'src/font/Zahraaa.ttf'
