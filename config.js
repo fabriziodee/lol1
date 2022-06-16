@@ -55,7 +55,7 @@ global.author = '💌 Lobita & Gatito 💫'
 global.wm = '©The Shadow Brokers - Bot'
 
 
-global.wait = '↻ Esperɑ soy lentɑ. . .'
+global.wait = '*↻ Esperɑ soy lentɑ . . .*'
 global.error = '☓ Ocurrió un error inesperado'
 global.nsfw = 'En este grupo no está permitido el contenido +18'
 
