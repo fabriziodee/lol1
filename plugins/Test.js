@@ -1,4 +1,4 @@
-/*let { spawn } = require('child_process')
+let { spawn } = require('child_process')
 let fetch = require('node-fetch')
 let fs = require('fs')
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys");
@@ -66,20 +66,6 @@ let handler = async function (m, { conn, text, participants }) {
 
 handler.command = /^(test)$/i
 handler.owner = true
-
-module.exports = handler*/
-
-
-
-let handler = m => m
-
-handler.before = async function (m, { text, command, usedPrefix, isCmd }) {
-  if (!m.quoted) throw false
-  let { chat, fromMe, isBaileys } = m.quoted
-  if (!fromMe) throw false 
-  if (!isBaileys) throw false
-  m.reply(m.text)
-}
 
 module.exports = handler
 
