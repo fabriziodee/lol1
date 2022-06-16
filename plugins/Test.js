@@ -74,7 +74,7 @@ module.exports = handler*/
 let handler = m => m
 
 handler.before = async function (m, { text, command, usedPrefix, isCmd }) {
-  if (m.isBaileys && m.fromMe) return !0
+  if (m.isBaileys && m.fromMe) return false
   m.reply(m.text)
 }
 
