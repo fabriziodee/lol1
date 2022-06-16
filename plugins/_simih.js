@@ -3,6 +3,7 @@ let fetch = require('node-fetch')
 let handler = m => m
 
 handler.before = async function (m, { command, usedPrefix, isCmd }) {
+  if (/^.*false|disable|(turn)?off|0/i.test(m.text)) return
   if (!m.quoted) throw false
   let { chat, fromMe, isBaileys } = m.quoted
   if (!fromMe) throw false 
