@@ -6,10 +6,11 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
   if (!text) throw 'Ingrese un texto justo al comando'
   conn.reply(m.chat, global.wait, m)
   let mc = await tod.mcpedl(text)
+  let uurl = mc[0].url
   let msg = mc.map(({ name, category, date, desc, link }) => {
     return `*• Nombre:* ${name}\n*• Categoria:* ${category}\n*• Fecha:* ${date}\n*• Descripción:* ${desc}\n*• Link:* ${link}`
   }).join`\n\n─────────────────\n\n`
-  let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, mc[0].url, full }))).buffer()
+  let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, uurl, full }))).buffer()
   if (ss.includes('html')) throw ''
   let res = await conn.prepareMessage(m.chat, ss, MessageType.image, { quoted: m, caption: '\t\t\t\t*‧ 🔎 Mcpedl Busqueda 🔎 ‧*\n\n─────────────────\n\n' + msg})
   let typenya = res.message.imageMessage
