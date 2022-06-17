@@ -5,6 +5,7 @@ let fetch = require('node-fetch')
 let handler = async(m, { conn, text, usedPrefix, command }) => {
   if (!text) throw 'Ingrese un texto justo al comando'
   conn.reply(m.chat, global.wait, m)
+  let full = /mc$/i.test(command)
   let mc = await tod.mcpedl(text)
   let uurl = mc[0].url
   let msg = mc.map(({ name, category, date, desc, link }) => {
