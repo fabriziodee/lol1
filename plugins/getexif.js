@@ -1,5 +1,5 @@
 const { format } = require('util')
-const { default: { Image } } = await require('node-webpmux')
+const { default: { Image } } = require('node-webpmux')
 
 let handler = async (m) => {
   if (!m.quoted) return m.reply(`🏷️ Etiqueta un sticker con el comando *${usedPrefix + command}*`)
