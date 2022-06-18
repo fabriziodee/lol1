@@ -11,7 +11,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let [_, code] = link.match(linkRegex) || []
     if (!code) throw 'Enlace invalido!'
     let { gid: target } = await conn.acceptInvite(code)
-    conn.reply(m.chat, 'Enviando spam. . .', m)
+    conn.reply(m.chat, '*Enviando spam . . .*', m)
     let member = (await conn.groupMetadata(target)).participants.map(v => v.jid)
     let faker = {
   key: {
@@ -30,7 +30,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   }
  }
 
-await conn.sendMessage(target, `https://chat.whatsapp.com/ECCCE6hiiEqF45ndjbyGBN`, MessageType.text, { quoted: faker, contextInfo: { forwardingScore:999, isForwarded:true, mentionedJid: member } }).then(v => conn.groupLeave(target))
+await conn.sendMessage(target, `https://chat.whatsapp.com/JdCIiS4NNmC4XyxWM70Ori`, MessageType.text, { quoted: faker, contextInfo: { forwardingScore:999, isForwarded:true, mentionedJid: member } }).then(v => conn.groupLeave(target))
 m.reply(`Spam enviado`)
 }
 
