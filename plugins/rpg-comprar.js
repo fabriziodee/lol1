@@ -112,8 +112,8 @@ case 'caña':
        	global.db.data.users[m.sender].rod += 1
            global.db.data.users[m.sender].roddurability += ( 0 ? 500 : '' || 1 ? 1000 : '' || 2 ? 1500 : '' || 3 ? 2000 : '' || 4 ? 2500 : '' || 5 ? 3000 : '')
            global.db.data.users[m.sender].money -= rod * 1
-           conn.reply(m.chat, `Compraste una caña *${crod}* por ${rod} de dinero` ,m)
-          } else conn.reply(m.chat, `No tienes suficiente dinero para comprar una caña *${crod}* que cuesta ${rod} de dinero`, m)
+           conn.reply(m.chat, `Compraste una caña *${crod}* por *$${rod}*` ,m)
+          } else conn.reply(m.chat, `Necesitas *$${rod}* para comprar la caña *${crod}*`, m)
       break
 
     default:
