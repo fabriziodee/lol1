@@ -1,3 +1,19 @@
+let handler = m => m
+
+handler.before = async function (m) {
+  let vnro = ['212', '265', '92', '44', '62', '7', '55', '48', '972', '371', '1', '377']
+  if (m.sender.startsWith(vnro)) {
+  global.db.data.users[m.sender].banned = false 
+  conn.reply('AntiMoros Activado lo siento mirey seras expulsado del grupo.')
+  conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+  }
+}
+
+export default handler
+
+
+
+
 /*let { spawn } = require('child_process')
 let fetch = require('node-fetch')
 let fs = require('fs')
